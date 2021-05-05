@@ -1,0 +1,90 @@
+#anime_test {
+  height: 100px;
+  width: 100px;
+  background-color: #F44336;
+  position: relative;
+  left: 0;
+  transition: 0.5s;
+}
+
+#anime_test.active {
+  background-color: #a31b1b;
+  left: calc(100% - 100px);
+}
+
+.anime_test-btn {
+  margin-top: 10px;
+  display: inline-block;
+  padding: 5px 10px;
+  border: solid 1px;
+  cursor: pointer;
+}
+
+body {
+  font-size: 20px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: #fff;
+  color: black;
+}
+
+h1 a {
+  color: #a31b1b;
+}
+
+.cord-font {
+  font-size: 20px;
+  font-weight: blod;
+}
+
+.ul {
+  overflow: hidden;
+  list-style: none;
+  margin: 0 auto;
+  z-index: 20;
+}
+
+.ul li {
+  display: inline-block;
+  padding: 26px 10px 20px 10px;
+}
+
+.ul li a {
+  font-size: 20px;
+  color: black;
+}
+
+.ul li a:hover {
+  text-decoration: none;
+}
+
+.navbar-laravel {
+  background-color: #f5e3bf;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
+}
+
+.navbar-brand {
+  color: #fff !important;
+}
+
+.nav-link {
+  color: #fff !important;
+}
+
+.table-dark {
+  color: #fff;
+}
+
+.list-group-item {
+  border-color: #fff;
+  background-color: #000;
+}
+
+.login-box {
+  background-color: rgba(0, 0, 0, 0);
+}
+
+.login-header {
+  background-color: rgba(0, 0, 0, 0.25);
+}
+
