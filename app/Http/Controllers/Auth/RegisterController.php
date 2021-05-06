@@ -11,6 +11,7 @@ use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Auth\Events\Registered;
+use Carbon\Carbon;
 
 class RegisterController extends Controller
 {
@@ -114,6 +115,7 @@ class RegisterController extends Controller
             }
             // ユーザーステータス更新
             $user->status = config('const.USER_STATUS.MAIL_AUTHED');
+            $user->email_verified_at = Carbon::now();
             if($user->save()) {
                 return view('auth.main.register', compact('email_token'));
             } else{
