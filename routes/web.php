@@ -13,11 +13,14 @@
 Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function() {
     Route::get('create', 'Admin\GuitarController@add');
     Route::post('create', 'Admin\GuitarController@create');
-    Route::get('cord', 'Admin\GuitarController@cord');
-    Route::get('home', 'Admin\GuitarController@home');
     Route::get('mypage', 'Admin\GuitarController@mypage');
     Route::get('playing', 'Admin\GuitarController@playing');
 });
+// コードは誰でも見せられる
+Route::get('admin/cord', 'Admin\GuitarController@cord');
+
+// ホームページだからauth必要ない
+Route::get('admin/home', 'Admin\GuitarController@home');
 
 // メールから仮登録しているルーティング
 Route::post('register/pre_check', 'Auth\RegisterController@pre_check')->name('register.pre_check');
@@ -35,8 +38,6 @@ Route::get('/', function() {
     return view('welcome');
 });
 
-
 Auth::routes();
-
 
 Route::get('/home', 'HomeController@index')->name('home');

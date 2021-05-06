@@ -37,6 +37,10 @@ h1 a {
   font-weight: blod;
 }
 
+li {
+  list-style: none;
+}
+
 .ul {
   overflow: hidden;
   list-style: none;
@@ -47,14 +51,15 @@ h1 a {
 .ul li {
   display: inline-block;
   padding: 26px 10px 20px 10px;
+  list-style: none;
 }
 
-.ul li a {
+.ul li .a {
   font-size: 20px;
   color: black;
 }
 
-.ul li a:hover {
+.ul li .a:hover {
   text-decoration: none;
 }
 
