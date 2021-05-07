@@ -23,7 +23,7 @@
                 </form>
             </div>
         </div>
-        <p><a href="playing">それぞれの曲に合わして</p>
+
         <div class="row">
             <div class="list-news col-md-12 mx-auto">
                 <div class="row">
@@ -31,8 +31,9 @@
                         <thead>
                             <tr>
                                 <th width="10%">ID</th>
-                                <th width="20%">タイトル</th>
-                                <th width="50%">本文</th>
+                                <th width="20%">曲のタイトル</th>
+                                <th width="20%">カテゴリー</th>
+                                <th width="30%">作曲者名</th>
                             </tr>
                         </thead>
                         <tbody>

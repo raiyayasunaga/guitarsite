@@ -40,8 +40,10 @@
                         <!-- Left Side Of Navbar -->
                         <!-- Authentication Links -->
                         @guest
+                            <ul class="navbar-nav mr-auto">
                                 <!-- ログインリンク -->
                                 <li><a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a></li>
+                            </ul>
                                 <!-- 右サイドバー -->
                             <ul class="navbar-nav ml-auto">
                                     @if (Route::has('register'))

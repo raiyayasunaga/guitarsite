@@ -14,7 +14,9 @@ class CordMusicTable extends Migration
     public function up()
     {
         Schema::create('cords', function (Blueprint $table) {
+        $table->increments('id');
         $table->string('image_path');
+        $table->string('lyrics');
         });
     }
 
@@ -25,6 +27,6 @@ class CordMusicTable extends Migration
      */
     public function down()
     {
-        //
+        Schema::dropIfExists('cords');
     }
 }
