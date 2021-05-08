@@ -7,6 +7,19 @@
   transition: 0.5s;
 }
 
+#text-button {
+  display: block;
+  cursor: pointer;
+  width: 160px;
+  text-align: center;
+  border: 1px solid #232323;
+}
+
+#view {
+  padding: 100px;
+  background-color: #F44336;
+}
+
 #anime_test.active {
   background-color: #a31b1b;
   left: calc(100% - 100px);
@@ -32,9 +45,31 @@ h1 a {
   color: #a31b1b;
 }
 
+.cordmenu {
+  display: flex;
+  justify-content: center;
+}
+
+.cord {
+  padding: 10px;
+}
+
+.cord a:hover {
+  text-decoration: none;
+}
+
 .cord-font {
-  font-size: 20px;
+  font-size: 15px;
   font-weight: blod;
+  background-color: gray;
+  border-radius: 20px;
+  padding: 10px;
+  color: black;
+}
+
+.cord-font:hover {
+  color: brown;
+  text-decoration: none;
 }
 
 li {
@@ -46,7 +81,7 @@ ul {
   list-style: none;
   margin: 0 auto;
   z-index: 20;
-  margin-left: 100px;
+  margin-left: 80px;
 }
 
 ul li {

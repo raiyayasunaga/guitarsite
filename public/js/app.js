@@ -1928,7 +1928,16 @@ __webpack_require__.r(__webpack_exports__);
   mounted: function mounted() {
     console.log('Component mounted.');
   }
-});
+}(function () {
+  'use strict';
+
+  var vm = new Vue({
+    el: app,
+    data: {
+      name: 'Raiya'
+    }
+  });
+})());
 
 /***/ }),
 

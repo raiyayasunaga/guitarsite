@@ -19,5 +19,15 @@
         mounted() {
             console.log('Component mounted.')
         }
+        
     }
+    (function() {
+        'use strict';
+        var vm = new Vue({
+            el:app,
+            data: {
+                name:'Raiya'
+            }
+        });
+    }) ();
 </script>

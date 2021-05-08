@@ -52,7 +52,7 @@ class RegisterController extends Controller
 
         $bridge_request = $request->all();
         // password マスキング
-        $bridge_request['password_mask'] = '*******';
+        $bridge_request['password_mask'] = '****';
 
         return view('auth.register_check')->with($bridge_request);
     }
@@ -67,7 +67,7 @@ class RegisterController extends Controller
     {
         return Validator::make($data, [
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
-            'password' => ['required', 'string', 'min:8', 'confirmed'],
+            'password' => ['required', 'string', 'min:4', 'confirmed'],
         ]);
     }
 

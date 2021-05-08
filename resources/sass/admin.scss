@@ -3,6 +3,7 @@
   font-size: 20px;
 }
 
+
 #anime_test {
   height: 100px;
   width: 100px;
@@ -10,6 +11,19 @@
   position: relative;
   left: 0;
   transition: 0.5s;
+}
+
+#text-button {
+  display: block;
+  cursor: pointer;
+  width: 160px;
+  text-align: center;
+  border: 1px solid #232323;
+}
+
+#view {
+  padding: 100px;
+  background-color: #F44336;
 }
 
 #anime_test.active {
@@ -37,10 +51,36 @@ body {
 h1 a{
   color: $sitecolor;
 }
-.cord-font {
-  font-size: 20px;
-  font-weight: blod;
+
+// ギターコードの編集
+.cordmenu {
+  display: flex;
+  justify-content: center;
 }
+.cord {
+  padding: 10px;
+  a:hover {
+    text-decoration: none;
+  }
+}
+
+
+.cord-font {
+  font-size: 15px;
+  font-weight: blod;
+  background-color: gray;
+  border-radius: 20px;
+  padding: 10px;
+  color:black;
+
+  &:hover {
+    color:brown;
+    text-decoration: none;
+  }
+}
+
+// コード一覧終わり
+
 li {
   list-style: none;
 }
@@ -50,7 +90,7 @@ ul {
     list-style:none;
     margin: 0 auto;
     z-index: 20;
-    margin-left: 100px;
+    margin-left: 80px;
 
    li {
     display: inline-block;

@@ -54,10 +54,9 @@
                                     </li>
                                 <header>
                                     <ul>
-                                        <li><a href = "mypage">マイページ</li>
-                                        <li><a href = "create">曲の作成</li>
-                                        <li><a href = "cord">ギターのコード一覧</li>
-                                        <a>
+                                        <li><a href = "mypage">マイページ</a></li>
+                                        <li><a href = "create">曲の作成</a></li>
+                                        <li><a href = "cord">ギターのコード一覧</a></li>
                                     </ul>
                                 </header>
                             </ul>
@@ -97,11 +96,12 @@
                 </div>
             </nav>
             {{-- ここまでナビゲーションバー --}}
-            <main class="py-4">
+            <main>
                 {{-- コンテンツをここに入れるため、@yieldで空けておきます。 --}}
                 @yield('content')
             </main>
         </div>
         <script src="{{ asset('js/cord_create.js') }}"></script>
+        <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
     </body>
 </html>
