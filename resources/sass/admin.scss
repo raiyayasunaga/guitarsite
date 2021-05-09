@@ -4,40 +4,6 @@
 }
 
 
-#anime_test {
-  height: 100px;
-  width: 100px;
-  background-color: #F44336;
-  position: relative;
-  left: 0;
-  transition: 0.5s;
-}
-
-#text-button {
-  display: block;
-  cursor: pointer;
-  width: 160px;
-  text-align: center;
-  border: 1px solid #232323;
-}
-
-#view {
-  padding: 100px;
-  background-color: #F44336;
-}
-
-#anime_test.active {
-  background-color: $sitecolor;
-  left: calc(100% - 100px);
-}
-
-.anime_test-btn {
-  margin-top:  10px;
-  display:  inline-block;
-  padding:  5px 10px;
-  border: solid 1px;
-  cursor:  pointer;
-}
 
 body {
   @include test;
@@ -51,6 +17,29 @@ body {
 h1 a{
   color: $sitecolor;
 }
+
+// ギターボタンの編集
+.form-control {
+    display: block;
+    width: 100%;
+    height: calc(2.25rem + 2px);
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    color: #495057;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    border-radius: .25rem;
+    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+
+.cord-button {
+  padding: 10px;
+  margin: 10px;
+}
+
+// 終わり
 
 // ギターコードの編集
 .cordmenu {

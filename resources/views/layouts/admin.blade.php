@@ -102,6 +102,6 @@
             </main>
         </div>
         <script src="{{ asset('js/cord_create.js') }}"></script>
-        <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+        
     </body>
 </html>

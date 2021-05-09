@@ -1924,20 +1924,78 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
-  mounted: function mounted() {
-    console.log('Component mounted.');
-  }
-}(function () {
-  'use strict';
-
-  var vm = new Vue({
-    el: app,
-    data: {
-      name: 'Raiya'
+  data: function data() {
+    // ここ入らないのかも
+    return {
+      cords: ['C', 'Cm', 'D', 'Dm', 'A', 'Am', 'B', 'Bm'],
+      MyText: ' ',
+      selected: 'key_c',
+      CordImage: null
+    }; // MyText= MyText;
+  },
+  // mounted: () => {
+  //     this.selected = "key_c";
+  //     console.log(this.selected);
+  // },
+  methods: {
+    onClick: function onClick($cord) {
+      this.MyText = "".concat(this.MyText) + "  " + "[".concat($cord, "] ");
+      var groupImages = {
+        'C': '/image/C.png',
+        'Cm': '/image/Cm.png',
+        'key_d': ['D', 'Dm', 'Ddim'],
+        'key_e': ['E', 'Em', 'Eb7'],
+        'key_f': ['F', 'Fm7', 'Fdim'],
+        'key_A': ['A', 'Am', 'Aaug'],
+        'key_b': ['B', 'Bm', 'Bdim']
+      };
+      this.CordImage = groupImages[$cord]; // コードを追加配列
+    },
+    onchange: function onchange() {
+      console.log(this.selected);
+      var groups = {
+        'key_c': ['C', 'Cm', 'Cdim'],
+        'key_d': ['D', 'Dm', 'Ddim'],
+        'key_e': ['E', 'Em', 'Eb7'],
+        'key_f': ['F', 'Fm7', 'Fdim'],
+        'key_A': ['A', 'Am', 'Aaug'],
+        'key_b': ['B', 'Bm', 'Bdim']
+      };
+      this.cords = groups[this.selected];
     }
-  });
-})());
+  }
+});
 
 /***/ }),
 
@@ -37602,29 +37660,123 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _vm._m(0)
+  return _c("div", { staticClass: "container" }, [
+    _c("div", { staticClass: "row my-3" }, [
+      _c(
+        "select",
+        {
+          directives: [
+            {
+              name: "model",
+              rawName: "v-model",
+              value: _vm.selected,
+              expression: "selected"
+            }
+          ],
+          staticClass: "form-control",
+          on: {
+            change: [
+              function($event) {
+                var $$selectedVal = Array.prototype.filter
+                  .call($event.target.options, function(o) {
+                    return o.selected
+                  })
+                  .map(function(o) {
+                    var val = "_value" in o ? o._value : o.value
+                    return val
+                  })
+                _vm.selected = $event.target.multiple
+                  ? $$selectedVal
+                  : $$selectedVal[0]
+              },
+              function($event) {
+                return _vm.onchange()
+              }
+            ]
+          }
+        },
+        [
+          _c("option", { attrs: { value: "key_c" } }, [_vm._v("C")]),
+          _vm._v(" "),
+          _c("option", { attrs: { value: "key_d" } }, [_vm._v("D")]),
+          _vm._v(" "),
+          _c("option", { attrs: { value: "key_e" } }, [_vm._v("E")]),
+          _vm._v(" "),
+          _c("option", { attrs: { value: "key_f" } }, [_vm._v("F")]),
+          _vm._v(" "),
+          _c("option", { attrs: { value: "key_g" } }, [_vm._v("G")]),
+          _vm._v(" "),
+          _c("option", { attrs: { value: "key_a" } }, [_vm._v("A")]),
+          _vm._v(" "),
+          _c("option", { attrs: { value: "key_b" } }, [_vm._v("B")])
+        ]
+      ),
+      _vm._v(" "),
+      _vm._m(0)
+    ]),
+    _vm._v(" "),
+    _c(
+      "div",
+      { staticClass: "row justify-content-center" },
+      _vm._l(_vm.cords, function(cord) {
+        return _c(
+          "button",
+          {
+            key: cord,
+            staticClass: "cord-button",
+            attrs: { type: "button" },
+            on: {
+              click: function($event) {
+                return _vm.onClick(cord)
+              }
+            }
+          },
+          [_vm._v("\n                " + _vm._s(cord) + "\n            ")]
+        )
+      }),
+      0
+    ),
+    _vm._v(" "),
+    _c("div", { staticClass: "row my-5" }, [
+      _c("textarea", {
+        directives: [
+          {
+            name: "model",
+            rawName: "v-model",
+            value: _vm.MyText,
+            expression: "MyText"
+          }
+        ],
+        attrs: { cols: "100", rows: "6" },
+        domProps: { value: _vm.MyText },
+        on: {
+          input: function($event) {
+            if ($event.target.composing) {
+              return
+            }
+            _vm.MyText = $event.target.value
+          }
+        }
+      })
+    ]),
+    _vm._v(" "),
+    _c("div", [_vm._v("\n        プレビュー\n    ")]),
+    _vm._v(" "),
+    _c("div", { staticClass: "row p-5 m-5" }, [
+      _c("div", { attrs: { id: "view" } }, [
+        _vm._v("\n            " + _vm._s(_vm.MyText) + "\n            "),
+        _vm.CordImage ? _c("img", { attrs: { src: _vm.CordImage } }) : _vm._e()
+      ])
+    ])
+  ])
 }
 var staticRenderFns = [
   function() {
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "container" }, [
-      _c("div", { staticClass: "row justify-content-center" }, [
-        _c("div", { staticClass: "col-md-8" }, [
-          _c("div", { staticClass: "card" }, [
-            _c("div", { staticClass: "card-header" }, [
-              _vm._v("Example Component")
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "card-body" }, [
-              _vm._v(
-                "\n                    I'm an example component.\n                "
-              )
-            ])
-          ])
-        ])
-      ])
+    return _c("div", { staticClass: "row m-3" }, [
+      _c("h3", [_vm._v("よく使われるコード")])
     ])
   }
 ]

@@ -9,6 +9,7 @@
       <div class="row py-5">
         <h2>コード表A〜G</h2>
       </div>
+
       <div class="row cordmenu">
         <p class="cord"><a href = "#C_cord">Cコード</a></p>
         <p class="cord"><a href = "#C#/Db_cord">C#/Dbコード</a></p>
@@ -31,6 +32,23 @@
         <div id = "C_cord" class="row my-5">
           <h2>Cコード</h2>
         </div>
+        <div class="row cordmenu">
+        <p class="cord"><a href = "#C_cord">Cコード</a></p>
+        <p class="cord"><a href = "#C#/Db_cord">C#/Dbコード</a></p>
+        <p class="cord"><a href = "#D_cord">Dコード</a></p>
+        <p class="cord"><a href = "#D#/Eb_cord">D#/Ebコード</a></p>
+        <p class="cord"><a href = "#E_cord">Eコード</a></p>
+        <p class="cord"><a href = "#F_cord">Fコード</a></p>
+        <p class="cord"><a href = "#F#/Gb_cord">F#/Gbコード</a></p>
+      </div>
+      <div class="row cordmenu">
+        <p class="cord"><a href = "#G_cord">Gコード</a></p>
+        <p class="cord"><a href = "#G#/Ab_cord">G#/Abコード</a></p>
+        <p class="cord"><a href = "#A_cord">Aコード</a></p>
+        <p class="cord"><a href = "#A#/Bb_cord">A#/Bbコード</a></p>
+        <p class="cord"><a href = "#B_cord">Bコード</a></p>
+
+      </div>
         <div class="row">
           <div class="col-md-2 p-3 mr-3" >
             <p class="cord-font">Cコード</p>
