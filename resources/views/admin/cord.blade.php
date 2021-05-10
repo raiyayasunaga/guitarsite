@@ -8,8 +8,13 @@
 
       <div class="row py-5">
         <h2>コード表A〜G</h2>
+        <h2><a href="playing">演奏しよう！</a></h2>
       </div>
-
+      <div>いろいろ試している</di>
+      <div id="app">
+        <example-component></example-component>
+      </div>
+      
       <div class="row cordmenu">
         <p class="cord"><a href = "#C_cord">Cコード</a></p>
         <p class="cord"><a href = "#C#/Db_cord">C#/Dbコード</a></p>

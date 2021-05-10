@@ -11,7 +11,10 @@ const mix = require('laravel-mix');
  |
  */
 
-mix.js('resources/js/app.js', 'public/js')
+mix.js([
+    'resources/js/app.js',
+    'resources/js/assets/jquery.js',
+], 'public/js/app.js')
     .scripts('resources/js/assets/cord_create.js', 'public/js/cord_create.js')
     .sass('resources/sass/app.scss', 'public/css')
     .sass('resources/sass/admin.scss', 'public/css')

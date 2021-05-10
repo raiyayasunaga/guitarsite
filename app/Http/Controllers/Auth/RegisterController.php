@@ -158,6 +158,8 @@ class RegisterController extends Controller
       $user->birth_day = $request->birth_day;
       $user->save();
       $this->guard()->login($user);
+                    //     return $this->registered($request, $user)
+                    //    ?: redirect($this->redirectPath());
   
       return view('auth.main.registered');
     }
