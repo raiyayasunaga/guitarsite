@@ -30,6 +30,10 @@ h1 a {
   margin: 10px;
 }
 
+#cordbackground {
+  background: #c8ffad;
+}
+
 .cordmenu {
   display: flex;
   justify-content: center;
@@ -37,18 +41,37 @@ h1 a {
 
 .cord {
   padding: 10px;
+  margin-right: 10px;
+  border-radius: 10px;
+  background-color: aqua;
+}
+
+.cord:hover {
+  background-color: aquamarine;
+}
+
+.cord a {
+  display: flex;
+  color: #fff;
 }
 
 .cord a:hover {
   text-decoration: none;
 }
 
+img {
+  width: 200px;
+  height: auto;
+  border: 2px solid #000;
+}
+
 .cord-font {
-  font-size: 15px;
+  font-size: 23px;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
   font-weight: blod;
-  background-color: gray;
-  border-radius: 20px;
-  padding: 10px;
+  background-color: #ececec;
+  border-radius: 5px;
+  padding: 5px;
   color: black;
 }
 

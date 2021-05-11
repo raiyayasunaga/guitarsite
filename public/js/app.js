@@ -1917,159 +1917,12 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     // ここ入らないのかも
-    return {
-      cords: ['C', 'Cm', 'D', 'Dm', 'A', 'Am', 'B', 'Bm'],
-      fixeds: ['/', 'N.C'],
-      MyText: ' ',
-      selected: 'key_c',
-      CordImage: null,
-      display: '表示されrた！',
-      sample: ' ',
-      selectsample: 'def',
-      link: "#",
-      image: null
-    };
+    return {};
   },
-  methods: {
-    Click: function Click() {
-      var image = {
-        'C': '/image/C.png'
-      };
-    },
-    onClick: function onClick($cord) {
-      this.MyText = "".concat(this.MyText) + "  " + "[".concat($cord, "] ");
-      var groupImages = {
-        "_C": '/image/C.png',
-
-        get "C"() {
-          return this["_C"];
-        },
-
-        set "C"(value) {
-          this["_C"] = value;
-        },
-
-        'Cm': '/image/Cm.png'
-      };
-      this.CordImage = groupImages[$cord]; // 固定で表記
-
-      this.MyText = "".concat(this.MyText) + "  " + "[".concat(fixed, "]"); // コードを追加配列
-    } // onchange() {
-    //     let groups = {
-    //         'key_c': ['C', 'Cm', 'Cdim'],
-    //         'key_c#': ['C#', 'Cm#', 'Cdim#'],
-    //         'key_d': ['D', 'Dm', 'Ddim'],
-    //         'key_d#': ['D#', 'Dm#', 'Ddim'],
-    //         'key_e': ['E', 'Em', 'Eb7'],
-    //         'key_f': ['F', 'Fm7', 'Fdim'],
-    //         'key_f#': ['F#', 'Fm7#', 'Fdim'],
-    //         'key_g': ['G', 'Gm'],
-    //         'key_g#': ['Gm', 'Gm#'],
-    //         'key_a': ['A', 'Am', 'Aaug'],
-    //         'key_a#': ['A#', 'Am#', 'Aaug'],
-    //         'key_b': ['B', 'Bm', 'Bdim']
-    //     };
-    //     this.cords = groups[this.selected];
-    // },
-
-  }
+  methods: {}
 });
 
 /***/ }),
@@ -2145,6 +1998,8 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     // ここ入らないのかも
@@ -2157,13 +2012,14 @@ __webpack_require__.r(__webpack_exports__);
     },
     onchange: function onchange() {},
     moveToDown: function moveToDown() {
-      newFunction();
-    }
+      Down();
+    },
+    Stop: function Stop() {}
   }
 });
 
-function newFunction() {
-  var speed = 3; //時間あたりに移動するpx量です。デフォルトでは1pxにしていますが、自由に変えてください
+function Down() {
+  var speed = 4; //時間あたりに移動するpx量です。デフォルトでは1pxにしていますが、自由に変えてください
 
   var interval = 20; //移動する間隔です。デフォルトでは0.1秒おきにしていますが、自由に変えてください
 
@@ -2180,6 +2036,18 @@ function newFunction() {
   //     clearInterval(timer);
   //   }
   // }, interval);
+}
+
+function MoveStop() {
+  var speed = 3; //時間あたりに移動するpx量です。デフォルトでは1pxにしていますが、自由に変えてください
+
+  var interval = 20; //移動する間隔です。デフォルトでは0.1秒おきにしていますが、自由に変えてください
+
+  var scrollTop = document.body.scrollTop;
+  setInterval(function () {
+    var scroll = scrollTop + speed;
+    window.scrollBy(0, scroll);
+  }, interval);
 }
 
 /***/ }),
@@ -37972,272 +37840,15 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", { staticClass: "container" }, [
-    _c("div", { staticClass: "row my-3" }, [
-      _c("div", { staticClass: "mt-3" }, [_vm._v("コード入力")]),
-      _vm._v(" "),
-      _c(
-        "select",
-        {
-          directives: [
-            {
-              name: "model",
-              rawName: "v-model",
-              value: _vm.selected,
-              expression: "selected"
-            }
-          ],
-          staticClass: "form-control mb-3",
-          on: {
-            change: [
-              function($event) {
-                var $$selectedVal = Array.prototype.filter
-                  .call($event.target.options, function(o) {
-                    return o.selected
-                  })
-                  .map(function(o) {
-                    var val = "_value" in o ? o._value : o.value
-                    return val
-                  })
-                _vm.selected = $event.target.multiple
-                  ? $$selectedVal
-                  : $$selectedVal[0]
-              },
-              function($event) {
-                return _vm.onchange()
-              }
-            ]
-          }
-        },
-        [
-          _c("option", { attrs: { value: "key_c" } }, [_vm._v("C")]),
-          _vm._v(" "),
-          _c("option", { attrs: { value: "key_c#" } }, [_vm._v("C#")]),
-          _vm._v(" "),
-          _c("option", { attrs: { value: "key_d" } }, [_vm._v("D")]),
-          _vm._v(" "),
-          _c("option", { attrs: { value: "key_d#" } }, [_vm._v("D#")]),
-          _vm._v(" "),
-          _c("option", { attrs: { value: "key_e" } }, [_vm._v("E")]),
-          _vm._v(" "),
-          _c("option", { attrs: { value: "key_f" } }, [_vm._v("F")]),
-          _vm._v(" "),
-          _c("option", { attrs: { value: "key_f#" } }, [_vm._v("F#")]),
-          _vm._v(" "),
-          _c("option", { attrs: { value: "key_g" } }, [_vm._v("G")]),
-          _vm._v(" "),
-          _c("option", { attrs: { value: "key_g#" } }, [_vm._v("G#")]),
-          _vm._v(" "),
-          _c("option", { attrs: { value: "key_a" } }, [_vm._v("A")]),
-          _vm._v(" "),
-          _c("option", { attrs: { value: "key_a#" } }, [_vm._v("A#")]),
-          _vm._v(" "),
-          _c("option", { attrs: { value: "key_b" } }, [_vm._v("B")])
-        ]
-      ),
-      _vm._v(" "),
-      _vm._m(0)
-    ]),
-    _vm._v(" "),
-    _c("div", [
-      _vm._v("うまく表示されるか\n    "),
-      _vm.display ? _c("div", [_vm._v(_vm._s(_vm.display))]) : _vm._e(),
-      _vm._v(" "),
-      !_vm.display ? _c("div", [_vm._v(_vm._s(_vm.display))]) : _vm._e(),
-      _vm._v(" "),
-      _c("img", { attrs: { src: "/img/C.png" } })
-    ]),
-    _vm._v(" "),
-    _c("div", [
-      _vm._v("\n    書き込み\n    "),
-      _c(
-        "select",
-        {
-          directives: [
-            {
-              name: "model",
-              rawName: "v-model",
-              value: _vm.selectsample,
-              expression: "selectsample"
-            }
-          ],
-          on: {
-            change: function($event) {
-              var $$selectedVal = Array.prototype.filter
-                .call($event.target.options, function(o) {
-                  return o.selected
-                })
-                .map(function(o) {
-                  var val = "_value" in o ? o._value : o.value
-                  return val
-                })
-              _vm.selectsample = $event.target.multiple
-                ? $$selectedVal
-                : $$selectedVal[0]
-            }
-          }
-        },
-        [
-          _c("option", { attrs: { value: "abc" } }, [_vm._v("abc")]),
-          _vm._v(" "),
-          _c("option", { attrs: { value: "def" } }, [_vm._v("def")]),
-          _vm._v(" "),
-          _c("option", { attrs: { value: "ghi" } }, [_vm._v("ghi")])
-        ]
-      ),
-      _vm._v(" "),
-      _c("textarea", {
-        directives: [
-          {
-            name: "model",
-            rawName: "v-model",
-            value: _vm.sample,
-            expression: "sample"
-          }
-        ],
-        attrs: { type: "text" },
-        domProps: { value: _vm.sample },
-        on: {
-          input: function($event) {
-            if ($event.target.composing) {
-              return
-            }
-            _vm.sample = $event.target.value
-          }
-        }
-      })
-    ]),
-    _vm._v(" "),
-    _c("div", [_vm._v(_vm._s(_vm.sample) + _vm._s(_vm.selectsample))]),
-    _vm._v(" "),
-    _c("div", [
-      _vm._v("\n    リンクのURLを変える\n    "),
-      _c("a", { attrs: { target: "_blank", href: _vm.link } }, [
-        _vm._v(_vm._s(_vm.link))
-      ]),
-      _vm._v(" "),
-      _c("input", {
-        attrs: { type: "button", value: "グーグルリンクに変更" },
-        on: {
-          click: function($event) {
-            _vm.link = "https://google.com/"
-          }
-        }
-      })
-    ]),
-    _vm._v(" "),
-    _c("div", [
-      _c("input", {
-        directives: [
-          {
-            name: "model",
-            rawName: "v-model",
-            value: _vm.image,
-            expression: "image"
-          }
-        ],
-        attrs: { type: "button", value: "画像表示" },
-        domProps: { value: _vm.image },
-        on: {
-          click: function($event) {
-            return _vm.Click()
-          },
-          input: function($event) {
-            if ($event.target.composing) {
-              return
-            }
-            _vm.image = $event.target.value
-          }
-        }
-      })
-    ]),
-    _vm._v(" "),
-    _c("div", [_vm._v(_vm._s(_vm.image))]),
-    _vm._v(" "),
-    _c(
-      "div",
-      { staticClass: "row justify-content-center" },
-      _vm._l(_vm.cords, function(cord) {
-        return _c(
-          "button",
-          {
-            key: cord,
-            staticClass: "cord-button",
-            attrs: { type: "button" },
-            on: {
-              click: function($event) {
-                return _vm.onClick(cord)
-              }
-            }
-          },
-          [_vm._v("\n                " + _vm._s(cord) + "\n            ")]
-        )
-      }),
-      0
-    ),
-    _vm._v(" "),
-    _c(
-      "div",
-      { staticClass: "row justify-content-center" },
-      _vm._l(_vm.fixeds, function(fixed) {
-        return _c(
-          "button",
-          {
-            key: fixed,
-            staticClass: "cord-button",
-            attrs: { type: "button" },
-            on: {
-              click: function($event) {
-                return _vm.onClick(fixed)
-              }
-            }
-          },
-          [_vm._v("\n                " + _vm._s(fixed) + "\n            ")]
-        )
-      }),
-      0
-    ),
-    _vm._v(" "),
-    _c("div", { staticClass: "row my-5" }, [
-      _c("textarea", {
-        directives: [
-          {
-            name: "model",
-            rawName: "v-model",
-            value: _vm.MyText,
-            expression: "MyText"
-          }
-        ],
-        attrs: { cols: "100", rows: "6" },
-        domProps: { value: _vm.MyText },
-        on: {
-          input: function($event) {
-            if ($event.target.composing) {
-              return
-            }
-            _vm.MyText = $event.target.value
-          }
-        }
-      })
-    ]),
-    _vm._v(" "),
-    _c("div", [_vm._v("\n        プレビュー\n    ")]),
-    _vm._v(" "),
-    _c("div", { staticClass: "row p-5 m-5" }, [
-      _c("div", { attrs: { id: "view" } }, [
-        _vm._v("\n            " + _vm._s(_vm.MyText) + "\n            "),
-        _vm.CordImage ? _c("img", { attrs: { src: _vm.CordImage } }) : _vm._e()
-      ])
-    ])
-  ])
+  return _vm._m(0)
 }
 var staticRenderFns = [
   function() {
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "row m-3" }, [
-      _c("h3", [_vm._v("よく使われるコード")])
+    return _c("div", { staticClass: "container" }, [
+      _c("div", { staticClass: "row my-3" })
     ])
   }
 ]
@@ -38262,114 +37873,100 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", { staticClass: "container" }, [
-    _c("div", { staticClass: "row m-3" }, [_vm._v("演奏しよう！！！！")]),
+  return _c("div", { on: { click: _vm.moveToDown } }, [
+    _c("div", {
+      on: {
+        dbclick: function($event) {
+          $event.stopPropagation()
+          return _vm.moveToDown($event)
+        }
+      }
+    }),
     _vm._v(" "),
-    _vm._m(0),
-    _vm._v(" "),
-    _vm._m(1),
-    _vm._v(" "),
-    _vm._m(2),
-    _vm._v(" "),
-    _c(
-      "div",
-      { staticStyle: { background: "linear-gradient(0deg, lightgreen, red)" } },
-      [
-        _vm._v("ちゃんとスクロールされているのか\n            "),
-        _c(
-          "button",
-          { attrs: { type: "button" }, on: { click: _vm.moveToDown } },
-          [_vm._v("下へ")]
-        ),
-        _vm._v(" "),
-        _c("br"),
-        _c("br"),
-        _c("br"),
-        _c("br"),
-        _c("br"),
-        _c("br"),
-        _c("br"),
-        _c("br"),
-        _vm._v(" "),
-        _c("br"),
-        _c("br"),
-        _c("br"),
-        _c("br"),
-        _c("br"),
-        _c("br"),
-        _c("br"),
-        _c("br"),
-        _vm._v(" "),
-        _c("br"),
-        _c("br"),
-        _c("br"),
-        _c("br"),
-        _c("br"),
-        _c("br"),
-        _c("br"),
-        _c("br"),
-        _vm._v(" "),
-        _c("br"),
-        _c("br"),
-        _c("br"),
-        _c("br"),
-        _c("br"),
-        _c("br"),
-        _c("br"),
-        _c("br"),
-        _vm._v(" "),
-        _c(
-          "button",
-          { attrs: { type: "button" }, on: { click: _vm.onClick } },
-          [_vm._v("ストップ")]
-        ),
-        _vm._v(" "),
-        _c("br"),
-        _c("br"),
-        _c("br"),
-        _c("br"),
-        _c("br"),
-        _c("br"),
-        _c("br"),
-        _c("br"),
-        _vm._v(" "),
-        _c("br"),
-        _c("br"),
-        _c("br"),
-        _c("br"),
-        _c("br"),
-        _c("br"),
-        _c("br"),
-        _c("br"),
-        _vm._v(" "),
-        _c("br"),
-        _c("br"),
-        _c("br"),
-        _c("br"),
-        _c("br"),
-        _c("br"),
-        _c("br"),
-        _c("br"),
-        _vm._v(" "),
-        _c("br"),
-        _c("br"),
-        _c("br"),
-        _c("br"),
-        _c("br"),
-        _c("br"),
-        _c("br"),
-        _c("br"),
-        _vm._v(" "),
-        _c("br"),
-        _c("br"),
-        _c("br"),
-        _c("br"),
-        _c("br"),
-        _c("br"),
-        _c("br"),
-        _c("br")
-      ]
-    )
+    _c("div", { staticClass: "container" }, [
+      _c("div", { staticClass: "row m-3" }, [_vm._v("演奏しよう！！！！")]),
+      _vm._v(" "),
+      _vm._m(0),
+      _vm._v(" "),
+      _vm._m(1),
+      _vm._v(" "),
+      _vm._m(2),
+      _vm._v(" "),
+      _c(
+        "div",
+        {
+          staticStyle: { background: "linear-gradient(0deg, lightgreen, red)" }
+        },
+        [
+          _vm._v("ちゃんとスクロールされているのか\n                    "),
+          _c(
+            "button",
+            { attrs: { type: "button" }, on: { click: _vm.moveToDown } },
+            [_vm._v("下へ")]
+          ),
+          _vm._v(" "),
+          _c("br"),
+          _c("br"),
+          _c("br"),
+          _c("br"),
+          _c("br"),
+          _c("br"),
+          _c("br"),
+          _c("br"),
+          _vm._v(" "),
+          _c("br"),
+          _c("br"),
+          _c("br"),
+          _c("br"),
+          _c("br"),
+          _c("br"),
+          _c("br"),
+          _c("br"),
+          _vm._v(" "),
+          _c("br"),
+          _c("br"),
+          _c("br"),
+          _c("br"),
+          _c("br"),
+          _c("br"),
+          _c("br"),
+          _c("br"),
+          _vm._v(" "),
+          _c("br"),
+          _c("br"),
+          _c("br"),
+          _c("br"),
+          _c("br"),
+          _c("br"),
+          _c("br"),
+          _c("br"),
+          _vm._v(" "),
+          _c(
+            "button",
+            { attrs: { type: "button" }, on: { click: _vm.onClick } },
+            [_vm._v("ストップ")]
+          ),
+          _vm._v(" "),
+          _c("br"),
+          _c("br"),
+          _c("br"),
+          _c("br"),
+          _c("br"),
+          _c("br"),
+          _c("br"),
+          _c("br"),
+          _vm._v(" "),
+          _c("br"),
+          _c("br"),
+          _c("br"),
+          _c("br"),
+          _c("br"),
+          _c("br"),
+          _c("br"),
+          _c("br")
+        ]
+      )
+    ])
   ])
 }
 var staticRenderFns = [
@@ -38378,7 +37975,7 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "row mt-3" }, [
-      _vm._v("スクロール速度\n            "),
+      _vm._v("スクロール速度\n                    "),
       _c("select", { staticClass: "form-control mb-3" }, [
         _c("option", { attrs: { value: "5" } }, [_vm._v("5")]),
         _vm._v(" "),
@@ -38455,7 +38052,7 @@ var staticRenderFns = [
     return _c("div", { staticClass: "row" }, [
       _c("h2", [_vm._v("ここで再生")]),
       _vm._v(" "),
-      _c("input", { attrs: { type: "button", value: " " } }),
+      _c("input", { attrs: { type: "button" } }),
       _vm._v(" "),
       _c("p", [_vm._v("なんちゃん")])
     ])
@@ -50854,7 +50451,17 @@ var app = new Vue({
 
 $(function () {
   $('#btn').on('click', function () {
-    alert("Hello jQuery!!");
+    $('.test').css("background-color", "red");
+  });
+  $('#top').on('click', function () {
+    $(window).scrollTop(600);
+    $(window).scrollLeft(600);
+    console.log('(%d, %d)', $(window).scrollLeft(), $(window).scrollTop());
+  });
+  $('#bottomBtn').on('click', function () {
+    $('html, body').animate({
+      scrollTop: $('body').get(0).scrollHeight
+    }, 200 * 100 * 100, 'inner');
   });
 });
 
