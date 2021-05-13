@@ -30,8 +30,6 @@
                 >
                     {{ cord }}
                 </button>
-        </div>
-        <div class="row justify-content-center">
                 <button
                     v-for="fixed of fixeds"  
                     :key="fixed"
@@ -41,10 +39,9 @@
                 >
                     {{ fixed }}
                 </button>
-
         </div>
         <div class="row my-5">
-            <textarea  cols="100" rows="6" v-model="MyText">
+            <textarea  cols="150" rows="6" v-model="MyText">
             </textarea>
         </div>
         <div>
@@ -55,8 +52,10 @@
             <!-- textarea記入した文字やコードを表示させる -->
             <div id="view">
                 {{ MyText }}
-                
+
+                <img v-bind:src=code_img_path />
                 <!-- <img v-if="CordImage" :src="CordImage"> -->
+                <!-- データバインディングを -->
             </div>
         </div>
     </div>
@@ -72,12 +71,11 @@
         data: () => {
             // ここ入らないのかも
             return {
-                cords: ['C', 'Cm', 'D', 'Dm', 'A', 'Am', 'B', 'Bm',],
+                cords: ['C', 'Cm', 'Cdim', 'C6', 'C7', 'C7sus4', 'Cadd9', 'Caug', 'Cdim', 'CmM7', 'Cm7', 'Cm7b5', 'Csus4', 'CM7'],
                 fixeds: ['/', 'N.C'],
                 MyText: ' ',
                 selected: 'key_c',
-
-                // CordImage: null
+                
             }
         },
         
@@ -85,6 +83,11 @@
             // $fixedは使わない？
             onClick($cord) {
                 this.MyText = `${this.MyText}` + "  " + `[${$cord}] `;
+
+                this.MyText = `${this.MyText}` + "  " + `[${fixed}]`;
+
+                // this.MyText = `${this.MyText}` + "  " + `[${image}]`;
+                
                 
                 // let groupImages = {
                 //   "_C": '/img/C.png', 
@@ -98,14 +101,12 @@
                 // };
                 // this.CordImage = groupImages;
                 // idビューエレメントを出して、appendをイメージタグを追加していく
-
-                this.MyText = `${this.MyText}` + "  " + `[${fixed}]`;
-
                 // 画像を配列にして上手くまとめて表示させる方法
             },
+
             onchange() {
                 let groupCords = {
-                    'key_c': ['C', 'Cm', 'Cdim'],
+                    'key_c': ['C', 'Cm', 'Cdim', 'C6', 'C7', 'C7sus4', 'Cadd9', 'Caug', 'Cdim', 'CmM7', 'Cm7', 'Cm7b5', 'Csus4', 'CM7'],
                     'key_c#': ['C#', 'Cm#', 'Cdim#'],
                     'key_d': ['D', 'Dm', 'Ddim'],
                     'key_d#': ['D#', 'Dm#', 'Ddim'],
@@ -118,7 +119,7 @@
                     'key_a#': ['A#', 'Am#', 'Aaug'],
                     'key_b': ['B', 'Bm', 'Bdim']
                 };
-                this.cords = groups[this.selected];
+                this.cords = groupCords[this.selected];
                 
             },
             

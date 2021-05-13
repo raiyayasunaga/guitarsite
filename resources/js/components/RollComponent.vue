@@ -7,8 +7,8 @@
 
                 <div class="row mt-3">スクロール速度
                     <select class="form-control mb-3">
-                        <option value="5">5</option>
-                        <option value="6">6</option>
+                        <option value="key_5">5</option>
+                        <option value="key_6">6</option>
                         <option value="7">7</option>
                         <option value="8">8</option>
                         <option value="9">9</option>
@@ -27,7 +27,7 @@
                 </div>
 
                 <div class="row mt-4">
-                    <div>カポ</div>
+                    <div>演奏の場合は与えられたカポの情報を元に表示させる切り替える。</div>
                     <select class="form-control mb-3">
                         <option value="key_+5">+5</option>
                         <option value="key_+4">+4</option>
@@ -78,7 +78,10 @@
                 this.null = this.moveToDown();
             },
             onchange() {
-
+                let groupspeed = {
+                    'key_5': ['C#', 'Cm#', 'Cdim#'],
+                    'key_6': []
+                }
             },
             moveToDown() {
 
@@ -91,8 +94,8 @@
         
     }
       function Down() {
-        const speed = 4; //時間あたりに移動するpx量です。デフォルトでは1pxにしていますが、自由に変えてください
-        const interval = 20; //移動する間隔です。デフォルトでは0.1秒おきにしていますが、自由に変えてください
+        const speed = 1; //時間あたりに移動するpx量です。デフォルトでは1pxにしていますが、自由に変えてください
+        const interval = 10; //移動する間隔です。デフォルトでは0.1秒おきにしていますが、自由に変えてください
         const scrollTop = document.body.scrollTop;
         setInterval(function() {
             const scroll = scrollTop + speed;

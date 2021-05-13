@@ -1,6 +1,6 @@
 @extends('layouts.admin')
 
-@section('title', 'コード作成')
+@section('title', 'ホームページ')
 
 @section('content')
     <div class="container">

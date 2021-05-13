@@ -2010,7 +2010,12 @@ __webpack_require__.r(__webpack_exports__);
     onClick: function onClick() {
       this["null"] = this.moveToDown();
     },
-    onchange: function onchange() {},
+    onchange: function onchange() {
+      var groupspeed = {
+        'key_5': ['C#', 'Cm#', 'Cdim#'],
+        'key_6': []
+      };
+    },
     moveToDown: function moveToDown() {
       Down();
     },
@@ -2019,9 +2024,9 @@ __webpack_require__.r(__webpack_exports__);
 });
 
 function Down() {
-  var speed = 4; //時間あたりに移動するpx量です。デフォルトでは1pxにしていますが、自由に変えてください
+  var speed = 1; //時間あたりに移動するpx量です。デフォルトでは1pxにしていますが、自由に変えてください
 
-  var interval = 20; //移動する間隔です。デフォルトでは0.1秒おきにしていますが、自由に変えてください
+  var interval = 10; //移動する間隔です。デフォルトでは0.1秒おきにしていますが、自由に変えてください
 
   var scrollTop = document.body.scrollTop;
   setInterval(function () {
@@ -2126,23 +2131,23 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
 /* harmony default export */ __webpack_exports__["default"] = ({
   // 何処でもできる
   data: function data() {
     // ここ入らないのかも
     return {
-      cords: ['C', 'Cm', 'D', 'Dm', 'A', 'Am', 'B', 'Bm'],
+      cords: ['C', 'Cm', 'Cdim', 'C6', 'C7', 'C7sus4', 'Cadd9', 'Caug', 'Cdim', 'CmM7', 'Cm7', 'Cm7b5', 'Csus4', 'CM7'],
       fixeds: ['/', 'N.C'],
       MyText: ' ',
-      selected: 'key_c' // CordImage: null
-
+      selected: 'key_c'
     };
   },
   methods: {
     // $fixedは使わない？
     onClick: function onClick($cord) {
-      this.MyText = "".concat(this.MyText) + "  " + "[".concat($cord, "] "); // let groupImages = {
+      this.MyText = "".concat(this.MyText) + "  " + "[".concat($cord, "] ");
+      this.MyText = "".concat(this.MyText) + "  " + "[".concat(fixed, "]"); // this.MyText = `${this.MyText}` + "  " + `[${image}]`;
+      // let groupImages = {
       //   "_C": '/img/C.png', 
       //   get "C"() {
       //     return this["_C"];
@@ -2154,12 +2159,11 @@ __webpack_require__.r(__webpack_exports__);
       // };
       // this.CordImage = groupImages;
       // idビューエレメントを出して、appendをイメージタグを追加していく
-
-      this.MyText = "".concat(this.MyText) + "  " + "[".concat(fixed, "]"); // 画像を配列にして上手くまとめて表示させる方法
+      // 画像を配列にして上手くまとめて表示させる方法
     },
     onchange: function onchange() {
       var groupCords = {
-        'key_c': ['C', 'Cm', 'Cdim'],
+        'key_c': ['C', 'Cm', 'Cdim', 'C6', 'C7', 'C7sus4', 'Cadd9', 'Caug', 'Cdim', 'CmM7', 'Cm7', 'Cm7b5', 'Csus4', 'CM7'],
         'key_c#': ['C#', 'Cm#', 'Cdim#'],
         'key_d': ['D', 'Dm', 'Ddim'],
         'key_d#': ['D#', 'Dm#', 'Ddim'],
@@ -2172,7 +2176,7 @@ __webpack_require__.r(__webpack_exports__);
         'key_a#': ['A#', 'Am#', 'Aaug'],
         'key_b': ['B', 'Bm', 'Bdim']
       };
-      this.cords = groups[this.selected];
+      this.cords = groupCords[this.selected];
     }
   }
 });
@@ -37977,9 +37981,9 @@ var staticRenderFns = [
     return _c("div", { staticClass: "row mt-3" }, [
       _vm._v("スクロール速度\n                    "),
       _c("select", { staticClass: "form-control mb-3" }, [
-        _c("option", { attrs: { value: "5" } }, [_vm._v("5")]),
+        _c("option", { attrs: { value: "key_5" } }, [_vm._v("5")]),
         _vm._v(" "),
-        _c("option", { attrs: { value: "6" } }, [_vm._v("6")]),
+        _c("option", { attrs: { value: "key_6" } }, [_vm._v("6")]),
         _vm._v(" "),
         _c("option", { attrs: { value: "7" } }, [_vm._v("7")]),
         _vm._v(" "),
@@ -38016,7 +38020,9 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "row mt-4" }, [
-      _c("div", [_vm._v("カポ")]),
+      _c("div", [
+        _vm._v("演奏の場合は与えられたカポの情報を元に表示させる切り替える。")
+      ]),
       _vm._v(" "),
       _c("select", { staticClass: "form-control mb-3" }, [
         _c("option", { attrs: { value: "key_+5" } }, [_vm._v("+5")]),
@@ -38149,45 +38155,42 @@ var render = function() {
     _c(
       "div",
       { staticClass: "row justify-content-center" },
-      _vm._l(_vm.cords, function(cord) {
-        return _c(
-          "button",
-          {
-            key: cord,
-            staticClass: "cord-button",
-            attrs: { type: "button" },
-            on: {
-              click: function($event) {
-                return _vm.onClick(cord)
+      [
+        _vm._l(_vm.cords, function(cord) {
+          return _c(
+            "button",
+            {
+              key: cord,
+              staticClass: "cord-button",
+              attrs: { type: "button" },
+              on: {
+                click: function($event) {
+                  return _vm.onClick(cord)
+                }
               }
-            }
-          },
-          [_vm._v("\n                " + _vm._s(cord) + "\n            ")]
-        )
-      }),
-      0
-    ),
-    _vm._v(" "),
-    _c(
-      "div",
-      { staticClass: "row justify-content-center" },
-      _vm._l(_vm.fixeds, function(fixed) {
-        return _c(
-          "button",
-          {
-            key: fixed,
-            staticClass: "cord-button",
-            attrs: { type: "button" },
-            on: {
-              click: function($event) {
-                return _vm.onClick(fixed)
+            },
+            [_vm._v("\n                " + _vm._s(cord) + "\n            ")]
+          )
+        }),
+        _vm._v(" "),
+        _vm._l(_vm.fixeds, function(fixed) {
+          return _c(
+            "button",
+            {
+              key: fixed,
+              staticClass: "cord-button",
+              attrs: { type: "button" },
+              on: {
+                click: function($event) {
+                  return _vm.onClick(fixed)
+                }
               }
-            }
-          },
-          [_vm._v("\n                " + _vm._s(fixed) + "\n            ")]
-        )
-      }),
-      0
+            },
+            [_vm._v("\n                " + _vm._s(fixed) + "\n            ")]
+          )
+        })
+      ],
+      2
     ),
     _vm._v(" "),
     _c("div", { staticClass: "row my-5" }, [
@@ -38200,7 +38203,7 @@ var render = function() {
             expression: "MyText"
           }
         ],
-        attrs: { cols: "100", rows: "6" },
+        attrs: { cols: "150", rows: "6" },
         domProps: { value: _vm.MyText },
         on: {
           input: function($event) {
@@ -38217,9 +38220,8 @@ var render = function() {
     _vm._v(" "),
     _c("div", { staticClass: "row p-5 m-5" }, [
       _c("div", { attrs: { id: "view" } }, [
-        _vm._v(
-          "\n            " + _vm._s(_vm.MyText) + "\n            \n            "
-        )
+        _vm._v("\n            " + _vm._s(_vm.MyText) + "\n\n            "),
+        _c("img", { attrs: { src: _vm.code_img_path } })
       ])
     ])
   ])

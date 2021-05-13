@@ -1,9 +1,14 @@
+@charset "UTF-8";
+
 body {
-  font-size: 20px;
   background-repeat: no-repeat;
   background-position: center;
   background-color: #fff;
   color: black;
+}
+
+textarea {
+  font-family: "\6E38\660E\671D", "YuMincho", "\30D2\30E9\30AE\30CE\660E\671D   Pro W3", "Hiragino Mincho Pro", "\FF2D\FF33   \FF30\660E\671D", "MS PMincho", serif;
 }
 
 h1 a {
@@ -26,8 +31,9 @@ h1 a {
 }
 
 .cord-button {
-  padding: 10px;
-  margin: 10px;
+  padding: 15px;
+  margin: 20px 40px 20px 0px;
+  font-family: "\6E38\660E\671D", "YuMincho", "\30D2\30E9\30AE\30CE\660E\671D   Pro W3", "Hiragino Mincho Pro", "\FF2D\FF33   \FF30\660E\671D", "MS PMincho", serif;
 }
 
 #cordbackground {

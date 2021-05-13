@@ -21,6 +21,7 @@
         "sass": "^1.32.12",
         "sass-loader": "^7.1.0",
         "vue": "^2.5.17",
+        "vue-smooth-scroll": "^1.0.13",
         "vue-template-compiler": "^2.6.12"
     }
 }

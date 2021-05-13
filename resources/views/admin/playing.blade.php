@@ -1,6 +1,6 @@
 @extends('layouts.admin')
 
-@section('title', 'コード作成')
+@section('title', '演奏してみよう！！')
 
 @section('content')
     <div class="container">
