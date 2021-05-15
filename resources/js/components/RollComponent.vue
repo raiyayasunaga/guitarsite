@@ -1,10 +1,10 @@
 <template>
-<div @click="moveToDown">
-    <div @dbclick.stop="moveToDown">
-</div>
+    <div @click="moveToDown">
         <div class="container">
                 <div class="row m-3">演奏しよう！！！！</div>
-
+                <transition>
+                    <button >ストップ</button>
+                </transition>
                 <div class="row mt-3">スクロール速度
                     <select class="form-control mb-3">
                         <option value="key_5">5</option>
@@ -51,15 +51,14 @@
                     <button type="button" @click="moveToDown">下へ</button>
                 <br><br><br><br><br><br><br><br>
                     <br><br><br><br><br><br><br><br>
-                    <br><br><br><br><br><br><br><br>
-                    <br><br><br><br><br><br><br><br>
                     <button type="button" @click="onClick">ストップ</button>
+                    <br><br><br><br><br><br><br><br>
+                    <br><br><br><br><br><br><br><br>
                     <br><br><br><br><br><br><br><br>
                     <br><br><br><br><br><br><br><br>
                 </div>
         </div>
     </div>
-
 </template>
 
 <script>
@@ -68,14 +67,14 @@
         data: () => {
             // ここ入らないのかも
             return {
-              
+              move: ture,
             }
         },
         
         methods: {
             // $fixedは使わない？
             onClick() {
-                this.null = this.moveToDown();
+                this.move = !this.move;
             },
             onchange() {
                 let groupspeed = {
@@ -84,7 +83,6 @@
                 }
             },
             moveToDown() {
-
                 Down();
             },
             Stop() {

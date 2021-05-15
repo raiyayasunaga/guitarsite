@@ -77,7 +77,7 @@
           </div>
           
           <div class="col-md-2 p-3 mx-3">
-          <p class="cord-font">Cm7(2)コード</p>
+          <p class="cord-font">CM7コード</p>
             <img src="/img/Cm7_2.png" alt="サンプル画像">
           </div>
           <div class="col-md-2 p-3 mx-3">

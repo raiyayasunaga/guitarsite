@@ -15,12 +15,14 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function() {
     Route::post('create', 'Admin\GuitarController@create');
     Route::get('mypage', 'Admin\GuitarController@mypage');
     Route::get('playing', 'Admin\GuitarController@playing');
+    Route::get('delete', 'Admin\GuitarController@delete');
 });
 
 // コードは誰でも見せられる
 Route::get('admin/cord', 'Admin\GuitarController@cord');
 
 // ホームページだからauth必要ない
+
 Route::get('admin/home', 'Admin\GuitarController@home');
 
 

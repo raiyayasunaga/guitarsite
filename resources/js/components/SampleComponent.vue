@@ -53,7 +53,7 @@
             <div id="view">
                 {{ MyText }}
 
-                <img v-bind:src=code_img_path />
+                <!-- <img v-bind:src=code_img_path /> -->
                 <!-- <img v-if="CordImage" :src="CordImage"> -->
                 <!-- データバインディングを -->
             </div>
@@ -82,7 +82,7 @@
         methods: {
             // $fixedは使わない？
             onClick($cord) {
-                this.MyText = `${this.MyText}` + "  " + `[${$cord}] `;
+                this.MyText = `${this.MyText}  [${$cord}] `;
 
                 this.MyText = `${this.MyText}` + "  " + `[${fixed}]`;
 

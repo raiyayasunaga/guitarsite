@@ -1999,16 +1999,17 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     // ここ入らないのかも
-    return {};
+    return {
+      move: ture
+    };
   },
   methods: {
     // $fixedは使わない？
     onClick: function onClick() {
-      this["null"] = this.moveToDown();
+      this.move = !this.move;
     },
     onchange: function onchange() {
       var groupspeed = {
@@ -2145,7 +2146,7 @@ __webpack_require__.r(__webpack_exports__);
   methods: {
     // $fixedは使わない？
     onClick: function onClick($cord) {
-      this.MyText = "".concat(this.MyText) + "  " + "[".concat($cord, "] ");
+      this.MyText = "".concat(this.MyText, "  [").concat($cord, "] ");
       this.MyText = "".concat(this.MyText) + "  " + "[".concat(fixed, "]"); // this.MyText = `${this.MyText}` + "  " + `[${image}]`;
       // let groupImages = {
       //   "_C": '/img/C.png', 
@@ -37878,99 +37879,99 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", { on: { click: _vm.moveToDown } }, [
-    _c("div", {
-      on: {
-        dbclick: function($event) {
-          $event.stopPropagation()
-          return _vm.moveToDown($event)
-        }
-      }
-    }),
-    _vm._v(" "),
-    _c("div", { staticClass: "container" }, [
-      _c("div", { staticClass: "row m-3" }, [_vm._v("演奏しよう！！！！")]),
-      _vm._v(" "),
-      _vm._m(0),
-      _vm._v(" "),
-      _vm._m(1),
-      _vm._v(" "),
-      _vm._m(2),
-      _vm._v(" "),
-      _c(
-        "div",
-        {
-          staticStyle: { background: "linear-gradient(0deg, lightgreen, red)" }
-        },
-        [
-          _vm._v("ちゃんとスクロールされているのか\n                    "),
-          _c(
-            "button",
-            { attrs: { type: "button" }, on: { click: _vm.moveToDown } },
-            [_vm._v("下へ")]
-          ),
-          _vm._v(" "),
-          _c("br"),
-          _c("br"),
-          _c("br"),
-          _c("br"),
-          _c("br"),
-          _c("br"),
-          _c("br"),
-          _c("br"),
-          _vm._v(" "),
-          _c("br"),
-          _c("br"),
-          _c("br"),
-          _c("br"),
-          _c("br"),
-          _c("br"),
-          _c("br"),
-          _c("br"),
-          _vm._v(" "),
-          _c("br"),
-          _c("br"),
-          _c("br"),
-          _c("br"),
-          _c("br"),
-          _c("br"),
-          _c("br"),
-          _c("br"),
-          _vm._v(" "),
-          _c("br"),
-          _c("br"),
-          _c("br"),
-          _c("br"),
-          _c("br"),
-          _c("br"),
-          _c("br"),
-          _c("br"),
-          _vm._v(" "),
-          _c(
-            "button",
-            { attrs: { type: "button" }, on: { click: _vm.onClick } },
-            [_vm._v("ストップ")]
-          ),
-          _vm._v(" "),
-          _c("br"),
-          _c("br"),
-          _c("br"),
-          _c("br"),
-          _c("br"),
-          _c("br"),
-          _c("br"),
-          _c("br"),
-          _vm._v(" "),
-          _c("br"),
-          _c("br"),
-          _c("br"),
-          _c("br"),
-          _c("br"),
-          _c("br"),
-          _c("br"),
-          _c("br")
-        ]
-      )
-    ])
+    _c(
+      "div",
+      { staticClass: "container" },
+      [
+        _c("div", { staticClass: "row m-3" }, [_vm._v("演奏しよう！！！！")]),
+        _vm._v(" "),
+        _c("transition", [_c("button", [_vm._v("ストップ")])]),
+        _vm._v(" "),
+        _vm._m(0),
+        _vm._v(" "),
+        _vm._m(1),
+        _vm._v(" "),
+        _vm._m(2),
+        _vm._v(" "),
+        _c(
+          "div",
+          {
+            staticStyle: {
+              background: "linear-gradient(0deg, lightgreen, red)"
+            }
+          },
+          [
+            _vm._v("ちゃんとスクロールされているのか\n                "),
+            _c(
+              "button",
+              { attrs: { type: "button" }, on: { click: _vm.moveToDown } },
+              [_vm._v("下へ")]
+            ),
+            _vm._v(" "),
+            _c("br"),
+            _c("br"),
+            _c("br"),
+            _c("br"),
+            _c("br"),
+            _c("br"),
+            _c("br"),
+            _c("br"),
+            _vm._v(" "),
+            _c("br"),
+            _c("br"),
+            _c("br"),
+            _c("br"),
+            _c("br"),
+            _c("br"),
+            _c("br"),
+            _c("br"),
+            _vm._v(" "),
+            _c(
+              "button",
+              { attrs: { type: "button" }, on: { click: _vm.onClick } },
+              [_vm._v("ストップ")]
+            ),
+            _vm._v(" "),
+            _c("br"),
+            _c("br"),
+            _c("br"),
+            _c("br"),
+            _c("br"),
+            _c("br"),
+            _c("br"),
+            _c("br"),
+            _vm._v(" "),
+            _c("br"),
+            _c("br"),
+            _c("br"),
+            _c("br"),
+            _c("br"),
+            _c("br"),
+            _c("br"),
+            _c("br"),
+            _vm._v(" "),
+            _c("br"),
+            _c("br"),
+            _c("br"),
+            _c("br"),
+            _c("br"),
+            _c("br"),
+            _c("br"),
+            _c("br"),
+            _vm._v(" "),
+            _c("br"),
+            _c("br"),
+            _c("br"),
+            _c("br"),
+            _c("br"),
+            _c("br"),
+            _c("br"),
+            _c("br")
+          ]
+        )
+      ],
+      1
+    )
   ])
 }
 var staticRenderFns = [
@@ -37979,7 +37980,7 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "row mt-3" }, [
-      _vm._v("スクロール速度\n                    "),
+      _vm._v("スクロール速度\n                "),
       _c("select", { staticClass: "form-control mb-3" }, [
         _c("option", { attrs: { value: "key_5" } }, [_vm._v("5")]),
         _vm._v(" "),
@@ -38220,8 +38221,7 @@ var render = function() {
     _vm._v(" "),
     _c("div", { staticClass: "row p-5 m-5" }, [
       _c("div", { attrs: { id: "view" } }, [
-        _vm._v("\n            " + _vm._s(_vm.MyText) + "\n\n            "),
-        _c("img", { attrs: { src: _vm.code_img_path } })
+        _vm._v("\n            " + _vm._s(_vm.MyText) + "\n\n            ")
       ])
     ])
   ])

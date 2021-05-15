@@ -4,8 +4,37 @@
 
 @section('content')
     <div class="container">
+        <div class="row mt-5">
+            <h2>曲の作成</h2>
+                  <input type="text" value="タイトル">
+                  <input tyepe="text" value="作者名">
+        </div>
+        <div class="row mt-5">
+            <div>設定するカポ</div>
+            <select class="form-control mb-3">
+                <option value="key_+5">+5</option>
+                <option value="key_+4">+4</option>
+                <option value="key_+3">+3</option>
+                <option value="key_+2">+2</option>
+                <option value="key_+1">+1</option>
+                <option value="key_+-0" selected>±0</option>
+                <option value="key_-1">-1</option>
+                <option value="key_-2">-2</option>
+                <option value="key_-3">-3</option>
+                <option value="key_-4">-4</option>
+                <option value="key_-5">-5</option>
+            </select>
+        </div>
+        <div class="row">
+            <div id="app">
+                <sample-component></sample-component>
+            </div>
+        </div>
+        <div class="row d-flex justify-content-end mb-5">
+                <input type="button"  value="保存する">
+        </div>
+
       <div class="row">
-      <h2>曲の作成</h2>
         <div class="col-md-8 mx-auto">
         <form action="{{ action('Admin\GuitarController@create') }}" method="post" enctype="multipart/form-data">
           @if (count($errors) > 0)

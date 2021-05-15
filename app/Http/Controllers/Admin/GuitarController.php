@@ -56,7 +56,7 @@ class GuitarController extends Controller
         $cond_title = $request->cond_title;
         if ($cond_title != '') {
             // 検索されたら検索結果を取得する
-            $posts = Music::where('title', $cond_title)->get();
+            $posts = Music::where('title', 'like', '%'.$cond_title.'%')->get();
         } else {
             // それ以外はすべてのニュースを取得する
             $posts = Music::all();
@@ -64,7 +64,24 @@ class GuitarController extends Controller
         return view('admin.home', ['posts' => $posts, 'cond_title' => $cond_title]);
     }
 
-    public function mypage() {
-        return view('admin.mypage');
+    public function mypage(Request $request) {
+        $cond_title = $request->cond_title;
+        if ($cond_title != '') {
+            // 検索されたら検索結果を取得する
+            $posts = Music::where('title', 'like', '%'.$cond_title.'%')->get();
+        } else {
+            // それ以外はすべてのニュースを取得する
+            $posts = Music::all();
+        }
+        return view('admin.mypage', ['posts' => $posts, 'cond_title' => $cond_title]);
     }
+
+    public function delete(Request $request)
+  {
+      // 該当するNews Modelを取得
+      $music = Music::find($request->id);
+      // 削除する
+      $music->delete();
+      return redirect('admin/home/');
+  }  
 }
