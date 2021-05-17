@@ -15,7 +15,8 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function() {
     Route::get('home', 'Admin\GuitarController@home');
     Route::post('create', 'Admin\GuitarController@create');
     Route::get('mypage', 'Admin\GuitarController@mypage');
-    Route::get('playing', 'Admin\GuitarController@playing');
+    Route::get('playing', 'Admin\GuitarController@playing')->name('admin.playing');
+
     Route::get('delete', 'Admin\GuitarController@delete');
     Route::get('mypageedit', 'Admin\GuitarController@mypageedit');
 });

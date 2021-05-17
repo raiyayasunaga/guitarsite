@@ -38,18 +38,29 @@
                                 <th width="10%">IDいつか外す</th>
                                 <th width="20%">曲のタイトル</th>
                                 <th width="20%">カテゴリー</th>
-                                <th width="30%">編集・公開</th>
+                                <th width="10%">カポ</th>
+                                <th width="20%">編集</th>
+                                <th width="20%">公開するのか</th>
                             </tr>
                         </thead>
                         <tbody>
                             @foreach($posts as $music)
                                 <tr>
                                     <th>{{ $music->id }}</th>
-                                    <td><a href ="playing"> {{ str_limit($music->title, 100) }}</a></td>
-                                    <td>{{ str_limit($music->body, 250) }}</td>
+                                    
+                                    <!-- 取得して投稿の値によって表示を変える -->
+                                        <td><a href ="{{ route('admin.playing', ['id' => $music->id]) }}"> {{ str_limit($music->title, 100) }}</a></td>
+                                    <!-- 連想配列・データベースで値を引っ張ってくる -->
+                                        <td>{{ ($music->category) }}</td>
+                                        <th>{{ ($music->capo) }}</th>
                                     <td>
                                         <div>
                                             <a href="{{ action('Admin\GuitarController@delete', ['id' => $music->id]) }}">削除</a>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div>
+                                            <a href="#">プライベート！</a>
                                         </div>
                                         <div>
                                           <a href="#">公開する！</a>

@@ -147,7 +147,7 @@ return [
 
     'attributes' => [
         'title' => 'タイトル',
-        'body' => 'カテゴリー'
+        'body' => '本文'
     ],
 
 ];

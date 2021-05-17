@@ -40,9 +40,9 @@
                                 <tr>
                                     <th>{{ $music->id }}</th>
                                     <td>{{ str_limit($music->title, 100) }}</td>
-                                    <td>{{ str_limit($music->body, 250) }}</td>
-                                    <!-- ここで作曲した人の値を取得する -->
-                                    <td> {{ Auth::user()->name }}</td>
+                                    <td>{{ str_limit($music->category, 150) }}</td>
+                                    <!-- user_idからユーザーのnameカラムが欲しい -->
+                                    <td> {{ str_limit($music->user_id, 100) }}</td>
                                     <td>
                                         <div>
                                             <a href="{{ action('Admin\GuitarController@delete', ['id' => $music->id]) }}">削除</a>

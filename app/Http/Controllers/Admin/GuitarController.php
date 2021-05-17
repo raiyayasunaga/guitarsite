@@ -25,7 +25,7 @@ class GuitarController extends Controller
     public function create(Request $request) {
         // 以下を追記
       // Varidationを行う
-
+    
       $this->validate($request, Music::$rules);
 
       $music = new Music;
@@ -49,16 +49,11 @@ class GuitarController extends Controller
 
       // データベースに保存する
       $music->fill($form);
+      //ユーザーそれぞれのデータの値を保存できる作業 
       $music->user_id = Auth::id();
       $music->save();
 
       return redirect('admin/home');
-    }
-    
-    
-
-    public function playing() {
-        return view('admin.playing');
     }
 
     public function cord() {
@@ -102,6 +97,12 @@ class GuitarController extends Controller
         // }
 
         return view('admin.mypage', ['posts' => $music, 'cond_title' => $cond_title,]);
+    }
+
+    public function playing(Request $request) {
+        $music = Music::find($request->id);
+        // 名前から予測していく
+        return view('admin.playing', ['music' => $music]);
     }
 
     public function delete(Request $request)

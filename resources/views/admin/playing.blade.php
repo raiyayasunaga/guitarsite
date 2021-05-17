@@ -4,14 +4,15 @@
 
 @section('content')
     <div class="container">
-      <div class="row my-4">
-        <h2>曲のタイトル：</h2>
-      </div>
-      <div class="row mb-5">
-        <div class="col-3">カポ：</div>
-        <div class="col-3">カテゴリー：</div>
-      </div>
-
+      <!-- user_idとidが一致したやつだけ -->
+          <div class="row my-4">
+        <!-- ifを使ってカラムによって表示を変える方法を実装 -->
+            <h2>曲のタイトル：{{ str_limit($music->title, 100) }}</h2>
+          </div>
+          <div class="row mb-5">
+            <h3 class="col-4">カポ：{{ ($music->capo) }}</h3>
+            <h3 class="col-4">カテゴリー：{{ ($music->category) }}</h3>
+         </div>
         <div id="app">
           <roll-component></roll-component>
         </div>
