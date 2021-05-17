@@ -30,10 +30,7 @@
                 <sample-component></sample-component>
             </div>
         </div>
-        <div class="row d-flex justify-content-end mb-5">
-                <input type="button"  value="保存する">
-        </div>
-
+        
       <div class="row">
         <div class="col-md-8 mx-auto">
         <form action="{{ action('Admin\GuitarController@create') }}" method="post" enctype="multipart/form-data">
@@ -50,6 +47,44 @@
                   <input type="text" class="form-control" name="title" value="{{ old('title') }}">
               </div>
           </div>
+          <!-- <div class="form-group row">
+              <label class="col-md-2" for="body" value="{{ old('body') }}" >カテゴリー</label>
+              <div class="col-md-10">
+                <select class="form-control mb-3">
+                        <option value="{{ old('body') }}">良い感じ？</option>
+                        <option value="{{ old('body') }}">激しめ</option>
+                        <option value="{{ old('body') }}">フォーク</option>
+                        <option value="{{ old('body') }}">ロック</option>
+                        <option value="{{ old('body') }}" selected>なし</option>
+                        <option value="{{ old('body') }}">ボカロ</option>
+                        <option value="{{ old('body') }}">メタル</option>
+                </select>
+              </div>
+          </div> -->
+          <div class="form-group row">
+            <label class="col-md-2" for="body">カポ</label>
+                <div class="col-md-10">
+                    <select class="form-control mb-3">
+                        <option value="key_+5">+5</option>
+                        <option value="key_+4">+4</option>
+                        <option value="key_+3">+3</option>
+                        <option value="key_+2">+2</option>
+                        <option value="key_+1">+1</option>
+                        <option value="key_+-0" selected>±0</option>
+                        <option value="key_-1">-1</option>
+                        <option value="key_-2">-2</option>
+                        <option value="key_-3">-3</option>
+                        <option value="key_-4">-4</option>
+                        <option value="key_-5">-5</option>
+                    </select>
+                </div>
+            </div>
+          <div class="form-group row">
+                        <label class="col-md-2" for="title">画像</label>
+                        <div class="col-md-10">
+                            <input type="file" class="form-control-file" name="image">
+                        </div>
+                    </div>
           <div class="form-group row">
               <label class="col-md-2" for="body">歌詞</label>
               <div class="col-md-10">

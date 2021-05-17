@@ -15,8 +15,11 @@ class CreateMusicTable extends Migration
     {
         Schema::create('music', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->integer('user_id');
             $table->string('title');
             $table->string('body');
+            $table->string('category')->nullable();
+            $table->string('capo')->nullable();
             $table->timestamps();
         });
     }

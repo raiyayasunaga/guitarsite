@@ -1983,22 +1983,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     // ここ入らないのかも
@@ -37883,15 +37867,11 @@ var render = function() {
       "div",
       { staticClass: "container" },
       [
-        _c("div", { staticClass: "row m-3" }, [_vm._v("演奏しよう！！！！")]),
-        _vm._v(" "),
         _c("transition", [_c("button", [_vm._v("ストップ")])]),
         _vm._v(" "),
         _vm._m(0),
         _vm._v(" "),
         _vm._m(1),
-        _vm._v(" "),
-        _vm._m(2),
         _vm._v(" "),
         _c(
           "div",
@@ -38013,42 +37993,6 @@ var staticRenderFns = [
         _c("option", { attrs: { value: "19" } }, [_vm._v("19")]),
         _vm._v(" "),
         _c("option", { attrs: { value: "20" } }, [_vm._v("20")])
-      ])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "row mt-4" }, [
-      _c("div", [
-        _vm._v("演奏の場合は与えられたカポの情報を元に表示させる切り替える。")
-      ]),
-      _vm._v(" "),
-      _c("select", { staticClass: "form-control mb-3" }, [
-        _c("option", { attrs: { value: "key_+5" } }, [_vm._v("+5")]),
-        _vm._v(" "),
-        _c("option", { attrs: { value: "key_+4" } }, [_vm._v("+4")]),
-        _vm._v(" "),
-        _c("option", { attrs: { value: "key_+3" } }, [_vm._v("+3")]),
-        _vm._v(" "),
-        _c("option", { attrs: { value: "key_+2" } }, [_vm._v("+2")]),
-        _vm._v(" "),
-        _c("option", { attrs: { value: "key_+1" } }, [_vm._v("+1")]),
-        _vm._v(" "),
-        _c("option", { attrs: { value: "key_+-0", selected: "" } }, [
-          _vm._v("±0")
-        ]),
-        _vm._v(" "),
-        _c("option", { attrs: { value: "key_-1" } }, [_vm._v("-1")]),
-        _vm._v(" "),
-        _c("option", { attrs: { value: "key_-2" } }, [_vm._v("-2")]),
-        _vm._v(" "),
-        _c("option", { attrs: { value: "key_-3" } }, [_vm._v("-3")]),
-        _vm._v(" "),
-        _c("option", { attrs: { value: "key_-4" } }, [_vm._v("-4")]),
-        _vm._v(" "),
-        _c("option", { attrs: { value: "key_-5" } }, [_vm._v("-5")])
       ])
     ])
   },

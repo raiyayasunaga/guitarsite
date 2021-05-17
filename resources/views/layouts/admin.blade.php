@@ -84,10 +84,9 @@
                         <ul class="navbar-nav ml-auto">
                             <header>
                                 <ul>
-                                    <li><a href = "mypage">マイページ</li>
-                                    <li><a href = "create">曲の作成</li>
-                                    <li><a href = "cord">ギターのコード一覧</li>
-                                    <a>
+                                    <li><a href = "mypage" >マイページ</a></li>
+                                    <li><a href = "create" >曲の作成</a></li>
+                                    <li><a href = "cord" >ギターのコード一覧</a></li>
                                 </ul>
                             </header>
                         </ul>

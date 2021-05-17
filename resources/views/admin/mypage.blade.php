@@ -5,7 +5,8 @@
 @section('content')
 <div class="container">
       <div class="row my-3">
-        <h2>マイページ</h2>
+        <h2><a href = "{{ action('Admin\GuitarController@mypageedit') }}">マイページ編集</a></h2>
+        
       </div>
       <div class="row">
         <div class="col-4">
@@ -13,7 +14,7 @@
         </div>
 
             <div class="col-8">
-                <form action="{{ action('Admin\GuitarController@home') }}" method="get">
+                <form action="{{ action('Admin\GuitarController@mypage') }}" method="get">
                     <div class="form-group row">
                         <div class="col-md-8">
                             <input type="text" class="form-control" name="cond_title" value="{{ $cond_title }}">
@@ -34,24 +35,24 @@
                     <table class="table">
                         <thead>
                             <tr>
-                                <th width="10%">ID</th>
+                                <th width="10%">IDいつか外す</th>
                                 <th width="20%">曲のタイトル</th>
                                 <th width="20%">カテゴリー</th>
-                                <th width="30%">作曲者名</th>
+                                <th width="30%">編集・公開</th>
                             </tr>
                         </thead>
                         <tbody>
                             @foreach($posts as $music)
                                 <tr>
                                     <th>{{ $music->id }}</th>
-                                    <td>{{ str_limit($music->title, 100) }}</td>
+                                    <td><a href ="playing"> {{ str_limit($music->title, 100) }}</a></td>
                                     <td>{{ str_limit($music->body, 250) }}</td>
                                     <td>
                                         <div>
                                             <a href="{{ action('Admin\GuitarController@delete', ['id' => $music->id]) }}">削除</a>
                                         </div>
                                         <div>
-                                          <a href="#">編集</a>
+                                          <a href="#">公開する！</a>
                                         </div>
                                     </td>
                                 </tr>

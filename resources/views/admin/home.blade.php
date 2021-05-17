@@ -8,10 +8,6 @@
             <h2>公開一覧</h2>
         </div>
         <div class="row">
-            <div class="col-4">
-                <a href="{{ action('Admin\GuitarController@create') }}" role="button" class="btn btn-primary">新規作成</a>
-            </div>
-
             <div class="col-md-8">
                 <form action="{{ action('Admin\GuitarController@home') }}" method="get">
                     <div class="form-group row">
@@ -45,6 +41,8 @@
                                     <th>{{ $music->id }}</th>
                                     <td>{{ str_limit($music->title, 100) }}</td>
                                     <td>{{ str_limit($music->body, 250) }}</td>
+                                    <!-- ここで作曲した人の値を取得する -->
+                                    <td> {{ Auth::user()->name }}</td>
                                     <td>
                                         <div>
                                             <a href="{{ action('Admin\GuitarController@delete', ['id' => $music->id]) }}">削除</a>

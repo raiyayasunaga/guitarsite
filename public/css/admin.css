@@ -11,8 +11,19 @@ textarea {
   font-family: "\6E38\660E\671D", "YuMincho", "\30D2\30E9\30AE\30CE\660E\671D   Pro W3", "Hiragino Mincho Pro", "\FF2D\FF33   \FF30\660E\671D", "MS PMincho", serif;
 }
 
+.user_name {
+  padding-left: 30px;
+  font-size: 30px;
+}
+
 h1 a {
   color: #a31b1b;
+}
+
+h1 a:hover {
+  text-decoration: none;
+  color: #a31b1b;
+  opacity: 0.8;
 }
 
 .form-control {

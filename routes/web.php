@@ -12,18 +12,17 @@
 */
 Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function() {
     Route::get('create', 'Admin\GuitarController@add');
+    Route::get('home', 'Admin\GuitarController@home');
     Route::post('create', 'Admin\GuitarController@create');
     Route::get('mypage', 'Admin\GuitarController@mypage');
     Route::get('playing', 'Admin\GuitarController@playing');
     Route::get('delete', 'Admin\GuitarController@delete');
+    Route::get('mypageedit', 'Admin\GuitarController@mypageedit');
 });
+
 
 // コードは誰でも見せられる
 Route::get('admin/cord', 'Admin\GuitarController@cord');
-
-// ホームページだからauth必要ない
-
-Route::get('admin/home', 'Admin\GuitarController@home');
 
 
 // メールから仮登録しているルーティング

@@ -1,8 +1,5 @@
 @import "function";
 
-
-
-
 body {
   background-repeat: no-repeat;
   background-position: center;
@@ -14,8 +11,18 @@ textarea {
   @include sitefont;
 }
 
+.user_name {
+  padding-left: 30px;
+  font-size: 30px;
+}
+
 h1 a{
   color: $sitecolor;
+  &:hover {
+    text-decoration: none;
+    color: $sitecolor;
+    opacity: 0.8;
+  }
 }
 
 // ギターボタンの編集

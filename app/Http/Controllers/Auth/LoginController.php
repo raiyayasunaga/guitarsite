@@ -4,8 +4,6 @@ namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
-
-// Requestする場合は追加
 use Illuminate\Http\Request;
 
 class LoginController extends Controller
@@ -47,7 +45,7 @@ class LoginController extends Controller
         $request->session()->invalidate();
 
         // /homeに変更
-        return $this->loggedOut($request) ?: redirect('admin/home');
+        return $this->loggedOut($request) ?: redirect('admin/cord');
     }
     public function __construct()
     {

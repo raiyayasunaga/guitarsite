@@ -3,11 +3,21 @@
 namespace App\Http\Controllers\Admin;
 
 use Illuminate\Http\Request;
+// use Illuminate\Http\User;使うか分からない
 use App\Http\Controllers\Controller;
 use App\Music;
+use App\User;
+use Auth;
+
+
+// ユーザー情報
+
 
 class GuitarController extends Controller
 {
+
+    // ユーザーによって表示変える方
+
     public function add() {
         return view('admin.create');
     }
@@ -39,11 +49,14 @@ class GuitarController extends Controller
 
       // データベースに保存する
       $music->fill($form);
+      $music->user_id = Auth::id();
       $music->save();
 
       return redirect('admin/home');
     }
     
+    
+
     public function playing() {
         return view('admin.playing');
     }
@@ -54,34 +67,53 @@ class GuitarController extends Controller
 
     public function home(Request $request) {
         $cond_title = $request->cond_title;
+        // $posts = Music::all()
+        //     ->orderBy('created_at', 'desc')->get();
+
         if ($cond_title != '') {
             // 検索されたら検索結果を取得する
-            $posts = Music::where('title', 'like', '%'.$cond_title.'%')->get();
+            $posts = Music::where('title', 'like', '%'.$cond_title.'%')
+                ->orderBy('id', 'asc')
+                ->get();
         } else {
             // それ以外はすべてのニュースを取得する
             $posts = Music::all();
         }
+
+
         return view('admin.home', ['posts' => $posts, 'cond_title' => $cond_title]);
     }
 
     public function mypage(Request $request) {
+        //  $auths = Auth::user();
+        // 'auth' => $auths
         $cond_title = $request->cond_title;
-        if ($cond_title != '') {
-            // 検索されたら検索結果を取得する
-            $posts = Music::where('title', 'like', '%'.$cond_title.'%')->get();
-        } else {
-            // それ以外はすべてのニュースを取得する
-            $posts = Music::all();
-        }
-        return view('admin.mypage', ['posts' => $posts, 'cond_title' => $cond_title]);
+
+        $music = Music::where('user_id', Auth::id()) //$userによる投稿を取得
+            ->orderBy('created_at', 'desc') // 投稿作成日が新しい順に並べる
+            ->paginate(10); // ページネーション; 
+        
+        // if ($cond_title != '') {
+        //     // 検索されたら検索結果を取得する
+        //     $music = Music::where('title', 'like', '%'.$cond_title.'%')->get();
+        // } else {
+        //     // それ以外はすべてのニュースを取得する
+        //     $music = Music::where('user_id', Auth::id());
+        // }
+
+        return view('admin.mypage', ['posts' => $music, 'cond_title' => $cond_title,]);
     }
 
     public function delete(Request $request)
-  {
+    {
       // 該当するNews Modelを取得
       $music = Music::find($request->id);
       // 削除する
       $music->delete();
       return redirect('admin/home/');
-  }  
+    }
+    
+    public function mypageedit() {
+        return view('admin.mypageedit');
+    }
 }

@@ -6,6 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Music extends Model
 {
+    
     // protected $table = ‘musics;
     protected $guarded = array('id');
 
@@ -13,4 +14,10 @@ class Music extends Model
         'title' => 'required',
         'body' => 'required',
     );
+
+    public function user()
+    {
+        return $this->belongsTo('App\User');
+    }
+    
 }

@@ -1,7 +1,7 @@
 <template>
     <div @click="moveToDown">
         <div class="container">
-                <div class="row m-3">演奏しよう！！！！</div>
+
                 <transition>
                     <button >ストップ</button>
                 </transition>
@@ -26,22 +26,6 @@
                     </select>
                 </div>
 
-                <div class="row mt-4">
-                    <div>演奏の場合は与えられたカポの情報を元に表示させる切り替える。</div>
-                    <select class="form-control mb-3">
-                        <option value="key_+5">+5</option>
-                        <option value="key_+4">+4</option>
-                        <option value="key_+3">+3</option>
-                        <option value="key_+2">+2</option>
-                        <option value="key_+1">+1</option>
-                        <option value="key_+-0" selected>±0</option>
-                        <option value="key_-1">-1</option>
-                        <option value="key_-2">-2</option>
-                        <option value="key_-3">-3</option>
-                        <option value="key_-4">-4</option>
-                        <option value="key_-5">-5</option>
-                    </select>
-                </div>
                 <div class="row">
                     <h2>ここで再生</h2>
                     <input type="button">
