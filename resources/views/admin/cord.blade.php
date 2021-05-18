@@ -10,7 +10,6 @@
         <h2>コード表A〜G</h2>
         <h2><a href="playing">演奏しよう！</a></h2>
       </div>
-      <div>コードは基本14本それぞれあるのでMとmの見分けなどまとめる</di>
       <div id="app">
         <example-component></example-component>
       </div>
@@ -73,7 +72,7 @@
           </div>
           <div class="col-md-2 p-3 mx-3">
           <p class="cord-font">Cm7コード</p>
-            <img src="/img/Cm7.png" alt="サンプル画像">
+            <img src="/img/C_m7.png" alt="サンプル画像">
           </div>
           
           <div class="col-md-2 p-3 mx-3">
@@ -106,8 +105,12 @@
             <img src="/img/Csus4.png" alt="サンプル画像">
           </div>
           <div class="col-md-2 p-3 mx-3">
-            <p class="cord-font">Caugコード</p>
-            <img src="/img/Caug.png" alt="サンプル画像">
+            <p class="cord-font">C7sus4コード</p>
+            <img src="/img/C7sus4.png" alt="サンプル画像">
+          </div>
+          <div class="col-md-2 p-3 mx-3">
+            <p class="cord-font">Cm6コード</p>
+            <img src="/img/Cm6.png" alt="サンプル画像">
           </div>
         </div>
 
@@ -142,54 +145,54 @@
             <img src="/img/Dbm.png" alt="Cm">
           </div>
           <div class="col-md-2 p-3 mx-3">
-          <p class="cord-font">C7コード</p>
+          <p class="cord-font">C#6コード</p>
             <img src="/img/Db6.png" alt="サンプル画像">
           </div>
           <div class="col-md-2 p-3 mx-3">
-          <p class="cord-font">Cdimコード</p>
+          <p class="cord-font">C#7コード</p>
             <img src="/img/Db7.png" alt="サンプル画像">
           </div>
           <div class="col-md-2 p-3 mx-3">
-          <p class="cord-font">Cm7コード</p>
-            <img src="/img/Db7sus4.png" alt="サンプル画像">
+          <p class="cord-font">C#m7コード</p>
+            <img src="/img/Db_m7.png" alt="サンプル画像">
           </div>
-          
+        
           <div class="col-md-2 p-3 mx-3">
-          <p class="cord-font">Cm7(2)コード</p>
-            <img src="/img/Dbadd9.png" alt="サンプル画像">
-          </div>
-          <div class="col-md-2 p-3 mx-3">
-          <p class="cord-font">Cm7b5コード</p>
+          <p class="cord-font">C#augコード</p>
             <img src="/img/Dbaug.png" alt="サンプル画像">
           </div>
           <div class="col-md-2 p-3 mx-3">
-            <p class="cord-font">CmM7コード</p>
+            <p class="cord-font">C#dimコード</p>
             <img src="/img/Dbdim.png" alt="サンプル画像">
           </div>
           
           <div class="col-md-2 p-3 mx-3">
-            <p class="cord-font">C6コード</p>
+            <p class="cord-font">C#mコード</p>
             <img src="/img/Dbm.png" alt="サンプル画像">
           </div>
           <div class="col-md-2 p-3 mx-3">
-            <p class="cord-font">Cadd9コード</p>
+            <p class="cord-font">C#m6コード</p>
             <img src="/img/Dbm6.png" alt="サンプル画像">
           </div>
           <div class="col-md-2 p-3 mx-3">
-            <p class="cord-font">Caugコード</p>
+            <p class="cord-font">C#M7コード</p>
             <img src="/img/DbM7.png" alt="サンプル画像">
           </div>
           <div class="col-md-2 p-3 mx-3">
-            <p class="cord-font">Csus4コード</p>
+            <p class="cord-font">C#m7b5コード</p>
             <img src="/img/Dbm7b5.png" alt="サンプル画像">
           </div>
           <div class="col-md-2 p-3 mx-3">
-            <p class="cord-font">Caugコード</p>
+            <p class="cord-font">C#mM7コード</p>
             <img src="/img/DbmM7.png" alt="サンプル画像">
           </div>
           <div class="col-md-2 p-3 mx-3">
-            <p class="cord-font">Caugコード</p>
+            <p class="cord-font">C#sus4コード</p>
             <img src="/img/Dbsus4.png" alt="サンプル画像">
+          </div>
+          <div class="col-md-2 p-3 mx-3">
+            <p class="cord-font">C#add9コード</p>
+            <img src="/img/Dbadd9.png" alt="サンプル画像">
           </div>
         </div>
 
@@ -254,7 +257,11 @@
           </div>
           <div class="col-md-2 p-3 mx-3">
             <p class="cord-font">DM7コード</p>
-            <img src="/img/DM7.png" alt="サンプル画像">
+            <img src="/img/DM_7.png" alt="サンプル画像">
+          </div>
+          <div class="col-md-2 p-3 mx-3">
+            <p class="cord-font">Dm7コード</p>
+            <img src="/img/D_m7.png" alt="サンプル画像">
           </div>
           <div class="col-md-2 p-3 mx-3">
             <p class="cord-font">Dm7b5コード</p>
@@ -292,58 +299,62 @@
 
       </div>
         <div class="row">
-        <div class="col-md-2 p-3 mx-3" >
-            <p class="cord-font">Ebコード</p>
+          <div class="col-md-2 p-3 mx-3" >
+            <p class="cord-font">D#コード</p>
             <img src="/img/Eb.png" alt="C">
           </div>
           <div class="col-md-2 p-3 mx-3">
-          <p class="cord-font">Eb6コード</p>
+            <p class="cord-font">D#mコード</p>
+            <img src="/img/Ebm.png" alt="サンプル画像">
+          </div>
+          <div class="col-md-2 p-3 mx-3">
+          <p class="cord-font">D#6コード</p>
             <img src="/img/Eb6.png" alt="Cm">
           </div>
           <div class="col-md-2 p-3 mx-3">
-          <p class="cord-font">Eb7コード</p>
+          <p class="cord-font">D#7コード</p>
             <img src="/img/Eb7.png" alt="サンプル画像">
           </div>
           <div class="col-md-2 p-3 mx-3">
-          <p class="cord-font">コード</p>
+          <p class="cord-font">D#7sus4コード</p>
             <img src="/img/Eb7sus4.png" alt="サンプル画像">
           </div>
           <div class="col-md-2 p-3 mx-3">
-          <p class="cord-font">Cm7コード</p>
+          <p class="cord-font">D#m7コード</p>
             <img src="/img/Eb_m7.png" alt="サンプル画像">
           </div>
           
           <div class="col-md-2 p-3 mx-3">
-          <p class="cord-font">Cm7(2)コード</p>
-            <img src="/img/Eadd9.png" alt="サンプル画像">
+          <p class="cord-font">D#add9コード</p>
+            <img src="/img/Ebadd9.png" alt="サンプル画像">
           </div>
           <div class="col-md-2 p-3 mx-3">
-          <p class="cord-font">Cm7b5コード</p>
+          <p class="cord-font">D#augコード</p>
             <img src="/img/Ebaug.png" alt="サンプル画像">
           </div>
           <div class="col-md-2 p-3 mx-3">
-            <p class="cord-font">CmM7コード</p>
+            <p class="cord-font">D#M7コード</p>
             <img src="/img/EbM_7.png" alt="サンプル画像">
           </div>
           
           <div class="col-md-2 p-3 mx-3">
-            <p class="cord-font">C6コード</p>
+            <p class="cord-font">D#dimコード</p>
             <img src="/img/Ebdim.png" alt="サンプル画像">
           </div>
           <div class="col-md-2 p-3 mx-3">
-            <p class="cord-font">Cadd9コード</p>
+            <p class="cord-font">D#m6コード</p>
             <img src="/img/Ebm6.png" alt="サンプル画像">
           </div>
           <div class="col-md-2 p-3 mx-3">
-            <p class="cord-font">Caugコード</p>
+            <p class="cord-font">D#m7b5コード</p>
             <img src="/img/Ebm7b5.png" alt="サンプル画像">
           </div>
           <div class="col-md-2 p-3 mx-3">
-            <p class="cord-font">Csus4コード</p>
+            <p class="cord-font">D#mM7コード</p>
             <img src="/img/EbmM7.png" alt="サンプル画像">
           </div>
           <div class="col-md-2 p-3 mx-3">
-            <p class="cord-font">Caugコード</p>
+            <p class="cord-font">D#sus4コード</p>
             <img src="/img/Ebsus4.png" alt="サンプル画像">
           </div>
         </div>
@@ -381,6 +392,10 @@
           <div class="col-md-2 p-3 mx-3">
           <p class="cord-font">E6コード</p>
             <img src="/img/E6.png" alt="サンプル画像">
+          </div>
+          <div class="col-md-2 p-3 mx-3">
+            <p class="cord-font">Em6コード</p>
+            <img src="/img/Em6.png" alt="サンプル画像">
           </div>
           <div class="col-md-2 p-3 mx-3">
           <p class="cord-font">E7コード</p>
@@ -659,7 +674,7 @@
           </div>
           <div class="col-md-2 p-3 mx-3">
             <p class="cord-font">GM7コード</p>
-            <img src="/img/GM?7.png" alt="サンプル画像">
+            <img src="/img/GM_7.png" alt="サンプル画像">
           </div>
           <div class="col-md-2 p-3 mx-3">
             <p class="cord-font">Gm7コード</p>
@@ -815,7 +830,11 @@
           </div>
           <div class="col-md-2 p-3 mx-3">
             <p class="cord-font">Am7コード</p>
-            <img src="/img/Am7.png" alt="サンプル画像">
+            <img src="/img/A_m7.png" alt="サンプル画像">
+          </div>
+          <div class="col-md-2 p-3 mx-3">
+            <p class="cord-font">AM7コード</p>
+            <img src="/img/AM_7.png" alt="サンプル画像">
           </div>
           <div class="col-md-2 p-3 mx-3">
             <p class="cord-font">Am7b5コード</p>
@@ -854,58 +873,62 @@
       </div>
         <div class="row">
         <div class="col-md-2 p-3 mx-3" >
-            <p class="cord-font">Bbコード</p>
+            <p class="cord-font">A#コード</p>
             <img src="/img/Bb.png" alt="C">
           </div>
           <div class="col-md-2 p-3 mx-3">
-          <p class="cord-font">Cmコード</p>
+          <p class="cord-font">A#6コード</p>
             <img src="/img/Bb6.png" alt="Cm">
           </div>
           <div class="col-md-2 p-3 mx-3">
-          <p class="cord-font">C7コード</p>
+          <p class="cord-font">A#7コード</p>
             <img src="/img/Bb7.png" alt="サンプル画像">
           </div>
           <div class="col-md-2 p-3 mx-3">
-          <p class="cord-font">Cdimコード</p>
+          <p class="cord-font">A#7sus4コード</p>
             <img src="/img/Bb7sus4.png" alt="サンプル画像">
           </div>
           <div class="col-md-2 p-3 mx-3">
-          <p class="cord-font">Cm7コード</p>
+          <p class="cord-font">A#augコード</p>
             <img src="/img/Bbaug.png" alt="サンプル画像">
           </div>
           
           <div class="col-md-2 p-3 mx-3">
-          <p class="cord-font">Cm7(2)コード</p>
+          <p class="cord-font">A#dimコード</p>
             <img src="/img/Bbdim.png" alt="サンプル画像">
           </div>
           <div class="col-md-2 p-3 mx-3">
-          <p class="cord-font">Cm7b5コード</p>
+          <p class="cord-font">A#mコード</p>
             <img src="/img/Bbm.png" alt="サンプル画像">
           </div>
           <div class="col-md-2 p-3 mx-3">
-            <p class="cord-font">CmM7コード</p>
+            <p class="cord-font">A#m6コード</p>
             <img src="/img/Bbm6.png" alt="サンプル画像">
           </div>
           
           <div class="col-md-2 p-3 mx-3">
-            <p class="cord-font">C6コード</p>
+            <p class="cord-font">A#m7b5コード</p>
             <img src="/img/Bbm7b5.png" alt="サンプル画像">
           </div>
           <div class="col-md-2 p-3 mx-3">
-            <p class="cord-font">Cadd9コード</p>
+            <p class="cord-font">A#mM7コード</p>
             <img src="/img/BbmM7.png" alt="サンプル画像">
           </div>
           <div class="col-md-2 p-3 mx-3">
-            <p class="cord-font">Caugコード</p>
+            <p class="cord-font">A#sus4コード</p>
             <img src="/img/Bbsus4.png" alt="サンプル画像">
           </div>
           <div class="col-md-2 p-3 mx-3">
-            <p class="cord-font">Csus4コード</p>
-            <img src="/img/Csus4.png" alt="サンプル画像">
+            <p class="cord-font">A#m7コード</p>
+            <img src="/img/Bb_m7.png" alt="サンプル画像">
           </div>
           <div class="col-md-2 p-3 mx-3">
-            <p class="cord-font">Caugコード</p>
-            <img src="/img/Caug.png" alt="サンプル画像">
+            <p class="cord-font">A#M7コード</p>
+            <img src="/img/BbM_7.png" alt="サンプル画像">
+          </div>
+          <div class="col-md-2 p-3 mx-3">
+            <p class="cord-font">A#add9コード</p>
+            <img src="/img/Bbadd9.png" alt="サンプル画像">
           </div>
         </div>
 
@@ -971,7 +994,11 @@
           </div>
           <div class="col-md-2 p-3 mx-3">
             <p class="cord-font">Bm7コード</p>
-            <img src="/img/Bm7.png" alt="サンプル画像">
+            <img src="/img/B_m7.png" alt="サンプル画像">
+          </div>
+          <div class="col-md-2 p-3 mx-3">
+            <p class="cord-font">BM7コード</p>
+            <img src="/img/BM_7.png" alt="サンプル画像">
           </div>
           <div class="col-md-2 p-3 mx-3">
             <p class="cord-font">Bm7b5コード</p>

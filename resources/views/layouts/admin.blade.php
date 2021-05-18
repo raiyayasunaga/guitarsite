@@ -53,10 +53,11 @@
                                     @endif
                                     </li>
                                 <header>
+                                <!-- ログイン前はadminをつける必要がある -->
                                     <ul>
-                                        <li><a href = "mypage">マイページ</a></li>
-                                        <li><a href = "create">曲の作成</a></li>
-                                        <li><a href = "cord">ギターのコード一覧</a></li>
+                                        <li><a href = "admin/mypage">マイページ</a></li>
+                                        <li><a href = "admin/create">曲の作成</a></li>
+                                        <li><a href = "admin/cord">ギターのコード一覧</a></li>
                                     </ul>
                                 </header>
                             </ul>
