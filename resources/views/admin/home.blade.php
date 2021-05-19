@@ -33,6 +33,7 @@
                                 <th width="20%">曲のタイトル</th>
                                 <th width="20%">カテゴリー</th>
                                 <th width="30%">作曲者名</th>
+                                <th width="20%">削除</th>
                             </tr>
                         </thead>
                         <tbody>

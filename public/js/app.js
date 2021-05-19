@@ -1983,17 +1983,22 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     // ここ入らないのかも
     return {
-      move: ture
+      moveToDown: flase
     };
   },
   methods: {
     // $fixedは使わない？
-    onClick: function onClick() {
-      this.move = !this.move;
+    OnClick: function OnClick() {
+      this.moveToDown = !this.moveToDown;
     },
     onchange: function onchange() {
       var groupspeed = {
@@ -2116,6 +2121,27 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   // 何処でもできる
   data: function data() {
@@ -2124,42 +2150,43 @@ __webpack_require__.r(__webpack_exports__);
       cords: ['C', 'Cm', 'Cdim', 'C6', 'C7', 'C7sus4', 'Cadd9', 'Caug', 'Cdim', 'CmM7', 'Cm7', 'Cm7b5', 'Csus4', 'CM7'],
       fixeds: ['/', 'N.C'],
       MyText: ' ',
-      selected: 'key_c'
+      selected: 'key_c',
+      CordImages: ['/img/C.png', '/img/Cm.png']
     };
   },
   methods: {
     // $fixedは使わない？
+    oneClick: function oneClick() {
+      this.count++;
+    },
     onClick: function onClick($cord) {
       this.MyText = "".concat(this.MyText, "  [").concat($cord, "] ");
-      this.MyText = "".concat(this.MyText) + "  " + "[".concat(fixed, "]"); // this.MyText = `${this.MyText}` + "  " + `[${image}]`;
+      this.MyText = "".concat(this.MyText) + "  " + "[".concat(fixed, "]");
+      this.MyText = "".concat(this.CordImages); // this.MyText = `${this.MyText}` + "  " + `[${image}]`;
       // let groupImages = {
-      //   "_C": '/img/C.png', 
-      //   get "C"() {
-      //     return this["_C"];
-      //   },
-      //   set "C"(value) {
-      //     this["_C"]=value;
-      //   },
-      //     'Cm': '/img/Cm.png',
+      //   "C": '/img/C.png', 
+      //   "C": '/img/Cm.png',
+      //   "Cdim": '/img/Cdim.png',
+      //   "C6": '/img/C7.png',
       // };
-      // this.CordImage = groupImages;
+      // this.CordImages = groupImages;
       // idビューエレメントを出して、appendをイメージタグを追加していく
       // 画像を配列にして上手くまとめて表示させる方法
     },
     onchange: function onchange() {
       var groupCords = {
         'key_c': ['C', 'Cm', 'Cdim', 'C6', 'C7', 'C7sus4', 'Cadd9', 'Caug', 'Cdim', 'CmM7', 'Cm7', 'Cm7b5', 'Csus4', 'CM7'],
-        'key_c#': ['C#', 'Cm#', 'Cdim#'],
-        'key_d': ['D', 'Dm', 'Ddim'],
-        'key_d#': ['D#', 'Dm#', 'Ddim'],
-        'key_e': ['E', 'Em', 'Eb7'],
-        'key_f': ['F', 'Fm7', 'Fdim'],
-        'key_f#': ['F#', 'Fm7#', 'Fdim'],
-        'key_g': ['G', 'Gm'],
-        'key_g#': ['Gm', 'Gm#'],
-        'key_a': ['A', 'Am', 'Aaug'],
-        'key_a#': ['A#', 'Am#', 'Aaug'],
-        'key_b': ['B', 'Bm', 'Bdim']
+        'key_c#': ['C#', 'C#6', 'C#7', 'C#7sus4', 'C#add9', 'C#m', 'C#dim', 'C#mM7', 'C#m7', 'C#mb5', 'C#sus4', 'C#M7'],
+        'key_d': ['D', 'Dm', 'Ddim', 'D6', 'D7', 'D7sus4', 'Dadd9', 'Daug', 'DmM7', 'Dm7', 'Dm7b5', 'Dsus4', 'DM7'],
+        'key_d#': ['D#', 'Dm#', 'Ddim', 'D#6', 'D#7', 'D#7sus4', 'D#add9', 'D#aug', 'D#m7', 'D#m7b5', 'D#sus4', 'D#M7'],
+        'key_e': ['E', 'Em', 'Eb7', 'Edim', 'E6', 'E7', 'E7sus4', 'Eadd9', 'EmM7', 'Em7', 'Em7b5', 'Esus4', 'EM7'],
+        'key_f': ['F', 'Fm7', 'Fdim', 'F6', 'F7', 'F7sus4', 'Fadd9', 'Fdim', 'FmM7', 'Fm7', 'Fm7b5', 'Fsus4', 'FM7'],
+        'key_f#': ['F#', 'F#m7', 'F#dim', 'F#6', 'F#7', 'F#7sus4', 'F#add9', 'F#aug', 'F#dim', 'F#mM7', 'F#m7', 'F#m7b5', 'F#sus4', 'F#M7'],
+        'key_g': ['G', 'Gm', 'Gdim', 'G7', 'G6', 'G7sus4', 'Gadd9', 'Gaug', 'GmM7', 'Gm7', 'Gm7b5', 'Gsus4', 'GM7'],
+        'key_g#': ['Gm', 'Gm#', 'G#dim', 'G#7', 'G#6', 'G#7sus4', 'G#add9', 'G#aug', 'G#mM7', 'G#m7', 'G#m7b5', 'G#sus4', 'G#M7'],
+        'key_a': ['A', 'Am', 'Aaug', 'Adim', 'A7', 'A6', 'A7sus4', 'Aadd9', 'Aaug', 'AmM7', 'Am7b5', 'Asus4', 'AM7'],
+        'key_a#': ['A#', 'A#m', 'A#aug', 'A#dim', 'A7', 'A6', 'A7sus4', 'Aadd9', 'Asug', 'AmM7', 'Am7', 'Am7b5', 'Asus4', 'AM7'],
+        'key_b': ['B', 'Bm', 'Bdim', 'Baug', 'B6', 'B7', 'B7sus4', 'Badd9', 'Baug', 'BmM7', 'Bm7', 'Bm7b5', 'Bsus4', 'BM7']
       };
       this.cords = groupCords[this.selected];
     }
@@ -37863,95 +37890,159 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", { on: { click: _vm.moveToDown } }, [
-    _c(
-      "div",
-      { staticClass: "container" },
-      [
-        _c("transition", [_c("button", [_vm._v("ストップ")])]),
-        _vm._v(" "),
-        _vm._m(0),
-        _vm._v(" "),
-        _vm._m(1),
-        _vm._v(" "),
-        _c(
-          "div",
-          {
-            staticStyle: {
-              background: "linear-gradient(0deg, lightgreen, red)"
+    _c("div", { staticClass: "container" }, [
+      _c(
+        "div",
+        {
+          on: {
+            click: function($event) {
+              return _vm.event.preventmoveToDown()
             }
-          },
-          [
-            _vm._v("ちゃんとスクロールされているのか\n                "),
-            _c(
-              "button",
-              { attrs: { type: "button" }, on: { click: _vm.moveToDown } },
-              [_vm._v("下へ")]
-            ),
+          }
+        },
+        [
+          _c(
+            "button",
+            {
+              on: {
+                click: function($event) {
+                  return _vm.event.preventDefault()
+                }
+              }
+            },
+            [_vm._v("ストップ")]
+          ),
+          _vm._v(" "),
+          _vm._m(0),
+          _vm._v(" "),
+          _vm._m(1),
+          _vm._v(" "),
+          _c(
+            "div",
+            {
+              staticStyle: {
+                background: "linear-gradient(0deg, lightgreen, red)"
+              }
+            },
+            [
+              _vm._v("ちゃんとスクロールされているのか\n                "),
+              _c(
+                "button",
+                { attrs: { type: "button" }, on: { click: _vm.moveToDown } },
+                [_vm._v("下へ")]
+              ),
+              _vm._v(" "),
+              _c("br"),
+              _c("br"),
+              _c("br"),
+              _c("br"),
+              _c("br"),
+              _c("br"),
+              _c("br"),
+              _vm._v(" "),
+              _c("br"),
+              _c("br"),
+              _c("br"),
+              _c("br"),
+              _c("br"),
+              _c("br"),
+              _c("br"),
+              _c("br"),
+              _vm._v(" "),
+              _c(
+                "button",
+                { attrs: { type: "button" }, on: { click: _vm.onClick } },
+                [_vm._v("ストップ")]
+              ),
+              _vm._v(" "),
+              _c("br"),
+              _c("br"),
+              _c("br"),
+              _c("br"),
+              _c("br"),
+              _c("br"),
+              _c("br"),
+              _c("br"),
+              _vm._v(" "),
+              _c("br"),
+              _c("br"),
+              _c("br"),
+              _c("br"),
+              _c("br"),
+              _c("br"),
+              _c("br"),
+              _c("br"),
+              _vm._v(" "),
+              _c("br"),
+              _c("br"),
+              _c("br"),
+              _c("br"),
+              _c("br"),
+              _c("br"),
+              _c("br"),
+              _c("br"),
+              _vm._v(" "),
+              _c("br"),
+              _c("br"),
+              _c("br"),
+              _c("br"),
+              _c("br"),
+              _c("br"),
+              _c("br"),
+              _c("br")
+            ]
+          ),
+          _vm._v(" "),
+          _c("div", [
+            _c("input", {
+              directives: [
+                {
+                  name: "model",
+                  rawName: "v-model",
+                  value: _vm.price,
+                  expression: "price"
+                }
+              ],
+              attrs: { type: "number" },
+              domProps: { value: _vm.price },
+              on: {
+                input: function($event) {
+                  if ($event.target.composing) {
+                    return
+                  }
+                  _vm.price = $event.target.value
+                }
+              }
+            }),
+            _vm._v("円＊\n                "),
+            _c("input", {
+              directives: [
+                {
+                  name: "model",
+                  rawName: "v-model",
+                  value: _vm.number,
+                  expression: "number"
+                }
+              ],
+              attrs: { type: "number" },
+              domProps: { value: _vm.number },
+              on: {
+                input: function($event) {
+                  if ($event.target.composing) {
+                    return
+                  }
+                  _vm.number = $event.target.value
+                }
+              }
+            }),
+            _vm._v("個\n                "),
+            _c("p", [_vm._v("合計" + _vm._s(_vm.sum) + "円")]),
             _vm._v(" "),
-            _c("br"),
-            _c("br"),
-            _c("br"),
-            _c("br"),
-            _c("br"),
-            _c("br"),
-            _c("br"),
-            _c("br"),
-            _vm._v(" "),
-            _c("br"),
-            _c("br"),
-            _c("br"),
-            _c("br"),
-            _c("br"),
-            _c("br"),
-            _c("br"),
-            _c("br"),
-            _vm._v(" "),
-            _c(
-              "button",
-              { attrs: { type: "button" }, on: { click: _vm.onClick } },
-              [_vm._v("ストップ")]
-            ),
-            _vm._v(" "),
-            _c("br"),
-            _c("br"),
-            _c("br"),
-            _c("br"),
-            _c("br"),
-            _c("br"),
-            _c("br"),
-            _c("br"),
-            _vm._v(" "),
-            _c("br"),
-            _c("br"),
-            _c("br"),
-            _c("br"),
-            _c("br"),
-            _c("br"),
-            _c("br"),
-            _c("br"),
-            _vm._v(" "),
-            _c("br"),
-            _c("br"),
-            _c("br"),
-            _c("br"),
-            _c("br"),
-            _c("br"),
-            _c("br"),
-            _c("br"),
-            _vm._v(" "),
-            _c("br"),
-            _c("br"),
-            _c("br"),
-            _c("br"),
-            _c("br"),
-            _c("br"),
-            _c("br"),
-            _c("br")
-          ]
-        )
-      ],
-      1
-    )
+            _c("p", [_vm._v("税込" + _vm._s(_vm.taxsum))])
+          ])
+        ]
+      )
+    ])
   ])
 }
 var staticRenderFns = [
@@ -37966,33 +38057,35 @@ var staticRenderFns = [
         _vm._v(" "),
         _c("option", { attrs: { value: "key_6" } }, [_vm._v("6")]),
         _vm._v(" "),
-        _c("option", { attrs: { value: "7" } }, [_vm._v("7")]),
+        _c("option", { attrs: { value: "key_7" } }, [_vm._v("7")]),
         _vm._v(" "),
-        _c("option", { attrs: { value: "8" } }, [_vm._v("8")]),
+        _c("option", { attrs: { value: "key_8" } }, [_vm._v("8")]),
         _vm._v(" "),
-        _c("option", { attrs: { value: "9" } }, [_vm._v("9")]),
+        _c("option", { attrs: { value: "key_9" } }, [_vm._v("9")]),
         _vm._v(" "),
-        _c("option", { attrs: { value: "10", selected: "" } }, [_vm._v("10")]),
+        _c("option", { attrs: { value: "key_10", selected: "" } }, [
+          _vm._v("10")
+        ]),
         _vm._v(" "),
-        _c("option", { attrs: { value: "11" } }, [_vm._v("11")]),
+        _c("option", { attrs: { value: "key_11" } }, [_vm._v("11")]),
         _vm._v(" "),
-        _c("option", { attrs: { value: "12" } }, [_vm._v("12")]),
+        _c("option", { attrs: { value: "key_12" } }, [_vm._v("12")]),
         _vm._v(" "),
-        _c("option", { attrs: { value: "13" } }, [_vm._v("13")]),
+        _c("option", { attrs: { value: "key_13" } }, [_vm._v("13")]),
         _vm._v(" "),
-        _c("option", { attrs: { value: "14" } }, [_vm._v("14")]),
+        _c("option", { attrs: { value: "key_14" } }, [_vm._v("14")]),
         _vm._v(" "),
-        _c("option", { attrs: { value: "15" } }, [_vm._v("15")]),
+        _c("option", { attrs: { value: "key_15" } }, [_vm._v("15")]),
         _vm._v(" "),
-        _c("option", { attrs: { value: "16" } }, [_vm._v("16")]),
+        _c("option", { attrs: { value: "key_16" } }, [_vm._v("16")]),
         _vm._v(" "),
-        _c("option", { attrs: { value: "17" } }, [_vm._v("17")]),
+        _c("option", { attrs: { value: "key_17" } }, [_vm._v("17")]),
         _vm._v(" "),
-        _c("option", { attrs: { value: "18" } }, [_vm._v("18")]),
+        _c("option", { attrs: { value: "key_18" } }, [_vm._v("18")]),
         _vm._v(" "),
-        _c("option", { attrs: { value: "19" } }, [_vm._v("19")]),
+        _c("option", { attrs: { value: "key_19" } }, [_vm._v("19")]),
         _vm._v(" "),
-        _c("option", { attrs: { value: "20" } }, [_vm._v("20")])
+        _c("option", { attrs: { value: "key_20" } }, [_vm._v("20")])
       ])
     ])
   },
@@ -38133,6 +38226,27 @@ var render = function() {
             },
             [_vm._v("\n                " + _vm._s(fixed) + "\n            ")]
           )
+        }),
+        _vm._v(" "),
+        _vm._l(_vm.CordImages, function(CordImage) {
+          return _c(
+            "button",
+            {
+              key: CordImage,
+              staticClass: "cord-button",
+              attrs: { type: "button" },
+              on: {
+                click: function($event) {
+                  return _vm.onClick(CordImage)
+                }
+              }
+            },
+            [
+              _vm._v(
+                "\n                " + _vm._s(CordImage) + "\n            "
+              )
+            ]
+          )
         })
       ],
       2
@@ -38161,12 +38275,33 @@ var render = function() {
       })
     ]),
     _vm._v(" "),
-    _c("div", [_vm._v("\n        プレビュー\n    ")]),
+    _c("div", [_vm._v("\n            プレビュー\n        ")]),
     _vm._v(" "),
     _c("div", { staticClass: "row p-5 m-5" }, [
-      _c("div", { attrs: { id: "view" } }, [
-        _vm._v("\n            " + _vm._s(_vm.MyText) + "\n\n            ")
-      ])
+      _c(
+        "div",
+        { attrs: { id: "view" } },
+        [
+          _vm._v(
+            "\n                " + _vm._s(_vm.MyText) + "\n\n                "
+          ),
+          _vm._v(" "),
+          _c("img", { ref: "MyText" }),
+          _vm._v(" "),
+          _vm._l(_vm.CordImages, function(CordImage) {
+            return _c("img", { key: CordImage, attrs: { src: CordImage } })
+          })
+        ],
+        2
+      )
+    ]),
+    _vm._v(" "),
+    _c("button", { attrs: { name: "admin.vue" } }, [_vm._v("保存する")]),
+    _vm._v(" "),
+    _c("div", [
+      _c("p", [_vm._v(_vm._s(_vm.count))]),
+      _vm._v(" "),
+      _c("button", { on: { click: _vm.oneClick } }, [_vm._v("クリック")])
     ])
   ])
 }

@@ -13,13 +13,15 @@
 Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function() {
     Route::get('create', 'Admin\GuitarController@add');
     Route::get('home', 'Admin\GuitarController@home');
-    Route::post('create', 'Admin\GuitarController@create');
+    // ルートの設定
+    Route::post('create', 'Admin\GuitarController@create')->name('admin.vue');
     Route::get('mypage', 'Admin\GuitarController@mypage');
     Route::get('playing', 'Admin\GuitarController@playing')->name('admin.playing');
 
     Route::get('delete', 'Admin\GuitarController@delete');
     Route::get('mypageedit', 'Admin\GuitarController@mypageedit');
 });
+
 
 
 // コードは誰でも見せられる
