@@ -41,15 +41,7 @@
                 >
                     {{ fixed }}
                 </button>
-                <button
-                    v-for="CordImage of CordImages"  
-                    :key="CordImage"
-                    class="cord-button"
-                    type="button"
-                    @click="onClick( CordImage )"
-                >
-                    {{ CordImage }}
-                </button>
+                
             </div>
             <div class="row my-5">
                 <textarea  cols="150" rows="6" v-model="MyText">
@@ -61,15 +53,11 @@
             <div class="row p-5 m-5">
 
                 <!-- textarea記入した文字やコードを表示させる -->
+                
                 <div id="view">
                     {{ MyText }}
 
                     <!-- <img v-bind:src=code_img_path /> -->
-                    <img ref="MyText" >
-                    <img 
-                        v-for="CordImage of CordImages"
-                        :key="CordImage"
-                        :src="CordImage" >
                     <!-- データバインディングを -->
                 </div>
             </div>
@@ -106,11 +94,10 @@
                 this.count++;
             },
             onClick($cord) {
-                this.MyText = `${this.MyText}  [${$cord}] `;
+                this.MyText = `${this.MyText} [${$cord}]`;
 
                 this.MyText = `${this.MyText}` + "  " + `[${fixed}]`;
 
-                this.MyText = `${this.CordImages}`;
 
                 // this.MyText = `${this.MyText}` + "  " + `[${image}]`;
                 

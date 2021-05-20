@@ -1988,15 +1988,23 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+function iine() {
+  alert("いいね");
+}
+
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     // ここ入らないのかも
     return {
-      moveToDown: flase
+      isClick: false
     };
   },
   methods: {
     // $fixedは使わない？
+    oneClick: function oneClick() {
+      this.isClick = true;
+      iine();
+    },
     OnClick: function OnClick() {
       this.moveToDown = !this.moveToDown;
     },
@@ -2009,7 +2017,9 @@ __webpack_require__.r(__webpack_exports__);
     moveToDown: function moveToDown() {
       Down();
     },
-    Stop: function Stop() {}
+    Stop: function Stop() {
+      MoveStop();
+    }
   }
 });
 
@@ -2022,27 +2032,16 @@ function Down() {
   setInterval(function () {
     var scroll = scrollTop + speed;
     window.scrollBy(0, scroll);
-  }, interval); // const duration=100; // 移動速度（1秒で終了）
-  // const interval=25; // 0.025秒ごとに移動
-  // const step=window.scrollY/Math.ceil(duration/interval); // 1回に移動する距離
-  // const timer=setInterval(() => {
-  //   window.scrollBy(0, step); // スクロール位置を移動
-  //   if(window.scrollY<= 0) {
-  //     clearInterval(timer);
-  //   }
-  // }, interval);
+  }, interval);
 }
 
 function MoveStop() {
-  var speed = 3; //時間あたりに移動するpx量です。デフォルトでは1pxにしていますが、自由に変えてください
+  var speed = 0; //時間あたりに移動するpx量です。デフォルトでは1pxにしていますが、自由に変えてください
 
   var interval = 20; //移動する間隔です。デフォルトでは0.1秒おきにしていますが、自由に変えてください
 
   var scrollTop = document.body.scrollTop;
-  setInterval(function () {
-    var scroll = scrollTop + speed;
-    window.scrollBy(0, scroll);
-  }, interval);
+  setInterval(function () {}, interval);
 }
 
 /***/ }),
@@ -2056,18 +2055,6 @@ function MoveStop() {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 //
 //
 //
@@ -2160,9 +2147,8 @@ __webpack_require__.r(__webpack_exports__);
       this.count++;
     },
     onClick: function onClick($cord) {
-      this.MyText = "".concat(this.MyText, "  [").concat($cord, "] ");
-      this.MyText = "".concat(this.MyText) + "  " + "[".concat(fixed, "]");
-      this.MyText = "".concat(this.CordImages); // this.MyText = `${this.MyText}` + "  " + `[${image}]`;
+      this.MyText = "".concat(this.MyText, " [").concat($cord, "]");
+      this.MyText = "".concat(this.MyText) + "  " + "[".concat(fixed, "]"); // this.MyText = `${this.MyText}` + "  " + `[${image}]`;
       // let groupImages = {
       //   "C": '/img/C.png', 
       //   "C": '/img/Cm.png',
@@ -37889,158 +37875,163 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", { on: { click: _vm.moveToDown } }, [
-    _c("div", { staticClass: "container" }, [
-      _c(
-        "div",
-        {
-          on: {
-            click: function($event) {
-              return _vm.event.preventmoveToDown()
+  return _c("div", { staticClass: "container" }, [
+    _c("button", { on: { click: _vm.Stop } }, [_vm._v("ストップ")]),
+    _vm._v(" "),
+    _c(
+      "button",
+      {
+        on: {
+          click: function($event) {
+            if (
+              !$event.type.indexOf("key") &&
+              _vm._k($event.keyCode, "enter", 13, $event.key, "Enter")
+            ) {
+              return null
             }
+            return _vm.moveToDown($event)
           }
+        }
+      },
+      [_vm._v("動く")]
+    ),
+    _vm._v(" "),
+    _c(
+      "button",
+      {
+        on: {
+          click: function($event) {
+            $event.stopPropagation()
+            return _vm.moveToDown($event)
+          }
+        }
+      },
+      [_vm._v("止まる")]
+    ),
+    _vm._v(" "),
+    _vm._m(0),
+    _vm._v(" "),
+    _vm._m(1),
+    _vm._v(" "),
+    _c(
+      "div",
+      { staticStyle: { background: "linear-gradient(0deg, lightgreen, red)" } },
+      [
+        _vm._v("ちゃんとスクロールされているのか\n                "),
+        _c(
+          "button",
+          { attrs: { type: "button" }, on: { click: _vm.moveToDown } },
+          [_vm._v("下へ")]
+        ),
+        _vm._v(" "),
+        _c("br"),
+        _c("br"),
+        _c("br"),
+        _c("br"),
+        _c("br"),
+        _c("br"),
+        _c("br"),
+        _vm._v(" "),
+        _c("br"),
+        _c("br"),
+        _c("br"),
+        _c("br"),
+        _c("br"),
+        _c("br"),
+        _c("br"),
+        _c("br"),
+        _vm._v(" "),
+        _c(
+          "button",
+          { attrs: { type: "button" }, on: { click: _vm.onClick } },
+          [_vm._v("ストップ")]
+        ),
+        _vm._v(" "),
+        _c("br"),
+        _c("br"),
+        _c("br"),
+        _c("br"),
+        _c("br"),
+        _c("br"),
+        _c("br"),
+        _c("br"),
+        _vm._v(" "),
+        _c("br"),
+        _c("br"),
+        _c("br"),
+        _c("br"),
+        _c("br"),
+        _c("br"),
+        _c("br"),
+        _c("br"),
+        _vm._v(" "),
+        _c("br"),
+        _c("br"),
+        _c("br"),
+        _c("br"),
+        _c("br"),
+        _c("br"),
+        _c("br"),
+        _c("br")
+      ]
+    ),
+    _vm._v(" "),
+    _c("div", [
+      _c("input", {
+        directives: [
+          {
+            name: "model",
+            rawName: "v-model",
+            value: _vm.price,
+            expression: "price"
+          }
+        ],
+        attrs: { type: "number" },
+        domProps: { value: _vm.price },
+        on: {
+          input: function($event) {
+            if ($event.target.composing) {
+              return
+            }
+            _vm.price = $event.target.value
+          }
+        }
+      }),
+      _vm._v("円＊\n                "),
+      _c("input", {
+        directives: [
+          {
+            name: "model",
+            rawName: "v-model",
+            value: _vm.number,
+            expression: "number"
+          }
+        ],
+        attrs: { type: "number" },
+        domProps: { value: _vm.number },
+        on: {
+          input: function($event) {
+            if ($event.target.composing) {
+              return
+            }
+            _vm.number = $event.target.value
+          }
+        }
+      }),
+      _vm._v("個\n                "),
+      _c("p", [_vm._v("合計" + _vm._s(_vm.sum) + "円")]),
+      _vm._v(" "),
+      _c("p", [_vm._v("税込" + _vm._s(_vm.taxsum))])
+    ]),
+    _vm._v(" "),
+    _c("div", { staticClass: "row" }, [
+      _c(
+        "button",
+        {
+          attrs: { value: "いいね", disabled: _vm.isClick },
+          on: { click: _vm.oneClick }
         },
-        [
-          _c(
-            "button",
-            {
-              on: {
-                click: function($event) {
-                  return _vm.event.preventDefault()
-                }
-              }
-            },
-            [_vm._v("ストップ")]
-          ),
-          _vm._v(" "),
-          _vm._m(0),
-          _vm._v(" "),
-          _vm._m(1),
-          _vm._v(" "),
-          _c(
-            "div",
-            {
-              staticStyle: {
-                background: "linear-gradient(0deg, lightgreen, red)"
-              }
-            },
-            [
-              _vm._v("ちゃんとスクロールされているのか\n                "),
-              _c(
-                "button",
-                { attrs: { type: "button" }, on: { click: _vm.moveToDown } },
-                [_vm._v("下へ")]
-              ),
-              _vm._v(" "),
-              _c("br"),
-              _c("br"),
-              _c("br"),
-              _c("br"),
-              _c("br"),
-              _c("br"),
-              _c("br"),
-              _vm._v(" "),
-              _c("br"),
-              _c("br"),
-              _c("br"),
-              _c("br"),
-              _c("br"),
-              _c("br"),
-              _c("br"),
-              _c("br"),
-              _vm._v(" "),
-              _c(
-                "button",
-                { attrs: { type: "button" }, on: { click: _vm.onClick } },
-                [_vm._v("ストップ")]
-              ),
-              _vm._v(" "),
-              _c("br"),
-              _c("br"),
-              _c("br"),
-              _c("br"),
-              _c("br"),
-              _c("br"),
-              _c("br"),
-              _c("br"),
-              _vm._v(" "),
-              _c("br"),
-              _c("br"),
-              _c("br"),
-              _c("br"),
-              _c("br"),
-              _c("br"),
-              _c("br"),
-              _c("br"),
-              _vm._v(" "),
-              _c("br"),
-              _c("br"),
-              _c("br"),
-              _c("br"),
-              _c("br"),
-              _c("br"),
-              _c("br"),
-              _c("br"),
-              _vm._v(" "),
-              _c("br"),
-              _c("br"),
-              _c("br"),
-              _c("br"),
-              _c("br"),
-              _c("br"),
-              _c("br"),
-              _c("br")
-            ]
-          ),
-          _vm._v(" "),
-          _c("div", [
-            _c("input", {
-              directives: [
-                {
-                  name: "model",
-                  rawName: "v-model",
-                  value: _vm.price,
-                  expression: "price"
-                }
-              ],
-              attrs: { type: "number" },
-              domProps: { value: _vm.price },
-              on: {
-                input: function($event) {
-                  if ($event.target.composing) {
-                    return
-                  }
-                  _vm.price = $event.target.value
-                }
-              }
-            }),
-            _vm._v("円＊\n                "),
-            _c("input", {
-              directives: [
-                {
-                  name: "model",
-                  rawName: "v-model",
-                  value: _vm.number,
-                  expression: "number"
-                }
-              ],
-              attrs: { type: "number" },
-              domProps: { value: _vm.number },
-              on: {
-                input: function($event) {
-                  if ($event.target.composing) {
-                    return
-                  }
-                  _vm.number = $event.target.value
-                }
-              }
-            }),
-            _vm._v("個\n                "),
-            _c("p", [_vm._v("合計" + _vm._s(_vm.sum) + "円")]),
-            _vm._v(" "),
-            _c("p", [_vm._v("税込" + _vm._s(_vm.taxsum))])
-          ])
-        ]
+        [_vm._v("クリック")]
       )
     ])
   ])
@@ -38226,27 +38217,6 @@ var render = function() {
             },
             [_vm._v("\n                " + _vm._s(fixed) + "\n            ")]
           )
-        }),
-        _vm._v(" "),
-        _vm._l(_vm.CordImages, function(CordImage) {
-          return _c(
-            "button",
-            {
-              key: CordImage,
-              staticClass: "cord-button",
-              attrs: { type: "button" },
-              on: {
-                click: function($event) {
-                  return _vm.onClick(CordImage)
-                }
-              }
-            },
-            [
-              _vm._v(
-                "\n                " + _vm._s(CordImage) + "\n            "
-              )
-            ]
-          )
         })
       ],
       2
@@ -38278,22 +38248,11 @@ var render = function() {
     _c("div", [_vm._v("\n            プレビュー\n        ")]),
     _vm._v(" "),
     _c("div", { staticClass: "row p-5 m-5" }, [
-      _c(
-        "div",
-        { attrs: { id: "view" } },
-        [
-          _vm._v(
-            "\n                " + _vm._s(_vm.MyText) + "\n\n                "
-          ),
-          _vm._v(" "),
-          _c("img", { ref: "MyText" }),
-          _vm._v(" "),
-          _vm._l(_vm.CordImages, function(CordImage) {
-            return _c("img", { key: CordImage, attrs: { src: CordImage } })
-          })
-        ],
-        2
-      )
+      _c("div", { attrs: { id: "view" } }, [
+        _vm._v(
+          "\n                " + _vm._s(_vm.MyText) + "\n\n                "
+        )
+      ])
     ]),
     _vm._v(" "),
     _c("button", { attrs: { name: "admin.vue" } }, [_vm._v("保存する")]),

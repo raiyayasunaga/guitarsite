@@ -1,8 +1,8 @@
 <template>
-    <div @click="moveToDown">
-        <div class="container">
-            <div @click="event.preventmoveToDown()">
-                    <button @click="event.preventDefault()">ストップ</button>
+    <div class="container">
+            <button @click="Stop">ストップ</button>
+            <button @click.enter="moveToDown">動く</button>
+            <button @click.stop="moveToDown">止まる</button>
                 <div class="row mt-3">スクロール速度
                     <select class="form-control mb-3">
                         <option value="key_5">5</option>
@@ -37,7 +37,6 @@
                     <br><br><br><br><br><br><br><br>
                     <br><br><br><br><br><br><br><br>
                     <br><br><br><br><br><br><br><br>
-                    <br><br><br><br><br><br><br><br>
                 </div>
                 <div>
                     <input v-model="price" type="number">円＊
@@ -45,23 +44,31 @@
                     <p>合計{{sum}}円</p>
                     <p>税込{{taxsum}}</p>
                 </div>
+                 <div class="row">
+                <button value="いいね" v-bind:disabled="isClick" @click="oneClick">クリック</button>
             </div>
-        </div>
-    </div>
+            </div>
 </template>
 
 <script>
+
+function iine() {
+            alert("いいね");
+        }
     export default {
 
         data: () => {
             // ここ入らないのかも
             return {
-              moveToDown: flase,
+                isClick: false,
             }
         },
-        
         methods: {
             // $fixedは使わない？
+            oneClick: function() {
+                this.isClick = true;
+                iine();
+            },
             OnClick() {
                 this.moveToDown = !this.moveToDown;
             },
@@ -75,44 +82,27 @@
                 Down();
             },
             Stop() {
-                
+                MoveStop();
             }
         },
         
         
     }
       function Down() {
-        const speed = 1; //時間あたりに移動するpx量です。デフォルトでは1pxにしていますが、自由に変えてください
-        const interval = 10; //移動する間隔です。デフォルトでは0.1秒おきにしていますが、自由に変えてください
-        const scrollTop = document.body.scrollTop;
+        let speed = 1; //時間あたりに移動するpx量です。デフォルトでは1pxにしていますが、自由に変えてください
+        let interval = 10; //移動する間隔です。デフォルトでは0.1秒おきにしていますが、自由に変えてください
+        let scrollTop = document.body.scrollTop;
         setInterval(function() {
-            const scroll = scrollTop + speed;
+            let scroll = scrollTop + speed;
             window.scrollBy(0, scroll)
         },interval);
-        // const duration=100; // 移動速度（1秒で終了）
-        // const interval=25; // 0.025秒ごとに移動
-        // const step=window.scrollY/Math.ceil(duration/interval); // 1回に移動する距離
-        // const timer=setInterval(() => {
-
-        //   window.scrollBy(0, step); // スクロール位置を移動
-
-        //   if(window.scrollY<= 0) {
-
-        //     clearInterval(timer);
-
-        //   }
-
-        // }, interval);
-        
       }
 
       function MoveStop() {
-        const speed = 3; //時間あたりに移動するpx量です。デフォルトでは1pxにしていますが、自由に変えてください
-        const interval = 20; //移動する間隔です。デフォルトでは0.1秒おきにしていますが、自由に変えてください
-        const scrollTop = document.body.scrollTop;
+        let speed = 0; //時間あたりに移動するpx量です。デフォルトでは1pxにしていますが、自由に変えてください
+        let interval = 20; //移動する間隔です。デフォルトでは0.1秒おきにしていますが、自由に変えてください
+        let scrollTop = document.body.scrollTop;
         setInterval(function() {
-            const scroll = scrollTop + speed;
-            window.scrollBy(0, scroll)
         },interval);
       }
 

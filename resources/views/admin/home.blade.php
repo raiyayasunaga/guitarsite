@@ -40,7 +40,8 @@
                             @foreach($posts as $music)
                                 <tr>
                                     <th>{{ $music->id }}</th>
-                                    <td>{{ str_limit($music->title, 100) }}</td>
+                                    <!-- マイページからパクってきた -->
+                                    <td><a href ="{{ route('admin.playing', ['id' => $music->id]) }}"> {{ str_limit($music->title, 100) }}</a></td>
                                     <td>{{ str_limit($music->category, 150) }}</td>
                                     <!-- user_idからユーザーのnameカラムが欲しい -->
                                     <td> {{ str_limit($music->user_id, 100) }}</td>
