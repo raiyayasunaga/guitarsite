@@ -1,8 +1,9 @@
 <template>
     <div class="container">
-            <button @click="Stop">ストップ</button>
-            <button @click.enter="moveToDown">動く</button>
-            <button @click.stop="moveToDown">止まる</button>
+            <!-- <button @click="Stop">ストップ</button> -->
+            <!-- <button @click.enter="moveToDown">動く</button> -->
+            <!-- 運搬止まらずむしろ早くなっている -->
+            <!-- <button @click="moveToDown=!moveToDown">止まる</button> -->
                 <div class="row mt-3">スクロール速度
                     <select class="form-control mb-3">
                         <option value="key_5">5</option>
@@ -23,60 +24,42 @@
                         <option value="key_20">20</option>
                     </select>
                 </div>
-
+        <div @click='moveToDown=!moveToDown'>
+            <div v-bind:function='{active:moveToDown}'>
                 <div class="row">
-                    <h2>ここで再生</h2>
-                    <input type="button">
-                    <p>なんちゃん</p>
+                    <h2>この下で歌詞やコードを表示する</h2>
                 </div>
-                <div style="background: linear-gradient(0deg, lightgreen, red);">ちゃんとスクロールされているのか
-                    <button type="button" @click="moveToDown">下へ</button>
-                    <br><br><br><br><br><br><br>
-                    <br><br><br><br><br><br><br><br>
-                    <button type="button" @click="onClick">ストップ</button>
-                    <br><br><br><br><br><br><br><br>
-                    <br><br><br><br><br><br><br><br>
-                    <br><br><br><br><br><br><br><br>
+                <div style="background: linear-gradient(0deg, lightgreen, red);">
                 </div>
-                <div>
-                    <input v-model="price" type="number">円＊
-                    <input v-model="number" type="number">個
-                    <p>合計{{sum}}円</p>
-                    <p>税込{{taxsum}}</p>
-                </div>
-                 <div class="row">
-                <button value="いいね" v-bind:disabled="isClick" @click="oneClick">クリック</button>
             </div>
-            </div>
+        </div>
+    </div>
 </template>
 
 <script>
 
-function iine() {
-            alert("いいね");
-        }
     export default {
 
         data: () => {
             // ここ入らないのかも
             return {
-                isClick: false,
+                moveToDown: false,
             }
         },
         methods: {
             // $fixedは使わない？
             oneClick: function() {
-                this.isClick = true;
-                iine();
+                
             },
             OnClick() {
                 this.moveToDown = !this.moveToDown;
             },
             onchange() {
                 let groupspeed = {
-                    'key_5': ['C#', 'Cm#', 'Cdim#'],
-                    'key_6': []
+                    'key_5': speed= 0.5,
+                    'key_6': 1,
                 }
+                this.groupspeed = this.groupspeed;
             },
             moveToDown() {
                 Down();
@@ -99,10 +82,12 @@ function iine() {
       }
 
       function MoveStop() {
-        let speed = 0; //時間あたりに移動するpx量です。デフォルトでは1pxにしていますが、自由に変えてください
+        let speed = 1; //時間あたりに移動するpx量です。デフォルトでは1pxにしていますが、自由に変えてください
         let interval = 20; //移動する間隔です。デフォルトでは0.1秒おきにしていますが、自由に変えてください
         let scrollTop = document.body.scrollTop;
         setInterval(function() {
+            let scroll = scrollTop - speed;
+            window.scrollBy(0, scroll)
         },interval);
       }
 

@@ -54,6 +54,24 @@
                             @endforeach
                         </tbody>
                     </table>
+
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th width="10%">ID</th>
+                                <th width="20%">曲の歌詞だけ</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach($cords as $cord)
+                                <tr>
+                                    <th>{{ $cord->id }}</th>
+                                    <td>{{ str_limit($cord->lyrics) }}</td>
+                                    <!-- user_idからユーザーのnameカラムが欲しい -->
+                                </tr>
+                            @endforeach
+                        </tbody>
+                    </table>
                 </div>
             </div>
         </div>

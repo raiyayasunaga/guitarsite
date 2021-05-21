@@ -1,7 +1,6 @@
 <template>
     <div class="container">
         <!-- vueでも同じように使えるのか？ -->
-
             <div class="row my-3">
                 <div class="mt-3">コード入力</div>
                 <select class="form-control mb-3" @change="onchange()" v-model="selected">
@@ -44,7 +43,7 @@
                 
             </div>
             <div class="row my-5">
-                <textarea  cols="150" rows="6" v-model="MyText">
+                <textarea  cols="150" rows="6" v-model="MyText" name="lyrics">
                 </textarea>
             </div>
             <div>
@@ -56,16 +55,16 @@
                 
                 <div id="view">
                     {{ MyText }}
-
-                    <!-- <img v-bind:src=code_img_path /> -->
+                    {{ Images }}
+                    <img 
+                        v-for="CordImage of CordImages"
+                        :key="CordImage"
+                        :v-if="CorImage"
+                        v-bind:src="CordImage">
                     <!-- データバインディングを -->
                 </div>
             </div>
-        <button name="admin.vue" >保存する</button>
-        <div>
-            <p>{{ count }}</p>
-            <button @click="oneClick">クリック</button>
-        </div>
+            <input type="submit" class="btn btn-primary" value="新規登録">
         
     </div>
 </template>
@@ -75,7 +74,6 @@
 <script>
 
     export default {
-// 何処でもできる
 
         data: () => {
             // ここ入らないのかも
@@ -84,7 +82,7 @@
                 fixeds: ['/', 'N.C'],
                 MyText: ' ',
                 selected: 'key_c',
-                CordImages: ['/img/C.png', '/img/Cm.png'],
+                CordImages: ['/img/C.png', '/img/Cm.png', '/img/C6.png', '/img/C7.png'],
             }
         },
         
@@ -99,15 +97,14 @@
                 this.MyText = `${this.MyText}` + "  " + `[${fixed}]`;
 
 
-                // this.MyText = `${this.MyText}` + "  " + `[${image}]`;
+                this.Images = '<img src="/img/C.png">';
                 
-                // let groupImages = {
-                //   "C": '/img/C.png', 
-                //   "C": '/img/Cm.png',
-                //   "Cdim": '/img/Cdim.png',
-                //   "C6": '/img/C7.png',
-                // };
-                // this.CordImages = groupImages;
+                let groupImages = { 
+                  "C": '/img/Cm.png',
+                  "Cdim": '/img/Cdim.png',
+                  "C6": '/img/C7.png',
+                };
+                this.CordImages = groupImages;
                 // idビューエレメントを出して、appendをイメージタグを追加していく
                 // 画像を配列にして上手くまとめて表示させる方法
             },

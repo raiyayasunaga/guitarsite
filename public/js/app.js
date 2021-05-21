@@ -1974,45 +1974,25 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-function iine() {
-  alert("いいね");
-}
-
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     // ここ入らないのかも
     return {
-      isClick: false
+      moveToDown: false
     };
   },
   methods: {
     // $fixedは使わない？
-    oneClick: function oneClick() {
-      this.isClick = true;
-      iine();
-    },
+    oneClick: function oneClick() {},
     OnClick: function OnClick() {
       this.moveToDown = !this.moveToDown;
     },
     onchange: function onchange() {
       var groupspeed = {
-        'key_5': ['C#', 'Cm#', 'Cdim#'],
-        'key_6': []
+        'key_5': speed = 0.5,
+        'key_6': 1
       };
+      this.groupspeed = this.groupspeed;
     },
     moveToDown: function moveToDown() {
       Down();
@@ -2036,12 +2016,15 @@ function Down() {
 }
 
 function MoveStop() {
-  var speed = 0; //時間あたりに移動するpx量です。デフォルトでは1pxにしていますが、自由に変えてください
+  var speed = 1; //時間あたりに移動するpx量です。デフォルトでは1pxにしていますが、自由に変えてください
 
   var interval = 20; //移動する間隔です。デフォルトでは0.1秒おきにしていますが、自由に変えてください
 
   var scrollTop = document.body.scrollTop;
-  setInterval(function () {}, interval);
+  setInterval(function () {
+    var scroll = scrollTop - speed;
+    window.scrollBy(0, scroll);
+  }, interval);
 }
 
 /***/ }),
@@ -2128,9 +2111,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
 /* harmony default export */ __webpack_exports__["default"] = ({
-  // 何処でもできる
   data: function data() {
     // ここ入らないのかも
     return {
@@ -2138,7 +2119,7 @@ __webpack_require__.r(__webpack_exports__);
       fixeds: ['/', 'N.C'],
       MyText: ' ',
       selected: 'key_c',
-      CordImages: ['/img/C.png', '/img/Cm.png']
+      CordImages: ['/img/C.png', '/img/Cm.png', '/img/C6.png', '/img/C7.png']
     };
   },
   methods: {
@@ -2148,15 +2129,14 @@ __webpack_require__.r(__webpack_exports__);
     },
     onClick: function onClick($cord) {
       this.MyText = "".concat(this.MyText, " [").concat($cord, "]");
-      this.MyText = "".concat(this.MyText) + "  " + "[".concat(fixed, "]"); // this.MyText = `${this.MyText}` + "  " + `[${image}]`;
-      // let groupImages = {
-      //   "C": '/img/C.png', 
-      //   "C": '/img/Cm.png',
-      //   "Cdim": '/img/Cdim.png',
-      //   "C6": '/img/C7.png',
-      // };
-      // this.CordImages = groupImages;
-      // idビューエレメントを出して、appendをイメージタグを追加していく
+      this.MyText = "".concat(this.MyText) + "  " + "[".concat(fixed, "]");
+      this.Images = '<img src="/img/C.png">';
+      var groupImages = {
+        "C": '/img/Cm.png',
+        "Cdim": '/img/Cdim.png',
+        "C6": '/img/C7.png'
+      };
+      this.CordImages = groupImages; // idビューエレメントを出して、appendをイメージタグを追加していく
       // 画像を配列にして上手くまとめて表示させる方法
     },
     onchange: function onchange() {
@@ -37876,164 +37856,29 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "container" }, [
-    _c("button", { on: { click: _vm.Stop } }, [_vm._v("ストップ")]),
-    _vm._v(" "),
-    _c(
-      "button",
-      {
-        on: {
-          click: function($event) {
-            if (
-              !$event.type.indexOf("key") &&
-              _vm._k($event.keyCode, "enter", 13, $event.key, "Enter")
-            ) {
-              return null
-            }
-            return _vm.moveToDown($event)
-          }
-        }
-      },
-      [_vm._v("動く")]
-    ),
-    _vm._v(" "),
-    _c(
-      "button",
-      {
-        on: {
-          click: function($event) {
-            $event.stopPropagation()
-            return _vm.moveToDown($event)
-          }
-        }
-      },
-      [_vm._v("止まる")]
-    ),
-    _vm._v(" "),
     _vm._m(0),
-    _vm._v(" "),
-    _vm._m(1),
     _vm._v(" "),
     _c(
       "div",
-      { staticStyle: { background: "linear-gradient(0deg, lightgreen, red)" } },
+      {
+        on: {
+          click: function($event) {
+            _vm.moveToDown = !_vm.moveToDown
+          }
+        }
+      },
       [
-        _vm._v("ちゃんとスクロールされているのか\n                "),
-        _c(
-          "button",
-          { attrs: { type: "button" }, on: { click: _vm.moveToDown } },
-          [_vm._v("下へ")]
-        ),
-        _vm._v(" "),
-        _c("br"),
-        _c("br"),
-        _c("br"),
-        _c("br"),
-        _c("br"),
-        _c("br"),
-        _c("br"),
-        _vm._v(" "),
-        _c("br"),
-        _c("br"),
-        _c("br"),
-        _c("br"),
-        _c("br"),
-        _c("br"),
-        _c("br"),
-        _c("br"),
-        _vm._v(" "),
-        _c(
-          "button",
-          { attrs: { type: "button" }, on: { click: _vm.onClick } },
-          [_vm._v("ストップ")]
-        ),
-        _vm._v(" "),
-        _c("br"),
-        _c("br"),
-        _c("br"),
-        _c("br"),
-        _c("br"),
-        _c("br"),
-        _c("br"),
-        _c("br"),
-        _vm._v(" "),
-        _c("br"),
-        _c("br"),
-        _c("br"),
-        _c("br"),
-        _c("br"),
-        _c("br"),
-        _c("br"),
-        _c("br"),
-        _vm._v(" "),
-        _c("br"),
-        _c("br"),
-        _c("br"),
-        _c("br"),
-        _c("br"),
-        _c("br"),
-        _c("br"),
-        _c("br")
+        _c("div", { attrs: { function: { active: _vm.moveToDown } } }, [
+          _vm._m(1),
+          _vm._v(" "),
+          _c("div", {
+            staticStyle: {
+              background: "linear-gradient(0deg, lightgreen, red)"
+            }
+          })
+        ])
       ]
-    ),
-    _vm._v(" "),
-    _c("div", [
-      _c("input", {
-        directives: [
-          {
-            name: "model",
-            rawName: "v-model",
-            value: _vm.price,
-            expression: "price"
-          }
-        ],
-        attrs: { type: "number" },
-        domProps: { value: _vm.price },
-        on: {
-          input: function($event) {
-            if ($event.target.composing) {
-              return
-            }
-            _vm.price = $event.target.value
-          }
-        }
-      }),
-      _vm._v("円＊\n                "),
-      _c("input", {
-        directives: [
-          {
-            name: "model",
-            rawName: "v-model",
-            value: _vm.number,
-            expression: "number"
-          }
-        ],
-        attrs: { type: "number" },
-        domProps: { value: _vm.number },
-        on: {
-          input: function($event) {
-            if ($event.target.composing) {
-              return
-            }
-            _vm.number = $event.target.value
-          }
-        }
-      }),
-      _vm._v("個\n                "),
-      _c("p", [_vm._v("合計" + _vm._s(_vm.sum) + "円")]),
-      _vm._v(" "),
-      _c("p", [_vm._v("税込" + _vm._s(_vm.taxsum))])
-    ]),
-    _vm._v(" "),
-    _c("div", { staticClass: "row" }, [
-      _c(
-        "button",
-        {
-          attrs: { value: "いいね", disabled: _vm.isClick },
-          on: { click: _vm.oneClick }
-        },
-        [_vm._v("クリック")]
-      )
-    ])
+    )
   ])
 }
 var staticRenderFns = [
@@ -38085,11 +37930,7 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "row" }, [
-      _c("h2", [_vm._v("ここで再生")]),
-      _vm._v(" "),
-      _c("input", { attrs: { type: "button" } }),
-      _vm._v(" "),
-      _c("p", [_vm._v("なんちゃん")])
+      _c("h2", [_vm._v("この下で歌詞やコードを表示する")])
     ])
   }
 ]
@@ -38232,7 +38073,7 @@ var render = function() {
             expression: "MyText"
           }
         ],
-        attrs: { cols: "150", rows: "6" },
+        attrs: { cols: "150", rows: "6", name: "lyrics" },
         domProps: { value: _vm.MyText },
         on: {
           input: function($event) {
@@ -38248,20 +38089,32 @@ var render = function() {
     _c("div", [_vm._v("\n            プレビュー\n        ")]),
     _vm._v(" "),
     _c("div", { staticClass: "row p-5 m-5" }, [
-      _c("div", { attrs: { id: "view" } }, [
-        _vm._v(
-          "\n                " + _vm._s(_vm.MyText) + "\n\n                "
-        )
-      ])
+      _c(
+        "div",
+        { attrs: { id: "view" } },
+        [
+          _vm._v(
+            "\n                " +
+              _vm._s(_vm.MyText) +
+              "\n                " +
+              _vm._s(_vm.Images) +
+              "\n                "
+          ),
+          _vm._l(_vm.CordImages, function(CordImage) {
+            return _c("img", {
+              key: CordImage,
+              attrs: { "v-if": _vm.CorImage, src: CordImage }
+            })
+          })
+        ],
+        2
+      )
     ]),
     _vm._v(" "),
-    _c("button", { attrs: { name: "admin.vue" } }, [_vm._v("保存する")]),
-    _vm._v(" "),
-    _c("div", [
-      _c("p", [_vm._v(_vm._s(_vm.count))]),
-      _vm._v(" "),
-      _c("button", { on: { click: _vm.oneClick } }, [_vm._v("クリック")])
-    ])
+    _c("input", {
+      staticClass: "btn btn-primary",
+      attrs: { type: "submit", value: "新規登録" }
+    })
   ])
 }
 var staticRenderFns = [

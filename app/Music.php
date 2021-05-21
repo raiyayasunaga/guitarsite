@@ -12,7 +12,6 @@ class Music extends Model
 
     public static $rules = array(
         'title' => 'required',
-        'body' => 'required',
         'capo' => 'required',
         'category' => 'required',
     );

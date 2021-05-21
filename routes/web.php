@@ -14,10 +14,11 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function() {
     Route::get('create', 'Admin\GuitarController@add');
     Route::get('home', 'Admin\GuitarController@home');
     // ルートの設定
-    Route::post('create', 'Admin\GuitarController@create')->name('admin.vue');
+    Route::post('create', 'Admin\GuitarController@create');
     Route::get('mypage', 'Admin\GuitarController@mypage');
     Route::get('playing', 'Admin\GuitarController@playing')->name('admin.playing');
-
+    // ギターコードの表示設定
+    Route::post('home', 'Admin\GuitarController@vue')->name('admin.vue');
     Route::get('delete', 'Admin\GuitarController@delete');
     Route::get('mypageedit', 'Admin\GuitarController@mypageedit');
 });

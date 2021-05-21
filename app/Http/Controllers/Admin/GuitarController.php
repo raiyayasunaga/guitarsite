@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Music;
 use App\User;
+use App\Cord;
 use Auth;
 
 
@@ -20,6 +21,16 @@ class GuitarController extends Controller
 
     public function add() {
         return view('admin.create');
+    }
+
+    // 渡されていない
+    public function vue(Request $request) {
+
+      $this->validate($request, Cord::$rules);
+
+      Cord::create($request->only("lyrics"));
+
+      return redirect('admin/home');
     }
 
     public function create(Request $request) {
@@ -76,7 +87,7 @@ class GuitarController extends Controller
         }
 
 
-        return view('admin.home', ['posts' => $posts, 'cond_title' => $cond_title]);
+        return view('admin.home', ['posts' => $posts, 'cond_title' => $cond_title, 'cords' => Cord::all()]);
     }
 
     public function mypage(Request $request) {

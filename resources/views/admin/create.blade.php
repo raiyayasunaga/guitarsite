@@ -4,30 +4,13 @@
 
 @section('content')
     <div class="container">
-        <div class="row mt-5">
-            <h2>曲の作成</h2>
-                  <input type="text" value="タイトル">
-                  <input tyepe="text" value="作者名">
-        </div>
-        <div class="row mt-5">
-            <div>設定するカポ</div>
-            <select class="form-control mb-3">
-                <option value="key_+5">+5</option>
-                <option value="key_+4">+4</option>
-                <option value="key_+3">+3</option>
-                <option value="key_+2">+2</option>
-                <option value="key_+1">+1</option>
-                <option value="key_+-0" selected>±0</option>
-                <option value="key_-1">-1</option>
-                <option value="key_-2">-2</option>
-                <option value="key_-3">-3</option>
-                <option value="key_-4">-4</option>
-                <option value="key_-5">-5</option>
-            </select>
-        </div>
         <div class="row">
             <div id="app">
-                <sample-component></sample-component>
+                <!-- フォームタグで保存されるのか。 -->
+                <form action="{{ action('Admin\GuitarController@vue') }}" method="post" enctype="multipart/form-data">
+                    <sample-component></sample-component>
+                    @csrf
+                </form>
             </div>
             
         </div>
@@ -55,12 +38,13 @@
                                 <option value="洋楽">洋楽</option>
                                 <option value="Jpop">Jpop</option>
                                 <option value="ロック">ロック</option>
+                                <option value="アニソン">アニソン</option>
                                 <option value="なし" selected>なし</option>
                         </select>
                     </div>
                 </div>
                 <div class="form-group row">
-                    <label class="col-md-2" for="body">カポ数</label>
+                    <label class="col-md-2" for="body">設定するカポ数</label>
                         <div class="col-md-10">
                             <select class="form-control mb-3" name = "capo">
                                 <option value="+5">+5</option>
@@ -84,7 +68,7 @@
                                 </div>
                             </div>
                 <div class="form-group row">
-                    <label class="col-md-2" for="body">歌詞</label>
+                                <label class="col-md-2" for="title">歌詞</label>
                     <div class="col-md-10">
                         <textarea class="form-control" name="body" rows="20">{{ old('body') }}</textarea>
                     </div>
