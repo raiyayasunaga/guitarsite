@@ -17,7 +17,7 @@ class CreateMusicTable extends Migration
             $table->bigIncrements('id');
             $table->integer('user_id');
             $table->string('title');
-            $table->string('body');
+            $table->text('lyrics');
             $table->string('category')->nullable();
             $table->string('capo')->nullable();
             $table->timestamps();

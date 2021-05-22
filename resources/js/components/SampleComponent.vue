@@ -55,17 +55,14 @@
                 
                 <div id="view">
                     {{ MyText }}
-                    {{ Images }}
-                    <img 
+                    <!-- <img 
                         v-for="CordImage of CordImages"
                         :key="CordImage"
                         :v-if="CorImage"
-                        v-bind:src="CordImage">
+                        v-bind:src="CordImage"> -->
                     <!-- データバインディングを -->
                 </div>
             </div>
-            <input type="submit" class="btn btn-primary" value="新規登録">
-        
     </div>
 </template>
 
@@ -82,7 +79,7 @@
                 fixeds: ['/', 'N.C'],
                 MyText: ' ',
                 selected: 'key_c',
-                CordImages: ['/img/C.png', '/img/Cm.png', '/img/C6.png', '/img/C7.png'],
+                CordImages: ' ',
             }
         },
         
@@ -97,14 +94,14 @@
                 this.MyText = `${this.MyText}` + "  " + `[${fixed}]`;
 
 
-                this.Images = '<img src="/img/C.png">';
+                // this.Images = '<img src="/img/C.png">';
                 
-                let groupImages = { 
-                  "C": '/img/Cm.png',
-                  "Cdim": '/img/Cdim.png',
-                  "C6": '/img/C7.png',
-                };
-                this.CordImages = groupImages;
+                // let groupImages = { 
+                //   "C": '/img/Cm.png',
+                //   "Cdim": '/img/Cdim.png',
+                //   "C6": '/img/C7.png',
+                // };
+                // this.CordImages = groupImages;
                 // idビューエレメントを出して、appendをイメージタグを追加していく
                 // 画像を配列にして上手くまとめて表示させる方法
             },

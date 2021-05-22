@@ -1969,11 +1969,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     // ここ入らないのかも
@@ -1984,9 +1979,7 @@ __webpack_require__.r(__webpack_exports__);
   methods: {
     // $fixedは使わない？
     oneClick: function oneClick() {},
-    OnClick: function OnClick() {
-      this.moveToDown = !this.moveToDown;
-    },
+    OnClick: function OnClick() {},
     onchange: function onchange() {
       var groupspeed = {
         'key_5': speed = 0.5,
@@ -2108,9 +2101,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     // ここ入らないのかも
@@ -2119,7 +2109,7 @@ __webpack_require__.r(__webpack_exports__);
       fixeds: ['/', 'N.C'],
       MyText: ' ',
       selected: 'key_c',
-      CordImages: ['/img/C.png', '/img/Cm.png', '/img/C6.png', '/img/C7.png']
+      CordImages: ' '
     };
   },
   methods: {
@@ -2129,14 +2119,14 @@ __webpack_require__.r(__webpack_exports__);
     },
     onClick: function onClick($cord) {
       this.MyText = "".concat(this.MyText, " [").concat($cord, "]");
-      this.MyText = "".concat(this.MyText) + "  " + "[".concat(fixed, "]");
-      this.Images = '<img src="/img/C.png">';
-      var groupImages = {
-        "C": '/img/Cm.png',
-        "Cdim": '/img/Cdim.png',
-        "C6": '/img/C7.png'
-      };
-      this.CordImages = groupImages; // idビューエレメントを出して、appendをイメージタグを追加していく
+      this.MyText = "".concat(this.MyText) + "  " + "[".concat(fixed, "]"); // this.Images = '<img src="/img/C.png">';
+      // let groupImages = { 
+      //   "C": '/img/Cm.png',
+      //   "Cdim": '/img/Cdim.png',
+      //   "C6": '/img/C7.png',
+      // };
+      // this.CordImages = groupImages;
+      // idビューエレメントを出して、appendをイメージタグを追加していく
       // 画像を配列にして上手くまとめて表示させる方法
     },
     onchange: function onchange() {
@@ -37856,6 +37846,10 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "container" }, [
+    _c("button", { on: { click: _vm.Stop } }, [_vm._v("ストップ")]),
+    _vm._v(" "),
+    _c("button", { on: { click: _vm.moveToDown } }, [_vm._v("動く")]),
+    _vm._v(" "),
     _vm._m(0),
     _vm._v(" "),
     _c(
@@ -37867,17 +37861,7 @@ var render = function() {
           }
         }
       },
-      [
-        _c("div", { attrs: { function: { active: _vm.moveToDown } } }, [
-          _vm._m(1),
-          _vm._v(" "),
-          _c("div", {
-            staticStyle: {
-              background: "linear-gradient(0deg, lightgreen, red)"
-            }
-          })
-        ])
-      ]
+      [_c("div", { attrs: { function: { active: _vm.moveToDown } } })]
     )
   ])
 }
@@ -37923,14 +37907,6 @@ var staticRenderFns = [
         _vm._v(" "),
         _c("option", { attrs: { value: "key_20" } }, [_vm._v("20")])
       ])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "row" }, [
-      _c("h2", [_vm._v("この下で歌詞やコードを表示する")])
     ])
   }
 ]
@@ -38089,32 +38065,10 @@ var render = function() {
     _c("div", [_vm._v("\n            プレビュー\n        ")]),
     _vm._v(" "),
     _c("div", { staticClass: "row p-5 m-5" }, [
-      _c(
-        "div",
-        { attrs: { id: "view" } },
-        [
-          _vm._v(
-            "\n                " +
-              _vm._s(_vm.MyText) +
-              "\n                " +
-              _vm._s(_vm.Images) +
-              "\n                "
-          ),
-          _vm._l(_vm.CordImages, function(CordImage) {
-            return _c("img", {
-              key: CordImage,
-              attrs: { "v-if": _vm.CorImage, src: CordImage }
-            })
-          })
-        ],
-        2
-      )
-    ]),
-    _vm._v(" "),
-    _c("input", {
-      staticClass: "btn btn-primary",
-      attrs: { type: "submit", value: "新規登録" }
-    })
+      _c("div", { attrs: { id: "view" } }, [
+        _vm._v("\n                " + _vm._s(_vm.MyText) + "\n                ")
+      ])
+    ])
   ])
 }
 var staticRenderFns = [

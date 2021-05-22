@@ -45,8 +45,8 @@ class GuitarController extends Controller
       // フォームから画像が送信されてきたら、保存して、$news->image_path に画像のパスを保存する
       if ($request->remove == 'true') {
         $music_form['image_path'] = null;
-    } elseif ($request->file('image')) {
-        $path = $request->file('image')->store('public/image');
+    } elseif ($request->file('img')) {
+        $path = $request->file('img')->store('public/img');
         $music_form['image_path'] = basename($path);
     } else {
         $music_form['image_path'] = $music->image_path;
@@ -73,8 +73,7 @@ class GuitarController extends Controller
 
     public function home(Request $request) {
         $cond_title = $request->cond_title;
-        // $posts = Music::all()
-        //     ->orderBy('created_at', 'desc')->get();
+
 
         if ($cond_title != '') {
             // 検索されたら検索結果を取得する
@@ -112,6 +111,7 @@ class GuitarController extends Controller
 
     public function playing(Request $request) {
         $music = Music::find($request->id);
+        
         // 名前から予測していく
         return view('admin.playing', ['music' => $music]);
     }
@@ -124,8 +124,34 @@ class GuitarController extends Controller
       $music->delete();
       return redirect('admin/home/');
     }
+
+    public function edit(Request $request)
+    {
+
+        $music = Music::find($request->id);
+
+      if (empty($music)) {
+        abort(404);    
+      }
+      return view('admin.mypageedit', ['music_form' => $music]);
+    }
     
-    public function mypageedit() {
-        return view('admin.mypageedit');
+    public function update(Request $request)
+    {
+        // Validationをかける
+        $this->validate($request, Music::$rules);
+        // News Modelからデータを取得する
+        $music = Music::find($request->id);
+        // 送信されてきたフォームデータを格納する
+        $music_form = $request->all();
+        unset($music_form['_token']);
+
+        // 該当するデータを上書きして保存する
+        $music->fill($music_form)->save();
+
+        return redirect('admin/mypage');
+    }
+    public function profile() {
+        return view('admin.profile');
     }
 }

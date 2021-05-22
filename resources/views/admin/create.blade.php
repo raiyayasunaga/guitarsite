@@ -4,19 +4,7 @@
 
 @section('content')
     <div class="container">
-        <div class="row">
-            <div id="app">
-                <!-- フォームタグで保存されるのか。 -->
-                <form action="{{ action('Admin\GuitarController@vue') }}" method="post" enctype="multipart/form-data">
-                    <sample-component></sample-component>
-                    @csrf
-                </form>
-            </div>
-            
-        </div>
-        
-      <div class="row mb-5">
-        <div class="col-md-8 mx-auto">
+      <div class="row my-5">
             <form action="{{ action('Admin\GuitarController@create') }}" method="post" enctype="multipart/form-data">
                 @if (count($errors) > 0)
                     <ul>
@@ -34,11 +22,12 @@
                 <div class="form-group row">
                     <label class="col-md-2" for="body" >カテゴリー</label>
                     <div class="col-md-10">
-                        <select class="form-control mb-3" name="category">
+                        <select class="form-control mb-3" name="category" value="{{ old('category') }}">
                                 <option value="洋楽">洋楽</option>
                                 <option value="Jpop">Jpop</option>
                                 <option value="ロック">ロック</option>
                                 <option value="アニソン">アニソン</option>
+                                <option value="ジブリ">ジブリ</option>
                                 <option value="なし" selected>なし</option>
                         </select>
                     </div>
@@ -46,7 +35,7 @@
                 <div class="form-group row">
                     <label class="col-md-2" for="body">設定するカポ数</label>
                         <div class="col-md-10">
-                            <select class="form-control mb-3" name = "capo">
+                            <select class="form-control mb-3" name = "capo" value="{{ old('capo') }}">
                                 <option value="+5">+5</option>
                                 <option value="+4">+4</option>
                                 <option value="+3">+3</option>
@@ -61,22 +50,22 @@
                             </select>
                         </div>
                     </div>
-                <div class="form-group row">
+                    <div class="form-group row">
                                 <label class="col-md-2" for="title">画像</label>
                                 <div class="col-md-10">
                                     <input type="file" class="form-control-file" name="image">
                                 </div>
-                            </div>
-                <div class="form-group row">
-                                <label class="col-md-2" for="title">歌詞</label>
-                    <div class="col-md-10">
-                        <textarea class="form-control" name="body" rows="20">{{ old('body') }}</textarea>
                     </div>
-                </div>
+                    <div class="row">
+                        <div id="app">
+                            <!-- フォームタグで保存されるのか。 -->
+                                <sample-component></sample-component>
+                                @csrf
+                        </div>
+                    </div>
                 {{ csrf_field() }}
                 <input type="submit" class="btn btn-primary" value="追加する">
             </form>          
-        </div>
       </div>
     </div>
 @endsection

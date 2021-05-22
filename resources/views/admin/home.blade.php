@@ -32,8 +32,8 @@
                                 <th width="10%">ID</th>
                                 <th width="20%">曲のタイトル</th>
                                 <th width="20%">カテゴリー</th>
-                                <th width="30%">作曲者名</th>
-                                <th width="20%">削除</th>
+                                <th width="20%">カポ数</th>
+                                <th width="30%">作曲者名アイコン表示</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -41,15 +41,11 @@
                                 <tr>
                                     <th>{{ $music->id }}</th>
                                     <!-- マイページからパクってきた -->
-                                    <td><a href ="{{ route('admin.playing', ['id' => $music->id]) }}"> {{ str_limit($music->title, 100) }}</a></td>
+                                    <td><a href ="{{ route('admin.playing', ['id' => $music->id]), }}"> {{ $music->title }}</a></td>
                                     <td>{{ str_limit($music->category, 150) }}</td>
+                                    <td>{{ ($music->capo)}}</td>
                                     <!-- user_idからユーザーのnameカラムが欲しい -->
                                     <td> {{ str_limit($music->user_id, 100) }}</td>
-                                    <td>
-                                        <div>
-                                            <a href="{{ action('Admin\GuitarController@delete', ['id' => $music->id]) }}">削除</a>
-                                        </div>
-                                    </td>
                                 </tr>
                             @endforeach
                         </tbody>
@@ -59,14 +55,14 @@
                         <thead>
                             <tr>
                                 <th width="10%">ID</th>
-                                <th width="20%">曲の歌詞だけ</th>
+                                <th width="20%">曲の歌詞だけvueアクションの所一応残しとく</th>
                             </tr>
                         </thead>
                         <tbody>
                             @foreach($cords as $cord)
                                 <tr>
                                     <th>{{ $cord->id }}</th>
-                                    <td>{{ str_limit($cord->lyrics) }}</td>
+                                    <td><a href ="{{ route('admin.playing', ['id' => $cord->id]), }}">{{ str_limit($cord->lyrics) }}</td>
                                     <!-- user_idからユーザーのnameカラムが欲しい -->
                                 </tr>
                             @endforeach

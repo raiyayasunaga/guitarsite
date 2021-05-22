@@ -14,6 +14,7 @@ class Music extends Model
         'title' => 'required',
         'capo' => 'required',
         'category' => 'required',
+        'lyrics' => 'required',
     );
 
     public function user()

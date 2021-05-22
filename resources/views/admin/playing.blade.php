@@ -13,11 +13,19 @@
             <h3 class="col-4">カポ：{{ ($music->capo) }}</h3>
             <h3 class="col-4">カテゴリー：{{ ($music->category) }}</h3>
          </div>
+        <div>
+          {{ $music->body}}
+        </div>
+
          <!-- ここにコードの表示を載せたい -->
         <div id="app">
           <roll-component></roll-component>
         </div>
         <div>
+        <h3>曲の歌詞</h3>
+        <div id="lyrics">
+          {{ $music->lyrics}}
+        </div>
           <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
         </div>
         <h1>終わり</h1>

@@ -4,11 +4,10 @@
 
 @section('content')
 <div class="container">
-      <div class="row my-3">
-        <h2><a href = "{{ action('Admin\GuitarController@mypageedit') }}">マイページ編集</a></h2>
-        
+      <div class="row my-5">
+        <h2><a href = "{{ action('Admin\GuitarController@profile') }}">{{ Auth::user()->name }}：プロフィール編集</a></h2>
       </div>
-      <div class="row">
+      <div class="row mt-5">
         <div class="col-4">
           <a href="{{ action('Admin\GuitarController@create') }}" role="button" class="btn btn-primary">オリジナル曲を作る！！</a>
         </div>
@@ -29,7 +28,6 @@
       </div>
 
         <div class="row">
-          <h2>自分の曲だけ</h2>
             <div class="list-news col-md-12 mx-auto">
                 <div class="row">
                     <table class="table">
@@ -54,6 +52,9 @@
                                         <td>{{ ($music->category) }}</td>
                                         <th>{{ ($music->capo) }}</th>
                                     <td>
+                                        <div>
+                                            <a href="{{ action('Admin\GuitarController@edit', ['id' => $music->id]) }}">編集</a>
+                                        </div>
                                         <div>
                                             <a href="{{ action('Admin\GuitarController@delete', ['id' => $music->id]) }}">削除</a>
                                         </div>

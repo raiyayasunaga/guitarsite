@@ -1,9 +1,8 @@
 <template>
     <div class="container">
-            <!-- <button @click="Stop">ストップ</button> -->
-            <!-- <button @click.enter="moveToDown">動く</button> -->
+            <button @click="Stop">ストップ</button>
+            <button @click="moveToDown">動く</button>
             <!-- 運搬止まらずむしろ早くなっている -->
-            <!-- <button @click="moveToDown=!moveToDown">止まる</button> -->
                 <div class="row mt-3">スクロール速度
                     <select class="form-control mb-3">
                         <option value="key_5">5</option>
@@ -26,11 +25,7 @@
                 </div>
         <div @click='moveToDown=!moveToDown'>
             <div v-bind:function='{active:moveToDown}'>
-                <div class="row">
-                    <h2>この下で歌詞やコードを表示する</h2>
-                </div>
-                <div style="background: linear-gradient(0deg, lightgreen, red);">
-                </div>
+                
             </div>
         </div>
     </div>
@@ -52,7 +47,7 @@
                 
             },
             OnClick() {
-                this.moveToDown = !this.moveToDown;
+
             },
             onchange() {
                 let groupspeed = {
