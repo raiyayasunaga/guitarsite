@@ -1,11 +1,11 @@
 <template>
     <div class="container">
-            <button @click="Stop">ストップ</button>
-            <button @click="moveToDown">動く</button>
+        <button class="stopbutton" @click="Stop">ストップ</button>
+            <div @click="moveToDown">
             <!-- 運搬止まらずむしろ早くなっている -->
                 <div class="row mt-3">スクロール速度
-                    <select class="form-control mb-3">
-                        <option value="key_5">5</option>
+                    <select class="form-control mb-3" v-model="speedNumber" @change="Select">
+                        <option v-for="speed of speeds" :key="speed" value="key_5">5</option>
                         <option value="key_6">6</option>
                         <option value="key_7">7</option>
                         <option value="key_8">8</option>
@@ -23,11 +23,14 @@
                         <option value="key_20">20</option>
                     </select>
                 </div>
-        <div @click='moveToDown=!moveToDown'>
-            <div v-bind:function='{active:moveToDown}'>
-                
-            </div>
-        </div>
+                <br>    
+                <br>    
+                <br>    
+                <br>    
+                <br>    
+                <br>    
+                <br>    
+            </div>   
     </div>
 </template>
 
@@ -38,7 +41,9 @@
         data: () => {
             // ここ入らないのかも
             return {
-                moveToDown: false,
+                test: 0,
+                SpeedNumber: 1,
+                speed: [{"key_6": 10}, {"key_7": 20}, ]
             }
         },
         methods: {
@@ -46,44 +51,30 @@
             oneClick: function() {
                 
             },
-            OnClick() {
-
+            setSpeedNumber: function($key) {
+                this.speedNumber = speeds[$key].number
             },
             onchange() {
-                let groupspeed = {
-                    'key_5': speed= 0.5,
-                    'key_6': 1,
-                }
-                this.groupspeed = this.groupspeed;
+            
             },
             moveToDown() {
-                Down();
+                let speed = 1; //時間あたりに移動するpx量です。デフォルトでは1pxにしていますが、自由に変えてください
+                let interval = 60; //移動する間隔です。デフォルトでは0.1秒おきにしていますが、自由に変えてくださ
+            this.test = setInterval(function() {
+                let scrollTop = document.body.scrollTop;
+                let scroll = scrollTop + speed;
+                window.scrollBy(0, scroll)
+            },interval);
+
             },
             Stop() {
-                MoveStop();
+                clearInterval(this.test);
             }
         },
         
         
     }
-      function Down() {
-        let speed = 1; //時間あたりに移動するpx量です。デフォルトでは1pxにしていますが、自由に変えてください
-        let interval = 10; //移動する間隔です。デフォルトでは0.1秒おきにしていますが、自由に変えてください
-        let scrollTop = document.body.scrollTop;
-        setInterval(function() {
-            let scroll = scrollTop + speed;
-            window.scrollBy(0, scroll)
-        },interval);
-      }
 
-      function MoveStop() {
-        let speed = 1; //時間あたりに移動するpx量です。デフォルトでは1pxにしていますが、自由に変えてください
-        let interval = 20; //移動する間隔です。デフォルトでは0.1秒おきにしていますが、自由に変えてください
-        let scrollTop = document.body.scrollTop;
-        setInterval(function() {
-            let scroll = scrollTop - speed;
-            window.scrollBy(0, scroll)
-        },interval);
-      }
+      
 
 </script>

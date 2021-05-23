@@ -3,7 +3,6 @@
 namespace App\Http\Controllers\Admin;
 
 use Illuminate\Http\Request;
-// use Illuminate\Http\User;使うか分からない
 use App\Http\Controllers\Controller;
 use App\Music;
 use App\User;

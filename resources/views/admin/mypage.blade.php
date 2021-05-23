@@ -56,7 +56,7 @@
                                             <a href="{{ action('Admin\GuitarController@edit', ['id' => $music->id]) }}">編集</a>
                                         </div>
                                         <div>
-                                            <a href="{{ action('Admin\GuitarController@delete', ['id' => $music->id]) }}">削除</a>
+                                            <button type="button" onclick="test()">消去</button>
                                         </div>
                                     </td>
                                     <td>

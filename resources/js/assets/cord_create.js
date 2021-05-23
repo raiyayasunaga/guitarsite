@@ -1,6 +1,22 @@
+
 function test() {
-  alert("Hello Javascript!!");
+
+  result = window.confirm("投稿してよろしいですか？")
+  if (result) {
+    window.location.href = '#';
+  } else {
+
+  }
+
 }
+
+
+
+
+
+
+
+
 // 末端に追加する方法
 function AddCords() {
   

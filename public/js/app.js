@@ -1969,56 +1969,45 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     // ここ入らないのかも
     return {
-      moveToDown: false
+      test: 0,
+      SpeedNumber: 1,
+      speed: [{
+        "key_6": 10
+      }, {
+        "key_7": 20
+      }]
     };
   },
   methods: {
     // $fixedは使わない？
     oneClick: function oneClick() {},
-    OnClick: function OnClick() {},
-    onchange: function onchange() {
-      var groupspeed = {
-        'key_5': speed = 0.5,
-        'key_6': 1
-      };
-      this.groupspeed = this.groupspeed;
+    setSpeedNumber: function setSpeedNumber($key) {
+      this.speedNumber = speeds[$key].number;
     },
+    onchange: function onchange() {},
     moveToDown: function moveToDown() {
-      Down();
+      var speed = 1; //時間あたりに移動するpx量です。デフォルトでは1pxにしていますが、自由に変えてください
+
+      var interval = 60; //移動する間隔です。デフォルトでは0.1秒おきにしていますが、自由に変えてくださ
+
+      this.test = setInterval(function () {
+        var scrollTop = document.body.scrollTop;
+        var scroll = scrollTop + speed;
+        window.scrollBy(0, scroll);
+      }, interval);
     },
     Stop: function Stop() {
-      MoveStop();
+      clearInterval(this.test);
     }
   }
 });
-
-function Down() {
-  var speed = 1; //時間あたりに移動するpx量です。デフォルトでは1pxにしていますが、自由に変えてください
-
-  var interval = 10; //移動する間隔です。デフォルトでは0.1秒おきにしていますが、自由に変えてください
-
-  var scrollTop = document.body.scrollTop;
-  setInterval(function () {
-    var scroll = scrollTop + speed;
-    window.scrollBy(0, scroll);
-  }, interval);
-}
-
-function MoveStop() {
-  var speed = 1; //時間あたりに移動するpx量です。デフォルトでは1pxにしていますが、自由に変えてください
-
-  var interval = 20; //移動する間隔です。デフォルトでは0.1秒おきにしていますが、自由に変えてください
-
-  var scrollTop = document.body.scrollTop;
-  setInterval(function () {
-    var scroll = scrollTop - speed;
-    window.scrollBy(0, scroll);
-  }, interval);
-}
 
 /***/ }),
 
@@ -37846,70 +37835,104 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "container" }, [
-    _c("button", { on: { click: _vm.Stop } }, [_vm._v("ストップ")]),
+    _c("button", { staticClass: "stopbutton", on: { click: _vm.Stop } }, [
+      _vm._v("ストップ")
+    ]),
     _vm._v(" "),
-    _c("button", { on: { click: _vm.moveToDown } }, [_vm._v("動く")]),
-    _vm._v(" "),
-    _vm._m(0),
-    _vm._v(" "),
-    _c(
-      "div",
-      {
-        on: {
-          click: function($event) {
-            _vm.moveToDown = !_vm.moveToDown
-          }
-        }
-      },
-      [_c("div", { attrs: { function: { active: _vm.moveToDown } } })]
-    )
+    _c("div", { on: { click: _vm.moveToDown } }, [
+      _c("div", { staticClass: "row mt-3" }, [
+        _vm._v("スクロール速度\n                "),
+        _c(
+          "select",
+          {
+            directives: [
+              {
+                name: "model",
+                rawName: "v-model",
+                value: _vm.speedNumber,
+                expression: "speedNumber"
+              }
+            ],
+            staticClass: "form-control mb-3",
+            on: {
+              change: [
+                function($event) {
+                  var $$selectedVal = Array.prototype.filter
+                    .call($event.target.options, function(o) {
+                      return o.selected
+                    })
+                    .map(function(o) {
+                      var val = "_value" in o ? o._value : o.value
+                      return val
+                    })
+                  _vm.speedNumber = $event.target.multiple
+                    ? $$selectedVal
+                    : $$selectedVal[0]
+                },
+                _vm.Select
+              ]
+            }
+          },
+          [
+            _vm._l(_vm.speeds, function(speed) {
+              return _c("option", { key: speed, attrs: { value: "key_5" } }, [
+                _vm._v("5")
+              ])
+            }),
+            _vm._v(" "),
+            _c("option", { attrs: { value: "key_6" } }, [_vm._v("6")]),
+            _vm._v(" "),
+            _c("option", { attrs: { value: "key_7" } }, [_vm._v("7")]),
+            _vm._v(" "),
+            _c("option", { attrs: { value: "key_8" } }, [_vm._v("8")]),
+            _vm._v(" "),
+            _c("option", { attrs: { value: "key_9" } }, [_vm._v("9")]),
+            _vm._v(" "),
+            _c("option", { attrs: { value: "key_10", selected: "" } }, [
+              _vm._v("10")
+            ]),
+            _vm._v(" "),
+            _c("option", { attrs: { value: "key_11" } }, [_vm._v("11")]),
+            _vm._v(" "),
+            _c("option", { attrs: { value: "key_12" } }, [_vm._v("12")]),
+            _vm._v(" "),
+            _c("option", { attrs: { value: "key_13" } }, [_vm._v("13")]),
+            _vm._v(" "),
+            _c("option", { attrs: { value: "key_14" } }, [_vm._v("14")]),
+            _vm._v(" "),
+            _c("option", { attrs: { value: "key_15" } }, [_vm._v("15")]),
+            _vm._v(" "),
+            _c("option", { attrs: { value: "key_16" } }, [_vm._v("16")]),
+            _vm._v(" "),
+            _c("option", { attrs: { value: "key_17" } }, [_vm._v("17")]),
+            _vm._v(" "),
+            _c("option", { attrs: { value: "key_18" } }, [_vm._v("18")]),
+            _vm._v(" "),
+            _c("option", { attrs: { value: "key_19" } }, [_vm._v("19")]),
+            _vm._v(" "),
+            _c("option", { attrs: { value: "key_20" } }, [_vm._v("20")])
+          ],
+          2
+        )
+      ]),
+      _vm._v(" "),
+      _c("br"),
+      _vm._v(" "),
+      _c("br"),
+      _vm._v(" "),
+      _c("br"),
+      _vm._v(" "),
+      _c("br"),
+      _vm._v(" "),
+      _c("br"),
+      _vm._v(" "),
+      _c("br"),
+      _vm._v(" "),
+      _c("br")
+    ])
   ])
 }
-var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "row mt-3" }, [
-      _vm._v("スクロール速度\n                "),
-      _c("select", { staticClass: "form-control mb-3" }, [
-        _c("option", { attrs: { value: "key_5" } }, [_vm._v("5")]),
-        _vm._v(" "),
-        _c("option", { attrs: { value: "key_6" } }, [_vm._v("6")]),
-        _vm._v(" "),
-        _c("option", { attrs: { value: "key_7" } }, [_vm._v("7")]),
-        _vm._v(" "),
-        _c("option", { attrs: { value: "key_8" } }, [_vm._v("8")]),
-        _vm._v(" "),
-        _c("option", { attrs: { value: "key_9" } }, [_vm._v("9")]),
-        _vm._v(" "),
-        _c("option", { attrs: { value: "key_10", selected: "" } }, [
-          _vm._v("10")
-        ]),
-        _vm._v(" "),
-        _c("option", { attrs: { value: "key_11" } }, [_vm._v("11")]),
-        _vm._v(" "),
-        _c("option", { attrs: { value: "key_12" } }, [_vm._v("12")]),
-        _vm._v(" "),
-        _c("option", { attrs: { value: "key_13" } }, [_vm._v("13")]),
-        _vm._v(" "),
-        _c("option", { attrs: { value: "key_14" } }, [_vm._v("14")]),
-        _vm._v(" "),
-        _c("option", { attrs: { value: "key_15" } }, [_vm._v("15")]),
-        _vm._v(" "),
-        _c("option", { attrs: { value: "key_16" } }, [_vm._v("16")]),
-        _vm._v(" "),
-        _c("option", { attrs: { value: "key_17" } }, [_vm._v("17")]),
-        _vm._v(" "),
-        _c("option", { attrs: { value: "key_18" } }, [_vm._v("18")]),
-        _vm._v(" "),
-        _c("option", { attrs: { value: "key_19" } }, [_vm._v("19")]),
-        _vm._v(" "),
-        _c("option", { attrs: { value: "key_20" } }, [_vm._v("20")])
-      ])
-    ])
-  }
-]
+var staticRenderFns = []
 render._withStripped = true
 
 

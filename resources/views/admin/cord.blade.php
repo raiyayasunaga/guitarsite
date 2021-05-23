@@ -10,9 +10,24 @@
         <h2>コード表A〜G</h2>
         <h2><a href="playing">演奏しよう！</a></h2>
       </div>
-      <div id="app">
-        <example-component></example-component>
+
+      <div>
+        demo
       </div>
+      <div id="modal" class="test"> 
+        <div class="modal-content">
+          <div class="modal-body">
+            <h2>あああああああああああああああ</h2>
+          </div>
+        </div>
+      </div>
+      <button type="button" onclick="test()">クリックする</button>
+
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
       
       <div class="row cordmenu">
         <p class="cord"><a href = "#C_cord">Cコード</a></p>
