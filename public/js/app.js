@@ -1972,24 +1972,28 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     // ここ入らないのかも
     return {
       test: 0,
-      SpeedNumber: 1,
-      speed: [{
-        "key_6": 10
-      }, {
-        "key_7": 20
-      }]
+      speedNumber: 'key_10'
     };
   },
   methods: {
     // $fixedは使わない？
     oneClick: function oneClick() {},
-    setSpeedNumber: function setSpeedNumber($key) {
-      this.speedNumber = speeds[$key].number;
+    select: function select() {
+      var groupspeeds = {
+        'key_5': this.sample,
+        'key_6': interval = 20
+      };
+      groupspeeds[this.speedNumber];
     },
     onchange: function onchange() {},
     moveToDown: function moveToDown() {
@@ -2003,8 +2007,17 @@ __webpack_require__.r(__webpack_exports__);
         window.scrollBy(0, scroll);
       }, interval);
     },
+    button: function button() {
+      var speed = 1;
+      var interval = 10;
+      this.sample = setInterval(function () {
+        var scrollTop = document.body.scrollTop;
+        var scroll = scrollTop + speed;
+        window.scrollBy(0, scroll);
+      }, interval);
+    },
     Stop: function Stop() {
-      clearInterval(this.test);
+      clearInterval(this.test), clearInterval(this.sample);
     }
   }
 });
@@ -37835,87 +37848,99 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "container" }, [
+    _vm._m(0),
+    _vm._v(" "),
     _c("button", { staticClass: "stopbutton", on: { click: _vm.Stop } }, [
       _vm._v("ストップ")
     ]),
     _vm._v(" "),
-    _c("div", { on: { click: _vm.moveToDown } }, [
-      _c("div", { staticClass: "row mt-3" }, [
-        _vm._v("スクロール速度\n                "),
-        _c(
-          "select",
-          {
-            directives: [
-              {
-                name: "model",
-                rawName: "v-model",
-                value: _vm.speedNumber,
-                expression: "speedNumber"
-              }
-            ],
-            staticClass: "form-control mb-3",
-            on: {
-              change: [
-                function($event) {
-                  var $$selectedVal = Array.prototype.filter
-                    .call($event.target.options, function(o) {
-                      return o.selected
-                    })
-                    .map(function(o) {
-                      var val = "_value" in o ? o._value : o.value
-                      return val
-                    })
-                  _vm.speedNumber = $event.target.multiple
-                    ? $$selectedVal
-                    : $$selectedVal[0]
-                },
-                _vm.Select
-              ]
+    _c(
+      "button",
+      {
+        on: {
+          click: function($event) {
+            $event.stopPropagation()
+            return _vm.Stop($event)
+          }
+        }
+      },
+      [_vm._v("ストップダブルタップ")]
+    ),
+    _vm._v(" "),
+    _c("button", { on: { click: _vm.button } }, [_vm._v("少し早い")]),
+    _vm._v(" "),
+    _c("div", { staticClass: "row mt-3" }, [
+      _vm._v("スクロール速度\n                "),
+      _c(
+        "select",
+        {
+          directives: [
+            {
+              name: "model",
+              rawName: "v-model",
+              value: _vm.speedNumber,
+              expression: "speedNumber"
             }
-          },
-          [
-            _vm._l(_vm.speeds, function(speed) {
-              return _c("option", { key: speed, attrs: { value: "key_5" } }, [
-                _vm._v("5")
-              ])
-            }),
-            _vm._v(" "),
-            _c("option", { attrs: { value: "key_6" } }, [_vm._v("6")]),
-            _vm._v(" "),
-            _c("option", { attrs: { value: "key_7" } }, [_vm._v("7")]),
-            _vm._v(" "),
-            _c("option", { attrs: { value: "key_8" } }, [_vm._v("8")]),
-            _vm._v(" "),
-            _c("option", { attrs: { value: "key_9" } }, [_vm._v("9")]),
-            _vm._v(" "),
-            _c("option", { attrs: { value: "key_10", selected: "" } }, [
-              _vm._v("10")
-            ]),
-            _vm._v(" "),
-            _c("option", { attrs: { value: "key_11" } }, [_vm._v("11")]),
-            _vm._v(" "),
-            _c("option", { attrs: { value: "key_12" } }, [_vm._v("12")]),
-            _vm._v(" "),
-            _c("option", { attrs: { value: "key_13" } }, [_vm._v("13")]),
-            _vm._v(" "),
-            _c("option", { attrs: { value: "key_14" } }, [_vm._v("14")]),
-            _vm._v(" "),
-            _c("option", { attrs: { value: "key_15" } }, [_vm._v("15")]),
-            _vm._v(" "),
-            _c("option", { attrs: { value: "key_16" } }, [_vm._v("16")]),
-            _vm._v(" "),
-            _c("option", { attrs: { value: "key_17" } }, [_vm._v("17")]),
-            _vm._v(" "),
-            _c("option", { attrs: { value: "key_18" } }, [_vm._v("18")]),
-            _vm._v(" "),
-            _c("option", { attrs: { value: "key_19" } }, [_vm._v("19")]),
-            _vm._v(" "),
-            _c("option", { attrs: { value: "key_20" } }, [_vm._v("20")])
           ],
-          2
-        )
-      ]),
-      _vm._v(" "),
+          staticClass: "form-control mb-3",
+          on: {
+            change: [
+              function($event) {
+                var $$selectedVal = Array.prototype.filter
+                  .call($event.target.options, function(o) {
+                    return o.selected
+                  })
+                  .map(function(o) {
+                    var val = "_value" in o ? o._value : o.value
+                    return val
+                  })
+                _vm.speedNumber = $event.target.multiple
+                  ? $$selectedVal
+                  : $$selectedVal[0]
+              },
+              _vm.select
+            ]
+          }
+        },
+        [
+          _c("option", { attrs: { value: "key_5" } }, [_vm._v("5")]),
+          _vm._v(" "),
+          _c("option", { attrs: { value: "key_6" } }, [_vm._v("6")]),
+          _vm._v(" "),
+          _c("option", { attrs: { value: "key_7" } }, [_vm._v("7")]),
+          _vm._v(" "),
+          _c("option", { attrs: { value: "key_8" } }, [_vm._v("8")]),
+          _vm._v(" "),
+          _c("option", { attrs: { value: "key_9" } }, [_vm._v("9")]),
+          _vm._v(" "),
+          _c("option", { attrs: { value: "key_10", selected: "" } }, [
+            _vm._v("10")
+          ]),
+          _vm._v(" "),
+          _c("option", { attrs: { value: "key_11" } }, [_vm._v("11")]),
+          _vm._v(" "),
+          _c("option", { attrs: { value: "key_12" } }, [_vm._v("12")]),
+          _vm._v(" "),
+          _c("option", { attrs: { value: "key_13" } }, [_vm._v("13")]),
+          _vm._v(" "),
+          _c("option", { attrs: { value: "key_14" } }, [_vm._v("14")]),
+          _vm._v(" "),
+          _c("option", { attrs: { value: "key_15" } }, [_vm._v("15")]),
+          _vm._v(" "),
+          _c("option", { attrs: { value: "key_16" } }, [_vm._v("16")]),
+          _vm._v(" "),
+          _c("option", { attrs: { value: "key_17" } }, [_vm._v("17")]),
+          _vm._v(" "),
+          _c("option", { attrs: { value: "key_18" } }, [_vm._v("18")]),
+          _vm._v(" "),
+          _c("option", { attrs: { value: "key_19" } }, [_vm._v("19")]),
+          _vm._v(" "),
+          _c("option", { attrs: { value: "key_20" } }, [_vm._v("20")])
+        ]
+      )
+    ]),
+    _vm._v(" "),
+    _c("div", { on: { click: _vm.moveToDown } }, [
       _c("br"),
       _vm._v(" "),
       _c("br"),
@@ -37932,7 +37957,16 @@ var render = function() {
     ])
   ])
 }
-var staticRenderFns = []
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", [
+      _c("h1", [_vm._v("ボタンを使って速さを切り替える方法はできた。")])
+    ])
+  }
+]
 render._withStripped = true
 
 

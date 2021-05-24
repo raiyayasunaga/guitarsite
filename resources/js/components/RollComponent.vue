@@ -1,11 +1,15 @@
 <template>
     <div class="container">
+        <div>
+            <h1>ボタンを使って速さを切り替える方法はできた。</h1>
+        </div>
         <button class="stopbutton" @click="Stop">ストップ</button>
-            <div @click="moveToDown">
+        <button @click.stop="Stop">ストップダブルタップ</button>
+            <button @click="button">少し早い</button>
             <!-- 運搬止まらずむしろ早くなっている -->
                 <div class="row mt-3">スクロール速度
-                    <select class="form-control mb-3" v-model="speedNumber" @change="Select">
-                        <option v-for="speed of speeds" :key="speed" value="key_5">5</option>
+                    <select class="form-control mb-3" v-model="speedNumber" @change="select">
+                        <option value="key_5">5</option>
                         <option value="key_6">6</option>
                         <option value="key_7">7</option>
                         <option value="key_8">8</option>
@@ -23,6 +27,7 @@
                         <option value="key_20">20</option>
                     </select>
                 </div>
+            <div @click="moveToDown">
                 <br>    
                 <br>    
                 <br>    
@@ -42,8 +47,7 @@
             // ここ入らないのかも
             return {
                 test: 0,
-                SpeedNumber: 1,
-                speed: [{"key_6": 10}, {"key_7": 20}, ]
+                speedNumber: 'key_10',
             }
         },
         methods: {
@@ -51,8 +55,13 @@
             oneClick: function() {
                 
             },
-            setSpeedNumber: function($key) {
-                this.speedNumber = speeds[$key].number
+            select() {
+                   
+                let groupspeeds = {
+                    'key_5': this.sample,
+                    'key_6': interval = 20,
+                }
+                groupspeeds[this.speedNumber];
             },
             onchange() {
             
@@ -67,8 +76,18 @@
             },interval);
 
             },
+            button() {
+                let speed = 1;
+                let interval = 10;
+            this.sample = setInterval(function() {
+                let scrollTop = document.body.scrollTop;
+                let scroll = scrollTop + speed;
+                window.scrollBy(0, scroll)
+            },interval);
+            },
             Stop() {
-                clearInterval(this.test);
+                clearInterval(this.test),
+                clearInterval(this.sample);
             }
         },
         

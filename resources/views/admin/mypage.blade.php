@@ -5,7 +5,7 @@
 @section('content')
 <div class="container">
       <div class="row my-5">
-        <h2><a href = "{{ action('Admin\GuitarController@profile') }}">{{ Auth::user()->name }}：プロフィール編集</a></h2>
+        <h2><a href = "{{ action('Admin\ProfileController@edit') }}">{{ Auth::user()->name }}：プロフィール編集</a></h2>
       </div>
       <div class="row mt-5">
         <div class="col-4">
@@ -54,6 +54,8 @@
                                     <td>
                                         <div>
                                             <a href="{{ action('Admin\GuitarController@edit', ['id' => $music->id]) }}">編集</a>
+                                            <a href="{{ action('Admin\GuitarController@delete', ['id' => $music->id]) }}">消去</a>
+
                                         </div>
                                         <div>
                                             <button type="button" onclick="test()">消去</button>
@@ -76,4 +78,18 @@
         </div>
       </div>
     </div>
+@endsection
+@section('js')
+<script>
+function test() {
+
+result = window.confirm("本当に消去してもよろしいですか？")
+if (result) {
+  window.location.href = "{{ action('Admin\GuitarController@delete', ['id' => $music->id]) }}"
+} else {
+
+}
+
+}
+</script>
 @endsection

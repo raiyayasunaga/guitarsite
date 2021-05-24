@@ -1,9 +1,10 @@
 
 function test() {
 
-  result = window.confirm("投稿してよろしいですか？")
+  result = window.confirm("本当に消去してもよろしいですか？")
   if (result) {
-    window.location.href = '#';
+    window.location.href = "{{ action('Admin\GuitarController@delete', ['id' => $music->id]) }}"
+    // window.location.href = 'home'
   } else {
 
   }

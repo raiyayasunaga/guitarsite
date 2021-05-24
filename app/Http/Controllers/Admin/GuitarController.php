@@ -15,14 +15,11 @@ use Auth;
 
 class GuitarController extends Controller
 {
-
-    // ユーザーによって表示変える方
-
     public function add() {
         return view('admin.create');
     }
 
-    // 渡されていない
+    // 一応残しとく
     public function vue(Request $request) {
 
       $this->validate($request, Cord::$rules);
@@ -72,7 +69,7 @@ class GuitarController extends Controller
 
     public function home(Request $request) {
         $cond_title = $request->cond_title;
-
+        $category = $request->category;
 
         if ($cond_title != '') {
             // 検索されたら検索結果を取得する
@@ -84,8 +81,18 @@ class GuitarController extends Controller
             $posts = Music::all();
         }
 
+        if ($category != '') {
+            // 検索されたら検索結果を取得する
+            $posts = Music::where('category', 'like', '%'.$category.'%')
+                ->orderBy('id', 'asc')
+                ->get();
+        } else {
+            // それ以外はすべてのニュースを取得する
+            $posts = Music::all();
+        }
 
-        return view('admin.home', ['posts' => $posts, 'cond_title' => $cond_title, 'cords' => Cord::all()]);
+
+        return view('admin.home', ['posts' => $posts, 'cond_title' => $cond_title, 'category' => $category, 'cords' => Cord::all()]);
     }
 
     public function mypage(Request $request) {
@@ -97,13 +104,6 @@ class GuitarController extends Controller
             ->orderBy('created_at', 'desc') // 投稿作成日が新しい順に並べる
             ->paginate(10); // ページネーション; 
         
-        // if ($cond_title != '') {
-        //     // 検索されたら検索結果を取得する
-        //     $music = Music::where('title', 'like', '%'.$cond_title.'%')->get();
-        // } else {
-        //     // それ以外はすべてのニュースを取得する
-        //     $music = Music::where('user_id', Auth::id());
-        // }
 
         return view('admin.mypage', ['posts' => $music, 'cond_title' => $cond_title,]);
     }
@@ -121,7 +121,7 @@ class GuitarController extends Controller
       $music = Music::find($request->id);
       // 削除する
       $music->delete();
-      return redirect('admin/home/');
+      return redirect('admin/mypage/');
     }
 
     public function edit(Request $request)
@@ -150,7 +150,5 @@ class GuitarController extends Controller
 
         return redirect('admin/mypage');
     }
-    public function profile() {
-        return view('admin.profile');
-    }
+
 }
