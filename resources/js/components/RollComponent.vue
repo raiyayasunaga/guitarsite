@@ -4,7 +4,6 @@
             <h1>ボタンを使って速さを切り替える方法はできた。</h1>
         </div>
         <button class="stopbutton" @click="Stop">ストップ</button>
-        <button @click.stop="Stop">ストップダブルタップ</button>
             <button @click="button">少し早い</button>
             <!-- 運搬止まらずむしろ早くなっている -->
                 <div class="row mt-3">スクロール速度

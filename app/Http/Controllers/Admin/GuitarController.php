@@ -7,6 +7,8 @@ use App\Http\Controllers\Controller;
 use App\Music;
 use App\User;
 use App\Cord;
+use Image;
+
 use Auth;
 
 
@@ -70,6 +72,7 @@ class GuitarController extends Controller
     public function home(Request $request) {
         $cond_title = $request->cond_title;
         $category = $request->category;
+        $user = Auth::user();
 
         if ($cond_title != '') {
             // 検索されたら検索結果を取得する
@@ -92,7 +95,7 @@ class GuitarController extends Controller
         }
 
 
-        return view('admin.home', ['posts' => $posts, 'cond_title' => $cond_title, 'category' => $category, 'cords' => Cord::all()]);
+        return view('admin.home', ['posts' => $posts, 'cond_title' => $cond_title, 'category' => $category, 'user' => $user, 'cords' => Cord::all()]);
     }
 
     public function mypage(Request $request) {
@@ -149,6 +152,21 @@ class GuitarController extends Controller
         $music->fill($music_form)->save();
 
         return redirect('admin/mypage');
+    }
+
+    private function saveProfileImage($image, $id) {
+        // get instance
+        $img = \Image::make($image);
+        // resize
+        $img->fit(100, 100, function($constraint){
+            $constraint->upsize(); 
+        });
+        // save
+        $file_name = 'profile_'.$id.'.'.$image->getClientOriginalExtension();
+        $save_path = 'public/profiles/'.$file_name;
+        Storage::put($save_path, (string) $img->encode());
+        // return file name
+        return $file_name;
     }
 
 }

@@ -51,7 +51,8 @@
                                 <th width="20%">曲のタイトル</th>
                                 <th width="20%">カテゴリー</th>
                                 <th width="20%">カポ数</th>
-                                <th width="30%">作曲者名アイコン表示</th>
+                                <th width="20%">作曲者名アイコン表示</th>
+                                <th width="10%">作者番号</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -63,6 +64,7 @@
                                     <td>{{ str_limit($music->category, 150) }}</td>
                                     <td>{{ ($music->capo)}}</td>
                                     <!-- user_idからユーザーのnameカラムが欲しい -->
+                                    <td><img src="{{ asset('storage/profiles/'.$user->profile_image) }}" style="width:30px; height:auto;" id="img"></td>
                                     <td> {{ str_limit($music->user_id, 100) }}</td>
                                 </tr>
                             @endforeach

@@ -1976,7 +1976,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     // ここ入らないのかも
@@ -37853,19 +37852,6 @@ var render = function() {
     _c("button", { staticClass: "stopbutton", on: { click: _vm.Stop } }, [
       _vm._v("ストップ")
     ]),
-    _vm._v(" "),
-    _c(
-      "button",
-      {
-        on: {
-          click: function($event) {
-            $event.stopPropagation()
-            return _vm.Stop($event)
-          }
-        }
-      },
-      [_vm._v("ストップダブルタップ")]
-    ),
     _vm._v(" "),
     _c("button", { on: { click: _vm.button } }, [_vm._v("少し早い")]),
     _vm._v(" "),
