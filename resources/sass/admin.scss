@@ -11,6 +11,15 @@ textarea {
   @include sitefont;
 }
 
+// 画像について
+#img {
+  display: block;
+}
+
+#Newimg {
+  display: block;
+}
+
 // ストップボタン
 .stopbutton {
   position: fixed;

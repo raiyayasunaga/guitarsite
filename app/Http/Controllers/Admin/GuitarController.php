@@ -72,6 +72,8 @@ class GuitarController extends Controller
     public function home(Request $request) {
         $cond_title = $request->cond_title;
         $category = $request->category;
+
+        // プロフィール用のコード
         $user = Auth::user();
 
         if ($cond_title != '') {
@@ -103,9 +105,10 @@ class GuitarController extends Controller
         // 'auth' => $auths
         $cond_title = $request->cond_title;
 
+
         $music = Music::where('user_id', Auth::id()) //$userによる投稿を取得
             ->orderBy('created_at', 'desc') // 投稿作成日が新しい順に並べる
-            ->paginate(10); // ページネーション; 
+            ->get(); // ページネーション; 
         
 
         return view('admin.mypage', ['posts' => $music, 'cond_title' => $cond_title,]);

@@ -4,7 +4,7 @@
 
 @section('content')
 <div class="container">
-      <div class="row my-5">
+      <div class="row mt-3">
         <h2><a href = "{{ action('Admin\ProfileController@edit') }}">{{ Auth::user()->name }}：プロフィール編集</a></h2>
       </div>
       <div class="row mt-5">
@@ -42,6 +42,7 @@
                             </tr>
                         </thead>
                         <tbody>
+                            @if ($posts != NULL)
                             @foreach($posts as $music)
                                 <tr>
                                     <th>{{ $music->id }}</th>
@@ -54,11 +55,9 @@
                                     <td>
                                         <div>
                                             <a href="{{ action('Admin\GuitarController@edit', ['id' => $music->id]) }}">編集</a>
-                                            <a href="{{ action('Admin\GuitarController@delete', ['id' => $music->id]) }}">消去</a>
-
                                         </div>
                                         <div>
-                                            <button type="button" onclick="test()">消去</button>
+                                            <a href="{{ action('Admin\GuitarController@delete', ['id' => $music->id]) }}">消去</a>
                                         </div>
                                     </td>
                                     <td>
@@ -71,6 +70,7 @@
                                     </td>
                                 </tr>
                             @endforeach
+                            @endif
                         </tbody>
                     </table>
                 </div>
@@ -82,10 +82,10 @@
 @section('js')
 <script>
 function test() {
-
+//引数を加える
 result = window.confirm("本当に消去してもよろしいですか？")
 if (result) {
-  window.location.href = "{{ action('Admin\GuitarController@delete', ['id' => $music->id]) }}"
+  window.location.href = "#"
 } else {
 
 }
