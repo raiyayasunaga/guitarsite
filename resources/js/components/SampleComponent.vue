@@ -2,24 +2,26 @@
     <div class="container">
         <!-- vueでも同じように使えるのか？ -->
             <div class="row my-3">
-                <div class="mt-3">コード入力</div>
-                <select class="form-control mb-3" @change="onchange()" v-model="selected">
-                    <option value="key_c">C</option>
-                    <option value="key_c#">C#</option>
-                    <option value="key_d">D</option>
-                    <option value="key_d#">D#</option>
-                    <option value="key_e">E</option>
-                    <option value="key_f">F</option>
-                    <option value="key_f#">F#</option>
-                    <option value="key_g">G</option>
-                    <option value="key_g#">G#</option>
-                    <option value="key_a">A</option>
-                    <option value="key_a#">A#</option>
-                    <option value="key_b">B</option>
-                </select>
-                <div class="row m-3">
-                    <h3>よく使われるコード</h3>
+                <div class="col-12">
+                    <div class="mt-3">コード入力</div>
+                    <select class="form-control mb-3" @change="onchange()" v-model="selected">
+                        <option value="key_c">C</option>
+                        <option value="key_c#">C#</option>
+                        <option value="key_d">D</option>
+                        <option value="key_d#">D#</option>
+                        <option value="key_e">E</option>
+                        <option value="key_f">F</option>
+                        <option value="key_f#">F#</option>
+                        <option value="key_g">G</option>
+                        <option value="key_g#">G#</option>
+                        <option value="key_a">A</option>
+                        <option value="key_a#">A#</option>
+                        <option value="key_b">B</option>
+                    </select>
                 </div>
+            </div>   
+            <div class="row m-3">
+                <h3>よく使われるコード</h3>
             </div>
             <div class="row justify-content-center">
                 <button 
@@ -40,10 +42,9 @@
                 >
                     {{ fixed }}
                 </button>
-                
             </div>
             <div class="row my-5">
-                <textarea  cols="150" rows="6" v-model="MyText" name="lyrics">
+                <textarea  cols="170" rows="6" v-model="MyText" name="lyrics">
                 </textarea>
             </div>
             <div>

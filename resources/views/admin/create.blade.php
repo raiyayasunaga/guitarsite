@@ -15,13 +15,13 @@
                 @endif
                 <div class="form-group row">
                     <label class="col-md-2" for="title">曲のタイトル</label>
-                    <div class="col-md-10">
+                    <div class="col-10">
                         <input type="text" class="form-control" name="title" value="{{ old('title') }}">
                     </div>
                 </div>
                 <div class="form-group row">
                     <label class="col-md-2" for="body" >カテゴリー</label>
-                    <div class="col-md-10">
+                    <div class="col-10">
                         <select class="form-control mb-3" name="category" value="{{ old('category') }}">
                                 <option value="洋楽">洋楽</option>
                                 <option value="Jpop">Jpop</option>
@@ -34,7 +34,7 @@
                 </div>
                 <div class="form-group row">
                     <label class="col-md-2" for="body">設定するカポ数</label>
-                        <div class="col-md-10">
+                        <div class="col-10">
                             <select class="form-control mb-3" name = "capo" value="{{ old('capo') }}">
                                 <option value="+7">+7</option>
                                 <option value="+6">+6</option>
@@ -49,16 +49,18 @@
                         </div>
                     </div>
                     <div class="form-group row">
-                                <label class="col-md-2" for="title">画像</label>
-                                <div class="col-md-10">
+                                <label class="col-2" for="title">画像</label>
+                                <div class="col-10">
                                     <input type="file" class="form-control-file" name="image">
                                 </div>
                     </div>
                     <div class="row">
-                        <div id="app">
-                            <!-- フォームタグで保存されるのか。 -->
-                                <sample-component></sample-component>
-                                @csrf
+                        <div class="col-12">
+                            <div id="app">
+                                <!-- フォームタグで保存されるのか。 -->
+                                    <sample-component></sample-component>
+                                    @csrf
+                            </div>
                         </div>
                     </div>
                 {{ csrf_field() }}

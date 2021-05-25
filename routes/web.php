@@ -28,7 +28,8 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function() {
     // プロフィールに関する
     Route::get('profile', 'Admin\ProfileController@profile');
     Route::get('profileedit', 'Admin\ProfileController@edit')->name('user.image');
-    Route::post('profileedit', 'Admin\ProfileController@updata');
+    // 一部変更になるはず
+    Route::PATCH('profileedit', 'Admin\ProfileController@updata');
 });
 
 

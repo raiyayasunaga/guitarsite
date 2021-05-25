@@ -2102,6 +2102,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     // ここ入らないのかも
@@ -37976,70 +37977,72 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "container" }, [
     _c("div", { staticClass: "row my-3" }, [
-      _c("div", { staticClass: "mt-3" }, [_vm._v("コード入力")]),
-      _vm._v(" "),
-      _c(
-        "select",
-        {
-          directives: [
-            {
-              name: "model",
-              rawName: "v-model",
-              value: _vm.selected,
-              expression: "selected"
-            }
-          ],
-          staticClass: "form-control mb-3",
-          on: {
-            change: [
-              function($event) {
-                var $$selectedVal = Array.prototype.filter
-                  .call($event.target.options, function(o) {
-                    return o.selected
-                  })
-                  .map(function(o) {
-                    var val = "_value" in o ? o._value : o.value
-                    return val
-                  })
-                _vm.selected = $event.target.multiple
-                  ? $$selectedVal
-                  : $$selectedVal[0]
-              },
-              function($event) {
-                return _vm.onchange()
+      _c("div", { staticClass: "col-12" }, [
+        _c("div", { staticClass: "mt-3" }, [_vm._v("コード入力")]),
+        _vm._v(" "),
+        _c(
+          "select",
+          {
+            directives: [
+              {
+                name: "model",
+                rawName: "v-model",
+                value: _vm.selected,
+                expression: "selected"
               }
-            ]
-          }
-        },
-        [
-          _c("option", { attrs: { value: "key_c" } }, [_vm._v("C")]),
-          _vm._v(" "),
-          _c("option", { attrs: { value: "key_c#" } }, [_vm._v("C#")]),
-          _vm._v(" "),
-          _c("option", { attrs: { value: "key_d" } }, [_vm._v("D")]),
-          _vm._v(" "),
-          _c("option", { attrs: { value: "key_d#" } }, [_vm._v("D#")]),
-          _vm._v(" "),
-          _c("option", { attrs: { value: "key_e" } }, [_vm._v("E")]),
-          _vm._v(" "),
-          _c("option", { attrs: { value: "key_f" } }, [_vm._v("F")]),
-          _vm._v(" "),
-          _c("option", { attrs: { value: "key_f#" } }, [_vm._v("F#")]),
-          _vm._v(" "),
-          _c("option", { attrs: { value: "key_g" } }, [_vm._v("G")]),
-          _vm._v(" "),
-          _c("option", { attrs: { value: "key_g#" } }, [_vm._v("G#")]),
-          _vm._v(" "),
-          _c("option", { attrs: { value: "key_a" } }, [_vm._v("A")]),
-          _vm._v(" "),
-          _c("option", { attrs: { value: "key_a#" } }, [_vm._v("A#")]),
-          _vm._v(" "),
-          _c("option", { attrs: { value: "key_b" } }, [_vm._v("B")])
-        ]
-      ),
-      _vm._v(" "),
-      _vm._m(0)
+            ],
+            staticClass: "form-control mb-3",
+            on: {
+              change: [
+                function($event) {
+                  var $$selectedVal = Array.prototype.filter
+                    .call($event.target.options, function(o) {
+                      return o.selected
+                    })
+                    .map(function(o) {
+                      var val = "_value" in o ? o._value : o.value
+                      return val
+                    })
+                  _vm.selected = $event.target.multiple
+                    ? $$selectedVal
+                    : $$selectedVal[0]
+                },
+                function($event) {
+                  return _vm.onchange()
+                }
+              ]
+            }
+          },
+          [
+            _c("option", { attrs: { value: "key_c" } }, [_vm._v("C")]),
+            _vm._v(" "),
+            _c("option", { attrs: { value: "key_c#" } }, [_vm._v("C#")]),
+            _vm._v(" "),
+            _c("option", { attrs: { value: "key_d" } }, [_vm._v("D")]),
+            _vm._v(" "),
+            _c("option", { attrs: { value: "key_d#" } }, [_vm._v("D#")]),
+            _vm._v(" "),
+            _c("option", { attrs: { value: "key_e" } }, [_vm._v("E")]),
+            _vm._v(" "),
+            _c("option", { attrs: { value: "key_f" } }, [_vm._v("F")]),
+            _vm._v(" "),
+            _c("option", { attrs: { value: "key_f#" } }, [_vm._v("F#")]),
+            _vm._v(" "),
+            _c("option", { attrs: { value: "key_g" } }, [_vm._v("G")]),
+            _vm._v(" "),
+            _c("option", { attrs: { value: "key_g#" } }, [_vm._v("G#")]),
+            _vm._v(" "),
+            _c("option", { attrs: { value: "key_a" } }, [_vm._v("A")]),
+            _vm._v(" "),
+            _c("option", { attrs: { value: "key_a#" } }, [_vm._v("A#")]),
+            _vm._v(" "),
+            _c("option", { attrs: { value: "key_b" } }, [_vm._v("B")])
+          ]
+        )
+      ])
     ]),
+    _vm._v(" "),
+    _vm._m(0),
     _vm._v(" "),
     _c(
       "div",
@@ -38092,7 +38095,7 @@ var render = function() {
             expression: "MyText"
           }
         ],
-        attrs: { cols: "150", rows: "6", name: "lyrics" },
+        attrs: { cols: "170", rows: "6", name: "lyrics" },
         domProps: { value: _vm.MyText },
         on: {
           input: function($event) {

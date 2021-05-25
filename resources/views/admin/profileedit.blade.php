@@ -7,12 +7,13 @@
    <h2 class="my-3">プロフィール編集</h2>
     <form method="post" action="{{ route('user.image', ['user' => $user->id]) }}" enctype="multipart/form-data">
       @csrf
-      <div class="row mb-5">
+  @method('PATCH')
+      <!-- <div class="row mb-5">
         <div class="col-3">
           <h3>名前変更</h3>
           <input type="text" value="">
         </div>
-      </div>
+      </div> -->
       <div class="row">
         <div class="col-md-3">
           <label for="profile_image">現在のプロフィール画像
