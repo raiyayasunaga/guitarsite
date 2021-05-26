@@ -2102,7 +2102,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     // ここ入らないのかも
@@ -2110,8 +2109,7 @@ __webpack_require__.r(__webpack_exports__);
       cords: ['C', 'Cm', 'Cdim', 'C6', 'C7', 'C7sus4', 'Cadd9', 'Caug', 'Cdim', 'CmM7', 'Cm7', 'Cm7b5', 'Csus4', 'CM7'],
       fixeds: ['/', 'N.C'],
       MyText: ' ',
-      selected: 'key_c',
-      CordImages: ' '
+      selected: 'key_c'
     };
   },
   methods: {
@@ -2121,11 +2119,10 @@ __webpack_require__.r(__webpack_exports__);
     },
     onClick: function onClick($cord) {
       this.MyText = "".concat(this.MyText, " [").concat($cord, "]");
-      this.MyText = "".concat(this.MyText) + "  " + "[".concat(fixed, "]"); // this.Images = '<img src="/img/C.png">';
-      // let groupImages = { 
-      //   "C": '/img/Cm.png',
-      //   "Cdim": '/img/Cdim.png',
-      //   "C6": '/img/C7.png',
+      this.MyText = "".concat(this.MyText) + "  " + "[".concat(fixed, "]"); // let groupImages = { 
+      //   "[C]": '/img/Cm.png',
+      //   "[Cdim]": '/img/Cdim.png',
+      //   "[C6]": '/img/C7.png',
       // };
       // this.CordImages = groupImages;
       // idビューエレメントを出して、appendをイメージタグを追加していく

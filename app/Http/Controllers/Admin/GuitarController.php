@@ -130,9 +130,8 @@ class GuitarController extends Controller
       return redirect('admin/mypage/');
     }
 
-    public function edit(Request $request)
+    public function edit($id, Request $request)
     {
-
         $music = Music::find($request->id);
 
       if (empty($music)) {

@@ -51,7 +51,7 @@ Route::post('register/main_check', 'Auth\RegisterController@mainCheck')->name('r
 Route::post('register/main_register', 'Auth\RegisterController@mainRegister')->name('register.main.registered');
 
 Route::get('/', function() {
-    return view('admin.cord');
+    return view('/welcome');
 });
 
 

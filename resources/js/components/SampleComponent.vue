@@ -1,6 +1,5 @@
 <template>
     <div class="container">
-        <!-- vueでも同じように使えるのか？ -->
             <div class="row my-3">
                 <div class="col-12">
                     <div class="mt-3">コード入力</div>
@@ -23,6 +22,7 @@
             <div class="row m-3">
                 <h3>よく使われるコード</h3>
             </div>
+            <!-- ボタン -->
             <div class="row justify-content-center">
                 <button 
                     v-for="cord in cords"
@@ -44,6 +44,7 @@
                 </button>
             </div>
             <div class="row my-5">
+                <!-- ここでボタンが表示される -->
                 <textarea  cols="170" rows="6" v-model="MyText" name="lyrics">
                 </textarea>
             </div>
@@ -51,9 +52,7 @@
                 プレビュー
             </div>
             <div class="row p-5 m-5">
-
-                <!-- textarea記入した文字やコードを表示させる -->
-                
+                <!-- textareaで入力したコード（ボタン）を{{MyText}}内で画像に変換させる -->
                 <div id="view">
                     {{ MyText }}
                     <!-- <img 
@@ -80,7 +79,6 @@
                 fixeds: ['/', 'N.C'],
                 MyText: ' ',
                 selected: 'key_c',
-                CordImages: ' ',
             }
         },
         
@@ -94,13 +92,10 @@
 
                 this.MyText = `${this.MyText}` + "  " + `[${fixed}]`;
 
-
-                // this.Images = '<img src="/img/C.png">';
-                
                 // let groupImages = { 
-                //   "C": '/img/Cm.png',
-                //   "Cdim": '/img/Cdim.png',
-                //   "C6": '/img/C7.png',
+                //   "[C]": '/img/Cm.png',
+                //   "[Cdim]": '/img/Cdim.png',
+                //   "[C6]": '/img/C7.png',
                 // };
                 // this.CordImages = groupImages;
                 // idビューエレメントを出して、appendをイメージタグを追加していく
