@@ -8,6 +8,9 @@
           <div class="row my-4">
         <!-- ifを使ってカラムによって表示を変える方法を実装 -->
             <h2>曲のタイトル：{{ str_limit($music->title, 100) }}</h2>
+            <div class="ml-3">
+              <img src="{{ asset('storage/profiles/'.$music->user->profile_image) }}" style="border: none; width:50px; height:auto; border-radius: 50px;" id="img">
+            </div>
           </div>
           <div class="row mb-5">
             <h3 class="col-4">カポ：{{ ($music->capo) }}</h3>

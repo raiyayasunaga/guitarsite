@@ -19,6 +19,7 @@ textarea {
 
 #img {
   display: block;
+  border-radius: 50px;
 }
 
 #Newimg {

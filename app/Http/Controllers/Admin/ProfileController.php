@@ -7,6 +7,7 @@ use App\Http\Controllers\Controller;
 use App\Music;
 use App\User;
 use App\Cord;
+use Storage; 
 use Image;
 use Auth;
 
@@ -22,23 +23,22 @@ class ProfileController extends Controller
         return view('admin.profileedit', ['user' => $user]);
     }
     
-    public function update($id, UserRequest $request) {
+    public function updata(Request $request) {
         $user = Auth::user();
         $form = $request->all();
     
         $profileImage = $request->file('profile_image');
         if ($profileImage != null) {
-            $form['profile_image'] = $this->saveProfileImage($profileImage, $id); // return file name
+            $form['profile_image'] = $this->saveProfileImage($profileImage, Auth::id()); // return file name
         }
     
         unset($form['_token']);
         unset($form['_method']);
         //ユーザーそれぞれのデータの値を保存できる作業 
-        $user->user_id = Auth::id();
         
         $user->fill($form)->save();
 
-        return redirect('admin/profile');
+        return redirect('admin/profileedit');
     }
     
     private function saveProfileImage($image, $id) {

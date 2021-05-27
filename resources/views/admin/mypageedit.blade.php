@@ -36,14 +36,16 @@
                 <div class="form-group row">
                     <label class="col-md-2" for="body">設定するカポ数</label>
                         <div class="col-md-10">
-                            <select class="form-control mb-3" name = "capo" >
-                                @foreach ($music_form as $music)
-                                    @if($music->id === $user->capo)
-                                        <option value="{{ $music->id }}" selected>{{ $music->name }}</option>
-                                    @else
-                                        <option value="{{ $music->id }}">{{ $music->name }}</option>
-                                    @endif
-                                @endforeach
+                            <select class="form-control mb-3" name = "capo" value="{{ $music_form->capo }}">
+                                <option value="+7">+7</option>
+                                <option value="+6">+6</option>
+                                <option value="+5">+5</option>
+                                <option value="+4">+4</option>
+                                <option value="+3">+3</option>
+                                <option value="+2">+2</option>
+                                <option value="+1">+1</option>
+                                <option value="+-0" selected>±0</option>
+                                <option value="半音">半音</option>
                             </select>
                         </div>
                     </div>

@@ -5,7 +5,7 @@
 @section('content')
   <div class="container">
    <h2 class="my-3">プロフィール編集</h2>
-    <form method="post" action="{{ route('user.image', ['user' => $user->id]) }}" enctype="multipart/form-data">
+    <form method="post" action="{{ route('user.image') }}" enctype="multipart/form-data">
       @csrf
   @method('PATCH')
       <!-- <div class="row mb-5">

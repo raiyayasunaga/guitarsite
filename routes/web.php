@@ -24,6 +24,8 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function() {
     // 編集と更新
     Route::get('mypageedit', 'Admin\GuitarController@edit');
     Route::post('mypageedit', 'Admin\GuitarController@update');
+    Route::get('mypage', 'Admin\GuitarController@close');
+    Route::get('home', 'Admin\GuitarController@open');
 
     // プロフィールに関する
     Route::get('profile', 'Admin\ProfileController@profile');

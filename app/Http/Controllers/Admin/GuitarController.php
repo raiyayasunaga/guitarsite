@@ -62,7 +62,7 @@ class GuitarController extends Controller
       $music->user_id = Auth::id();
       $music->save();
 
-      return redirect('admin/home');
+      return redirect('admin/mypage');
     }
 
     public function cord() {
@@ -101,8 +101,7 @@ class GuitarController extends Controller
     }
 
     public function mypage(Request $request) {
-        //  $auths = Auth::user();
-        // 'auth' => $auths
+
         $cond_title = $request->cond_title;
 
 
@@ -124,13 +123,14 @@ class GuitarController extends Controller
     public function delete(Request $request)
     {
       // 該当するNews Modelを取得
+      
       $music = Music::find($request->id);
       // 削除する
       $music->delete();
       return redirect('admin/mypage/');
     }
 
-    public function edit($id, Request $request)
+    public function edit(Request $request)
     {
         $music = Music::find($request->id);
 
@@ -143,6 +143,7 @@ class GuitarController extends Controller
     public function update(Request $request)
     {
         // Validationをかける
+
         $this->validate($request, Music::$rules);
         // News Modelからデータを取得する
         $music = Music::find($request->id);
@@ -154,6 +155,16 @@ class GuitarController extends Controller
         $music->fill($music_form)->save();
 
         return redirect('admin/mypage');
+    }
+
+    public function close(Request $request)
+    {
+        return redirect('admin/mypage');
+    }
+
+    public function open(Request $request)
+    {
+        return redirect('admin/home');
     }
 
     private function saveProfileImage($image, $id) {

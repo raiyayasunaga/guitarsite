@@ -48,11 +48,10 @@
                         <thead>
                             <tr>
                                 <th class="mobile" width="10%">ID</th>
-                                <th width="40%">曲のタイトル</th>
+                                <th width="50%">曲のタイトル</th>
                                 <th width="20%">カテゴリー</th>
                                 <th class="mobile"  width="10%">カポ数</th>
                                 <th width="10%">作者</th>
-                                <th class="mobile" width="10%">作者番号</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -62,8 +61,7 @@
                                     <td><a href ="{{ route('admin.playing', ['id' => $music->id]), }}"> {{ $music->title }}</a></td>
                                     <td>{{ str_limit($music->category, 150) }}</td>
                                     <td class="mobile">{{ ($music->capo)}}</td>
-                                    <td><img src="{{ asset('storage/profiles/'.$user->profile_image) }}" style="width:30px; height:auto;" id="img"></td>
-                                    <td class="mobile"> {{ str_limit($music->user_id, 100) }}</td>
+                                    <td><img src="{{ asset('storage/profiles/'.$music->user->profile_image) }}" style="border: none; width:30px; height:auto; border-radius: 50px;" id="img"></td>
                                 </tr>
                             @endforeach
                         </tbody>

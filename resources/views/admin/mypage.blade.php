@@ -42,7 +42,6 @@
                             </tr>
                         </thead>
                         <tbody>
-                            @if ($posts != NULL)
                             @foreach($posts as $music)
                                 <tr>
                                     <th class="mobile">{{ $music->id }}</th>
@@ -59,6 +58,9 @@
                                         <div>
                                             <a href="{{ action('Admin\GuitarController@delete', ['id' => $music->id]) }}">消去</a>
                                         </div>
+                                        <div>
+                                            <button onclick="test()">消去</button>
+                                        </div>
                                     </td>
                                     <td>
                                         <div>
@@ -70,7 +72,6 @@
                                     </td>
                                 </tr>
                             @endforeach
-                            @endif
                         </tbody>
                     </table>
                 </div>
@@ -81,15 +82,18 @@
 @endsection
 @section('js')
 <script>
-function test() {
+
+foreach ($posts as $music) {
+    function test() {
 //引数を加える
 result = window.confirm("本当に消去してもよろしいですか？")
 if (result) {
-  window.location.href = "#"
+  window.location.href = "{{ action('Admin\GuitarController@delete', ['id' => $music->id]) }}"
 } else {
 
 }
 
 }
+};
 </script>
 @endsection

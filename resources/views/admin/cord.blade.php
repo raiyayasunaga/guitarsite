@@ -4,6 +4,12 @@
 
 @section('content')
   <div id ="cordbackground">
+  <div class="container">
+    <div class="row">
+      <div id="text"></div>
+      <button onclick="sample()">ボタン押してみ？</button>
+    </div>
+  </div>
     <div class="container">
 
       <div class="row py-5">
@@ -1013,4 +1019,17 @@
 
     </div>
   </div>
+@endsection
+@section('js')
+<script>
+
+function sample() { 
+ const week = ['日', '月', '火', '水', '木', '金', '土'];
+ let today = new Date();
+
+ let week_jp = week[today.getDay()];
+ document.write(`今日は、${week_jp}曜日です`);
+
+}
+</script>
 @endsection
