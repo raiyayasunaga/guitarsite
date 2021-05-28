@@ -2,6 +2,8 @@
 
 @section('title', '曲の編集')
 
+
+
 @section('content')
     <div class="container">
       <div class="row my-5">

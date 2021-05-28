@@ -1,15 +1,31 @@
 @extends('layouts.admin')
 
 @section('title', 'コード一覧')
+@section('style')
+<style>
+  body {
+  background: linear-gradient(-45deg, lightgreen, lightblue);
+  background-size: 100% 100%;
+  animation: gradient 30s ease infinite;
+}
 
+@keyframes gradient {
+  0% {
+    background-position: 0% 0%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 0%;
+  }
+}
+</style>
+@endsection('style')
 @section('content')
-  <div id ="cordbackground">
   <div class="container">
-    <div class="row">
-      <div id="text"></div>
-      <button onclick="sample()">ボタン押してみ？</button>
-    </div>
-  </div>
+    <a href="test">いろいろ遊んでみ！？！</a>
+
     <div class="container">
 
       <div class="row py-5">
@@ -1018,7 +1034,6 @@
         </div>
 
     </div>
-  </div>
 @endsection
 @section('js')
 <script>

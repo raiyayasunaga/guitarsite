@@ -18,6 +18,7 @@
 
         <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
 
+
         <!-- Fonts -->
         <link rel="dns-prefetch" href="https://fonts.gstatic.com">
         <link href="https://fonts.googleapis.com/css?family=Raleway:300,400,600" rel="stylesheet" type="text/css">
@@ -27,12 +28,16 @@
         <link href="{{ asset('/assets/css/app.css') }}" rel="stylesheet">
         {{-- この章の後半で作成するCSSを読み込みます --}}
         <link href="{{ asset('/assets/css/admin.css') }}" rel="stylesheet">
+
+        <link href="{{ asset('/sass/admin.scss') }}" rel="stylesheet">
+        
+        @yield('style')
     </head>
     <body>
         <div id="app">
             {{-- 画面上部に表示するナビゲーションバーです。 --}}
             <nav class="navbar navbar-expand-md navbar-dark navbar-laravel">
-                <div class="container">
+                <div class="naver container">
                     <h1><a href ="home">楽器を弾こう！</a></h1>
                     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>

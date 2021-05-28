@@ -2,10 +2,32 @@
 
 @section('title', 'マイページ')
 
+@section('style')
+<style>
+body {
+  background: linear-gradient(-45deg, lightgreen, lightblue, lightpink);
+  background-size: 400% 400%;
+  animation: gradient 30s ease infinite;
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 40% 0%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 40% 0%;
+  }
+}
+</style>
+@endsection
+
 @section('content')
 <div class="container">
       <div class="row mt-3">
-        <h2><a href = "{{ action('Admin\ProfileController@edit') }}">{{ Auth::user()->name }}：プロフィール編集</a></h2>
+        <h2><a href = "{{ action('Admin\ProfileController@edit') }}"><img src="{{ asset('storage/profiles/'.$user->profile_image) }}" style="border: none; width:90px; height:auto; border-radius: 50px;" >：プロフィール編集</a></h2>
       </div>
       <div class="row my-3">
         <div class="col-md-4 my-3">
@@ -82,18 +104,15 @@
 @endsection
 @section('js')
 <script>
-
-foreach ($posts as $music) {
     function test() {
 //引数を加える
-result = window.confirm("本当に消去してもよろしいですか？")
-if (result) {
-  window.location.href = "{{ action('Admin\GuitarController@delete', ['id' => $music->id]) }}"
-} else {
+        result = window.confirm("本当に消去してもよろしいですか？")
+        if (result) {
+        window.location.href = "{{ action('Admin\GuitarController@delete', ['id' => $music->id]) }}"
+        } else {
+
+        }
 
 }
-
-}
-};
 </script>
 @endsection

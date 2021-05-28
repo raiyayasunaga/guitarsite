@@ -2102,14 +2102,33 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     // ここ入らないのかも
     return {
-      cords: ['C', 'Cm', 'Cdim', 'C6', 'C7', 'C7sus4', 'Cadd9', 'Caug', 'Cdim', 'CmM7', 'Cm7', 'Cm7b5', 'Csus4', 'CM7'],
+      cords: ['C', 'Cm', 'C6', 'C7', 'C7sus4', 'Cadd9', 'Caug', 'Cdim', 'CmM7', 'Cm7', 'Cm7b5', 'Csus4', 'CM7'],
       fixeds: ['/', 'N.C'],
+      images: ['C_png', 'Cm_png', 'C6_png'],
+      Cordimage: ' ',
       MyText: ' ',
-      selected: 'key_c'
+      selected: 'key_c',
+      show: ' '
     };
   },
   methods: {
@@ -2118,14 +2137,7 @@ __webpack_require__.r(__webpack_exports__);
       this.count++;
     },
     onClick: function onClick($cord) {
-      this.MyText = "".concat(this.MyText, " [").concat($cord, "]");
-      this.MyText = "".concat(this.MyText) + "  " + "[".concat(fixed, "]"); // let groupImages = { 
-      //   "[C]": '/img/Cm.png',
-      //   "[Cdim]": '/img/Cdim.png',
-      //   "[C6]": '/img/C7.png',
-      // };
-      // this.CordImages = groupImages;
-      // idビューエレメントを出して、appendをイメージタグを追加していく
+      this.MyText = "".concat(this.MyText, " [").concat($cord, "]"); // idビューエレメントを出して、appendをイメージタグを追加していく
       // 画像を配列にして上手くまとめて表示させる方法
     },
     onchange: function onchange() {
@@ -2144,6 +2156,13 @@ __webpack_require__.r(__webpack_exports__);
         'key_b': ['B', 'Bm', 'Bdim', 'Baug', 'B6', 'B7', 'B7sus4', 'Badd9', 'Baug', 'BmM7', 'Bm7', 'Bm7b5', 'Bsus4', 'BM7']
       };
       this.cords = groupCords[this.selected];
+    },
+    onImage: function onImage() {
+      var groupImages = {
+        'C': '/img/C.png',
+        'Cm': '/img/Cm.png',
+        'Cdim': '/img/Cdim.png'
+      };
     }
   }
 });
@@ -38035,6 +38054,52 @@ var render = function() {
             _vm._v(" "),
             _c("option", { attrs: { value: "key_b" } }, [_vm._v("B")])
           ]
+        ),
+        _vm._v(" "),
+        _c("div", [_vm._v("画像表示")]),
+        _vm._v(" "),
+        _c(
+          "select",
+          {
+            directives: [
+              {
+                name: "model",
+                rawName: "v-model",
+                value: _vm.show,
+                expression: "show"
+              }
+            ],
+            staticClass: "form-control",
+            on: {
+              change: [
+                function($event) {
+                  var $$selectedVal = Array.prototype.filter
+                    .call($event.target.options, function(o) {
+                      return o.selected
+                    })
+                    .map(function(o) {
+                      var val = "_value" in o ? o._value : o.value
+                      return val
+                    })
+                  _vm.show = $event.target.multiple
+                    ? $$selectedVal
+                    : $$selectedVal[0]
+                },
+                function($event) {
+                  return _vm.onImage()
+                }
+              ]
+            }
+          },
+          [
+            _c("option", { attrs: { value: "/img/C.png" } }, [_vm._v("C")]),
+            _vm._v(" "),
+            _c("option", { attrs: { value: "/img/Cm.png" } }, [_vm._v("Cm")]),
+            _vm._v(" "),
+            _c("option", { attrs: { value: "/img/Cdim.png" } }, [
+              _vm._v("Cdim")
+            ])
+          ]
         )
       ])
     ]),
@@ -38082,6 +38147,32 @@ var render = function() {
       2
     ),
     _vm._v(" "),
+    _c(
+      "div",
+      { staticClass: "row justify-content-center" },
+      [
+        _vm._l(_vm.images, function(image) {
+          return _c(
+            "button",
+            {
+              key: image,
+              staticClass: "cord-button",
+              attrs: { type: "button", src: _vm.Cordiamge },
+              on: {
+                click: function($event) {
+                  return _vm.onClick(image)
+                }
+              }
+            },
+            [_vm._v("\n                " + _vm._s(image) + "\n            ")]
+          )
+        }),
+        _vm._v("\n            プレビュー\n            "),
+        _c("div")
+      ],
+      2
+    ),
+    _vm._v(" "),
     _c("div", { staticClass: "row my-5" }, [
       _c("textarea", {
         directives: [
@@ -38109,7 +38200,7 @@ var render = function() {
     _vm._v(" "),
     _c("div", { staticClass: "row p-5 m-5" }, [
       _c("div", { attrs: { id: "view" } }, [
-        _vm._v("\n                " + _vm._s(_vm.MyText) + "\n                ")
+        _vm._v("\n                " + _vm._s(_vm.MyText) + "\n            ")
       ])
     ])
   ])

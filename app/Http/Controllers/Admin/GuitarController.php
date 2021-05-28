@@ -101,16 +101,15 @@ class GuitarController extends Controller
     }
 
     public function mypage(Request $request) {
-
+        $user = Auth::user();
         $cond_title = $request->cond_title;
-
+        
 
         $music = Music::where('user_id', Auth::id()) //$userによる投稿を取得
             ->orderBy('created_at', 'desc') // 投稿作成日が新しい順に並べる
             ->get(); // ページネーション; 
         
-
-        return view('admin.mypage', ['posts' => $music, 'cond_title' => $cond_title,]);
+        return view('admin.mypage', ['posts' => $music, 'cond_title' => $cond_title, 'user' => $user]);
     }
 
     public function playing(Request $request) {
@@ -137,7 +136,7 @@ class GuitarController extends Controller
       if (empty($music)) {
         abort(404);    
       }
-      return view('admin.mypageedit', ['music_form' => $music]);
+      return view('admin.mypageedit', ['music_form' => $music, ]);
     }
     
     public function update(Request $request)
@@ -157,16 +156,6 @@ class GuitarController extends Controller
         return redirect('admin/mypage');
     }
 
-    public function close(Request $request)
-    {
-        return redirect('admin/mypage');
-    }
-
-    public function open(Request $request)
-    {
-        return redirect('admin/home');
-    }
-
     private function saveProfileImage($image, $id) {
         // get instance
         $img = \Image::make($image);
@@ -180,6 +169,10 @@ class GuitarController extends Controller
         Storage::put($save_path, (string) $img->encode());
         // return file name
         return $file_name;
+    }
+
+    public function test() {
+        return view('admin.test');
     }
 
 }

@@ -1,9 +1,9 @@
-$sitecolor: rgb(163, 27, 27);
+$sitecolor: #1B1311;
 
-$sitebackground: rgb(245, 227, 191);
+$sitebackground: #B90008;
 
 $cordbackground: #CDF7D9;
 
 @mixin sitefont {
-  font-family: "游明朝", "YuMincho", "ヒラギノ明朝 Pro W3", "Hiragino Mincho Pro", "ＭＳ Ｐ明朝", "MS PMincho", serif;;
+  font-family: '明朝体';
 }

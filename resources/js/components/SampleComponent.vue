@@ -17,6 +17,12 @@
                         <option value="key_a#">A#</option>
                         <option value="key_b">B</option>
                     </select>
+                    <div>画像表示</div>
+                    <select class="form-control" @change="onImage()" v-model="show">
+                        <option value="/img/C.png">C</option>
+                        <option value="/img/Cm.png">Cm</option>
+                        <option value="/img/Cdim.png">Cdim</option>
+                    </select>
                 </div>
             </div>   
             <div class="row m-3">
@@ -43,6 +49,22 @@
                     {{ fixed }}
                 </button>
             </div>
+            <div class="row justify-content-center">
+                <button
+                    v-for="image of images"  
+                    :key="image"
+                    class="cord-button"
+                    type="button"
+                    @click="onClick( image )"
+                    v-bind:src="Cordiamge"
+                >
+                    {{ image }}
+                </button>
+                プレビュー
+                <div>
+                </div>
+
+            </div>
             <div class="row my-5">
                 <!-- ここでボタンが表示される -->
                 <textarea  cols="170" rows="6" v-model="MyText" name="lyrics">
@@ -55,12 +77,6 @@
                 <!-- textareaで入力したコード（ボタン）を{{MyText}}内で画像に変換させる -->
                 <div id="view">
                     {{ MyText }}
-                    <!-- <img 
-                        v-for="CordImage of CordImages"
-                        :key="CordImage"
-                        :v-if="CorImage"
-                        v-bind:src="CordImage"> -->
-                    <!-- データバインディングを -->
                 </div>
             </div>
     </div>
@@ -75,10 +91,13 @@
         data: () => {
             // ここ入らないのかも
             return {
-                cords: ['C', 'Cm', 'Cdim', 'C6', 'C7', 'C7sus4', 'Cadd9', 'Caug', 'Cdim', 'CmM7', 'Cm7', 'Cm7b5', 'Csus4', 'CM7'],
+                cords: ['C', 'Cm', 'C6', 'C7', 'C7sus4', 'Cadd9', 'Caug', 'Cdim', 'CmM7', 'Cm7', 'Cm7b5', 'Csus4', 'CM7'],
                 fixeds: ['/', 'N.C'],
+                images:['C_png', 'Cm_png', 'C6_png'],
+                Cordimage: ' ',
                 MyText: ' ',
                 selected: 'key_c',
+                show: ' ',
             }
         },
         
@@ -90,18 +109,11 @@
             onClick($cord) {
                 this.MyText = `${this.MyText} [${$cord}]`;
 
-                this.MyText = `${this.MyText}` + "  " + `[${fixed}]`;
-
-                // let groupImages = { 
-                //   "[C]": '/img/Cm.png',
-                //   "[Cdim]": '/img/Cdim.png',
-                //   "[C6]": '/img/C7.png',
-                // };
-                // this.CordImages = groupImages;
+                
                 // idビューエレメントを出して、appendをイメージタグを追加していく
                 // 画像を配列にして上手くまとめて表示させる方法
             },
-
+            
             onchange() {
                 let groupCords = {
                     'key_c': ['C', 'Cm', 'Cdim', 'C6', 'C7', 'C7sus4', 'Cadd9', 'Caug', 'Cdim', 'CmM7', 'Cm7', 'Cm7b5', 'Csus4', 'CM7'],
@@ -119,6 +131,13 @@
                 };
                 this.cords = groupCords[this.selected];
                 
+            },
+            onImage() {
+                let groupImages = {
+                    'C': '/img/C.png',
+                    'Cm': '/img/Cm.png',
+                    'Cdim': '/img/Cdim.png'
+                }
             },
             
         }

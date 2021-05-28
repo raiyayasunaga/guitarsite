@@ -3,6 +3,10 @@
 @section('title', 'ホームページ')
 
 @section('content')
+
+<div class="bg"></div>
+<div class="bg bg2"></div>
+<div class="bg bg3"></div>
     <div class="container">
         <div class="row my-3">
             <h2>公開一覧</h2>
