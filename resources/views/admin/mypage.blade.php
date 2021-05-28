@@ -81,7 +81,9 @@ body {
                                             <a href="{{ action('Admin\GuitarController@delete', ['id' => $music->id]) }}">消去</a>
                                         </div>
                                         <div>
-                                            <button onclick="test()">消去</button>
+                                        <form action="">
+                                            <button type="submit" onclick="test()">消去</button>
+                                        </form>
                                         </div>
                                     </td>
                                     <td>

@@ -50740,11 +50740,11 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! /Users/aneiraiya/Desktop/guitar_player/guitarsite/resources/js/app.js */"./resources/js/app.js");
-__webpack_require__(/*! /Users/aneiraiya/Desktop/guitar_player/guitarsite/resources/js/assets/jquery.js */"./resources/js/assets/jquery.js");
-__webpack_require__(/*! /Users/aneiraiya/Desktop/guitar_player/guitarsite/resources/sass/app.scss */"./resources/sass/app.scss");
-__webpack_require__(/*! /Users/aneiraiya/Desktop/guitar_player/guitarsite/resources/sass/admin.scss */"./resources/sass/admin.scss");
-module.exports = __webpack_require__(/*! /Users/aneiraiya/Desktop/guitar_player/guitarsite/resources/sass/public.scss */"./resources/sass/public.scss");
+__webpack_require__(/*! /Users/aneiraiya/laravel_lesson/guitarsite/resources/js/app.js */"./resources/js/app.js");
+__webpack_require__(/*! /Users/aneiraiya/laravel_lesson/guitarsite/resources/js/assets/jquery.js */"./resources/js/assets/jquery.js");
+__webpack_require__(/*! /Users/aneiraiya/laravel_lesson/guitarsite/resources/sass/app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! /Users/aneiraiya/laravel_lesson/guitarsite/resources/sass/admin.scss */"./resources/sass/admin.scss");
+module.exports = __webpack_require__(/*! /Users/aneiraiya/laravel_lesson/guitarsite/resources/sass/public.scss */"./resources/sass/public.scss");
 
 
 /***/ })
