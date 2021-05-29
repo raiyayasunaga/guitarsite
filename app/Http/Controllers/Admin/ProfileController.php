@@ -6,7 +6,6 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Music;
 use App\User;
-use App\Cord;
 use Storage; 
 use Image;
 use Auth;

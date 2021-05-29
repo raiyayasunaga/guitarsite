@@ -18,7 +18,6 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function() {
     Route::get('mypage', 'Admin\GuitarController@mypage');
     Route::get('playing', 'Admin\GuitarController@playing')->name('admin.playing');
     // ギターコードの表示設定
-    Route::post('home', 'Admin\GuitarController@vue')->name('admin.vue');
     Route::get('delete', 'Admin\GuitarController@delete');
 
     // 編集と更新

@@ -1,4 +1,4 @@
-@charset "UTF-8";
+@import url(https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@200&display=swap);@charset "UTF-8";
 
 body {
   background-repeat: no-repeat;
@@ -32,16 +32,6 @@ textarea {
   left: 1270px;
 }
 
-.test {
-  display: none;
-  overflow: auto;
-}
-
-.modal-content {
-  background-color: white;
-  width: 500px;
-}
-
 .user_name {
   padding-left: 30px;
   font-size: 30px;
@@ -50,16 +40,6 @@ textarea {
 #lyrics {
   font-size: 30px;
   padding: 30px;
-}
-
-h1 a {
-  color: black;
-}
-
-h1 a:hover {
-  text-decoration: none;
-  color: #1B1311;
-  opacity: 0.8;
 }
 
 .form-control {
@@ -133,6 +113,18 @@ img {
   text-decoration: none;
 }
 
+h1 a {
+  color: #23d024;
+  font-family: "Noto Serif JP", serif;
+  font-weight: 900;
+}
+
+h1 a:hover {
+  text-decoration: none;
+  color: #eb9916;
+  opacity: 0.8;
+}
+
 li {
   list-style: none;
 }
@@ -143,6 +135,8 @@ ul {
   margin: 0 auto;
   z-index: 20;
   margin-left: 10px;
+  font-family: "Noto Serif JP", serif;
+  font-weight: 900;
 }
 
 ul li {
@@ -153,15 +147,16 @@ ul li {
 
 ul li a {
   font-size: 20px;
-  color: black;
+  color: #23d024;
 }
 
 ul li a:hover {
   text-decoration: none;
+  color: #eb9916;
 }
 
 .navbar-laravel {
-  background-color: #B90008;
+  background-color: #6c32ab;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
 }
 
@@ -170,7 +165,7 @@ ul li a:hover {
 }
 
 .nav-link {
-  color: black !important;
+  color: #23d024 !important;
 }
 
 .table-dark {

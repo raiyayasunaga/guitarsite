@@ -22,23 +22,25 @@
                     </div>
                 </div>
                 <div class="form-group row">
-                    <label class="col-md-2" for="body" >カテゴリー</label>
+                    <label class="col-md-2" for="category" >カテゴリー</label>
                     <div class="col-md-10">
                     <!-- データベースで取得した 値に合わせるオンラインサポートする-->
-                        <select class="form-control mb-3" name="category" value="{{ $music_form->category }}">
+                        <select class="form-control mb-3" name="category">
+                                <option selected value="{{ $music_form->category }}">{{ $music_form->category }}</option>
                                 <option value="洋楽">洋楽</option>
                                 <option value="Jpop">Jpop</option>
                                 <option value="ロック">ロック</option>
                                 <option value="アニソン">アニソン</option>
                                 <option value="ジブリ">ジブリ</option>
-                                <option value="なし" selected>なし</option>
+                                <option value="なし">なし</option>
                         </select>
                     </div>
                 </div>
                 <div class="form-group row">
-                    <label class="col-md-2" for="body">設定するカポ数</label>
+                    <label class="col-md-2" for="capo">設定するカポ数</label>
                         <div class="col-md-10">
-                            <select class="form-control mb-3" name = "capo" value="{{ $music_form->capo }}">
+                            <select class="form-control mb-3" name = "capo">
+                                <option selected value="{{ $music_form->capo }}">{{ $music_form->capo }}</option>
                                 <option value="+7">+7</option>
                                 <option value="+6">+6</option>
                                 <option value="+5">+5</option>
@@ -46,7 +48,7 @@
                                 <option value="+3">+3</option>
                                 <option value="+2">+2</option>
                                 <option value="+1">+1</option>
-                                <option value="+-0" selected>±0</option>
+                                <option value="±0">±0</option>
                                 <option value="半音">半音</option>
                             </select>
                         </div>

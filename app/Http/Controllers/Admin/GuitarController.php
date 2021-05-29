@@ -6,7 +6,6 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Music;
 use App\User;
-use App\Cord;
 use Image;
 
 use Auth;
@@ -22,14 +21,6 @@ class GuitarController extends Controller
     }
 
     // 一応残しとく
-    public function vue(Request $request) {
-
-      $this->validate($request, Cord::$rules);
-
-      Cord::create($request->only("lyrics"));
-
-      return redirect('admin/home');
-    }
 
     public function create(Request $request) {
         // 以下を追記
@@ -97,13 +88,12 @@ class GuitarController extends Controller
         }
 
 
-        return view('admin.home', ['posts' => $posts, 'cond_title' => $cond_title, 'category' => $category, 'user' => $user, 'cords' => Cord::all()]);
+        return view('admin.home', ['posts' => $posts, 'cond_title' => $cond_title, 'category' => $category, 'user' => $user]);
     }
 
     public function mypage(Request $request) {
         $user = Auth::user();
         $cond_title = $request->cond_title;
-        
 
         $music = Music::where('user_id', Auth::id()) //$userによる投稿を取得
             ->orderBy('created_at', 'desc') // 投稿作成日が新しい順に並べる
@@ -136,7 +126,7 @@ class GuitarController extends Controller
       if (empty($music)) {
         abort(404);    
       }
-      return view('admin.mypageedit', ['music_form' => $music, ]);
+      return view('admin.mypageedit', ['music_form' => $music]);
     }
     
     public function update(Request $request)

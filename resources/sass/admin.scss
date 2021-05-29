@@ -1,5 +1,7 @@
 @import "function";
 
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@200&display=swap');
+
 body {
   background-repeat: no-repeat;
   background-position: center;
@@ -36,18 +38,6 @@ textarea {
   left: 1270px;
 }
 
-// モーダルのCSS
-.test {
-  display: none;
-  overflow: auto;
-}
-
-.modal-content {
-  background-color: white;
-  width: 500px;
-
-}
-
 .user_name {
   padding-left: 30px;
   font-size: 30px;
@@ -57,14 +47,7 @@ textarea {
   padding: 30px;
 }
 
-h1 a{
- color: black;
-  &:hover {
-    text-decoration: none;
-    color: $sitecolor;
-    opacity: 0.8;
-  }
-}
+
 
 // ギターボタンの編集
 .form-control {
@@ -139,33 +122,47 @@ img {
 
 // コード一覧終わり
 
-li {
-  list-style: none;
-}
 
-ul {
-    overflow:hidden;
-    list-style:none;
-    margin: 0 auto;
-    z-index: 20;
-    margin-left: 10px;
-
-   li {
-    display: inline-block;
-    padding: 26px 10px 20px 10px;
-    list-style: none;
-      a {
-      font-size: 20px;
-      color: black;
-        &:hover {
-          text-decoration: none;
-          }
-        }
-      }
-  } 
+// ヘッダーナビゲーション
+h1 a{
+  color: $sinnzi-color-green;
+  @include hederfont;
+  font-weight: 900;
+   &:hover {
+     text-decoration: none;
+     color: $sinnzi-color-orenge;
+     opacity: 0.8;
+   }
+ }
+ li {
+   list-style: none;
+ }
+ 
+ ul {
+     overflow:hidden;
+     list-style:none;
+     margin: 0 auto;
+     z-index: 20;
+     margin-left: 10px;
+     @include hederfont;
+     font-weight: 900;
+    li {
+     display: inline-block;
+     padding: 26px 10px 20px 10px;
+     list-style: none;
+       a {
+       font-size: 20px;
+       color: $sinnzi-color-green;
+         &:hover {
+           text-decoration: none;
+           color: $sinnzi-color-orenge;
+           }
+         }
+       }
+   } 
 
 .navbar-laravel {
-  background-color: $sitebackground;
+  background-color: $sinnzi-color-purple;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
 }
 
@@ -174,7 +171,7 @@ ul {
 }
 
 .nav-link {
-  color: black !important;
+  color: $sinnzi-color-green !important;
 }
 
 .table-dark {

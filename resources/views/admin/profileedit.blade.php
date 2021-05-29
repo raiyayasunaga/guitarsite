@@ -33,6 +33,10 @@
             変更する
           </button>
     </form>
+<div>
+  <a href="profile">デザインスキンを変える</a>
+</div>
+
   </div>
 @endsection
 

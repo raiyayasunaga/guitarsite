@@ -63,27 +63,9 @@
                                 <tr>
                                     <th class="mobile">{{ $music->id }}</th>
                                     <td><a href ="{{ route('admin.playing', ['id' => $music->id]), }}"> {{ $music->title }}</a></td>
-                                    <td>{{ str_limit($music->category, 150) }}</td>
+                                    <td>{{ str_limit($music->category) }}</td>
                                     <td class="mobile">{{ ($music->capo)}}</td>
                                     <td><img src="{{ asset('storage/profiles/'.$music->user->profile_image) }}" style="border: none; width:30px; height:auto; border-radius: 50px;" id="img"></td>
-                                </tr>
-                            @endforeach
-                        </tbody>
-                    </table>
-
-                    <table class="table">
-                        <thead>
-                            <tr>
-                                <th width="10%">ID</th>
-                                <th width="20%">曲の歌詞だけvueアクションの所一応残しとく</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            @foreach($cords as $cord)
-                                <tr>
-                                    <th>{{ $cord->id }}</th>
-                                    <td><a href ="{{ route('admin.playing', ['id' => $cord->id]), }}">{{ str_limit($cord->lyrics) }}</td>
-                                    <!-- user_idからユーザーのnameカラムが欲しい -->
                                 </tr>
                             @endforeach
                         </tbody>

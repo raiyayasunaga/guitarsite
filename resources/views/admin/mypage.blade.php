@@ -81,8 +81,9 @@ body {
                                             <a href="{{ action('Admin\GuitarController@delete', ['id' => $music->id]) }}">消去</a>
                                         </div>
                                         <div>
-                                        <form action="">
-                                            <button type="submit" onclick="test()">消去</button>
+                                        <form method="get" action="{{ action('Admin\GuitarController@delete') }}" onSubmit="return check()">
+                                            <button type="submit" >消去</button>
+                                                <input type="hidden" name="id" value="{{$music->id}}">
                                         </form>
                                         </div>
                                     </td>
@@ -106,14 +107,19 @@ body {
 @endsection
 @section('js')
 <script>
-    function test() {
-//引数を加える
-        result = window.confirm("本当に消去してもよろしいですか？")
-        if (result) {
-        window.location.href = "{{ action('Admin\GuitarController@delete', ['id' => $music->id]) }}"
-        } else {
+function check(){
 
-        }
+if(window.confirm('本当に消してもよろしいですか？')){ // 確認ダイアログを表示
+
+    return true; // 「OK」時は送信を実行
+
+}
+else{ // 「キャンセル」時の処理
+
+ // 警告ダイアログを表示
+    return false; // 送信を中止
+
+}
 
 }
 </script>

@@ -4,6 +4,17 @@ $sitebackground: #B90008;
 
 $cordbackground: #CDF7D9;
 
+$sinnzi-color-purple: #6c32ab;
+$sinnzi-color-green: #23d024;
+$sinnzi-color-orenge: #eb9916;
+
+$NERV-red: #B90008;
+$NERV-black: #1B1311; 
+
 @mixin sitefont {
   font-family: '明朝体';
+}
+
+@mixin hederfont {
+  font-family: 'Noto Serif JP', serif;
 }

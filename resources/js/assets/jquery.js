@@ -1,17 +1,30 @@
+var chord_insert = function() {
+  $('#origin-data');
+}
 $(function () {
+  // リアルタイムで表示させる
+  $('#origin-data').on('input', function() {
+    $('#output').html($('#origin-data')[0].value);
+  });
   $('#btn').on('click', function() {
-      $('.test').css("background-color", "red");
+      alert("Hello JEQrty");
   });
-  $('#top').on('click', function() {
-    $(window).scrollTop(600);
-    $(window).scrollLeft(600);
-    console.log('(%d, %d)',$(window).scrollLeft(), $(window).scrollTop());
+
+
+  $("#cordButton_C").on('click',function() {
+		// 値を設定
+		// $('#origin-data').val(" ");
+		// // 値を取得
+		// var str1 = $('#origin-data').val();
+		$('#origin-data') . append("[C]");
+	});
+
+
+  $("#cordButton_D").on('click', function() {
+    $('#origin-data').val('[D]');
+
+    var str1 = $('#origin-data').val();
+    $('#origin-data') . append(text(str1)); 
   });
-  $('#bottomBtn').on('click', function() {
-    $('html, body').animate(
-        { scrollTop: $('body').get(0).scrollHeight },
-        200 * 100 * 100,
-        'inner',
-    );
-});
+
 });
