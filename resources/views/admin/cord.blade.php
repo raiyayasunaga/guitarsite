@@ -1070,21 +1070,6 @@
 <script>
   // jsonデータ
 
-  const cords = [{
-    'cord': '/img/C.png',
-    'cord': '/img/D.png',
-    'cord': 'img/E.png',
-    'cord': '/img/A.png',
-  }];
-
-  functon jsons() {
-
-  for (let $i = 0; $i < cords.length; $i++) {
-    document.write(cords[$i].cord);
-  }
-}
-
-
   // jsonデータおわり
   function check() {
     let answer = prompt('１から１０まで');

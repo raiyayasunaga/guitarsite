@@ -1,6 +1,7 @@
 {
     "/js/app.js": "/js/app.js",
     "/css/app.css": "/css/app.css",
+    "/css/ayanami.css": "/css/ayanami.css",
     "/css/admin.css": "/css/admin.css",
     "/css/public.css": "/css/public.css"
 }

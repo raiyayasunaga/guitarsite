@@ -16,6 +16,16 @@ function cordsName() {
 }
 
 $(function () {
+  $('#skin').on('click', function(url) { 
+      let linkstyle = document.getElementById('changestyle');
+      linkstyle.href = url;
+  }),
+
+  $('#skin2').on('click', function(url) { 
+    let linkstyle = document.getElementById('ayanami');
+    linkstyle.href = url;
+  });
+
   // リアルタイムで表示させる
   $('#origin-data').on('input', function() {
     $('#output').html($('#origin-data')[0].value);

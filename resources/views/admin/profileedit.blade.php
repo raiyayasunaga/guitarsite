@@ -2,6 +2,10 @@
 
 @section('title', 'プロフィール編集')
 
+@section('style')
+<link href="{{ asset('/css/ayanami.css') }}" rel="stylesheet" id="changestyle" />
+@endsection
+
 @section('content')
   <div class="container">
    <h2 class="my-3">プロフィール編集</h2>
@@ -33,12 +37,39 @@
             変更する
           </button>
     </form>
+    
+    <div class="container">
+      
+   <div class="row">
+     <div class="col-6">
+       <input class="btn btn-primary" type="button" value="初号機スキン">
+     </div>
+     <div class="col-6">
+        <input class="btn btn-primary" type="button" value="綾波スキン">
+     </div>
+     <div class="col-6">
+        <input class="btn btn-primary" type="button" value="アキラスキン">
+     </div>
+     <div class="col-6">
+        <input class="btn btn-primary" type="button" value="ジョジョスキン">
+     </div>
+   </div>
+   <div class="row">
+   <input type="button" id="skin" value="初号機スキン" onclick="changeStyle(' {{ asset('/css/admin.css') }} '); "/>
+   </div>
+   <div class="row">
+   <input type="button" id="skin" value="test.css" onclick="changeStyle(' {{ asset('/css/ayanami.css') }} '); "/>
+   </div>
+   <button type="submit" class="btn btn-primary">変更する</button>
+ </div>
 
   </div>
 @endsection
 
 <!-- スクリプトで設定した後に表示させる機能を実装 -->
 <script>
+  
+
   function previewImage(obj)
   {
     var fileReader = new FileReader();

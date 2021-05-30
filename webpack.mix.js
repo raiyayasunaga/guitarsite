@@ -16,5 +16,6 @@ mix.js([
     'resources/js/assets/jquery.js',
 ], 'public/js/app.js')
     .sass('resources/sass/app.scss', 'public/css')
+    .sass('resources/sass/skin/ayanami.scss', 'public/css')
     .sass('resources/sass/admin.scss', 'public/css')
     .sass('resources/sass/public.scss', 'public/css');

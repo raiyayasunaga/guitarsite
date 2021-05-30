@@ -37,13 +37,13 @@ body {
             <div class="col-md-8">
                 <form action="{{ action('Admin\GuitarController@mypage') }}" method="get">
                     <div class="form-group row">
-                        <div class="col-8">
-                            <input type="text" class="form-control" name="cond_title" value="{{ $cond_title }}">
-                        </div>
-                        <div class="col-4">
-                            {{ csrf_field() }}
-                            <input type="submit" class="btn btn-primary" value="検索">
-                        </div>
+                            <div class="col-8">
+                                <input type="text" class="form-control" name="cond_title" value="{{ $cond_title }}">
+                            </div>
+                            <div class="col-4">
+                                {{ csrf_field() }}
+                                <input type="submit" class="btn btn-primary" value="検索">
+                            </div>
                     </div>
                 </form>
             </div>

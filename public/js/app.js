@@ -38188,7 +38188,14 @@ function cordsName() {
 }
 
 $(function () {
-  // リアルタイムで表示させる
+  $('#skin').on('click', function (url) {
+    var linkstyle = document.getElementById('changestyle');
+    linkstyle.href = url;
+  }), $('#skin2').on('click', function (url) {
+    var linkstyle = document.getElementById('ayanami');
+    linkstyle.href = url;
+  }); // リアルタイムで表示させる
+
   $('#origin-data').on('input', function () {
     $('#output').html($('#origin-data')[0].value);
   });
@@ -38496,16 +38503,28 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./resources/sass/skin/ayanami.scss":
+/*!******************************************!*\
+  !*** ./resources/sass/skin/ayanami.scss ***!
+  \******************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
+
+/***/ }),
+
 /***/ 0:
-/*!******************************************************************************************************************************************************!*\
-  !*** multi ./resources/js/app.js ./resources/js/assets/jquery.js ./resources/sass/app.scss ./resources/sass/admin.scss ./resources/sass/public.scss ***!
-  \******************************************************************************************************************************************************/
+/*!*****************************************************************************************************************************************************************************************!*\
+  !*** multi ./resources/js/app.js ./resources/js/assets/jquery.js ./resources/sass/app.scss ./resources/sass/skin/ayanami.scss ./resources/sass/admin.scss ./resources/sass/public.scss ***!
+  \*****************************************************************************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 __webpack_require__(/*! /Users/aneiraiya/laravel_lesson/guitarsite/resources/js/app.js */"./resources/js/app.js");
 __webpack_require__(/*! /Users/aneiraiya/laravel_lesson/guitarsite/resources/js/assets/jquery.js */"./resources/js/assets/jquery.js");
 __webpack_require__(/*! /Users/aneiraiya/laravel_lesson/guitarsite/resources/sass/app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! /Users/aneiraiya/laravel_lesson/guitarsite/resources/sass/skin/ayanami.scss */"./resources/sass/skin/ayanami.scss");
 __webpack_require__(/*! /Users/aneiraiya/laravel_lesson/guitarsite/resources/sass/admin.scss */"./resources/sass/admin.scss");
 module.exports = __webpack_require__(/*! /Users/aneiraiya/laravel_lesson/guitarsite/resources/sass/public.scss */"./resources/sass/public.scss");
 

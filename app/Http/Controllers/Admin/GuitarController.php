@@ -23,7 +23,6 @@ class GuitarController extends Controller
     public function skin() {
         return view('admin.skin');
     }
-    // 一応残しとく
 
     public function create(Request $request) {
         // 以下を追記
@@ -97,11 +96,13 @@ class GuitarController extends Controller
     public function mypage(Request $request) {
         $user = Auth::user();
         $cond_title = $request->cond_title;
+        $category = $request->category;
 
         $music = Music::where('user_id', Auth::id()) //$userによる投稿を取得
             ->orderBy('created_at', 'desc') // 投稿作成日が新しい順に並べる
             ->get(); // ページネーション; 
-        
+
+
         return view('admin.mypage', ['posts' => $music, 'cond_title' => $cond_title, 'user' => $user]);
     }
 

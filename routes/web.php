@@ -24,7 +24,7 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function() {
     Route::get('mypageedit', 'Admin\GuitarController@edit');
     Route::post('mypageedit', 'Admin\GuitarController@update');
 
-    Route::get('skin', 'Admin\GuitarController@skin')
+    Route::get('skin', 'Admin\GuitarController@skin');
 
     // プロフィールに関する
     Route::get('profile', 'Admin\ProfileController@profile');
