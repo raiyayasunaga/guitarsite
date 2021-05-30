@@ -20,6 +20,9 @@ class GuitarController extends Controller
         return view('admin.create');
     }
 
+    public function skin() {
+        return view('admin.skin');
+    }
     // 一応残しとく
 
     public function create(Request $request) {

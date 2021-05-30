@@ -112,12 +112,22 @@
 
 
                         <div class="col-12">
-                        <textarea placeholder="歌詞、コードを入力" class="form-control" id="origin-data" rows="5" style="overflow: hidden; height: 134px;"></textarea>
+                        <textarea placeholder="歌詞、コードを入力" class="form-control" onkeyup="origindata()" id="origin-data"  rows="5" style="overflow: hidden; height: 134px;"></textarea>
                         </div>
+                        
                         <div class="my-3">プレビュー</div>
                         <div class="col-12 my-5" id="output">
-
+                        </div>    
+                        <button onclick="button()">テストC.png</button>
+                        <div class="col-12">
+                            <div id="test-data"></div>
                         </div>
+                        <label>
+                        <input type="text" id="inputForm" onkeyup="inputCheck()">
+                        </label>
+                        <div id="check">入力前</div>
+
+                        <br><br><br><br><br><br><br><br><br><br><br><br><br>
                     </div>    
                     
       
@@ -126,7 +136,18 @@
 
 @section('js')
 <script>
+    // リアルタイムだがボタンは表示されない
+function origindata() {
+    let cordValue = document.getElementById("origin-data").value;
+    document.getElementById("output").innerHTML = ' ' + cordValue;
+}
+
+function button() {
+    let C_cord = '<img src="/img/C.png">';
+    $('#test-data') . append(C_cord);
+}
  
+
     function chord_insert($this) {
             $('#origin-data') . append($this);
     }

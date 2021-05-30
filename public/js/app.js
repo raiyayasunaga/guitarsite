@@ -38171,9 +38171,21 @@ var app = new Vue({
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-var chord_insert = function chord_insert() {
-  $('#origin-data');
-};
+// ここの考え結構使えるかも
+function cordsName() {
+  var cords = {
+    'C': '/img/C.png',
+    'D': '/img/D.png',
+    'E': 'img/E.png'
+  };
+  var c = prompt('コードを入力');
+
+  if (cords[c]) {
+    $('#view').append("".concat(c, "\u306E\u753B\u50CF\u306F") + "<img src=\"".concat(cords[c], "\">") + "\u3067\u3059");
+  } else {
+    document.write('エラー');
+  }
+}
 
 $(function () {
   // リアルタイムで表示させる

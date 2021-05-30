@@ -24,7 +24,7 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function() {
     Route::get('mypageedit', 'Admin\GuitarController@edit');
     Route::post('mypageedit', 'Admin\GuitarController@update');
 
-    Route::get('test', 'Admin\GuitarController@test');
+
 
     // プロフィールに関する
     Route::get('profile', 'Admin\ProfileController@profile');
@@ -33,6 +33,7 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function() {
     Route::PATCH('profileedit', 'Admin\ProfileController@updata');
 });
 
+Route::get('admin/skin', 'Admin\GuitarController@skin');
 
 
 // コードは誰でも見せられる

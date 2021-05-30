@@ -24,8 +24,39 @@
 @endsection('style')
 @section('content')
   <div class="container">
-    <a href="test">いろいろ遊んでみ！？！</a>
+      <div>
+      <a href="skin">デザインスキンを変える</a>
+      何故かできない,,,
+    </div>
+    <div class="row">
+      <h3>if文でユーザーが出した値をチェックする方法</h3>
+      <div class="col">
+          <button onclick="check()">クリック</button>
+      </div>
+      <div class="col">
+      <button onclick="sample()">曜日確認</button>
+      </div>
+    </div>
 
+    <div class="row">
+    <button onclick="cordsName()">画像</button>
+    </div>
+    <div class=row>
+      <button onclick="prameter()">関数</button>
+    </div>
+    <div class="row">
+      <button >クラス定義</button>
+    </div>
+
+    <div id="view">
+      プレビュー：
+
+    </div>
+    <div>
+      <button onclick="jsons()">データが反応しているのか？</button>
+    </div>
+
+</div>
     <div class="container">
 
       <div class="row py-5">
@@ -1037,6 +1068,32 @@
 @endsection
 @section('js')
 <script>
+  // jsonデータ
+
+  const cords = [{
+    'cord': '/img/C.png',
+    'cord': '/img/D.png',
+    'cord': 'img/E.png',
+    'cord': '/img/A.png',
+  }];
+
+  functon jsons() {
+
+  for (let $i = 0; $i < cords.length; $i++) {
+    document.write(cords[$i].cord);
+  }
+}
+
+
+  // jsonデータおわり
+  function check() {
+    let answer = prompt('１から１０まで');
+ if(answer >= 1 && answer <= 10) {
+   document.write('正しい')
+ } else {
+   document.write('正しくない')
+ }
+  }
 
 function sample() { 
  const week = ['日', '月', '火', '水', '木', '金', '土'];
@@ -1045,6 +1102,37 @@ function sample() {
  let week_jp = week[today.getDay()];
  document.write(`今日は、${week_jp}曜日です`);
 
+}
+
+// ここの考え結構使えるかも
+function cordsName() {
+  const cords = {
+    'C': '/img/C.png',
+    'D': '/img/D.png',
+    'E': 'img/E.png',
+  }
+  let c = prompt('コードを入力')
+  if(cords[c]) {
+    $('#view') . append(`${c}の画像は` + `<img src="${cords[c]}">` + `です`);
+  } else {
+    document.write('エラー');
+  }
+}
+
+function prameter() {
+  const getTax = (price, tax=10) => {
+    return Math.round(price * (tax / 100));
+  }
+  let tax = getTax(1980, 8);
+  $('#view') . append(tax);
+}
+
+
+class Cords {
+  getcord() {
+    return 100 * 0.1;
+  }
+  
 }
 </script>
 @endsection
