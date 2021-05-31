@@ -60,13 +60,15 @@
                         </thead>
                         <tbody>
                             @foreach($posts as $music)
-                                <tr>
-                                    <th class="mobile">{{ $music->id }}</th>
-                                    <td><a href ="{{ route('admin.playing', ['id' => $music->id]), }}"> {{ $music->title }}</a></td>
-                                    <td>{{ ($music->category) }}</td>
-                                    <td class="mobile">{{ ($music->capo)}}</td>
-                                    <td><img src="{{ asset('storage/profiles/'.$music->user->profile_image) }}" style="border: none; width:30px; height:auto; border-radius: 50px;" id="img"></td>
-                                </tr>
+                                @if($music->public)
+                                    <tr>
+                                        <th class="mobile">{{ $music->id }}</th>
+                                        <td><a href ="{{ route('admin.playing', ['id' => $music->id]), }}"> {{ $music->title }}</a></td>
+                                        <td>{{ ($music->category) }}</td>
+                                        <td class="mobile">{{ ($music->capo)}}</td>
+                                        <td><img src="{{ asset('storage/profiles/'.$music->user->profile_image) }}" style="border: none; width:30px; height:auto; border-radius: 50px;" id="img"></td>
+                                    </tr>
+                                @endif
                             @endforeach
                         </tbody>
                     </table>

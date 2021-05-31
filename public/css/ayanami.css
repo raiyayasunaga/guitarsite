@@ -1,4 +1,11 @@
-@import url(https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@200&display=swap);h1 a {
+@import url(https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@200&display=swap);#hedarSkin {
+  background-image: url("/img/ayanami.png");
+  background-repeat: no-repeat;
+  background-size: 100px;
+  padding: 50px 100px 30px 10px;
+}
+
+h1 a {
   color: #fff;
   font-family: "Noto Serif JP", serif;
   font-weight: 900;

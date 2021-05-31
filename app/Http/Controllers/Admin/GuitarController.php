@@ -20,8 +20,21 @@ class GuitarController extends Controller
         return view('admin.create');
     }
 
-    public function skin() {
-        return view('admin.skin');
+    public function close(Request $request) {
+        $music = Music::find($request->id);
+        $music->public = false;
+
+        $music->save();
+
+        return redirect('admin/mypage');
+    }
+
+    public function open(Request $request) {
+        $music = Music::find($request->id);
+        $music->public = true;
+
+        $music->save();
+        return redirect('admin/home');
     }
 
     public function create(Request $request) {
@@ -140,11 +153,12 @@ class GuitarController extends Controller
         $this->validate($request, Music::$rules);
         // News Modelからデータを取得する
         $music = Music::find($request->id);
+
         // 送信されてきたフォームデータを格納する
         $music_form = $request->all();
         unset($music_form['_token']);
 
-        // 該当するデータを上書きして保存する
+        // 該当するデータを上書きして保存する)
         $music->fill($music_form)->save();
 
         return redirect('admin/mypage');

@@ -5,12 +5,20 @@
 
 // アキラスキン
 #bgskin {
-  background-image: url("/img/AKIRA.jpg");
   background-repeat: no-repeat;
   background-position: center;
   opacity: 0.8;
 }
 
+#hedarSkin {
+  background-image: url("/img/shogouki.png");
+  background-repeat: no-repeat;
+  background-size: 100px;
+  padding: 50px 100px 30px 10px;
+  &:hover {
+    background-image: url("/img/shogouki_kakusei.png");
+  }
+}
 
 
 

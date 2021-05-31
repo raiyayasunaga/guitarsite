@@ -60,7 +60,7 @@ body {
                                 <th width="20%">カテゴリー</th>
                                 <th class="mobile" width="10%">カポ</th>
                                 <th width="10%">編集</th>
-                                <th width="30%">公開するのか</th>
+                                <th width="20%">公開するのか</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -75,24 +75,21 @@ body {
                                         <th class="mobile">{{ ($music->capo) }}</th>
                                     <td>
                                         <div>
-                                            <a href="{{ action('Admin\GuitarController@edit', ['id' => $music->id]) }}">編集</a>
-                                        </div>
-                                        <div>
-                                            <a href="{{ action('Admin\GuitarController@delete', ['id' => $music->id]) }}">消去</a>
+                                            <a class="btn btn-primary py-1" href="{{ action('Admin\GuitarController@edit', ['id' => $music->id]) }}">編集</a>
                                         </div>
                                         <div>
                                         <form method="get" action="{{ action('Admin\GuitarController@delete') }}" onSubmit="return check()">
-                                            <button type="submit" >消去</button>
+                                            <button type="submit" class="btn btn-primary py-1" >消去</button>
                                                 <input type="hidden" name="id" value="{{$music->id}}">
                                         </form>
                                         </div>
                                     </td>
                                     <td>
                                         <div>
-                                            <a href="#">プライベート！</a>
+                                            <a href="{{ action('Admin\GuitarController@close', ['id' => $music->id]) }}">プライベート</a>
                                         </div>
                                         <div>
-                                          <a href="#">公開する！</a>
+                                          <a href="{{ action('Admin\GuitarController@open', ['id' => $music->id]) }}">公開する！</a>
                                         </div>
                                     </td>
                                 </tr>

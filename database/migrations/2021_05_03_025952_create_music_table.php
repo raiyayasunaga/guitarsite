@@ -20,7 +20,7 @@ class CreateMusicTable extends Migration
             $table->text('lyrics')->nullable();
             $table->string('category')->nullable();
             $table->string('capo')->nullable();
-            $table->string('public_id')->nullable();
+            $table->boolean('public')->nullable();
             $table->timestamps();
         });
     }

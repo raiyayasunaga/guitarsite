@@ -189,9 +189,7 @@
 
     function origindata() {
   let input = document.getElementById( "origin-data" ).value;
-  if ( input === '[C]') {
-          let input = '<img src="/img/C.png">';
-        }
+
   document.getElementById( "preview" ).innerHTML = input;
 }
 
