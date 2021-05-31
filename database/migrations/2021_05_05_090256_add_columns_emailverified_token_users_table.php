@@ -17,7 +17,6 @@ class AddColumnsEmailverifiedTokenUsersTable extends Migration
             $table->tinyInteger('email_verified')->default(0);
             $table->string('email_verify_token')->nullable();
             $table->string('profile_image')->nullable();
-            
         });
     }
 

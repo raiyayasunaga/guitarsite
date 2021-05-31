@@ -52,9 +52,7 @@
       プレビュー：
 
     </div>
-    <div>
-      <button onclick="jsons()">データが反応しているのか？</button>
-    </div>
+    
 
 </div>
     <div class="container">
@@ -1104,20 +1102,7 @@ function cordsName() {
   }
 }
 
-function prameter() {
-  const getTax = (price, tax=10) => {
-    return Math.round(price * (tax / 100));
-  }
-  let tax = getTax(1980, 8);
-  $('#view') . append(tax);
-}
 
 
-class Cords {
-  getcord() {
-    return 100 * 0.1;
-  }
-  
-}
 </script>
 @endsection

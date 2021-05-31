@@ -1,5 +1,4 @@
 
-
 // ここの考え結構使えるかも
 function cordsName() {
   const cords = {
@@ -7,30 +6,11 @@ function cordsName() {
     'D': '/img/D.png',
     'E': 'img/E.png',
   }
-  let c = prompt('コードを入力')
-  if(cords[c]) {
-    $('#view') . append(`${c}の画像は` + `<img src="${cords[c]}">` + `です`);
-  } else {
-    document.write('エラー');
-  }
 }
 
 $(function () {
-  $('#skin').on('click', function(url) { 
-      let linkstyle = document.getElementById('changestyle');
-      linkstyle.href = url;
-  }),
-
-  $('#skin2').on('click', function(url) { 
-    let linkstyle = document.getElementById('ayanami');
-    linkstyle.href = url;
-  });
-
   // リアルタイムで表示させる
-  $('#origin-data').on('input', function() {
-    $('#output').html($('#origin-data')[0].value);
-  });
-
+  
 
   $('#btn').on('click', function() {
       alert("Hello JEQrty");

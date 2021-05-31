@@ -2,12 +2,17 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@200&display=swap');
 
-body {
+
+// アキラスキン
+#bgskin {
+  background-image: url("/img/AKIRA.jpg");
   background-repeat: no-repeat;
   background-position: center;
-  background-color: #fff;
-  color: black;
+  opacity: 0.8;
 }
+
+
+
 
 textarea {
   @include sitefont;

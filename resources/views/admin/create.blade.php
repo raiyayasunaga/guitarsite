@@ -51,7 +51,7 @@
                 <input type="submit" class="btn btn-primary" value="追加する">
             </form>
                     <div class="row">
-                        <select id="selectCords" name="music_key_sel" onchange="Keychange();" class="form-control">
+                        <select id="selectCords" name="music_key_sel" onchange="keyChange();" class="form-control">
 					      <option value="1">C = Am</option>
 					      <option value="2">C# = A#m</option>
 					      <option value="3">D = Bm</option>
@@ -112,13 +112,20 @@
 
 
                         <div class="col-12">
-                        <textarea placeholder="歌詞、コードを入力" class="form-control" onkeyup="origindata()" id="origin-data"  rows="5" style="overflow: hidden; height: 134px;"></textarea>
+                        <textarea placeholder="歌詞、コードを入力" class="form-control" onchange="origindata()" id="origin-data"  rows="5" style="overflow: hidden; height: 134px;"></textarea>
                         </div>
                         
                         <div class="my-3">プレビュー</div>
-                        <div class="col-12 my-5" id="output">
-                        </div>    
+                            <div class="col-12 my-5" id="preview">
+                            
+                            </div>
+                        </div> 
+
+
+
                         <button onclick="button()">テストC.png</button>
+                        <button onclick="button('D')">テストD.png</button>
+                        <button onclick="button('E')">テストE.png</button>
                         <div class="col-12">
                             <div id="test-data"></div>
                         </div>
@@ -136,30 +143,22 @@
 
 @section('js')
 <script>
-    // リアルタイムだがボタンは表示されない
-function origindata() {
-    let cordValue = document.getElementById("origin-data").value;
-    document.getElementById("output").innerHTML = ' ' + cordValue;
-}
-
-function button() {
-    let C_cord = '<img src="/img/C.png">';
-    $('#test-data') . append(C_cord);
-}
- 
-
-    function chord_insert($this) {
-            $('#origin-data') . append($this);
-    }
-    function Keychange() {
+    //セレクトでボタンの種類を変える
+    function keyChange() {
         if(document.getElementById('selectCords')){
         id = document.getElementById('selectCords').value;
         if(id == '1') {
             document.getElementById('key_C').style.display = "";
+            document.getElementById('key_Db').style.display = "none";
             document.getElementById('key_D').style.display = "none";
         }
         else if(id == '2') {
             document.getElementById('key_C').style.display = "none";
+            document.getElementById('key_Db').style.display = "";
+            document.getElementById('key_D').style.display = "none";
+        } else if(id == '3') {
+            document.getElementById('key_C').style.display = "none";
+            document.getElementById('key_Db').style.display = "none";
             document.getElementById('key_D').style.display = "";
         }
         }else{
@@ -169,7 +168,43 @@ function button() {
         }
     }
 
-window.onload = Keychange;
+    // ボタンを値によって表示を変える、カーソルの位置も自由にできる！！
+    function chord_insert($this) {
+        var textarea = document.querySelector('textarea');
+
+        var sentence = textarea.value;
+        var len      = sentence.length;
+        var pos      = textarea.selectionStart;
+
+        var before   = sentence.substr(0, pos);
+        var word     = $this;
+        var after    = sentence.substr(pos, len);
+
+        sentence = before + word + after;
+
+        textarea.value = sentence;
+            $('#origin-data') . append($this);
+    }
+
+
+    function origindata() {
+  let input = document.getElementById( "origin-data" ).value;
+  if ( input === '[C]') {
+          let input = '<img src="/img/C.png">';
+        }
+  document.getElementById( "preview" ).innerHTML = input;
+}
+
+    function button($this) {
+        const cords = {
+
+        }
+        $('#test-data') . append('<img src="/img/C.png">')
+    }
+    
+    // ボタンの画像を変えるはずだが、、
+    
+
 
 </script>
 @endsection

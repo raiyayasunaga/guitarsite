@@ -38178,27 +38178,10 @@ function cordsName() {
     'D': '/img/D.png',
     'E': 'img/E.png'
   };
-  var c = prompt('コードを入力');
-
-  if (cords[c]) {
-    $('#view').append("".concat(c, "\u306E\u753B\u50CF\u306F") + "<img src=\"".concat(cords[c], "\">") + "\u3067\u3059");
-  } else {
-    document.write('エラー');
-  }
 }
 
 $(function () {
-  $('#skin').on('click', function (url) {
-    var linkstyle = document.getElementById('changestyle');
-    linkstyle.href = url;
-  }), $('#skin2').on('click', function (url) {
-    var linkstyle = document.getElementById('ayanami');
-    linkstyle.href = url;
-  }); // リアルタイムで表示させる
-
-  $('#origin-data').on('input', function () {
-    $('#output').html($('#origin-data')[0].value);
-  });
+  // リアルタイムで表示させる
   $('#btn').on('click', function () {
     alert("Hello JEQrty");
   });
@@ -38514,10 +38497,21 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./resources/sass/skin/nerv.scss":
+/*!***************************************!*\
+  !*** ./resources/sass/skin/nerv.scss ***!
+  \***************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
+
+/***/ }),
+
 /***/ 0:
-/*!*****************************************************************************************************************************************************************************************!*\
-  !*** multi ./resources/js/app.js ./resources/js/assets/jquery.js ./resources/sass/app.scss ./resources/sass/skin/ayanami.scss ./resources/sass/admin.scss ./resources/sass/public.scss ***!
-  \*****************************************************************************************************************************************************************************************/
+/*!*************************************************************************************************************************************************************************************************************************!*\
+  !*** multi ./resources/js/app.js ./resources/js/assets/jquery.js ./resources/sass/app.scss ./resources/sass/skin/ayanami.scss ./resources/sass/skin/nerv.scss ./resources/sass/admin.scss ./resources/sass/public.scss ***!
+  \*************************************************************************************************************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -38525,6 +38519,7 @@ __webpack_require__(/*! /Users/aneiraiya/laravel_lesson/guitarsite/resources/js/
 __webpack_require__(/*! /Users/aneiraiya/laravel_lesson/guitarsite/resources/js/assets/jquery.js */"./resources/js/assets/jquery.js");
 __webpack_require__(/*! /Users/aneiraiya/laravel_lesson/guitarsite/resources/sass/app.scss */"./resources/sass/app.scss");
 __webpack_require__(/*! /Users/aneiraiya/laravel_lesson/guitarsite/resources/sass/skin/ayanami.scss */"./resources/sass/skin/ayanami.scss");
+__webpack_require__(/*! /Users/aneiraiya/laravel_lesson/guitarsite/resources/sass/skin/nerv.scss */"./resources/sass/skin/nerv.scss");
 __webpack_require__(/*! /Users/aneiraiya/laravel_lesson/guitarsite/resources/sass/admin.scss */"./resources/sass/admin.scss");
 module.exports = __webpack_require__(/*! /Users/aneiraiya/laravel_lesson/guitarsite/resources/sass/public.scss */"./resources/sass/public.scss");
 

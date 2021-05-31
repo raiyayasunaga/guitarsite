@@ -1,0 +1,49 @@
+@import "skinFuction";
+
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@200&display=swap');
+
+h1 a{
+  color: $NERV-black;
+  @include hederfont;
+  font-weight: 900;
+   &:hover {
+     text-decoration: none;
+     color: $sinnzi-color-orenge;
+     opacity: 0.8;
+   }
+ }
+ li {
+   list-style: none;
+ }
+ 
+ ul {
+     overflow:hidden;
+     list-style:none;
+     margin: 0 auto;
+     z-index: 20;
+     margin-left: 10px;
+     @include hederfont;
+     font-weight: 900;
+    li {
+     display: inline-block;
+     padding: 26px 10px 20px 10px;
+     list-style: none;
+       a {
+       font-size: 20px;
+       color: $NERV-black;
+         &:hover {
+           text-decoration: none;
+           color: $sinnzi-color-orenge;
+           }
+         }
+       }
+   } 
+
+.navbar-laravel {
+  background-color: $NERV-red;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
+}
+
+.nav-link {
+  color: $ayanami-color-white !important;
+}
