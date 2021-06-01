@@ -75,21 +75,24 @@ body {
                                         <th class="mobile">{{ ($music->capo) }}</th>
                                     <td>
                                         <div>
-                                            <a class="btn btn-primary py-1" href="{{ action('Admin\GuitarController@edit', ['id' => $music->id]) }}">編集</a>
+                                            <a class="btn btn-primary p-1" href="{{ action('Admin\GuitarController@edit', ['id' => $music->id]) }}">編集</a>
                                         </div>
                                         <div>
                                         <form method="get" action="{{ action('Admin\GuitarController@delete') }}" onSubmit="return check()">
-                                            <button type="submit" class="btn btn-primary py-1" >消去</button>
+                                            <button type="submit" class="btn btn-primary p-1" >消去</button>
                                                 <input type="hidden" name="id" value="{{$music->id}}">
                                         </form>
                                         </div>
                                     </td>
                                     <td>
                                         <div>
-                                            <a href="{{ action('Admin\GuitarController@close', ['id' => $music->id]) }}">プライベート</a>
+                                            <a class="btn btn-primary p-1" href="{{ action('Admin\GuitarController@close', ['id' => $music->id]) }}">非公開</a>
                                         </div>
                                         <div>
-                                          <a href="{{ action('Admin\GuitarController@open', ['id' => $music->id]) }}">公開する！</a>
+                                        <form method="get" action="{{ action('Admin\GuitarController@open') }}" onSubmit="return check()">
+                                            <button type="submit" class="btn btn-primary p-1">公開</button>
+                                            <input type="hidden" name="id" value="{{$music->id}}">
+                                        </form>
                                         </div>
                                     </td>
                                 </tr>
@@ -106,7 +109,7 @@ body {
 <script>
 function check(){
 
-if(window.confirm('本当に消してもよろしいですか？')){ // 確認ダイアログを表示
+if(window.confirm('本当に実行してもよろしいですか？')){ // 確認ダイアログを表示
 
     return true; // 「OK」時は送信を実行
 

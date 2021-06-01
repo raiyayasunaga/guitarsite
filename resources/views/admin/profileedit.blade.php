@@ -38,31 +38,37 @@
             変更する
           </button>
     </form>
+  </div>
     
     <div class="container">
       <h2>カラースキン編集</h2>
         <div class="row my-5">
-          <div>エヴァシリーズ</div>
           <div class="col-6">
-            <select class="form-control" onchange="changestyle('ayanami', value)" id="skin">
-              <option value="{{ asset('/css/ayanami.css') }}">綾波スキン</option>
-              <option value="{{ asset('/css/admin.css') }}">初号機スキン</option>
-              <option value="{{ asset('/css/nerv.css') }}">NERVスキン</option>
-            </select>
+            <form action="{{ asset('Admin/ProfileController@skin') }}">
+              <select class="form-control" name="skin" onchange="changestyle('ayanami', value)" id="skin">
+                  <option value="{{ asset('/css/ayanami.css') }}">綾波スキン</option>
+                  <option value="{{ asset('/css/admin.css') }}">初号機スキン</option>
+                  <option value="{{ asset('/css/nerv.css') }}">NERVスキン</option>
+              </select>
+              <div class="my-5">
+                  <button type="submit" class="btn btn-primary">変更する</button>
+              </div>
+            </form>
+            
           </div>
         </div>
     </div>
-    <button type="submit" class="btn btn-primary">変更する</button>
-  </div>
 
   
 @endsection
 <script>
-
+// CSS替える関数
 function changestyle(cssid, cssfile) {
   document.getElementById(cssid).href = cssfile;
 }
 
+
+// 画像を表示させる
   function previewImage(obj)
   {
     var fileReader = new FileReader();

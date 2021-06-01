@@ -1,4 +1,9 @@
 
+function changestyle(cssid, cssfile) {
+  document.getElementById(cssid).href = cssfile;
+}
+
+
 // ここの考え結構使えるかも
 function cordsName() {
   const cords = {

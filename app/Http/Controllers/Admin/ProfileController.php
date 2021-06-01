@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Music;
 use App\User;
+use App\
 use Storage; 
 use Image;
 use Auth;
@@ -39,6 +40,14 @@ class ProfileController extends Controller
         $user->fill($form)->save();
 
         return redirect('admin/profileedit');
+    }
+
+    // skinsテーブル
+    public function skin() {
+        $user = Auth::user();
+        // $skin = 
+        // $skin->save();
+        return redirect('admin/mypage');
     }
     
     private function saveProfileImage($image, $id) {

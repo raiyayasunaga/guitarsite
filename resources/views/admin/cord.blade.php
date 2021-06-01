@@ -24,10 +24,6 @@
 @endsection('style')
 @section('content')
   <div class="container">
-      <div>
-      <a href="skin">デザインスキンを変える</a>
-      何故かできない,,,
-    </div>
     <div class="row">
       <h3>if文でユーザーが出した値をチェックする方法</h3>
       <div class="col">

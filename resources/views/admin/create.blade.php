@@ -123,7 +123,7 @@
 
 
 
-                        <button onclick="button()">テストC.png</button>
+                        <button onclick="button('C')">テストC.png</button>
                         <button onclick="button('D')">テストD.png</button>
                         <button onclick="button('E')">テストE.png</button>
                         <div class="col-12">
@@ -195,9 +195,13 @@
 
     function button($this) {
         const cords = {
-
+            'C': '<img src="/img/C.png">',
+            'D': '<img src="/img/D.png">',
+            'E': '<img src="/img/E.png">',
         }
-        $('#test-data') . append('<img src="/img/C.png">')
+        if($this === cords.C) {
+        $('#test-data') . append(cords[0]);
+        }
     }
     
     // ボタンの画像を変えるはずだが、、

@@ -52,6 +52,14 @@ textarea {
   padding: 30px;
 }
 
+a {
+  color: black;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
 .form-control {
   display: block;
   width: 100%;

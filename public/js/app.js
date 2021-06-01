@@ -38171,7 +38171,11 @@ var app = new Vue({
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-// ここの考え結構使えるかも
+function changestyle(cssid, cssfile) {
+  document.getElementById(cssid).href = cssfile;
+} // ここの考え結構使えるかも
+
+
 function cordsName() {
   var cords = {
     'C': '/img/C.png',

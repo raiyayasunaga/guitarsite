@@ -29,8 +29,8 @@ class AddColumnsEmailverifiedTokenUsersTable extends Migration
     {
         Schema::table('users', function (Blueprint $table) {
             $table->dropColumn('email_verified');
-            $table->dropColumn('profile_image');
             $table->dropColumn('email_verify_token');
+            $table->dropColumn('profile_image');
         });
     }
 }

@@ -2,6 +2,29 @@
 
 @section('title', 'ホームページ')
 
+@section('style')
+<!-- 多分この中にlinkをforeachで追記する -->
+<style>
+body {
+  background: linear-gradient(-45deg, white, #a90e11, white);
+  background-size: 400% 400%;
+  animation: gradient 60s ease infinite;
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 10% 0%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 10% 0%;
+  }
+}
+</style>
+@endsection
+
 @section('content')
 <div id="bgskin">
     <div class="bg"></div>

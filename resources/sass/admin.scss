@@ -60,6 +60,13 @@ textarea {
   padding: 30px;
 }
 
+a {
+  color: black;
+  &:hover {
+    text-decoration: none;
+  }
+}
+
 
 
 // ギターボタンの編集
@@ -178,6 +185,7 @@ h1 a{
   background-color: $sinnzi-color-purple;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
 }
+
 
 .navbar-brand {
   color: #fff !important;
