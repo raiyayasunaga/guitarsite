@@ -102,6 +102,7 @@ class GuitarController extends Controller
             // それ以外はすべてのニュースを取得する
             $posts = Music::all();
         }
+        
 
 
         return view('admin.home', ['posts' => $posts, 'cond_title' => $cond_title, 'category' => $category, 'user' => $user]);

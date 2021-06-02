@@ -67,7 +67,7 @@
 					    </select>
 
                         <div class="col-12 my-5">
-                            <div id="otherCords">
+                            <div id="otherCords" onchange="origindata()">
                                 <div id="key_C">
                                     <button class="btn btn-outline-primary m-1" onclick="chord_insert('[C]');">C</button>
                                     <button class="btn btn-outline-primary m-1" onclick="chord_insert('[Cm]');">Cm</button>
@@ -189,7 +189,9 @@
 
     function origindata() {
   let input = document.getElementById( "origin-data" ).value;
-
+        if(input === ['C']) {
+            let = input = '<img src="/img/C.png">';
+        }
   document.getElementById( "preview" ).innerHTML = input;
 }
 

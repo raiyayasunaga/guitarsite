@@ -15,7 +15,7 @@ class CreateSkinsTable extends Migration
     {
         Schema::create('skins', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('skin')->nullable();
+            $table->integer('skin_id')->nullable();
             $table->timestamps();
         });
     }

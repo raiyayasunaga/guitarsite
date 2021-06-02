@@ -18,6 +18,9 @@
   &:hover {
     background-image: url("/img/shogouki_kakusei.png");
   }
+  &:active {
+    background-image: url("/img/shogouki_angry.png");
+  }
 }
 
 

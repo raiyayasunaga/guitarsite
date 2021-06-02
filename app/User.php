@@ -47,4 +47,9 @@ class User extends Authenticatable
         return $this->hasMany('App\Music'); 
     }
 
+    public function skin()
+    {
+        return $this->hasMany('App\Skin');
+    }
+
 }

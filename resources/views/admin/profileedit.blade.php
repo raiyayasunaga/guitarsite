@@ -5,6 +5,7 @@
 @section('style')
         <link href="{{ asset('/css/nerv.css') }}" rel="stylesheet" id="nerv" />
         <link href="{{ asset('/css/ayanami.css') }}" rel="stylesheet" id="ayanami" />
+        <link href="{{ asset('/css/guitar.css') }}" rel="stylesheet" id="guitar" />
 @endsection
 
 @section('content')
@@ -16,7 +17,7 @@
       <div class="row mb-5">
         <div class="col-3">
           <h3>名前変更</h3>
-          <input type="text" name="name" value="">
+          <input type="text" value="">
         </div>
       </div>
       <div class="row">
@@ -45,7 +46,8 @@
         <div class="row my-5">
           <div class="col-6">
             <form action="{{ asset('Admin/ProfileController@skin') }}">
-              <select class="form-control" name="skin" onchange="changestyle('ayanami', value)" id="skin">
+              <select class="form-control" name="skin_id" onchange="changestyle('guitar', value)" id="skin">
+                  <option value="{{ asset('/css/guitar.css') }}">選択して下さい</option>
                   <option value="{{ asset('/css/ayanami.css') }}">綾波スキン</option>
                   <option value="{{ asset('/css/admin.css') }}">初号機スキン</option>
                   <option value="{{ asset('/css/nerv.css') }}">NERVスキン</option>
@@ -62,11 +64,6 @@
   
 @endsection
 <script>
-// CSS替える関数
-function changestyle(cssid, cssfile) {
-  document.getElementById(cssid).href = cssfile;
-}
-
 
 // 画像を表示させる
   function previewImage(obj)

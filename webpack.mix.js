@@ -18,5 +18,6 @@ mix.js([
     .sass('resources/sass/app.scss', 'public/css')
     .sass('resources/sass/skin/ayanami.scss', 'public/css')
     .sass('resources/sass/skin/nerv.scss', 'public/css')
+    .sass('resources/sass/skin/guitar.scss', 'public/css')
     .sass('resources/sass/admin.scss', 'public/css')
     .sass('resources/sass/public.scss', 'public/css');

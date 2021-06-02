@@ -17,6 +17,10 @@
   background-image: url("/img/shogouki_kakusei.png");
 }
 
+#hedarSkin:active {
+  background-image: url("/img/shogouki_angry.png");
+}
+
 textarea {
   font-family: "\660E\671D\4F53";
 }

@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Music;
 use App\User;
-use App\
+use App\Skin;
 use Storage; 
 use Image;
 use Auth;
@@ -25,7 +25,6 @@ class ProfileController extends Controller
     
     public function updata(Request $request) {
         $user = Auth::user();
-        $form = $request->all();
 
         // $userName = $request->value('name');
         $profileImage = $request->file('profile_image');
@@ -43,10 +42,17 @@ class ProfileController extends Controller
     }
 
     // skinsテーブル
-    public function skin() {
+    public function skin(Request $request) {
+        
+        $this->validate($request, Skin::$rules);
         $user = Auth::user();
-        // $skin = 
-        // $skin->save();
+
+        $skin = User::find($request->id);
+        $skin = new Skin;
+        dump($skin);
+
+        $skin->save();
+        
         return redirect('admin/mypage');
     }
     

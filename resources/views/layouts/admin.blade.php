@@ -29,9 +29,10 @@
         <!-- Styles -->
         {{-- 何故かassetsに定義されていた --}}
         <link href="{{ asset('/css/app.css') }}" rel="stylesheet">
-        {{-- この章の後半で作成するCSSを読み込みます --}}
-        <link href="{{ asset('/css/admin.css') }}" rel="stylesheet" id="changestyle">
         
+        <link href="{{ asset('/css/admin.css') }}" rel="stylesheet" id="changestyle">
+
+        <!-- ここで実装可能出ないと全ての画面で変更されない -->
         @yield('style')
     </head>
     <body>
@@ -109,6 +110,12 @@
                 @yield('content')
             </main>
         </div>
+        <script>
+            // ここに変数を定義する？
+            function changestyle(cssid, cssfile) {
+            document.getElementById(cssid).href = cssfile;
+            }
+        </script>
     </body>
     @yield('js')
 </html>
