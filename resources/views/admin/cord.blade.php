@@ -48,6 +48,7 @@
       プレビュー：
 
     </div>
+    <button id="voice">クリック音声</button>
     
 
 </div>
@@ -1062,6 +1063,14 @@
 @endsection
 @section('js')
 <script>
+   window.onload = function() {
+        var my_audio = new Audio("/Audio/test.mp3");
+            //ボタンにクリックイベントを設定
+            document.getElementById("voice").onclick = function() {
+                my_audio.currentTime = 0;  //再生開始位置を先頭に戻す
+                my_audio.play();  //サウンドを再生
+            }
+    }
   // jsonデータ
 
   // jsonデータおわり
