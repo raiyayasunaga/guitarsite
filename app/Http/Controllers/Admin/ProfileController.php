@@ -45,11 +45,11 @@ class ProfileController extends Controller
     public function skin(Request $request) {
         
         $this->validate($request, Skin::$rules);
+        
         $user = Auth::user();
 
         $skin = User::find($request->id);
         $skin = new Skin;
-        dump($skin);
 
         $skin->save();
         

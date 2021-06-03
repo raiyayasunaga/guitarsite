@@ -49,22 +49,7 @@
                     {{ fixed }}
                 </button>
             </div>
-            <div class="row justify-content-center">
-                <button
-                    v-for="image of images"  
-                    :key="image"
-                    class="cord-button"
-                    type="button"
-                    @click="onClick( image )"
-                    v-bind:src="Cordiamge"
-                >
-                    {{ image }}
-                </button>
-                プレビュー
-                <div>
-                </div>
 
-            </div>
             <div class="row my-5">
                 <!-- ここでボタンが表示される -->
                 <textarea  cols="170" rows="6" v-model="MyText" name="lyrics">

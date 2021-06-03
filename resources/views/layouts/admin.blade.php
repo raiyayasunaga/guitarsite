@@ -118,11 +118,11 @@
 
             // 声
             window.onload = function() {
-        var my_audio = new Audio("/Audio/shogoukiVoice.mp3");
+            let shogoukiVoice = new Audio("/Audio/shogoukiVoice.mp3");
             //ボタンにクリックイベントを設定
             document.getElementById("hedarSkin").onclick = function() {
-                my_audio.currentTime = 0;  //再生開始位置を先頭に戻す
-                my_audio.play();  //サウンドを再生
+                shogoukiVoice.currentTime = 0;  //再生開始位置を先頭に戻す
+                shogoukiVoice.play();  //サウンドを再生
             }
     }
         </script>

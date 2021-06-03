@@ -17,6 +17,7 @@ class AddColumnsEmailverifiedTokenUsersTable extends Migration
             $table->tinyInteger('email_verified')->default(0);
             $table->string('email_verify_token')->nullable();
             $table->string('profile_image')->nullable();
+            $table->integer('skin_id')->nullable();
         });
     }
 
@@ -31,6 +32,7 @@ class AddColumnsEmailverifiedTokenUsersTable extends Migration
             $table->dropColumn('email_verified');
             $table->dropColumn('email_verify_token');
             $table->dropColumn('profile_image');
+            $table->dropColumn('skin_id');
         });
     }
 }

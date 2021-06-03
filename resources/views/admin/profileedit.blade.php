@@ -40,7 +40,7 @@
           </button>
     </form>
   </div>
-    
+  <!-- formタグはややこしくなるためあえて分けて考えている -->
     <div class="container">
       <h2>カラースキン編集</h2>
         <div class="row my-5">

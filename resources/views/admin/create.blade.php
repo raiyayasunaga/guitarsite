@@ -2,6 +2,12 @@
 
 @section('title', '曲の作成')
 
+@section('style')
+<style>
+   
+</style>
+@endsection
+
 @section('content')
     <div class="container">
             <form action="{{ action('Admin\GuitarController@create') }}" method="post" enctype="multipart/form-data">
@@ -116,26 +122,13 @@
                         </div>
                         
                         <div class="my-3">プレビュー</div>
+                        
                             <div class="col-12 my-5" id="preview">
-                            
                             </div>
                         </div> 
-
-
-
-                        <button onclick="button('C')">テストC.png</button>
-                        <button onclick="button('D')">テストD.png</button>
-                        <button onclick="button('E')">テストE.png</button>
-                        <div class="col-12">
-                            <div id="test-data"></div>
-                        </div>
-                        <label>
-                        <input type="text" id="inputForm" onkeyup="inputCheck()">
-                        </label>
-                        <div id="check">入力前</div>
-
-                        <br><br><br><br><br><br><br><br><br><br><br><br><br>
+                        <input type="submit" class="btn btn-primary mb-5" value="追加する">
                     </div>    
+                    
                     
       
     </div>
@@ -144,6 +137,7 @@
 @section('js')
 <script>
     //セレクトでボタンの種類を変える
+    
     function keyChange() {
         if(document.getElementById('selectCords')){
         id = document.getElementById('selectCords').value;
@@ -170,15 +164,15 @@
 
     // ボタンを値によって表示を変える、カーソルの位置も自由にできる！！
     function chord_insert($this) {
-        var textarea = document.querySelector('textarea');
+        let textarea = document.querySelector('textarea');
 
-        var sentence = textarea.value;
-        var len      = sentence.length;
-        var pos      = textarea.selectionStart;
+        let sentence = textarea.value;
+        let len      = sentence.length;
+        let pos      = textarea.selectionStart;
 
-        var before   = sentence.substr(0, pos);
-        var word     = $this;
-        var after    = sentence.substr(pos, len);
+        let before   = sentence.substr(0, pos);
+        let word     = $this;
+        let after    = sentence.substr(pos, len);
 
         sentence = before + word + after;
 
@@ -187,13 +181,14 @@
     }
 
 
-    function origindata() {
-  let input = document.getElementById( "origin-data" ).value;
-        if(input === ['C']) {
-            let = input = '<img src="/img/C.png">';
-        }
-  document.getElementById( "preview" ).innerHTML = input;
-}
+
+//     function origindata() {
+//   let input = document.getElementById( "origin-data" ).value;
+//   let text = input.mathc(/[]/);
+//   let result = text.replase(/[]/, '<img src="/img/C.png>');
+//   document.getElementById( "preview" ).innerHTML = result;
+
+// }
 
     function button($this) {
         const cords = {

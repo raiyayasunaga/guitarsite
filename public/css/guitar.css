@@ -43,7 +43,7 @@ ul li {
 
 ul li a {
   font-size: 20px;
-  color: #fff;
+  color: black;
 }
 
 ul li a:hover {
@@ -52,11 +52,11 @@ ul li a:hover {
 }
 
 .navbar-laravel {
-  background-color: #eea20c;
+  background-color: #fff;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
 }
 
 .nav-link {
-  color: #fff !important;
+  color: black !important;
 }
 

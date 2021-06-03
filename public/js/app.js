@@ -2103,21 +2103,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     // ここ入らないのかも
@@ -37874,32 +37859,6 @@ var render = function() {
       2
     ),
     _vm._v(" "),
-    _c(
-      "div",
-      { staticClass: "row justify-content-center" },
-      [
-        _vm._l(_vm.images, function(image) {
-          return _c(
-            "button",
-            {
-              key: image,
-              staticClass: "cord-button",
-              attrs: { type: "button", src: _vm.Cordiamge },
-              on: {
-                click: function($event) {
-                  return _vm.onClick(image)
-                }
-              }
-            },
-            [_vm._v("\n                " + _vm._s(image) + "\n            ")]
-          )
-        }),
-        _vm._v("\n            プレビュー\n            "),
-        _c("div")
-      ],
-      2
-    ),
-    _vm._v(" "),
     _c("div", { staticClass: "row my-5" }, [
       _c("textarea", {
         directives: [
@@ -38171,7 +38130,6 @@ var app = new Vue({
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-//ここに記述CSSデザイン替え コメントに無いと影響が出る
 $(function () {
   // リアルタイムで表示させる
   $('#btn').on('click', function () {
