@@ -15,10 +15,6 @@
       @csrf
   @method('PATCH')
       <div class="row mb-5">
-        <div class="col-3">
-          <h3>名前変更</h3>
-          <input type="text" value="">
-        </div>
       </div>
       <div class="row">
         <div class="col-md-3">
@@ -42,21 +38,36 @@
   </div>
   <!-- formタグはややこしくなるためあえて分けて考えている -->
     <div class="container">
-      <h2>カラースキン編集</h2>
+        <div class="row">
+            <h3>名前変更</h3>
+            <div class="col-4">
+              <input type="text" name="name" value="">
+            </div>
+        </div>
         <div class="row my-5">
           <div class="col-6">
-            <form action="{{ asset('Admin/ProfileController@skin') }}">
-              <select class="form-control" name="skin_id" onchange="changestyle('guitar', value)" id="skin">
-                  <option value="{{ asset('/css/guitar.css') }}">選択して下さい</option>
-                  <option value="{{ asset('/css/ayanami.css') }}">綾波スキン</option>
-                  <option value="{{ asset('/css/admin.css') }}">初号機スキン</option>
-                  <option value="{{ asset('/css/nerv.css') }}">NERVスキン</option>
-              </select>
-              <div class="my-5">
-                  <button type="submit" class="btn btn-primary">変更する</button>
-              </div>
-            </form>
-            
+            <div><h2>カラースキン編集</h2></div>
+              <form method="post" action="{{ action('Admin\ProfileController@skin') }}">
+                <select class="form-control" name="skin_id" onchange="changestyle('guitar', value)" id="skin">
+                    <option value="1">選択して下さい</option>
+                    <option value="2">綾波スキン</option>
+                    <option value="3">初号機スキン</option>
+                    <option value="4">NERVスキン</option>
+                </select>
+                <div class="my-5">
+                @csrf
+                    <button type="submit" class="btn btn-primary">変更する</button>
+                </div>
+              </form>
+          </div>
+          <div class="col-6">
+            <div><h2>カラースキンプレビュー</h2>
+            <select class="form-control" onchange="changeCss('guitar', value)" id="skin">
+              <option value="{{ asset('/css/guitar.css') }}">選択して下さい</option>
+              <option value="{{ asset('/css/ayanami.css') }}">綾波スキン</option>
+              <option value="{{ asset('/css/admin.css') }}">初号機スキン</option>
+              <option value="{{ asset('/css/nerv.css') }}">NERVスキン</option>
+            </select>
           </div>
         </div>
     </div>
@@ -64,6 +75,9 @@
   
 @endsection
 <script>
+function changeCss(cssid, cssfile) {
+  document.getElementById(cssid).href = cssfile;
+}
 
 // 画像を表示させる
   function previewImage(obj)

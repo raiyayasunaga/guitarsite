@@ -1,24 +1,14 @@
 @import url(https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@200&display=swap);@charset "UTF-8";
 
-#bgskin {
-  background-repeat: no-repeat;
-  background-position: center;
-  opacity: 0.8;
-}
-
 #hedarSkin {
-  background-image: url("/img/shogouki.png");
+  background-image: url("/img/guitar.png");
   background-repeat: no-repeat;
-  background-size: 100px;
+  background-size: 90px;
   padding: 50px 100px 30px 10px;
 }
 
 #hedarSkin:hover {
-  background-image: url("/img/shogouki_kakusei.png");
-}
-
-#hedarSkin:active {
-  background-image: url("/img/shogouki_angry.png");
+  background-image: url("/img/eleguitar.png");
 }
 
 textarea {
@@ -143,7 +133,7 @@ img {
 }
 
 h1 a {
-  color: #23d024;
+  color: white;
   font-family: "Noto Serif JP", serif;
   font-weight: 900;
 }
@@ -176,7 +166,7 @@ ul li {
 
 ul li a {
   font-size: 20px;
-  color: #23d024;
+  color: black;
 }
 
 ul li a:hover {
@@ -185,16 +175,12 @@ ul li a:hover {
 }
 
 .navbar-laravel {
-  background-color: #6c32ab;
+  background-color: #fff;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
 }
 
-.navbar-brand {
-  color: #fff !important;
-}
-
 .nav-link {
-  color: #23d024 !important;
+  color: black !important;
 }
 
 .table-dark {

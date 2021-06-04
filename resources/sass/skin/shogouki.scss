@@ -1,17 +1,20 @@
 @import "skinFuction";
 
 #hedarSkin {
-  background-image: url("/img/guitar.png");
+  background-image: url("/img/shogouki.png");
   background-repeat: no-repeat;
-  background-size: 90px;
+  background-size: 100px;
   padding: 50px 100px 30px 10px;
   &:hover {
-    background-image: url("/img/eleguitar.png");
+    background-image: url("/img/shogouki_kakusei.png");
+  }
+  &:active {
+    background-image: url("/img/shogouki_angry.png");
   }
 }
 
 h1 a{
-  color: $ayanami-color-white;
+  color: $sinnzi-color-green;
   @include hederfont;
   font-weight: 900;
    &:hover {
@@ -25,7 +28,7 @@ h1 a{
  }
  
  ul {
-     overflow: hidden;
+     overflow:hidden;
      list-style:none;
      margin: 0 auto;
      z-index: 20;
@@ -38,7 +41,7 @@ h1 a{
      list-style: none;
        a {
        font-size: 20px;
-       color: black;
+       color: $sinnzi-color-green;
          &:hover {
            text-decoration: none;
            color: $sinnzi-color-orenge;
@@ -48,10 +51,15 @@ h1 a{
    } 
 
 .navbar-laravel {
-  background-color: #fff;
+  background-color: $sinnzi-color-purple;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
 }
 
+
+.navbar-brand {
+  color: #fff !important;
+}
+
 .nav-link {
-  color: black !important;
+  color: $sinnzi-color-green !important;
 }

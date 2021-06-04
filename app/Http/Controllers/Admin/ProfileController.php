@@ -13,11 +13,6 @@ use Auth;
 
 class ProfileController extends Controller
 {
-    public function profile() {
-        $user = Auth::user();
-        return view('admin.profile', ['user' => $user]);
-    }
-
     public function edit(Request $request) {
         $user = Auth::user();
         return view('admin.profileedit', ['user' => $user]);
@@ -25,7 +20,6 @@ class ProfileController extends Controller
     
     public function updata(Request $request) {
         $user = Auth::user();
-
         // $userName = $request->value('name');
         $profileImage = $request->file('profile_image');
         if ($profileImage != null) {
@@ -44,15 +38,12 @@ class ProfileController extends Controller
     // skinsテーブル
     public function skin(Request $request) {
         
-        $this->validate($request, Skin::$rules);
-        
+        // $this->validate($request, Skin::$rules);
         $user = Auth::user();
 
-        $skin = User::find($request->id);
-        $skin = new Skin;
+        $user->skin_id = $request->skin_id;
+        $user->save();
 
-        $skin->save();
-        
         return redirect('admin/mypage');
     }
     

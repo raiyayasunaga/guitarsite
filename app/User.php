@@ -21,7 +21,7 @@ class User extends Authenticatable
     protected $fillable = [
         'name', 'email', 'password',
         'email_verifed', 'email_verify_token',
-        'profile_image',
+        'profile_image', 
     ];
 
     /**
@@ -49,7 +49,7 @@ class User extends Authenticatable
 
     public function skin()
     {
-        return $this->hasMany('App\Skin');
+        return $this->belongsTo('App\Skin');
     }
 
 }

@@ -38447,17 +38447,6 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ "./resources/sass/skin/guitar.scss":
-/*!*****************************************!*\
-  !*** ./resources/sass/skin/guitar.scss ***!
-  \*****************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-// removed by extract-text-webpack-plugin
-
-/***/ }),
-
 /***/ "./resources/sass/skin/nerv.scss":
 /*!***************************************!*\
   !*** ./resources/sass/skin/nerv.scss ***!
@@ -38469,10 +38458,21 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./resources/sass/skin/shogouki.scss":
+/*!*******************************************!*\
+  !*** ./resources/sass/skin/shogouki.scss ***!
+  \*******************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
+
+/***/ }),
+
 /***/ 0:
-/*!***********************************************************************************************************************************************************************************************************************************************************!*\
-  !*** multi ./resources/js/app.js ./resources/js/assets/jquery.js ./resources/sass/app.scss ./resources/sass/skin/ayanami.scss ./resources/sass/skin/nerv.scss ./resources/sass/skin/guitar.scss ./resources/sass/admin.scss ./resources/sass/public.scss ***!
-  \***********************************************************************************************************************************************************************************************************************************************************/
+/*!*************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** multi ./resources/js/app.js ./resources/js/assets/jquery.js ./resources/sass/app.scss ./resources/sass/skin/ayanami.scss ./resources/sass/skin/nerv.scss ./resources/sass/skin/shogouki.scss ./resources/sass/admin.scss ./resources/sass/public.scss ***!
+  \*************************************************************************************************************************************************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -38481,7 +38481,7 @@ __webpack_require__(/*! /Users/aneiraiya/laravel_lesson/guitarsite/resources/js/
 __webpack_require__(/*! /Users/aneiraiya/laravel_lesson/guitarsite/resources/sass/app.scss */"./resources/sass/app.scss");
 __webpack_require__(/*! /Users/aneiraiya/laravel_lesson/guitarsite/resources/sass/skin/ayanami.scss */"./resources/sass/skin/ayanami.scss");
 __webpack_require__(/*! /Users/aneiraiya/laravel_lesson/guitarsite/resources/sass/skin/nerv.scss */"./resources/sass/skin/nerv.scss");
-__webpack_require__(/*! /Users/aneiraiya/laravel_lesson/guitarsite/resources/sass/skin/guitar.scss */"./resources/sass/skin/guitar.scss");
+__webpack_require__(/*! /Users/aneiraiya/laravel_lesson/guitarsite/resources/sass/skin/shogouki.scss */"./resources/sass/skin/shogouki.scss");
 __webpack_require__(/*! /Users/aneiraiya/laravel_lesson/guitarsite/resources/sass/admin.scss */"./resources/sass/admin.scss");
 module.exports = __webpack_require__(/*! /Users/aneiraiya/laravel_lesson/guitarsite/resources/sass/public.scss */"./resources/sass/public.scss");
 

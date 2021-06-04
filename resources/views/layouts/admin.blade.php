@@ -29,10 +29,26 @@
         <!-- Styles -->
         {{-- 何故かassetsに定義されていた --}}
         <link href="{{ asset('/css/app.css') }}" rel="stylesheet">
-        
-        <link href="{{ asset('/css/admin.css') }}" rel="stylesheet" id="changestyle">
 
         <!-- ここで実装可能出ないと全ての画面で変更されない -->
+        @guest
+            <link href="{{ asset('/css/admin.css') }}" rel="stylesheet">
+        @else
+            @if (Auth::user()->skin_id == 1)
+            <link href="{{ asset('/css/admin.css') }}" rel="stylesheet">
+            @elseif (Auth::user()->skin_id == 2)
+            <link href="{{ asset('/css/ayanami.css') }}" rel="stylesheet">
+            @elseif (Auth::user()->skin_id == 3)
+            <link href="{{ asset('/css/shogouki.css') }}" rel="stylesheet">
+            @elseif (Auth::user()->skin_id == NULL)
+            <link href="{{ asset('/css/admin.css') }}" rel="stylesheet">
+            @else
+            <link href="{{ asset('/css/admin.css') }}" rel="stylesheet">
+            @endif
+        @endguest
+        
+
+
         @yield('style')
     </head>
     <body>
@@ -112,19 +128,9 @@
         </div>
         <script>
             // ここに変数を定義する？
-            function changestyle(cssid, cssfile) {
-            document.getElementById(cssid).href = cssfile;
-            }
+            
 
             // 声
-            window.onload = function() {
-            let shogoukiVoice = new Audio("/Audio/shogoukiVoice.mp3");
-            //ボタンにクリックイベントを設定
-            document.getElementById("hedarSkin").onclick = function() {
-                shogoukiVoice.currentTime = 0;  //再生開始位置を先頭に戻す
-                shogoukiVoice.play();  //サウンドを再生
-            }
-    }
         </script>
     </body>
     @yield('js')

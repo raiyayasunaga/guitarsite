@@ -29,11 +29,11 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function() {
     Route::get('close', 'Admin\GuitarController@close');
 
     // プロフィールに関する
-    Route::get('profile', 'Admin\ProfileController@profile');
     Route::get('profileedit', 'Admin\ProfileController@edit')->name('user.image');
 
     // カラースキンを変更するルート
     Route::post('prfilleedit', 'Admin\ProfileController@skin');
+    
     // 一部変更になるはず
     Route::PATCH('profileedit', 'Admin\ProfileController@updata');
 });
