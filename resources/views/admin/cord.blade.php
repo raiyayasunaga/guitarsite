@@ -23,35 +23,6 @@
 </style>
 @endsection('style')
 @section('content')
-  <div class="container">
-    <div class="row">
-      <h3>if文でユーザーが出した値をチェックする方法</h3>
-      <div class="col">
-          <button onclick="check()">クリック</button>
-      </div>
-      <div class="col">
-      <button onclick="sample()">曜日確認</button>
-      </div>
-    </div>
-
-    <div class="row">
-    <button onclick="cordsName()">画像</button>
-    </div>
-    <div class=row>
-      <button onclick="prameter()">関数</button>
-    </div>
-    <div class="row">
-      <button >クラス定義</button>
-    </div>
-
-    <div id="view">
-      プレビュー：
-
-    </div>
-    <button id="voice">クリック音声</button>
-    
-
-</div>
     <div class="container">
 
       <div class="row py-5">
@@ -1060,54 +1031,4 @@
         </div>
 
     </div>
-@endsection
-@section('js')
-<script>
-   window.onload = function() {
-        var my_audio = new Audio("/Audio/test.mp3");
-            //ボタンにクリックイベントを設定
-            document.getElementById("voice").onclick = function() {
-                my_audio.currentTime = 0;  //再生開始位置を先頭に戻す
-                my_audio.play();  //サウンドを再生
-            }
-    }
-  // jsonデータ
-
-  // jsonデータおわり
-  function check() {
-    let answer = prompt('１から１０まで');
- if(answer >= 1 && answer <= 10) {
-   document.write('正しい')
- } else {
-   document.write('正しくない')
- }
-  }
-
-function sample() { 
- const week = ['日', '月', '火', '水', '木', '金', '土'];
- let today = new Date();
-
- let week_jp = week[today.getDay()];
- document.write(`今日は、${week_jp}曜日です`);
-
-}
-
-// ここの考え結構使えるかも
-function cordsName() {
-  const cords = {
-    'C': '/img/C.png',
-    'D': '/img/D.png',
-    'E': 'img/E.png',
-  }
-  let c = prompt('コードを入力')
-  if(cords[c]) {
-    $('#view') . append(`${c}の画像は` + `<img src="${cords[c]}">` + `です`);
-  } else {
-    document.write('エラー');
-  }
-}
-
-
-
-</script>
 @endsection

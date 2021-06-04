@@ -5,7 +5,7 @@
 @section('style')
         <link href="{{ asset('/css/nerv.css') }}" rel="stylesheet" id="nerv" />
         <link href="{{ asset('/css/ayanami.css') }}" rel="stylesheet" id="ayanami" />
-        <link href="{{ asset('/css/guitar.css') }}" rel="stylesheet" id="guitar" />
+        <link href="{{ asset('/css/admin.css') }}" rel="stylesheet" id="guitar" />
 @endsection
 
 @section('content')
@@ -13,9 +13,7 @@
    <h2 class="my-3">プロフィール編集</h2>
     <form method="post" action="{{ route('user.image') }}" enctype="multipart/form-data">
       @csrf
-  @method('PATCH')
-      <div class="row mb-5">
-      </div>
+      @method('PATCH')
       <div class="row">
         <div class="col-md-3">
           <label for="profile_image">現在のプロフィール画像
@@ -39,10 +37,14 @@
   <!-- formタグはややこしくなるためあえて分けて考えている -->
     <div class="container">
         <div class="row">
+          <form method="post" action="{{ action('Admin\ProfileController@name') }}">
             <h3>名前変更</h3>
             <div class="col-4">
               <input type="text" name="name" value="">
             </div>
+            @csrf
+            <button class="btn btn-primary">変更する</button>
+          </form>
         </div>
         <div class="row my-5">
           <div class="col-6">

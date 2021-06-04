@@ -36,8 +36,8 @@ class ProfileController extends Controller
     }
 
     // skinsテーブル
-    public function skin(Request $request) {
-        
+    public function skin(Request $request) 
+    {    
         // $this->validate($request, Skin::$rules);
         $user = Auth::user();
 
@@ -45,6 +45,14 @@ class ProfileController extends Controller
         $user->save();
 
         return redirect('admin/mypage');
+    }
+    public function name(Request $request)
+    {
+        $user = Auth::user();
+        $user->name = $request->name;
+        $user->save();
+
+        return redirect('admin/profileedit');
     }
     
     private function saveProfileImage($image, $id) {

@@ -13,6 +13,53 @@
   }
 }
 
+
+// ギターコードの編集
+#cordbackground {
+  background: #c8ffad;
+}
+
+.cordmenu {
+  display: flex;
+  justify-content: center;
+}
+.cord {
+  padding: 10px;
+  margin-right: 10px;
+  border-radius: 10px;
+  background-color: aqua;
+  &:hover {
+    background-color: aquamarine;
+  }
+  a {
+    display: flex;
+    color: #fff;
+    &:hover {
+      text-decoration: none;
+    }
+  }
+}
+
+img {
+  width: 200px;
+  height: auto;
+  border: 2px solid #000;
+}
+
+.cord-font {
+  font-size: 23px;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-weight: blod;
+  background-color: #ececec;
+  border-radius: 5px;
+  padding: 5px;
+  color:black;
+
+  &:hover {
+    color:brown;
+    text-decoration: none;
+  }
+}
 h1 a{
   color: $sinnzi-color-green;
   @include hederfont;
@@ -39,6 +86,7 @@ h1 a{
      display: inline-block;
      padding: 26px 10px 20px 10px;
      list-style: none;
+
        a {
        font-size: 20px;
        color: $sinnzi-color-green;
@@ -46,9 +94,12 @@ h1 a{
            text-decoration: none;
            color: $sinnzi-color-orenge;
            }
+         &:active {
+            background-image: url("/img/C.png");
+          }
          }
        }
-   } 
+    } 
 
 .navbar-laravel {
   background-color: $sinnzi-color-purple;

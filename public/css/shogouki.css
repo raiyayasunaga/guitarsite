@@ -13,6 +13,56 @@
   background-image: url("/img/shogouki_angry.png");
 }
 
+#cordbackground {
+  background: #c8ffad;
+}
+
+.cordmenu {
+  display: flex;
+  justify-content: center;
+}
+
+.cord {
+  padding: 10px;
+  margin-right: 10px;
+  border-radius: 10px;
+  background-color: aqua;
+}
+
+.cord:hover {
+  background-color: aquamarine;
+}
+
+.cord a {
+  display: flex;
+  color: #fff;
+}
+
+.cord a:hover {
+  text-decoration: none;
+}
+
+img {
+  width: 200px;
+  height: auto;
+  border: 2px solid #000;
+}
+
+.cord-font {
+  font-size: 23px;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  font-weight: blod;
+  background-color: #ececec;
+  border-radius: 5px;
+  padding: 5px;
+  color: black;
+}
+
+.cord-font:hover {
+  color: brown;
+  text-decoration: none;
+}
+
 h1 a {
   color: #23d024;
   font-family: "Noto Serif JP", serif;
@@ -53,6 +103,10 @@ ul li a {
 ul li a:hover {
   text-decoration: none;
   color: #eb9916;
+}
+
+ul li a:active {
+  background-image: url("/img/C.png");
 }
 
 .navbar-laravel {
