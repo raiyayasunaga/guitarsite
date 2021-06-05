@@ -34,24 +34,37 @@
         @guest
             <link href="{{ asset('/css/admin.css') }}" rel="stylesheet">
         @else
-            @if (Auth::user()->skin_id == 1)
-            <link href="{{ asset('/css/admin.css') }}" rel="stylesheet">
-            @elseif (Auth::user()->skin_id == 2)
-            <link href="{{ asset('/css/ayanami.css') }}" rel="stylesheet">
-            @elseif (Auth::user()->skin_id == 3)
-            <link href="{{ asset('/css/shogouki.css') }}" rel="stylesheet">
-            @elseif (Auth::user()->skin_id == 4)
-            <link href="{{ asset('/css/nerv.css') }}" rel="stylesheet">
-            @elseif (Auth::user()->skin_id == NULL)
-            <link href="{{ asset('/css/admin.css') }}" rel="stylesheet">
-            @else
-            <link href="{{ asset('/css/admin.css') }}" rel="stylesheet">
-            @endif
+            @switch (Auth::user()->skin_id)
+            @case(1)
+                <link href="{{ asset('/css/admin.css') }}" rel="stylesheet">
+                @break
+            @case(2)
+                <link href="{{ asset('/css/ayanami.css') }}" rel="stylesheet">
+                @break
+            @case(3)
+                <link href="{{ asset('/css/shogouki.css') }}" rel="stylesheet">
+                @break
+            @case(4)
+                <link href="{{ asset('/css/nerv.css') }}" rel="stylesheet">
+                @break
+            @case(5)
+                <link href="{{ asset('/css/shingeki.css') }}" rel="stylesheet">
+                @break
+            @case(6)
+                <link href="{{ asset('/css/akira.css') }}" rel="stylesheet">
+                @break
+            @case(7)
+                <link href="{{ asset('/css/giburi.css') }}" rel="stylesheet">
+                @break
+
+            @default
+                <link href="{{ asset('/css/admin.css') }}" rel="stylesheet">
+            @endswitch
         @endguest
 
         @yield('style')
     </head>
-    <body>
+    <body class="fadeout">
         <div id="app">
             {{-- 画面上部に表示するナビゲーションバーです。 --}}
             <nav class="navbar navbar-expand-md navbar-dark navbar-laravel">
@@ -110,9 +123,9 @@
                         <ul class="navbar-nav" style="padding-left: 420px;">
                             <header>
                                 <ul>
-                                    <li><a href = "mypage" >マイページ</a></li>
-                                    <li><a href = "create" >曲の作成</a></li>
-                                    <li><a href = "cord" >ギターのコード一覧</a></li>
+                                    <li><a id="mypage" href = "mypage" >マイページ</a></li>
+                                    <li><a id="create" href = "create" >曲の作成</a></li>
+                                    <li><a id="musicCords" href = "cord" >ギターのコード一覧</a></li>
                                 </ul>
                             </header>
                         </ul>
@@ -131,14 +144,113 @@
             
 
             // 声
-            window.onload = function() {
-        var my_audio = new Audio("/Audio/shogoukiVoice.mp3");
-            //ボタンにクリックイベントを設定
-            document.getElementById("hedarSkin").onclick = function() {
-                my_audio.currentTime = 0;  //再生開始位置を先頭に戻す
-                my_audio.play();  //サウンドを再生
-            }
-        }
+        @guest
+
+        @else
+            @switch(Auth::user()->skin_id)
+                @case(1)
+                // ギターボイス
+                window.onload = function() {
+                    let my_audio = new Audio("/Audio/test.mp3");
+                document.getElementById("hedarSkin").onclick = function() {
+                    my_audio.currentTime = 0;
+                    my_audio.play();
+                    }    
+                }
+                @break
+
+                @case(2)
+                // 綾波ボイス
+                window.onload = function() {
+                    let my_audio = new Audio("/Audio/ayanamiVoice1.mp3");
+                document.getElementById("hedarSkin").onclick = function() {
+                    my_audio.currentTime = 0;
+                    my_audio.play();
+                    }    
+                }
+                @break
+
+                @case(3)
+                // 初号機のボイス
+                window.onload = function() {
+                    let my_audio = new Audio("/Audio/shogoukiVoice.mp3");
+                    let mypageSound = new Audio("/Audio/test.mp3"); 
+                    let createSound = new Audio("/Audio/test.mp3");
+                    let musicSound = new Audio("/Audio/test.mp3");
+                //ボタンにクリックイベントを設定
+                    document.getElementById("hedarSkin").onclick = function() {
+                        my_audio.currentTime = 0;  //再生開始位置を先頭に戻す
+                        my_audio.play();  //サウンドを再生
+                        }
+                    document.getElementById("mypage").onclick = function() {
+                        mypageSound.currentTime = 0;
+                        mypageSound.play();
+                    }
+                    document.getElementById("create").onclick = function() {
+                        createSound.currentTime = 0;
+                        createSound.play();
+                    }
+                    document.getElementById("musicCords").onclick = function() {
+                        createSound.currentTime = 0;
+                        createSound.play();
+                    }
+                }
+                @break
+
+                @case(4)
+                // NERVボイス
+                window.onload = function() {
+                    let my_audio = new Audio("/Audio/test.mp3");
+                document.getElementById("hedarSkin").onclick = function() {
+                    my_audio.currentTime = 0;
+                    my_audio.play();
+                    }    
+                }
+                @break
+
+                @case(5)
+                // 進撃
+                window.onload = function() {
+                    let my_audio = new Audio("/Audio/erennVoice1.mp3");
+                document.getElementById("hedarSkin").onclick = function() {
+                    my_audio.currentTime = 0;
+                    my_audio.play();
+                    }    
+                }
+                @break
+
+                @case(6)
+                // AKIRAスキン
+                window.onload = function() {
+                    let my_audio = new Audio("/Audio/tetuoVoice1.mp3");
+                document.getElementById("hedarSkin").onclick = function() {
+                    my_audio.currentTime = 0;
+                    my_audio.play();
+                    }    
+                }
+                @break
+
+                @case(7)
+                // ジブリスキン
+                window.onload = function() {
+                    let my_audio = new Audio("/Audio/tetuoVoice1.mp3");
+                document.getElementById("hedarSkin").onclick = function() {
+                    my_audio.currentTime = 0;
+                    my_audio.play();
+                    }    
+                }
+                @break
+                
+                @default
+                window.onload = function() {
+                    let my_audio = new Audio("/Audio/test.mp3");
+                document.getElementById("hedarSkin").onclick = function() {
+                    my_audio.currentTime = 0;
+                    my_audio.play();
+                    }    
+                }
+            @endswitch
+        @endguest
         </script>
     </body>
     @yield('js')

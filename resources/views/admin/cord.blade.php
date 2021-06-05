@@ -24,6 +24,15 @@
 @endsection('style')
 @section('content')
     <div class="container">
+      <div class="row">
+        <div>ここで正規表現のテスト</div>
+
+        <button onclick="test();">クリック</button>
+        <input id="input" type="text" onkeyup="inputCheck()">
+      </div>
+      <div id="view">プレビュー</div>
+    </div>
+    <div class="container">
 
       <div class="row py-5">
         <h2>コード表A〜G</h2>
@@ -1031,4 +1040,31 @@
         </div>
 
     </div>
+@endsection
+
+@section('js')
+<script>
+  function inputCheck() {
+  let inputValue = document.getElementById( "input" ).value;
+  let result = inputValue.replace(/[A-Z]/g, cords);
+  function cords(match){
+    if(match === 'C') {
+      return 'Cコード';
+    }else if(match === 'D') {
+      return 'Dコード';
+    }else {
+      return match;
+    }
+  }
+  document.getElementById( "view" ).innerHTML = result;
+}
+  function test() {
+    var str = 'sample_1, sample_2, sample_3';
+ 
+ // 正規表現に「g」フラグを追加
+    var result = str.replace(/_/g, '<img src="/img/C.png">');
+    //  _（アンダーバー）から-（ハイフン）に変更
+    $('#view') . append(result);
+  }
+</script>
 @endsection

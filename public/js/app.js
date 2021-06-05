@@ -38130,6 +38130,27 @@ var app = new Vue({
 /*! no static exports found */
 /***/ (function(module, exports) {
 
+$(window).on('load', function () {
+  $('body').removeClass('fadeout');
+});
+$(function () {
+  // ハッシュリンク(#)と別ウィンドウでページを開く場合はスルー
+  $('a:not([href^="#"]):not([target])').on('click', function (e) {
+    e.preventDefault(); // ナビゲートをキャンセル
+
+    url = $(this).attr('href'); // 遷移先のURLを取得
+
+    if (url !== '') {
+      $('body').addClass('fadeout'); // bodyに class="fadeout"を挿入
+
+      setTimeout(function () {
+        window.location = url; // 0.8秒後に取得したURLに遷移
+      }, 700);
+    }
+
+    return false;
+  });
+});
 $(function () {
   // リアルタイムで表示させる
   $('#btn').on('click', function () {
@@ -38436,6 +38457,17 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./resources/sass/skin/akira.scss":
+/*!****************************************!*\
+  !*** ./resources/sass/skin/akira.scss ***!
+  \****************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
+
+/***/ }),
+
 /***/ "./resources/sass/skin/ayanami.scss":
 /*!******************************************!*\
   !*** ./resources/sass/skin/ayanami.scss ***!
@@ -38447,10 +38479,32 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./resources/sass/skin/giburi.scss":
+/*!*****************************************!*\
+  !*** ./resources/sass/skin/giburi.scss ***!
+  \*****************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
+
+/***/ }),
+
 /***/ "./resources/sass/skin/nerv.scss":
 /*!***************************************!*\
   !*** ./resources/sass/skin/nerv.scss ***!
   \***************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
+
+/***/ }),
+
+/***/ "./resources/sass/skin/shingeki.scss":
+/*!*******************************************!*\
+  !*** ./resources/sass/skin/shingeki.scss ***!
+  \*******************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
@@ -38470,9 +38524,9 @@ __webpack_require__.r(__webpack_exports__);
 /***/ }),
 
 /***/ 0:
-/*!*************************************************************************************************************************************************************************************************************************************************************!*\
-  !*** multi ./resources/js/app.js ./resources/js/assets/jquery.js ./resources/sass/app.scss ./resources/sass/skin/ayanami.scss ./resources/sass/skin/nerv.scss ./resources/sass/skin/shogouki.scss ./resources/sass/admin.scss ./resources/sass/public.scss ***!
-  \*************************************************************************************************************************************************************************************************************************************************************/
+/*!********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** multi ./resources/js/app.js ./resources/js/assets/jquery.js ./resources/sass/app.scss ./resources/sass/skin/ayanami.scss ./resources/sass/skin/nerv.scss ./resources/sass/skin/shingeki.scss ./resources/sass/skin/akira.scss ./resources/sass/skin/giburi.scss ./resources/sass/skin/shogouki.scss ./resources/sass/admin.scss ./resources/sass/public.scss ***!
+  \********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -38481,6 +38535,9 @@ __webpack_require__(/*! /Users/aneiraiya/laravel_lesson/guitarsite/resources/js/
 __webpack_require__(/*! /Users/aneiraiya/laravel_lesson/guitarsite/resources/sass/app.scss */"./resources/sass/app.scss");
 __webpack_require__(/*! /Users/aneiraiya/laravel_lesson/guitarsite/resources/sass/skin/ayanami.scss */"./resources/sass/skin/ayanami.scss");
 __webpack_require__(/*! /Users/aneiraiya/laravel_lesson/guitarsite/resources/sass/skin/nerv.scss */"./resources/sass/skin/nerv.scss");
+__webpack_require__(/*! /Users/aneiraiya/laravel_lesson/guitarsite/resources/sass/skin/shingeki.scss */"./resources/sass/skin/shingeki.scss");
+__webpack_require__(/*! /Users/aneiraiya/laravel_lesson/guitarsite/resources/sass/skin/akira.scss */"./resources/sass/skin/akira.scss");
+__webpack_require__(/*! /Users/aneiraiya/laravel_lesson/guitarsite/resources/sass/skin/giburi.scss */"./resources/sass/skin/giburi.scss");
 __webpack_require__(/*! /Users/aneiraiya/laravel_lesson/guitarsite/resources/sass/skin/shogouki.scss */"./resources/sass/skin/shogouki.scss");
 __webpack_require__(/*! /Users/aneiraiya/laravel_lesson/guitarsite/resources/sass/admin.scss */"./resources/sass/admin.scss");
 module.exports = __webpack_require__(/*! /Users/aneiraiya/laravel_lesson/guitarsite/resources/sass/public.scss */"./resources/sass/public.scss");

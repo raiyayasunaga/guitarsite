@@ -55,19 +55,19 @@ body {
                     <table class="table">
                         <thead>
                             <tr>
-                                <th class="mobile" width="10%">IDいつか外す</th>
-                                <th width="40%">曲のタイトル</th>
+                                <th width="10%">id</th>
+                                <th width="20%">曲のタイトル</th>
                                 <th width="20%">カテゴリー</th>
                                 <th class="mobile" width="10%">カポ</th>
                                 <th width="10%">編集</th>
-                                <th width="20%">公開するのか</th>
+                                <th width="10%">公開するのか</th>
+                                <th width="10%">公開状態</th>
                             </tr>
                         </thead>
                         <tbody>
                             @foreach($posts as $music)
                                 <tr>
-                                    <th class="mobile">{{ $music->id }}</th>
-                                    
+                                    <th>{{ $music->id }}</th>
                                     <!-- 取得して投稿の値によって表示を変える -->
                                         <td><a href ="{{ route('admin.playing', ['id' => $music->id]) }}"> {{ str_limit($music->title, 100) }}</a></td>
                                     <!-- 連想配列・データベースで値を引っ張ってくる -->
@@ -94,6 +94,13 @@ body {
                                             <input type="hidden" name="id" value="{{$music->id}}">
                                         </form>
                                         </div>
+                                    </td>
+                                    <td>
+                                        @if($music->public == 1)
+                                        <div>公開済み</div>
+                                        @else
+                                        <div>未公開</div>
+                                        @endif
                                     </td>
                                 </tr>
                             @endforeach

@@ -3,8 +3,6 @@
 @section('title', 'プロフィール編集')
 
 @section('style')
-        <link href="{{ asset('/css/nerv.css') }}" rel="stylesheet" id="nerv" />
-        <link href="{{ asset('/css/ayanami.css') }}" rel="stylesheet" id="ayanami" />
         <link href="{{ asset('/css/admin.css') }}" rel="stylesheet" id="guitar" />
 @endsection
 
@@ -55,6 +53,9 @@
                     <option value="2">綾波スキン</option>
                     <option value="3">初号機スキン</option>
                     <option value="4">NERVスキン</option>
+                    <option value="5">進撃スキン</option>
+                    <option value="6">AKIRAスキン</option>
+                    <option value="7">ジブリスキン</option>
                 </select>
                 <div class="my-5">
                 @csrf
@@ -67,8 +68,11 @@
             <select class="form-control" onchange="changeCss('guitar', value)" id="skin">
               <option value="{{ asset('/css/guitar.css') }}">選択して下さい</option>
               <option value="{{ asset('/css/ayanami.css') }}">綾波スキン</option>
-              <option value="{{ asset('/css/admin.css') }}">初号機スキン</option>
+              <option value="{{ asset('/css/shogouki.css') }}">初号機スキン</option>
               <option value="{{ asset('/css/nerv.css') }}">NERVスキン</option>
+              <option value="{{ asset('/css/shingeki.css') }}">進撃スキン</option>
+              <option value="{{ asset('/css/akira.css') }}">AKIRAスキン</option>
+              <option value="{{ asset('/css/giburi.css') }}">ジブリスキン</option>
             </select>
           </div>
         </div>
