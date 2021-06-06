@@ -16,22 +16,61 @@
             <h3 class="col-4">カポ：{{ ($music->capo) }}</h3>
             <h3 class="col-4">カテゴリー：{{ ($music->category) }}</h3>
          </div>
-        <div>
-          {{ $music->body}}
-        </div>
 
-         <!-- ここにコードの表示を載せたい -->
         <div id="app">
           <roll-component></roll-component>
         </div>
         <div>
         <h3>曲の歌詞</h3>
-        <div id="lyrics">
-          {{ $music->lyrics}}
-        </div>
-          <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+
+        <div id="lyrics"> 
         </div>
         <h1>終わり</h1>
 
     </div>
 @endsection
+
+@section('js')
+<script>
+// ここでlyricsでもらった値を表現
+
+document.addEventListener("DOMContentLoaded", function() {
+  let string = '{{ $music->lyrics}}';
+  let result = string.replace(/\[.*?]/g, cords);
+  function cords(match){
+    switch(match) {
+        case '[C]':
+            return '<img src="/img/C.png">';
+            break;
+        case '[Cdim]':
+            return '<img src="/img/Cdim.png">';
+            break;
+        case '[Cm]':
+            return '<img src="/img/Cm.png">';
+            break;
+        case '[G]':
+            return '<img src="/img/G.png">';
+            break;
+        case '[Am]':
+            return '<img src="/img/Am.png">';
+            break;
+        case '[F]':
+            return '<img src="/img/F.png">';
+            break;
+        case '[Em]':
+            return '<img src="/img/Em.png">';
+            break;
+        case '[Cadd9]':
+            return '<img src="/img/Cadd9.png">';
+            break;
+        default:
+            return match;
+    }
+  }
+ $('#lyrics') . append(result);
+});
+
+  
+</script>
+@endsection
+

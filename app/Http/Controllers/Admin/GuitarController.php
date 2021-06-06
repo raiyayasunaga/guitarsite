@@ -46,22 +46,7 @@ class GuitarController extends Controller
 
       $music = new Music;
       $form = $request->all();
-
-      // フォームから画像が送信されてきたら、保存して、$news->image_path に画像のパスを保存する
-      if ($request->remove == 'true') {
-        $music_form['image_path'] = null;
-    } elseif ($request->file('img')) {
-        $path = $request->file('img')->store('public/img');
-        $music_form['image_path'] = basename($path);
-    } else {
-        $music_form['image_path'] = $music->image_path;
-    }
-    
-      // フォームから送信されてきた_tokenを削除する
-      unset($form['_token']);
-      unset($music_form['remove']);
-      // フォームから送信されてきたimageを削除する
-      unset($form['image']);
+      unset($form['music_key_sel']);
 
       // データベースに保存する
       $music->fill($form);
@@ -123,7 +108,6 @@ class GuitarController extends Controller
 
     public function playing(Request $request) {
         $music = Music::find($request->id);
-        
         // 名前から予測していく
         return view('admin.playing', ['music' => $music]);
     }
@@ -160,8 +144,9 @@ class GuitarController extends Controller
         $music_form = $request->all();
         unset($music_form['_token']);
 
+
         // 該当するデータを上書きして保存する)
-        $music->fill($music_form)->save();
+        $music->save();
 
         return redirect('admin/mypage');
     }

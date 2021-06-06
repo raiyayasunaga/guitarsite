@@ -24,13 +24,7 @@
 @endsection('style')
 @section('content')
     <div class="container">
-      <div class="row">
-        <div>ここで正規表現のテスト</div>
-
-        <button onclick="test();">クリック</button>
-        <input id="input" type="text" onkeyup="inputCheck()">
-      </div>
-      <div id="view">プレビュー</div>
+      
     </div>
     <div class="container">
 
@@ -1046,12 +1040,12 @@
 <script>
   function inputCheck() {
   let inputValue = document.getElementById( "input" ).value;
-  let result = inputValue.replace(/[A-Z]/g, cords);
+  let result = inputValue.replace(/[.[A-Z].]/g, cords);
   function cords(match){
     if(match === 'C') {
-      return 'Cコード';
+      return '<img src="/img/C.png">';
     }else if(match === 'D') {
-      return 'Dコード';
+      return '<img src="/img/D.png">';
     }else {
       return match;
     }
