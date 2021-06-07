@@ -15,6 +15,41 @@
   background-image: url("/img/shogouki_angry.png");
 }
 
+body {
+  background: linear-gradient(-45deg, white, #a90e11, white);
+  background-size: 400% 400%;
+  -webkit-animation: gradient 60s ease infinite;
+          animation: gradient 60s ease infinite;
+}
+
+@-webkit-keyframes gradient {
+  0% {
+    background-position: 10% 0%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 10% 0%;
+  }
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 10% 0%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 10% 0%;
+  }
+}
+
 body::after {
   content: "";
   position: fixed;

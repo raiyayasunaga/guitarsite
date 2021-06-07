@@ -6,7 +6,7 @@
 <!-- 多分この中にlinkをforeachで追記する -->
 <style>
 body {
-  background: linear-gradient(-45deg, white, #a90e11, white);
+  background: linear-gradient(-45deg, #46f7dc, #a9f8c5, #f3feaa);
   background-size: 400% 400%;
   animation: gradient 60s ease infinite;
 }
@@ -22,16 +22,27 @@ body {
     background-position: 10% 0%;
   }
 }
+
+body.fadeout::after {
+  opacity: 1;
+}
+
+body.fadeout article{
+  -webkit-transform:scale(1.2);
+  transform:scale(1.2);
+}
+
 </style>
 @endsection
 
 @section('content')
-<div id="bgskin">
+<div id="bgskin-home">
+
     <div class="bg"></div>
     <div class="bg bg2"></div>
     <div class="bg bg3"></div>
     <div class="container">
-        <div class="row my-3">
+        <div class="row py-3">
             <h2>公開一覧</h2>
         </div>
         <div class="row">

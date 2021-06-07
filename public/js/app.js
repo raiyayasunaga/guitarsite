@@ -1973,9 +1973,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     // ここ入らないのかも
@@ -1998,7 +1995,7 @@ __webpack_require__.r(__webpack_exports__);
     moveToDown: function moveToDown() {
       var speed = 1; //時間あたりに移動するpx量です。デフォルトでは1pxにしていますが、自由に変えてください
 
-      var interval = 60; //移動する間隔です。デフォルトでは0.1秒おきにしていますが、自由に変えてくださ
+      var interval = 120; //移動する間隔です。デフォルトでは0.1秒おきにしていますが、自由に変えてくださ
 
       this.test = setInterval(function () {
         var scrollTop = document.body.scrollTop;
@@ -37576,8 +37573,6 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "container" }, [
-    _vm._m(0),
-    _vm._v(" "),
     _c("button", { staticClass: "stopbutton", on: { click: _vm.Stop } }, [
       _vm._v("ストップ")
     ]),
@@ -37672,16 +37667,7 @@ var render = function() {
     ])
   ])
 }
-var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", [
-      _c("h1", [_vm._v("ボタンを使って速さを切り替える方法はできた。")])
-    ])
-  }
-]
+var staticRenderFns = []
 render._withStripped = true
 
 
@@ -38149,24 +38135,6 @@ $(function () {
     }
 
     return false;
-  });
-});
-$(function () {
-  // リアルタイムで表示させる
-  $('#btn').on('click', function () {
-    alert("Hello JEQrty");
-  });
-  $("#cordButton_C").on('click', function () {
-    // 値を設定
-    // $('#origin-data').val(" ");
-    // // 値を取得
-    // var str1 = $('#origin-data').val();
-    $('#origin-data').append("[C]");
-  });
-  $("#cordButton_D").on('click', function () {
-    $('#origin-data').val('[D]');
-    var str1 = $('#origin-data').val();
-    $('#origin-data').append(text(str1));
   });
 });
 

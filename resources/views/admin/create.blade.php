@@ -77,7 +77,6 @@
                                     <button type="button" class="btn btn-outline-primary m-1" onclick="chord_insert('[Cdim]');">Cdim</button>
                                     <button type="button" class="btn btn-outline-primary m-1" onclick="chord_insert('[CM7]');">CM7</button>
                                     <button type="button" class="btn btn-outline-primary m-1" onclick="chord_insert('[Cadd9]');">Cadd9</button>
-                                    <button type="button" class="btn btn-outline-primary m-1" onclick="chord_insert('<br>');">改行ボタン</button>
                                 </div>
                                 <div id="key_C#" style="display: none;">
                                     <button type="button" class="btn btn-outline-primary m-1" onclick="chord_insert('[C#]');">C#</button>
@@ -128,7 +127,7 @@
 
 
                         <div class="col-12">
-                        <textarea placeholder="歌詞、コードを入力" name="lyrics" class="form-control" onkeyup="origindata()" id="origin-data"  rows="5" style="overflow: hidden; height: 134px;"></textarea>
+                        <textarea placeholder="歌詞、コードを入力" name="lyrics" class="form-control" onkeyup="origindata()" id="origin-data"  rows="5" value="{{ old('lyrics') }}" style="overflow: hidden; height: 134px;"></textarea>
                         </div>
                         
                         <div class="my-3">プレビュー</div>
@@ -332,11 +331,14 @@
 
     function origindata() {
   let input = document.getElementById( "origin-data" ).value;
-  let result = input.replace(/\[.*?]/g, cords);
+  let result = input.replace(/\[.*?]|\n/g, cords);
   function cords(match){
     switch(match) {
         case '[C]':
             return '<img src="/img/C.png">';
+            break;
+        case "\n":
+            return '<br>';
             break;
         case '[Cdim]':
             return '<img src="/img/Cdim.png">';
@@ -346,6 +348,9 @@
             break;
         case '[G]':
             return '<img src="/img/G.png">';
+            break;
+        case '[CM7]':
+            return '<img src="/img/CM_7.png">';
             break;
         case '[Am]':
             return '<img src="/img/Am.png">';
@@ -365,10 +370,6 @@
   }
   document.getElementById( "preview" ).innerHTML = result;
 
-}   
-    // ボタンの画像を変えるはずだが、、
-    
-
-
+} 
 </script>
 @endsection

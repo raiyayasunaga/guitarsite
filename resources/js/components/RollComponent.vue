@@ -1,8 +1,5 @@
 <template>
     <div class="container">
-        <div>
-            <h1>ボタンを使って速さを切り替える方法はできた。</h1>
-        </div>
         <button class="stopbutton" @click="Stop">ストップ</button>
             <button @click="button">少し早い</button>
             <!-- 運搬止まらずむしろ早くなっている -->
@@ -67,7 +64,7 @@
             },
             moveToDown() {
                 let speed = 1; //時間あたりに移動するpx量です。デフォルトでは1pxにしていますが、自由に変えてください
-                let interval = 60; //移動する間隔です。デフォルトでは0.1秒おきにしていますが、自由に変えてくださ
+                let interval = 120; //移動する間隔です。デフォルトでは0.1秒おきにしていますが、自由に変えてくださ
             this.test = setInterval(function() {
                 let scrollTop = document.body.scrollTop;
                 let scroll = scrollTop + speed;

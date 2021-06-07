@@ -6,7 +6,6 @@
 
 @section('content')
     <div class="container">
-      <div class="row my-5">
             <form action="{{ action('Admin\GuitarController@update') }}" method="post" enctype="multipart/form-data">
                 @if (count($errors) > 0)
                     <ul>
@@ -15,13 +14,13 @@
                         @endforeach
                     </ul>
                 @endif
-                <div class="form-group row">
+                <div class="row my-3">
                     <label class="col-md-2" for="title">曲のタイトル</label>
                     <div class="col-md-10">
                         <input type="text" class="form-control" name="title" value="{{ $music_form->title }}">
                     </div>
                 </div>
-                <div class="form-group row">
+                <div class="row">
                     <label class="col-md-2" for="category" >カテゴリー</label>
                     <div class="col-md-10">
                     <!-- データベースで取得した 値に合わせるオンラインサポートする-->
@@ -52,7 +51,7 @@
                                 <option value="半音">半音</option>
                             </select>
                         </div>
-                    </div>
+                </div>
                     
                     <div class="row">
                         <select id="selectCords" name="music_key_sel" onchange="keyChange();" class="form-control">
@@ -78,7 +77,6 @@
                                     <button type="button" class="btn btn-outline-primary m-1" onclick="chord_insert('[Cdim]');">Cdim</button>
                                     <button type="button" class="btn btn-outline-primary m-1" onclick="chord_insert('[CM7]');">CM7</button>
                                     <button type="button" class="btn btn-outline-primary m-1" onclick="chord_insert('[Cadd9]');">Cadd9</button>
-                                    <button type="button" class="btn btn-outline-primary m-1" onclick="chord_insert('<br>');">改行ボタン</button>
                                 </div>
                                 <div id="key_C#" style="display: none;">
                                     <button type="button" class="btn btn-outline-primary m-1" onclick="chord_insert('[C#]');">C#</button>
@@ -129,7 +127,7 @@
 
 
                         <div class="col-12">
-                        <textarea placeholder="歌詞、コードを入力" name="lyrics" class="form-control" onkeyup="origindata()" id="origin-data"  rows="5" style="overflow: hidden; height: 134px;"></textarea>
+                        <textarea value="{{ $music_form->lyrics }}" name="lyrics" class="form-control" onkeyup="origindata()" id="origin-data" rows="5" style="overflow: hidden; height: 134px;"></textarea>
                         </div>
                         
                         <div class="my-3">プレビュー</div>
@@ -141,7 +139,6 @@
                         <input type="submit" class="btn btn-primary mb-5" value="更新する">
                     </div>
             </form>          
-      </div>
     </div>
 @endsection
 

@@ -33,9 +33,8 @@
 @section('js')
 <script>
 // ここでlyricsでもらった値を表現
-
 document.addEventListener("DOMContentLoaded", function() {
-  let string = '{{ $music->lyrics}}';
+  let string = '{!! str_replace("\n", "<br />", str_replace("\r", "", $music->lyrics)) !!}';
   let result = string.replace(/\[.*?]/g, cords);
   function cords(match){
     switch(match) {

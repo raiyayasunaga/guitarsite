@@ -68,6 +68,8 @@
         <div id="app">
             {{-- 画面上部に表示するナビゲーションバーです。 --}}
             <nav class="navbar navbar-expand-md navbar-dark navbar-laravel">
+                <span id="logo-hedar"></span>
+                <span id="logo-hidden"></span>
                 <div class="naver container">
                     <a href="home"><div id="hedarSkin"></div></a>
                     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -133,9 +135,8 @@
                     </div>
                 </div>
             </nav>
-            {{-- ここまでナビゲーションバー --}}
+
             <main>
-                {{-- コンテンツをここに入れるため、@yieldで空けておきます。 --}}
                 @yield('content')
             </main>
         </div>
