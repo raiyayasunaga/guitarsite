@@ -25,7 +25,7 @@ body {
 @endsection
 
 @section('content')
-<ul class="sample">
+<ul class="m-0" id="background-mypage-image">
     <li></li>
     <li></li>
     <li></li>

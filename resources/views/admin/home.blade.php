@@ -5,42 +5,17 @@
 @section('style')
 <!-- 多分この中にlinkをforeachで追記する -->
 <style>
-body {
-  background: linear-gradient(-45deg, #46f7dc, #a9f8c5, #f3feaa);
-  background-size: 400% 400%;
-  animation: gradient 60s ease infinite;
-}
-
-@keyframes gradient {
-  0% {
-    background-position: 10% 0%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-  100% {
-    background-position: 10% 0%;
-  }
-}
-
-body.fadeout::after {
-  opacity: 1;
-}
-
-body.fadeout article{
-  -webkit-transform:scale(1.2);
-  transform:scale(1.2);
-}
-
 </style>
 @endsection
 
 @section('content')
+<ul class="m-0" id="background-home-image">
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+</ul>
 <div id="bgskin-home">
-
-    <div class="bg"></div>
-    <div class="bg bg2"></div>
-    <div class="bg bg3"></div>
     <div class="container">
         <div class="row py-3">
             <h2>公開一覧</h2>

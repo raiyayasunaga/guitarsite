@@ -6,7 +6,7 @@
 
 @section('content')
     <div class="container">
-            <form action="{{ action('Admin\GuitarController@update') }}" method="post" enctype="multipart/form-data">
+            <form action="{{ action('Admin\GuitarController@update'), route('user.cord') }}"  method="post" enctype="multipart/form-data">
                 @if (count($errors) > 0)
                     <ul>
                         @foreach($errors->all() as $e)
@@ -54,7 +54,7 @@
                 </div>
                     
                     <div class="row">
-                        <select id="selectCords" name="music_key_sel" onchange="keyChange();" class="form-control">
+                        <select id="selectCords" onchange="keyChange();" class="form-control">
 					      <option value="1">C = Am</option>
 					      <option value="2">C# = A#m</option>
 					      <option value="3">D = Bm</option>
@@ -127,7 +127,7 @@
 
 
                         <div class="col-12">
-                        <textarea value="{{ $music_form->lyrics }}" name="lyrics" class="form-control" onkeyup="origindata()" id="origin-data" rows="5" style="overflow: hidden; height: 134px;"></textarea>
+                        <textarea placeholder="歌詞、コードを入力" name="lyrics" class="form-control" onkeyup="origindata()" id="origin-data" rows="5" style="overflow: hidden; height: 134px;">{{ $music_form->lyrics }}</textarea>
                         </div>
                         
                         <div class="my-3">プレビュー</div>
@@ -136,6 +136,7 @@
                             </div>
                         </div> 
                         @csrf
+                        <input type="hidden" value="{{ $music_form->id }}" name="id">
                         <input type="submit" class="btn btn-primary mb-5" value="更新する">
                     </div>
             </form>          
@@ -144,13 +145,196 @@
 
 @section('js')
 <script>
+ function keyChange() {
+        if(document.getElementById('selectCords')){
+            id = document.getElementById('selectCords').value;
+            if(id == '1') {
+                document.getElementById('key_C').style.display = "";
+                document.getElementById('key_C#').style.display = "none";
+                document.getElementById('key_D').style.display = "none";
+                document.getElementById('key_Eb').style.display = "none";
+                document.getElementById('key_E').style.display = "none";
+                document.getElementById('key_F').style.display = "none";
+                document.getElementById('key_F#').style.display = "none";
+                document.getElementById('key_G').style.display = "none";
+                document.getElementById('key_Ab').style.display = "none";
+                document.getElementById('key_A').style.display = "none";
+                document.getElementById('key_Bb').style.display = "none";
+                document.getElementById('key_B').style.display = "none";
+            }else if(id == '2') {
+                document.getElementById('key_C').style.display = "none";
+                document.getElementById('key_C#').style.display = "";
+                document.getElementById('key_D').style.display = "none";
+                document.getElementById('key_Eb').style.display = "none";
+                document.getElementById('key_E').style.display = "none";
+                document.getElementById('key_F').style.display = "none";
+                document.getElementById('key_F#').style.display = "none";
+                document.getElementById('key_G').style.display = "none";
+                document.getElementById('key_Ab').style.display = "none";
+                document.getElementById('key_A').style.display = "none";
+                document.getElementById('key_Bb').style.display = "none";
+                document.getElementById('key_B').style.display = "none";
+            }else if(id == '3') {
+                document.getElementById('key_C').style.display = "none";
+                document.getElementById('key_C#').style.display = "none";
+                document.getElementById('key_D').style.display = "";
+                document.getElementById('key_Eb').style.display = "none";
+                document.getElementById('key_E').style.display = "none";
+                document.getElementById('key_F').style.display = "none";
+                document.getElementById('key_F#').style.display = "none";
+                document.getElementById('key_G').style.display = "none";
+                document.getElementById('key_Ab').style.display = "none";
+                document.getElementById('key_A').style.display = "none";
+                document.getElementById('key_Bb').style.display = "none";
+                document.getElementById('key_B').style.display = "none";
+            }else if(id == '4') {
+                document.getElementById('key_C').style.display = "none";
+                document.getElementById('key_C#').style.display = "none";
+                document.getElementById('key_D').style.display = "none";
+                document.getElementById('key_Eb').style.display = "";
+                document.getElementById('key_E').style.display = "none";
+                document.getElementById('key_F').style.display = "none";
+                document.getElementById('key_F#').style.display = "none";
+                document.getElementById('key_G').style.display = "none";
+                document.getElementById('key_Ab').style.display = "none";
+                document.getElementById('key_A').style.display = "none";
+                document.getElementById('key_Bb').style.display = "none";
+                document.getElementById('key_B').style.display = "none";
+            }else if(id == '5') {
+                document.getElementById('key_C').style.display = "none";
+                document.getElementById('key_C#').style.display = "none";
+                document.getElementById('key_D').style.display = "none";
+                document.getElementById('key_Eb').style.display = "none";
+                document.getElementById('key_E').style.display = "";
+                document.getElementById('key_F').style.display = "none";
+                document.getElementById('key_F#').style.display = "none";
+                document.getElementById('key_G').style.display = "none";
+                document.getElementById('key_Ab').style.display = "none";
+                document.getElementById('key_A').style.display = "none";
+                document.getElementById('key_Bb').style.display = "none";
+                document.getElementById('key_B').style.display = "none";
+            }else if(id == '6') {
+                document.getElementById('key_C').style.display = "none";
+                document.getElementById('key_C#').style.display = "none";
+                document.getElementById('key_D').style.display = "none";
+                document.getElementById('key_Eb').style.display = "none";
+                document.getElementById('key_E').style.display = "none";
+                document.getElementById('key_F').style.display = "";
+                document.getElementById('key_F#').style.display = "none";
+                document.getElementById('key_G').style.display = "none";
+                document.getElementById('key_Ab').style.display = "none";
+                document.getElementById('key_A').style.display = "none";
+                document.getElementById('key_Bb').style.display = "none";
+                document.getElementById('key_B').style.display = "none";
+            }else if(id == '7') {
+                document.getElementById('key_C').style.display = "none";
+                document.getElementById('key_C#').style.display = "none";
+                document.getElementById('key_D').style.display = "none";
+                document.getElementById('key_Eb').style.display = "none";
+                document.getElementById('key_E').style.display = "none";
+                document.getElementById('key_F').style.display = "none";
+                document.getElementById('key_F#').style.display = "";
+                document.getElementById('key_G').style.display = "none";
+                document.getElementById('key_Ab').style.display = "none";
+                document.getElementById('key_A').style.display = "none";
+                document.getElementById('key_Bb').style.display = "none";
+                document.getElementById('key_B').style.display = "none";
+            }else if(id == '8') {
+                document.getElementById('key_C').style.display = "none";
+                document.getElementById('key_C#').style.display = "none";
+                document.getElementById('key_D').style.display = "none";
+                document.getElementById('key_Eb').style.display = "none";
+                document.getElementById('key_E').style.display = "none";
+                document.getElementById('key_F').style.display = "none";
+                document.getElementById('key_F#').style.display = "none";
+                document.getElementById('key_G').style.display = "";
+                document.getElementById('key_Ab').style.display = "none";
+                document.getElementById('key_A').style.display = "none";
+                document.getElementById('key_Bb').style.display = "none";
+                document.getElementById('key_B').style.display = "none";
+            }else if(id == '9') {
+                document.getElementById('key_C').style.display = "none";
+                document.getElementById('key_C#').style.display = "none";
+                document.getElementById('key_D').style.display = "none";
+                document.getElementById('key_Eb').style.display = "none";
+                document.getElementById('key_E').style.display = "none";
+                document.getElementById('key_F').style.display = "none";
+                document.getElementById('key_F#').style.display = "none";
+                document.getElementById('key_G').style.display = "none";
+                document.getElementById('key_Ab').style.display = "";
+                document.getElementById('key_A').style.display = "none";
+                document.getElementById('key_Bb').style.display = "none";
+                document.getElementById('key_B').style.display = "none";
+            }else if(id == '10') {
+                document.getElementById('key_C').style.display = "none";
+                document.getElementById('key_C#').style.display = "none";
+                document.getElementById('key_D').style.display = "none";
+                document.getElementById('key_Eb').style.display = "none";
+                document.getElementById('key_E').style.display = "none";
+                document.getElementById('key_F').style.display = "none";
+                document.getElementById('key_F#').style.display = "none";
+                document.getElementById('key_G').style.display = "none";
+                document.getElementById('key_Ab').style.display = "none";
+                document.getElementById('key_A').style.display = "";
+                document.getElementById('key_Bb').style.display = "none";
+                document.getElementById('key_B').style.display = "none";
+            }else if(id == '11') {
+                document.getElementById('key_C').style.display = "none";
+                document.getElementById('key_C#').style.display = "none";
+                document.getElementById('key_D').style.display = "none";
+                document.getElementById('key_Eb').style.display = "none";
+                document.getElementById('key_E').style.display = "none";
+                document.getElementById('key_F').style.display = "none";
+                document.getElementById('key_F#').style.display = "none";
+                document.getElementById('key_G').style.display = "none";
+                document.getElementById('key_Ab').style.display = "none";
+                document.getElementById('key_A').style.display = "none";
+                document.getElementById('key_Bb').style.display = "";
+                document.getElementById('key_B').style.display = "none";
+            }else if(id == '12') {
+                document.getElementById('key_C').style.display = "none";
+                document.getElementById('key_C#').style.display = "none";
+                document.getElementById('key_D').style.display = "none";
+                document.getElementById('key_Eb').style.display = "none";
+                document.getElementById('key_E').style.display = "none";
+                document.getElementById('key_F').style.display = "none";
+                document.getElementById('key_F#').style.display = "none";
+                document.getElementById('key_G').style.display = "none";
+                document.getElementById('key_Ab').style.display = "none";
+                document.getElementById('key_A').style.display = "none";
+                document.getElementById('key_Bb').style.display = "none";
+                document.getElementById('key_B').style.display = "";
+            }
+        }
+    }
+
+    // ボタンを値によって表示を変える、カーソルの位置も自由にできる！！
+    function chord_insert($this) {
+        let textarea = document.querySelector('textarea');
+
+        let sentence = textarea.value;
+        let len      = sentence.length;
+        let pos      = textarea.selectionStart;
+
+        let before   = sentence.substr(0, pos);
+        let word     = $this;
+        let after    = sentence.substr(pos, len);
+
+        sentence = before + word + after;
+
+        textarea.value = sentence;
+            $('#origin-data') . append($this);
+    }
 function origindata() {
   let input = document.getElementById( "origin-data" ).value;
-  let result = input.replace(/\[.*?]/g, cords);
+  let result = input.replace(/\[.*?]|\n/g, cords);
   function cords(match){
     switch(match) {
         case '[C]':
             return '<img src="/img/C.png">';
+            break;
+        case "\n":
+            return '<br>';
             break;
         case '[Cdim]':
             return '<img src="/img/Cdim.png">';
@@ -160,6 +344,9 @@ function origindata() {
             break;
         case '[G]':
             return '<img src="/img/G.png">';
+            break;
+        case '[CM7]':
+            return '<img src="/img/CM_7.png">';
             break;
         case '[Am]':
             return '<img src="/img/Am.png">';
@@ -175,7 +362,6 @@ function origindata() {
             break;
         default:
             return match;
-        
     }
   }
   document.getElementById( "preview" ).innerHTML = result;

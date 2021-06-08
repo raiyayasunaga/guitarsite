@@ -15,38 +15,13 @@
   background-image: url("/img/shogouki_angry.png");
 }
 
-body {
-  background: linear-gradient(-45deg, white, #a90e11, white);
-  background-size: 400% 400%;
-  -webkit-animation: gradient 60s ease infinite;
-          animation: gradient 60s ease infinite;
+.navbar-nav {
+  padding-left: 420px;
 }
 
-@-webkit-keyframes gradient {
-  0% {
-    background-position: 10% 0%;
-  }
-
-  50% {
-    background-position: 100% 50%;
-  }
-
-  100% {
-    background-position: 10% 0%;
-  }
-}
-
-@keyframes gradient {
-  0% {
-    background-position: 10% 0%;
-  }
-
-  50% {
-    background-position: 100% 50%;
-  }
-
-  100% {
-    background-position: 10% 0%;
+@media screen and (max-width: 854px) {
+  .navbar-nav {
+    padding: 0px;
   }
 }
 
@@ -57,8 +32,6 @@ body::after {
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: #B90008;
-  /* 背景カラー */
   z-index: 9;
   /* 一番手前に */
   pointer-events: none;
@@ -67,6 +40,8 @@ body::after {
   /* 初期値 : 透過状態 */
   /* アニメーション時間は 0.8秒 */
   transition: opacity 0.7s ease;
+  background-color: #B90008;
+  /* 背景カラー */
 }
 
 body.fadeout::after {
@@ -75,6 +50,168 @@ body.fadeout::after {
 
 body.fadeout article {
   transform: scale(1.2);
+}
+
+#background-home-image {
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+
+#background-home-image li {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+  background-position: 50% 50%;
+  background-size: cover;
+  background-repeat: none;
+  opacity: 0;
+  -webkit-animation: anime 60s linear 0s infinite;
+          animation: anime 60s linear 0s infinite;
+}
+
+#background-home-image li:nth-child(1) {
+  background-image: url("/img/shogoukibg2.jpg");
+  /* 背景画像を入力して下さい */
+}
+
+#background-home-image li:nth-child(2) {
+  background-image: url("/img/shogoukibg1.jpg");
+  -webkit-animation-delay: 15s;
+          animation-delay: 15s;
+}
+
+#background-home-image li:nth-child(3) {
+  background-image: url("/img/sinnzibg1.jpg");
+  -webkit-animation-delay: 30s;
+          animation-delay: 30s;
+}
+
+#background-home-image li:nth-child(4) {
+  background-image: url("/img/sinnzibg2.jpg");
+  -webkit-animation-delay: 45s;
+          animation-delay: 45s;
+}
+
+@-webkit-keyframes anime {
+  0% {
+    -webkit-animation-timing-function: ease-in;
+            animation-timing-function: ease-in;
+    opacity: 0;
+  }
+
+  10% {
+    transform: scale(1.1);
+    opacity: 0.5;
+  }
+
+  40% {
+    transform: scale(1.2);
+    -webkit-animation-timing-function: ease-out;
+            animation-timing-function: ease-out;
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes anime {
+  0% {
+    -webkit-animation-timing-function: ease-in;
+            animation-timing-function: ease-in;
+    opacity: 0;
+  }
+
+  10% {
+    transform: scale(1.1);
+    opacity: 0.5;
+  }
+
+  40% {
+    transform: scale(1.2);
+    -webkit-animation-timing-function: ease-out;
+            animation-timing-function: ease-out;
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
+#background-mypage-image {
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+
+#background-mypage-image li {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+  background-position: 50% 50%;
+  background-size: cover;
+  background-repeat: none;
+  opacity: 0;
+  -webkit-animation: anime 60s linear 0s infinite;
+          animation: anime 60s linear 0s infinite;
+}
+
+#background-mypage-image li:nth-child(1) {
+  background-image: url("/img/evabg1.jpg");
+  /* 背景画像を入力して下さい */
+}
+
+#background-mypage-image li:nth-child(2) {
+  background-image: url("/img/evabg2.jpg");
+  -webkit-animation-delay: 15s;
+          animation-delay: 15s;
+}
+
+#background-mypage-image li:nth-child(3) {
+  background-image: url("/img/evabg3.jpg");
+  -webkit-animation-delay: 30s;
+          animation-delay: 30s;
+}
+
+#background-mypage-image li:nth-child(4) {
+  background-image: url("/img/evabg4.jpg");
+  -webkit-animation-delay: 45s;
+          animation-delay: 45s;
+}
+
+#preview {
+  color: #db1024;
+  font-weight: bold;
+}
+
+#preview img {
+  width: 70px;
+  margin-bottom: 90px;
+  margin-right: -30px;
+}
+
+#lyrics {
+  color: #db1024;
+  font-weight: bold;
+}
+
+#lyrics img {
+  width: 70px;
+  margin-bottom: 90px;
+  margin-right: -30px;
 }
 
 #cordbackground {

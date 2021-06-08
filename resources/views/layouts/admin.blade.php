@@ -122,7 +122,7 @@
                             </li>
 
                         <!-- Right Side Of Navbar -->
-                        <ul class="navbar-nav" style="padding-left: 420px;">
+                        <ul class="navbar-nav">
                             <header>
                                 <ul>
                                     <li><a id="mypage" href = "mypage" >マイページ</a></li>
@@ -175,7 +175,7 @@
                 // 初号機のボイス
                 window.onload = function() {
                     let my_audio = new Audio("/Audio/shogoukiVoice.mp3");
-                    let mypageSound = new Audio("/Audio/test.mp3"); 
+                    let mypageSound = new Audio("/Audio/sinnziVoice1.mp3"); 
                     let createSound = new Audio("/Audio/test.mp3");
                     let musicSound = new Audio("/Audio/test.mp3");
                 //ボタンにクリックイベントを設定

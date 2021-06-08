@@ -13,39 +13,18 @@
   }
 }
 
-body {
-  background: linear-gradient(-45deg, white, #a90e11, white);
-  background-size: 400% 400%;
-  animation: gradient 60s ease infinite;
-}
-
-@keyframes gradient {
-  0% {
-    background-position: 10% 0%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-  100% {
-    background-position: 10% 0%;
+// レスポンシブ
+.navbar-nav {
+  padding-left: 420px;
+  @include iphone-12-max() {
+    padding: 0px;
   }
 }
-
 
 //アニメーション
 body::after {
-  content: '';
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
+  @include body-animation;
   background-color: $NERV-red;  /* 背景カラー */
-  z-index: 9;  /* 一番手前に */
-  pointer-events: none;  /* 他の要素にアクセス可能にするためにポインターイベントは無効に */
-  opacity: 0;  /* 初期値 : 透過状態 */
-  -webkit-transition: opacity .7s ease;  /* アニメーション時間は 0.8秒 */
-  transition: opacity .7s ease;
 }
 
 body.fadeout::after {
@@ -55,6 +34,114 @@ body.fadeout::after {
 body.fadeout article{
   -webkit-transform:scale(1.2);
   transform:scale(1.2);
+}
+
+// home画像編集
+#background-home-image{
+  @include background-image;
+    li {
+      @include background-image-li;
+      animation: anime 60s linear 0s infinite ;
+    }
+}
+#background-home-image li:nth-child(1) { 
+    background-image: url("/img/shogoukibg2.jpg");   /* 背景画像を入力して下さい */
+}
+#background-home-image li:nth-child(2) {
+    background-image: url("/img/shogoukibg1.jpg");
+    animation-delay: 15s;
+}
+#background-home-image li:nth-child(3) {
+    background-image: url("/img/sinnzibg1.jpg");
+    animation-delay: 30s;
+}
+#background-home-image li:nth-child(4) {
+    background-image: url("/img/sinnzibg2.jpg");
+    animation-delay: 45s;
+}
+@keyframes anime { 
+    0% {
+        animation-timing-function: ease-in;
+        opacity: 0;
+    }
+    10% {
+        transform: scale(1.1);
+        opacity: 0.5;
+    }
+    40% {
+        transform: scale(1.2);
+            animation-timing-function: ease-out;
+        opacity: 0;
+    }
+    100% { opacity: 0 }
+}
+// home背景画像終わり
+
+// mypage背
+#background-mypage-image {
+  @include background-image;
+  li {
+    @include background-image-li;
+    animation: anime 60s linear 0s infinite ;
+    &:nth-child(1) { 
+      background-image: url("/img/evabg1.jpg");   /* 背景画像を入力して下さい */
+    }
+    &:nth-child(2) {
+      background-image: url("/img/evabg2.jpg");
+      animation-delay: 15s;
+    }
+    &:nth-child(3) {
+      background-image: url("/img/evabg3.jpg");
+      animation-delay: 30s;
+    }
+    &:nth-child(4) {
+      background-image: url("/img/evabg4.jpg");
+      animation-delay: 45s;
+    }
+  }
+}
+// mypage背景画像終わり
+
+// #bgskin-home {
+//   background: linear-gradient(-45deg, #46f7dc, #a9f8c5, #f3feaa);
+//   background-size: 400% 400%;
+//   z-index: -3;
+//   animation: gradient 60s ease infinite;
+// }
+
+// @keyframes gradient {
+//   0% {
+//     background-position: 10% 0%;
+//   }
+//   50% {
+//     background-position: 100% 50%;
+//   }
+//   100% {
+//     background-position: 10% 0%;
+//   }
+// }
+
+// #bgskin-home.fadeout::after {
+//   opacity: 1;
+// }
+
+// #bgskin-home.fadeout article{
+//   -webkit-transform:scale(1.2);
+//   transform:scale(1.2);
+// }
+
+#preview {
+  @include preview-font;
+  img {
+    @include preview-image;
+  }
+}
+
+#lyrics {
+  @include preview-font;
+  img {
+    @include preview-image;
+  }
 }
 
 // ギターコードの編集

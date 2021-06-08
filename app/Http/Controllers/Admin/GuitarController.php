@@ -46,7 +46,6 @@ class GuitarController extends Controller
 
       $music = new Music;
       $form = $request->all();
-      unset($form['music_key_sel']);
 
       // データベースに保存する
       $music->fill($form);
@@ -114,8 +113,6 @@ class GuitarController extends Controller
 
     public function delete(Request $request)
     {
-      // 該当するNews Modelを取得
-      
       $music = Music::find($request->id);
       // 削除する
       $music->delete();
@@ -125,7 +122,6 @@ class GuitarController extends Controller
     public function edit(Request $request)
     {
         $music = Music::find($request->id);
-
       if (empty($music)) {
         abort(404);    
       }
@@ -134,19 +130,14 @@ class GuitarController extends Controller
     
     public function update(Request $request)
     {
-        // Validationをかける
-
         $this->validate($request, Music::$rules);
         // News Modelからデータを取得する
         $music = Music::find($request->id);
-
         // 送信されてきたフォームデータを格納する
         $music_form = $request->all();
-        unset($music_form['_token']);
-
 
         // 該当するデータを上書きして保存する)
-        $music->save();
+        $music->fill($music_form)->save();
 
         return redirect('admin/mypage');
     }
@@ -164,10 +155,6 @@ class GuitarController extends Controller
         Storage::put($save_path, (string) $img->encode());
         // return file name
         return $file_name;
-    }
-
-    public function test() {
-        return view('admin.test');
     }
 
 }

@@ -22,7 +22,7 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function() {
 
     // 編集と更新
     Route::get('mypageedit', 'Admin\GuitarController@edit');
-    Route::post('mypageedit', 'Admin\GuitarController@update');
+    Route::post('mypageedit', 'Admin\GuitarController@update')->name('user.cord');
 
     // 公開と非公開
     Route::get('open', 'Admin\GuitarController@open');

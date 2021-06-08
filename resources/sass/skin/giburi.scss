@@ -29,7 +29,7 @@ body::after {
   transition: opacity 0.8s;
 }
 
-#bgskin-home {
+#bgskin-mypage {
   background-image: url("/img/chihiro.png");
   opacity: 0.5;
   background-repeat: no-repeat;
@@ -39,65 +39,42 @@ body::after {
   z-index: 3;
 }
 
-// 背景画像
-.sample {
-    position: fixed;
-    top: 0px;
-    left: 0px;
-    width: 100%;
-    height: 100%;
-    z-index: -1;
+// home背景画像
+
+#background-home-image{
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+    li {
+      position: absolute;
+      top: 0px;
+      left: 0px;
+      width: 100%;
+      height: 100%;
+      background-position: 50% 50%;
+      background-size: cover;
+      background-repeat: none;
+      opacity: 0;
+      animation: anime 60s linear 0s infinite ;
+    }
 }
-.sample li {
-    position: absolute;
-    top: 0px;
-    left: 0px;
-    width: 100%;
-    height: 100%;
-    background-position: 50% 50%;
-    background-size: cover;
-    background-repeat: none;
-    opacity: 0;
-    -webkit-animation: anime 60s linear 0s infinite ;
-    animation: anime 60s linear 0s infinite ;
+#background-home-image li:nth-child(1) { 
+    background-image: url("/img/howl1.png");   /* 背景画像を入力して下さい */
 }
-.sample li:nth-child(1) { 
-    background-image: url("/img/howlbg1.png");   /* 背景画像を入力して下さい */
-}
-.sample li:nth-child(2) {
-    background-image: url("/img/mononokebg1.png");
-    -webkit-animation-delay: 15s;
+#background-home-image li:nth-child(2) {
+    background-image: url("/img/mononoke1.png");
     animation-delay: 15s;
 }
-.sample li:nth-child(3) {
-    background-image: url("/img/kokurikobg1.png");
-    -webkit-animation-delay: 30s;
+#background-home-image li:nth-child(3) {
+    background-image: url("/img/kokuriko1.png");
     animation-delay: 30s;
 }
-.sample li:nth-child(4) {
-    background-image: url("/img/nekonobg1.png");
-    -webkit-animation-delay: 45s;
+#background-home-image li:nth-child(4) {
+    background-image: url("/img/nekono1.png");
     animation-delay: 45s;
-}
-@-webkit-keyframes anime { 
-    0% {
-        -webkit-animation-timing-function: ease-in;
-        opacity: 0;
-    }
-    10% {
-        -webkit-transform: scale(1.1);
-        opacity: 0.2;
-    }
-    40% {
-        -webkit-transform: scale(1.2);
-            -webkit-animation-timing-function: ease-out;
-        opacity: 0.2;
-    }
-    50% {
-        -webkit-transform: scale(1.3);
-        opacity: 0;
-    }
-    100% { opacity: 0 }
 }
 @keyframes anime { 
     0% {
@@ -111,15 +88,55 @@ body::after {
     40% {
         transform: scale(1.2);
             animation-timing-function: ease-out;
-        opacity: 0.2;
-    }
-    50% {
-        transform: scale(1.3);
         opacity: 0;
     }
     100% { opacity: 0 }
 }
-// 背景画像終わり
+// home背景画像終わり
+
+// mypage背
+#background-mypage-image {
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  li {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    background-position: 50% 50%;
+    background-size: cover;
+    background-repeat: none;
+    opacity: 0;
+    animation: anime 75s linear 0s infinite ;
+    &:nth-child(1) { 
+      background-image: url("/img/howl1bg.jpg");   /* 背景画像を入力して下さい */
+    }
+    &:nth-child(2) {
+      background-image: url("/img/totoro1bg.jpg");
+      animation-delay: 15s;
+    }
+    &:nth-child(3) {
+      background-image: url("/img/buta1bg.jpg");
+      animation-delay: 30s;
+    }
+    &:nth-child(4) {
+      background-image: url("/img/kazetatinu1bg.jpg");
+      animation-delay: 45s;
+    }
+    &:nth-child(5) {
+      background-image: url("/img/marnie1bg.jpg");
+      animation-delay: 60s;;
+    }
+  }
+}
+
+// mypage背景画像終わり
+
 
 // ギターコード画像の配置
 #preview {

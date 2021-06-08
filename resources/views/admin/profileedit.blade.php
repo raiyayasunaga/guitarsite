@@ -50,8 +50,8 @@
               <form method="post" action="{{ action('Admin\ProfileController@skin') }}">
                 <select class="form-control" name="skin_id" onchange="changestyle('guitar', value)" id="skin">
                     <option value="1">選択して下さい</option>
-                    <option value="2">綾波スキン</option>
-                    <option value="3">初号機スキン</option>
+                    <option value="2">綾波＆アスカ＆マリスキン</option>
+                    <option value="3">初号機＆シンジスキン</option>
                     <option value="4">NERVスキン</option>
                     <option value="5">進撃スキン</option>
                     <option value="6">AKIRAスキン</option>
@@ -67,13 +67,14 @@
             <div><h2>カラースキンプレビュー</h2>
             <select class="form-control" onchange="changeCss('guitar', value)" id="skin">
               <option value="{{ asset('/css/guitar.css') }}">選択して下さい</option>
-              <option value="{{ asset('/css/ayanami.css') }}">綾波スキン</option>
-              <option value="{{ asset('/css/shogouki.css') }}">初号機スキン</option>
+              <option value="{{ asset('/css/ayanami.css') }}">綾波＆アスカ＆マリスキン</option>
+              <option value="{{ asset('/css/shogouki.css') }}">初号機＆シンジスキン</option>
               <option value="{{ asset('/css/nerv.css') }}">NERVスキン</option>
               <option value="{{ asset('/css/shingeki.css') }}">進撃スキン</option>
               <option value="{{ asset('/css/akira.css') }}">AKIRAスキン</option>
               <option value="{{ asset('/css/giburi.css') }}">ジブリスキン</option>
             </select>
+            <span>※若干スタイルが崩れますが保存後は正常に機能します。</span>
           </div>
         </div>
     </div>
