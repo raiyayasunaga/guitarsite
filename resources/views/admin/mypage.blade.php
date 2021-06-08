@@ -103,9 +103,9 @@ body {
                                         </td>
                                         <td>
                                             @if($music->public == 1)
-                                            <div>公開済み</div>
+                                            <div style="color: red;">公開済み</div>
                                             @else
-                                            <div>未公開</div>
+                                            <div style="color: blue;">未公開</div>
                                             @endif
                                         </td>
                                     </tr>

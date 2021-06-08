@@ -176,8 +176,8 @@
                 window.onload = function() {
                     let my_audio = new Audio("/Audio/shogoukiVoice.mp3");
                     let mypageSound = new Audio("/Audio/sinnziVoice1.mp3"); 
-                    let createSound = new Audio("/Audio/test.mp3");
-                    let musicSound = new Audio("/Audio/test.mp3");
+                    let createSound = new Audio("/Audio/kaworuVoice1.mp3");
+                    let musicSound = new Audio("/Audio/kaworuVoice2.mp3");
                 //ボタンにクリックイベントを設定
                     document.getElementById("hedarSkin").onclick = function() {
                         my_audio.currentTime = 0;  //再生開始位置を先頭に戻す
@@ -192,8 +192,8 @@
                         createSound.play();
                     }
                     document.getElementById("musicCords").onclick = function() {
-                        createSound.currentTime = 0;
-                        createSound.play();
+                        musicSound.currentTime = 0;
+                        musicSound.play();
                     }
                 }
                 @break
