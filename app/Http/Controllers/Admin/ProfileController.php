@@ -20,7 +20,7 @@ class ProfileController extends Controller
     
     public function updata(Request $request) {
         $user = Auth::user();
-        // $userName = $request->value('name');
+
         $profileImage = $request->file('profile_image');
         if ($profileImage != null) {
             $form['profile_image'] = $this->saveProfileImage($profileImage, Auth::id()); // return file name

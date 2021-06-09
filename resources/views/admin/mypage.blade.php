@@ -44,7 +44,7 @@ body {
                     <form action="{{ action('Admin\GuitarController@mypage') }}" method="get">
                         <div class="form-group row">
                                 <div class="col-8">
-                                    <input type="text" class="form-control" name="cond_title" value="{{ $cond_title }}">
+                                    <input type="text" class="form-control" name="mypage_title" value="{{ $mypage_title }}">
                                 </div>
                                 <div class="col-4">
                                     {{ csrf_field() }}

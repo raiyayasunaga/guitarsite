@@ -39,9 +39,7 @@ class GuitarController extends Controller
     }
 
     public function create(Request $request) {
-        // 以下を追記
-      // Varidationを行う
-    
+
       $this->validate($request, Music::$rules);
 
       $music = new Music;
@@ -94,15 +92,22 @@ class GuitarController extends Controller
 
     public function mypage(Request $request) {
         $user = Auth::user();
-        $cond_title = $request->cond_title;
-        $category = $request->category;
+        $mypage_title = $request->mypage_title; 
 
-        $music = Music::where('user_id', Auth::id()) //$userによる投稿を取得
+        if ($mypage_title != '') {
+            // 検索されたら検索結果を取得する
+            $music = Music::where('title', 'like', '%'.$mypage_title.'%')
+                ->orderBy('id', 'asc')
+                ->get();
+        } else {
+            // それ以外はすべてのニュースを取得する
+            $music = Music::where('user_id', Auth::id()) //$userによる投稿を取得
             ->orderBy('created_at', 'desc') // 投稿作成日が新しい順に並べる
-            ->get(); // ページネーション; 
+            ->get(); 
+        }
 
 
-        return view('admin.mypage', ['posts' => $music, 'cond_title' => $cond_title, 'user' => $user]);
+        return view('admin.mypage', ['posts' => $music, 'mypage_title' => $mypage_title, 'user' => $user]);
     }
 
     public function playing(Request $request) {
