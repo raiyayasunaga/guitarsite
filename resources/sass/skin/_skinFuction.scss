@@ -78,3 +78,19 @@ $NERV-black: #1B1311;
 @mixin hederfont {
   font-family: 'Noto Serif JP', serif;
 }
+
+@mixin cord {
+  padding: 10px;
+  margin-right: 10px;
+  border-radius: 10px;
+  &:hover {
+    opacity: 0.8;
+  }
+  a {
+    display: flex;
+    color: #fff;
+    &:hover {
+      text-decoration: none;
+    }
+  }
+}

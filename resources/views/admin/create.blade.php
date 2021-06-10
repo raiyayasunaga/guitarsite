@@ -726,25 +726,67 @@
         case '[FM7]':
             return '<img src="/img/FM_7.png">';
             break;
-            case '[Fm]':
+        case '[Fm]':
             return '<img src="/img/Fm.png">';
             break;
-            case '[Fm6]':
+        case '[Fm6]':
             return '<img src="/img/Fm6.png">';
             break;
-            case '[Fm7b5]':
+        case '[Fm7b5]':
             return '<img src="/img/Fm7b5.png">';
             break;
-            case '[FmM7]':
+        case '[FmM7]':
             return '<img src="/img/FmM7.png">';
-            break;case '[Fsus4]':
+            break;
+        case '[Fsus4]':
             return '<img src="/img/Fsus4.png">';
             break;
-            
-
+    
         case '[G]':
             return '<img src="/img/G.png">';
             break;
+        case '[Gm]':
+            return '<img src="/img/Gm.png">';
+            break;
+        case '[Gm7]':
+            return '<img src="/img/G_m7.png">';
+            break;
+        case '[G6]':
+            return '<img src="/img/G6.png">';
+            break;
+        case '[G7]':
+            return '<img src="/img/G7.png">';
+            break;
+        case '[G7sus4]':
+            return '<img src="/img/G7sus4.png">';
+            break;
+        case '[Gadd9]':
+            return '<img src="/img/Gadd9.png">';
+            break;
+        case '[Gaug]':
+            return '<img src="/img/Gaug.png">';
+            break;
+        case '[GM7]':
+            return '<img src="/img/GM_7.png">';
+            break;
+        case '[Gm6]':
+            return '<img src="/img/Gm6.png">';
+            break;
+        case '[Gm7b5]':
+            return '<img src="/img/Gm7b5.png">';
+            break;
+        case '[GmM7]':
+            return '<img src="/img/GmM7.png">';
+            break;
+        case '[Gsus4]':
+            return '<img src="/img/Gsus4.png">';
+            break;
+
+        case '[G#]':
+            return '<img src="/img/Ab.png">';
+            break;
+
+            
         case '[Am]':
             return '<img src="/img/Am.png">';
             break;

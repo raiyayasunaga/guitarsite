@@ -34,20 +34,20 @@
       </div>
 
       <div class="row cordmenu">
-        <p class="cord"><a href = "#C_cord">Cコード</a></p>
-        <p class="cord"><a href = "#C#/Db_cord">C#/Dbコード</a></p>
-        <p class="cord"><a href = "#D_cord">Dコード</a></p>
-        <p class="cord"><a href = "#D#/Eb_cord">D#/Ebコード</a></p>
-        <p class="cord"><a href = "#E_cord">Eコード</a></p>
-        <p class="cord"><a href = "#F_cord">Fコード</a></p>
-        <p class="cord"><a href = "#F#/Gb_cord">F#/Gbコード</a></p>
+        <p class="cord-1"><a href = "#C_cord">Cコード</a></p>
+        <p class="cord-2"><a href = "#C#/Db_cord">C#/Dbコード</a></p>
+        <p class="cord-3"><a href = "#D_cord">Dコード</a></p>
+        <p class="cord-4"><a href = "#D#/Eb_cord">D#/Ebコード</a></p>
+        <p class="cord-5"><a href = "#E_cord">Eコード</a></p>
+        <p class="cord-6"><a href = "#F_cord">Fコード</a></p>
+        <p class="cord-7"><a href = "#F#/Gb_cord">F#/Gbコード</a></p>
       </div>
       <div class="row cordmenu">
-        <p class="cord"><a href = "#G_cord">Gコード</a></p>
-        <p class="cord"><a href = "#G#/Ab_cord">G#/Abコード</a></p>
-        <p class="cord"><a href = "#A_cord">Aコード</a></p>
-        <p class="cord"><a href = "#A#/Bb_cord">A#/Bbコード</a></p>
-        <p class="cord"><a href = "#B_cord">Bコード</a></p>
+        <p class="cord-8"><a href = "#G_cord">Gコード</a></p>
+        <p class="cord-9"><a href = "#G#/Ab_cord">G#/Abコード</a></p>
+        <p class="cord-10"><a href = "#A_cord">Aコード</a></p>
+        <p class="cord-11"><a href = "#A#/Bb_cord">A#/Bbコード</a></p>
+        <p class="cord-12"><a href = "#B_cord">Bコード</a></p>
 
       </div>
       <hr>
@@ -96,7 +96,7 @@
           
           <div class="col-md-2 p-3 mx-3">
           <p class="cord-font">CM7コード</p>
-            <img src="/img/Cm7_2.png" alt="サンプル画像">
+            <img src="/img/CM_7.png" alt="サンプル画像">
           </div>
           <div class="col-md-2 p-3 mx-3">
           <p class="cord-font">Cm7b5コード</p>
@@ -195,7 +195,7 @@
           </div>
           <div class="col-md-2 p-3 mx-3">
             <p class="cord-font">C#M7コード</p>
-            <img src="/img/DbM7.png" alt="サンプル画像">
+            <img src="/img/DbM_7.png" alt="サンプル画像">
           </div>
           <div class="col-md-2 p-3 mx-3">
             <p class="cord-font">C#m7b5コード</p>

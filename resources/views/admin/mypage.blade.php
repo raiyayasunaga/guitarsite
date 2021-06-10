@@ -61,24 +61,20 @@ body {
                         <table class="table">
                             <thead>
                                 <tr>
-                                    <th width="10%">id</th>
-                                    <th width="20%">曲のタイトル</th>
+                                    <th width="30%">曲のタイトル</th>
                                     <th width="20%">カテゴリー</th>
-                                    <th class="mobile" width="10%">カポ</th>
-                                    <th width="10%">編集</th>
-                                    <th width="10%">公開するのか</th>
+                                    <th width="20%">編集</th>
+                                    <th width="20%">公開する</th>
                                     <th width="10%">公開状態</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 @foreach($posts as $music)
                                     <tr>
-                                        <th>{{ $music->id }}</th>
                                         <!-- 取得して投稿の値によって表示を変える -->
                                             <td><a href ="{{ route('admin.playing', ['id' => $music->id]) }}"> {{ str_limit($music->title, 100) }}</a></td>
                                         <!-- 連想配列・データベースで値を引っ張ってくる -->
                                             <td>{{ ($music->category) }}</td>
-                                            <th class="mobile">{{ ($music->capo) }}</th>
                                         <td>
                                             <div>
                                                 <a class="btn btn-primary p-1" href="{{ action('Admin\GuitarController@edit', ['id' => $music->id]) }}">編集</a>

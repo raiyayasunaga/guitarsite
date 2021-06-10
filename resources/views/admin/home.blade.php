@@ -60,10 +60,9 @@
                     <table class="table">
                         <thead>
                             <tr>
-                                <th class="mobile" width="10%">ID</th>
                                 <th width="50%">曲のタイトル</th>
                                 <th width="20%">カテゴリー</th>
-                                <th class="mobile"  width="10%">カポ数</th>
+                                <th width="20%">カポ数</th>
                                 <th width="10%">作者</th>
                             </tr>
                         </thead>
@@ -71,7 +70,6 @@
                             @foreach($posts as $music)
                                 @if($music->public)
                                     <tr>
-                                        <th class="mobile">{{ $music->id }}</th>
                                         <td><a href ="{{ route('admin.playing', ['id' => $music->id]), }}"> {{ $music->title }}</a></td>
                                         <td>{{ ($music->category) }}</td>
                                         <td class="mobile">{{ ($music->capo)}}</td>

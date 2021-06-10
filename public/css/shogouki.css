@@ -223,23 +223,243 @@ body.fadeout article {
   justify-content: center;
 }
 
-.cord {
+.cord-1 {
   padding: 10px;
   margin-right: 10px;
   border-radius: 10px;
-  background-color: aqua;
+  background-color: red;
 }
 
-.cord:hover {
-  background-color: aquamarine;
+.cord-1:hover {
+  opacity: 0.8;
 }
 
-.cord a {
+.cord-1 a {
   display: flex;
   color: #fff;
 }
 
-.cord a:hover {
+.cord-1 a:hover {
+  text-decoration: none;
+}
+
+.cord-2 {
+  padding: 10px;
+  margin-right: 10px;
+  border-radius: 10px;
+  background-color: blue;
+}
+
+.cord-2:hover {
+  opacity: 0.8;
+}
+
+.cord-2 a {
+  display: flex;
+  color: #fff;
+}
+
+.cord-2 a:hover {
+  text-decoration: none;
+}
+
+.cord-3 {
+  padding: 10px;
+  margin-right: 10px;
+  border-radius: 10px;
+  background-color: yellow;
+}
+
+.cord-3:hover {
+  opacity: 0.8;
+}
+
+.cord-3 a {
+  display: flex;
+  color: #fff;
+}
+
+.cord-3 a:hover {
+  text-decoration: none;
+}
+
+.cord-4 {
+  padding: 10px;
+  margin-right: 10px;
+  border-radius: 10px;
+  background-color: green;
+}
+
+.cord-4:hover {
+  opacity: 0.8;
+}
+
+.cord-4 a {
+  display: flex;
+  color: #fff;
+}
+
+.cord-4 a:hover {
+  text-decoration: none;
+}
+
+.cord-5 {
+  padding: 10px;
+  margin-right: 10px;
+  border-radius: 10px;
+  background-color: brown;
+}
+
+.cord-5:hover {
+  opacity: 0.8;
+}
+
+.cord-5 a {
+  display: flex;
+  color: #fff;
+}
+
+.cord-5 a:hover {
+  text-decoration: none;
+}
+
+.cord-6 {
+  padding: 10px;
+  margin-right: 10px;
+  border-radius: 10px;
+  background-color: purple;
+}
+
+.cord-6:hover {
+  opacity: 0.8;
+}
+
+.cord-6 a {
+  display: flex;
+  color: #fff;
+}
+
+.cord-6 a:hover {
+  text-decoration: none;
+}
+
+.cord-7 {
+  padding: 10px;
+  margin-right: 10px;
+  border-radius: 10px;
+  background-color: pink;
+}
+
+.cord-7:hover {
+  opacity: 0.8;
+}
+
+.cord-7 a {
+  display: flex;
+  color: #fff;
+}
+
+.cord-7 a:hover {
+  text-decoration: none;
+}
+
+.cord-8 {
+  padding: 10px;
+  margin-right: 10px;
+  border-radius: 10px;
+  background-color: black;
+}
+
+.cord-8:hover {
+  opacity: 0.8;
+}
+
+.cord-8 a {
+  display: flex;
+  color: #fff;
+}
+
+.cord-8 a:hover {
+  text-decoration: none;
+}
+
+.cord-9 {
+  padding: 10px;
+  margin-right: 10px;
+  border-radius: 10px;
+  background-color: orange;
+}
+
+.cord-9:hover {
+  opacity: 0.8;
+}
+
+.cord-9 a {
+  display: flex;
+  color: #fff;
+}
+
+.cord-9 a:hover {
+  text-decoration: none;
+}
+
+.cord-10 {
+  padding: 10px;
+  margin-right: 10px;
+  border-radius: 10px;
+  background-color: white;
+}
+
+.cord-10:hover {
+  opacity: 0.8;
+}
+
+.cord-10 a {
+  display: flex;
+  color: #fff;
+}
+
+.cord-10 a:hover {
+  text-decoration: none;
+}
+
+.cord-11 {
+  padding: 10px;
+  margin-right: 10px;
+  border-radius: 10px;
+  background-color: gold;
+}
+
+.cord-11:hover {
+  opacity: 0.8;
+}
+
+.cord-11 a {
+  display: flex;
+  color: #fff;
+}
+
+.cord-11 a:hover {
+  text-decoration: none;
+}
+
+.cord-12 {
+  padding: 10px;
+  margin-right: 10px;
+  border-radius: 10px;
+  background-color: silver;
+}
+
+.cord-12:hover {
+  opacity: 0.8;
+}
+
+.cord-12 a {
+  display: flex;
+  color: #fff;
+}
+
+.cord-12 a:hover {
   text-decoration: none;
 }
 
