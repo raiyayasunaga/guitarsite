@@ -21,7 +21,7 @@ class ProfileController extends Controller
     public function updata(Request $request) {
         $user = Auth::user();
 
-        $profileImage = Storage::disk('s3')->putFile();
+        $profileImage = Storage::disk('s3');
         if ($profileImage != null) {
             $form['s3'] = $this->saveProfileImage($profileImage, Auth::id()); // return file name
         }
