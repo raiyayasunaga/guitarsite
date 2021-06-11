@@ -8,7 +8,7 @@ use App\Music;
 use App\User;
 use App\Skin;
 use Storage; 
-use Image;
+
 use Auth;
 
 class ProfileController extends Controller
@@ -18,17 +18,20 @@ class ProfileController extends Controller
         return view('admin.profileedit', ['user' => $user]);
     }
     
-    public function updata(Request $request) {
+    public function update(Request $request) {
         $user = Auth::user();
 
-        $profileImage = Storage::disk('s3');
-        if ($profileImage != null) {
-            $form['s3'] = $this->saveProfileImage($profileImage, Auth::id()); // return file name
-        }
-    
+        $form = $request->all();
+        
+        if (isset($form['image'])) {
+            $path = $request->file('image')->store('public/profile');
+            $user->profile_image = basename($path);
+          } else {
+              $user->profile_image = null;
+          }
+        
         unset($form['_token']);
-        unset($form['_method']);
-        //ユーザーそれぞれのデータの値を保存できる作業 
+        unset($form['image']);
         
         $user->fill($form)->save();
 

@@ -37,7 +37,7 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function() {
     Route::post('profileedit', 'Admin\ProfileController@name');
     
     // 一部変更になるはず
-    Route::PATCH('profileedit', 'Admin\ProfileController@updata');
+    Route::post('profileedit', 'Admin\ProfileController@update');
 });
 
 

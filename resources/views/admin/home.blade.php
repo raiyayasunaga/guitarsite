@@ -78,7 +78,7 @@
                                         <td><a href ="{{ route('admin.playing', ['id' => $music->id]), }}"> {{ $music->title }}</a></td>
                                         <td>{{ ($music->category) }}</td>
                                         <td class="mobile">{{ ($music->capo)}}</td>
-                                        <td><img src="{{ $music->user->profile_image }}" style="border: none; width:30px; height:auto; border-radius: 50px;" id="img"></td>
+                                        <td><img src="{{ asset('storage/profiles/'.$music->user->profile_image) }}" style="border: none; width:30px; height:auto; border-radius: 50px;" id="img"></td>
                                     </tr>
                                 @endif
                             @endforeach
@@ -96,6 +96,6 @@
 <script>
 document.addEventListener("DOMContentLoaded", function() {
 
-});
+}
 </script>
 @endsection

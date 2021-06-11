@@ -33,7 +33,7 @@ body {
 </ul>
     <div class="container">
         <div class="row">
-            <h2><a class="button-link" href = "{{ action('Admin\ProfileController@edit') }}"><img src="{{ asset('storage/profiles/'.$user->profile_image) }}" style="border: none; width:90px; height:auto; border-radius: 50px;" >プロフィール編集</a></h2>
+            <h2><a class="button-link" href = "{{ action('Admin\ProfileController@edit') }}"><img src="{{ $user->profile_image }}">プロフィール編集</a></h2>
         </div>
         <div class="row my-3">
             <div class="col-md-4 my-3">
@@ -117,6 +117,8 @@ body {
 @endsection
 @section('js')
 <script>
+  
+                
 function check(){
 
 if(window.confirm('本当に実行してもよろしいですか？')){ // 確認ダイアログを表示
