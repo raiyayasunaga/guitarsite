@@ -15,7 +15,7 @@
       <div class="row">
         <div class="col-md-3">
           <label for="profile_image">現在のプロフィール画像
-            <img src="{{ asset('storage/profiles/'.$user->profile_image) }}" id="img">
+            <img src="{{ $user->profile_image }}" id="img">
           </label>
         </div>
         <div class="col-md-5">

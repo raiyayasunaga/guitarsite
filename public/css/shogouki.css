@@ -15,6 +15,17 @@
   background-image: url("/img/shogouki_angry.png");
 }
 
+.button-link {
+  display: flex;
+  text-decoration: none;
+  color: black;
+}
+
+.button-link:hover {
+  text-decoration: none;
+  opacity: 0.8;
+}
+
 .navbar-nav {
   padding-left: 420px;
 }
@@ -39,7 +50,7 @@ body::after {
   opacity: 0;
   /* 初期値 : 透過状態 */
   /* アニメーション時間は 0.8秒 */
-  transition: opacity 0.7s ease;
+  transition: opacity 0.8s ease;
   background-color: #B90008;
   /* 背景カラー */
 }
@@ -267,7 +278,7 @@ body.fadeout article {
   padding: 10px;
   margin-right: 10px;
   border-radius: 10px;
-  background-color: yellow;
+  background-color: lightskyblue;
 }
 
 .cord-3:hover {
@@ -407,7 +418,7 @@ body.fadeout article {
   padding: 10px;
   margin-right: 10px;
   border-radius: 10px;
-  background-color: white;
+  background-color: lightgreen;
 }
 
 .cord-10:hover {

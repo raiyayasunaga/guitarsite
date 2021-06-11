@@ -13,6 +13,17 @@
   }
 }
 
+.button-link {
+  display: flex;
+  text-decoration: none;
+  color: black;
+  &:hover {
+    text-decoration: none;
+    opacity: 0.8;
+  }
+}
+
+//ハンバーガーメニュー 
 
 
 // レスポンシブ
@@ -37,6 +48,8 @@ body.fadeout article{
   -webkit-transform:scale(1.2);
   transform:scale(1.2);
 }
+
+
 
 // home画像編集
 #background-home-image{
@@ -165,7 +178,7 @@ body.fadeout article{
  }
  .cord-3 {
   @include cord;
-  background-color: yellow;
+  background-color: lightskyblue;
  }
  .cord-4 {
   @include cord;
@@ -193,7 +206,7 @@ body.fadeout article{
  }
  .cord-10 {
   @include cord;
-  background-color: white;
+  background-color: lightgreen;
  }
  .cord-11 {
   @include cord;

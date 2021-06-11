@@ -15,6 +15,11 @@
     <li></li>
     <li></li>
 </ul>
+<div class="hamburger">
+  <span></span>
+  <span></span>
+  <span></span>
+</div>
 <div id="bgskin-home">
     <div class="container">
         <div class="row py-3">
@@ -73,7 +78,7 @@
                                         <td><a href ="{{ route('admin.playing', ['id' => $music->id]), }}"> {{ $music->title }}</a></td>
                                         <td>{{ ($music->category) }}</td>
                                         <td class="mobile">{{ ($music->capo)}}</td>
-                                        <td><img src="{{ asset('storage/profiles/'.$music->user->profile_image) }}" style="border: none; width:30px; height:auto; border-radius: 50px;" id="img"></td>
+                                        <td><img src="{{ $music->user->profile_image }}" style="border: none; width:30px; height:auto; border-radius: 50px;" id="img"></td>
                                     </tr>
                                 @endif
                             @endforeach
@@ -85,4 +90,12 @@
       </div>
     </div>
 </div>
+@endsection
+
+@section('js')
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+
+});
+</script>
 @endsection

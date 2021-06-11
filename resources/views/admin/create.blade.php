@@ -510,13 +510,13 @@
         case '[Cdim]':
             return '<img src="/img/Cdim.png">';
             break;
-        case '[CM7]':
+        case '[Cmaj7]':
             return '<img src="/img/CM_7.png">';
             break;
         case '[Cm6]':
             return '<img src="/img/Cm6.png">';
             break;
-        case '[Cm7b5]':
+        case '[Cm7-5]':
             return '<img src="/img/Cm7b5.png">';
             break;
         case '[CmM7]':
@@ -546,7 +546,7 @@
         case '[C#dim]':
             return '<img src="/img/Dbdim.png">';
             break;
-        case '[C#M7]':
+        case '[C#maj7]':
             return '<img src="/img/DbM_7.png">';
             break;
         case '[C#m]':
@@ -558,7 +558,7 @@
         case '[C#m7]':
             return '<img src="/img/Db_m7.png">';
             break;
-        case '[C#m7b5]':
+        case '[C#m7-5]':
             return '<img src="/img/Dbm7b5.png">';
             break;
         case '[C#mM7]':
@@ -581,7 +581,7 @@
             return '<img src="/img/D7.png">';
             break;
         case '[D7sus4]':
-            return '<img src="/img/Dsus4.png">';
+            return '<img src="/img/D7sus4.png">';
             break;
         case '[Dadd9]':
             return '<img src="/img/Dadd9.png">';
@@ -592,8 +592,8 @@
         case '[Ddim]':
             return '<img src="/img/Ddim.png">';
             break;
-        case '[DM7]':
-            return '<img src="/img/DM_7">';
+        case '[Dmaj7]':
+            return '<img src="/img/DM_7.png">';
             break;
         case '[Dm]':
             return '<img src="/img/Dm.png">';
@@ -601,18 +601,13 @@
         case '[Dm6]':
             return '<img src="/img/Dm6.png">';
             break;
-        case '[DM7]':
-            return '<img src="/img/DM_7.png">';
-            break;
-        case '[Dm7b5]':
+        case '[Dm7-5]':
             return '<img src="/img/Dm7b5.png">';
-            break;
-        case '[DmM7]':
-            return '<img src="/img/DmM7.png">';
             break;
         case '[Dsus4]':
             return '<img src="/img/Dsus4.png">';
             break;
+
         case '[D#m7]':
             return '<img src="/img/Eb_m7.png">';
             break;
@@ -637,7 +632,7 @@
         case '[D#dim]':
             return '<img src="/img/Ebdim.png">';
             break;
-        case '[D#M7]':
+        case '[D#maj7]':
             return '<img src="/img/EbM_7.png">';
             break;
         case '[D#m]':
@@ -646,7 +641,7 @@
         case '[D#m6]':
             return '<img src="/img/Ebm6.png">';
             break;
-        case '[D#m7b5]':
+        case '[D#m7-5]':
             return '<img src="/img/Ebm7b5.png">';
             break;
         case '[D#mM7]':
@@ -677,7 +672,7 @@
         case '[Edim]':
             return '<img src="/img/Edim.png">';
             break;
-        case '[EM7]':
+        case '[Emaj7]':
             return '<img src="/img/EM_7.png">';
             break;
         case '[Em]':
@@ -689,7 +684,7 @@
         case '[Em7]':
             return '<img src="/img/Em7.png">';
             break;
-        case '[Em7b5]':
+        case '[Em7-5]':
             return '<img src="/img/Emb5.png">';
             break;
         case '[EmM7]':
@@ -723,7 +718,7 @@
         case '[Fdim]':
             return '<img src="/img/Fdim.png">';
             break;
-        case '[FM7]':
+        case '[Fmaj7]':
             return '<img src="/img/FM_7.png">';
             break;
         case '[Fm]':
@@ -732,7 +727,7 @@
         case '[Fm6]':
             return '<img src="/img/Fm6.png">';
             break;
-        case '[Fm7b5]':
+        case '[Fm7-5]':
             return '<img src="/img/Fm7b5.png">';
             break;
         case '[FmM7]':
@@ -740,6 +735,49 @@
             break;
         case '[Fsus4]':
             return '<img src="/img/Fsus4.png">';
+            break;
+
+        case '[F#]':
+            return '<img src="/img/Gb.png">';
+            break;
+        case '[F#m7]':
+            return '<img src="/img/Gb_m7.png">';
+            break;
+        case '[F#6]':
+            return '<img src="/img/Gb6.png">';
+            break;
+        case '[F#7]':
+            return '<img src="/img/Gb7.png">';
+            break;
+        case '[F#7sus4]':
+            return '<img src="/img/Gbsus4.png">';
+            break;
+        case '[F#add9]':
+            return '<img src="/img/Gbadd9.png">';
+            break;
+        case '[F#aug]':
+            return '<img src="/img/GBaug.png">';
+            break;
+        case '[F#dim]':
+            return '<img src="/img/Gbdim.png">';
+            break;
+        case '[F#maj7]':
+            return '<img src="/img/GbM_7.png">';
+            break;
+        case '[F#m]':
+            return '<img src="/img/Gbm.png">';
+            break;
+        case '[F#m6]':
+            return '<img src="/img/Gbm6.png">';
+            break;
+        case '[F#m7-5]':
+            return '<img src="/img/Gbm7b5.png">';
+            break;
+        case '[F#mM7]':
+            return '<img src="/img/GbmM7.png">';
+            break;
+        case '[F#sus4]':
+            return '<img src="/img/Gbsus4.png">';
             break;
     
         case '[G]':
@@ -766,13 +804,13 @@
         case '[Gaug]':
             return '<img src="/img/Gaug.png">';
             break;
-        case '[GM7]':
+        case '[Gmaj7]':
             return '<img src="/img/GM_7.png">';
             break;
         case '[Gm6]':
             return '<img src="/img/Gm6.png">';
             break;
-        case '[Gm7b5]':
+        case '[Gm7-5]':
             return '<img src="/img/Gm7b5.png">';
             break;
         case '[GmM7]':
@@ -785,16 +823,173 @@
         case '[G#]':
             return '<img src="/img/Ab.png">';
             break;
+        case '[G#6]':
+            return '<img src="/img/Ab6.png">';
+            break;
+        case '[G#7]':
+            return '<img src="/img/Ab7.png">';
+            break;
+        case '[G#7sus4]':
+            return '<img src="/img/Ab7sus4.png">';
+            break;
+        case '[G#add9]':
+            return '<img src="/img/Abadd9.png">';
+            break;
+        case '[G#aug]':
+            return '<img src="/img/Abaug.png">';
+            break;
+        case '[G#dim]':
+            return '<img src="/img/Abdim.png">';
+            break;
+        case '[G#maj7]':
+            return '<img src="/img/AbM_7.png">';
+            break;
+        case '[G#m]':
+            return '<img src="/img/Abm.png">';
+            break;
+        case '[G#m7]':
+            return '<img src="/img/Ab_m7.png">';
+            break;
+        case '[G#m6]':
+            return '<img src="/img/Abm6.png">';
+            break;
+        case '[G#m7-5]':
+            return '<img src="/img/Abm7b5.png">';
+            break;
+        case '[G#mM7]':
+            return '<img src="/img/AbmM7.png">';
+            break;
+        case '[G#sus4]':
+            return '<img src="/img/Absus4.png">';
+            break;
 
-            
+        case '[A]':
+            return '<img src="/img/A.png">';
+            break;
+        case '[Am7]':
+            return '<img src="/img/A_m7.png">';
+            break;
+        case '[A6]':
+            return '<img src="/img/A6.png">';
+            break;
+        case '[A7]':
+            return '<img src="/img/A7.png">';
+            break;
+        case '[A7sus4]':
+            return '<img src="/img/A7sus4.png">';
+            break;
+        case '[Aadd9]':
+            return '<img src="/img/Aadd9.png">';
+            break;
+        case '[Aaug]':
+            return '<img src="/img/Aaug.png">';
+            break;
+        case '[Adim]':
+            return '<img src="/img/Adim.png">';
+            break;
+        case '[Amaj7]':
+            return '<img src="/img/AM_7.png">';
+            break;
         case '[Am]':
             return '<img src="/img/Am.png">';
             break;
-        
-        case '[Em]':
-            return '<img src="/img/Em.png">';
+        case '[Am6]':
+            return '<img src="/img/Am6.png">';
+            break;
+        case '[Am7-5]':
+            return '<img src="/img/Am7b5.png">';
+            break;
+        case '[Ammaj7]':
+            return '<img src="/img/AmM7.png">';
+            break;
+        case '[Asus4]':
+            return '<img src="/img/Asus4.png">';
             break;
 
+        case '[A#]':
+            return '<img src="/img/Am.png">';
+            break;
+        case '[A#m7]':
+            return '<img src="/img/Bb_m7.png">';
+            break;
+        case '[A#6]':
+            return '<img src="/img/Bb6.png">';
+            break;
+        case '[A#7]':
+            return '<img src="/img/Bb7.png">';
+            break;
+        case '[A#7sus4]':
+            return '<img src="/img/Bb7sus4.png">';
+            break;
+        case '[A#add9]':
+            return '<img src="/img/Bbadd9.png">';
+            break;
+        case '[A#aug]':
+            return '<img src="/img/Bbaug.png">';
+            break;
+        case '[A#dim]':
+            return '<img src="/img/Bbdim.png">';
+            break;
+        case '[A#M7]':
+            return '<img src="/img/BbM_7.png">';
+            break;
+        case '[A#m]':
+            return '<img src="/img/Bbm.png">';
+            break;
+        case '[A#m6]':
+            return '<img src="/img/Bbm6.png">';
+            break;
+        case '[A#m7-5]':
+            return '<img src="/img/Bbm7b5.png">';
+            break;
+        case '[A#mM7]':
+            return '<img src="/img/BbmM7.png">';
+            break;
+        case '[A#sus4]':
+            return '<img src="/img/Bbsus4.png">';
+            break;
+
+        case '[B]':
+            return '<img src="/img/B.png">';
+            break;
+        case '[Bm7]':
+            return '<img src="/img/B_m7.png">';
+            break;
+        case '[B6]':
+            return '<img src="/img/B6.png">';
+            break;
+        case '[B7]':
+            return '<img src="/img/B7.png">';
+            break;
+        case '[B7sus4]':
+            return '<img src="/img/B7sus4.png">';
+            break;
+        case '[Badd9]':
+            return '<img src="/img/Badd9.png">';
+            break;
+        case '[Baug]':
+            return '<img src="/img/Baug.png">';
+            break;
+        case '[Bmaj7]':
+            return '<img src="/img/BM_7.png">';
+            break;
+        case '[Bm]':
+            return '<img src="/img/Bm.png">';
+            break;
+        case '[Bm6]':
+            return '<img src="/img/Bm6.png">';
+            break;
+        case '[Bm7-5]':
+            return '<img src="/img/Bm7b5.png">';
+            break;
+        case '[BmM7]':
+            return '<img src="/img/BmM7.png">';
+            break;
+        case '[Bsus4]':
+            return '<img src="/img/Bsus4.png">';
+            break;
+
+        
 
         default:
             return match;

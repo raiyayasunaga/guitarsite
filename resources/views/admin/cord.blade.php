@@ -30,7 +30,6 @@
 
       <div class="row py-5">
         <h2>コード表A〜G</h2>
-        <h2><a href="playing">演奏しよう！</a></h2>
       </div>
 
       <div class="row cordmenu">
@@ -56,20 +55,20 @@
           <h2>Cコード</h2>
         </div>
         <div class="row cordmenu">
-        <p class="cord"><a href = "#C_cord">Cコード</a></p>
-        <p class="cord"><a href = "#C#/Db_cord">C#/Dbコード</a></p>
-        <p class="cord"><a href = "#D_cord">Dコード</a></p>
-        <p class="cord"><a href = "#D#/Eb_cord">D#/Ebコード</a></p>
-        <p class="cord"><a href = "#E_cord">Eコード</a></p>
-        <p class="cord"><a href = "#F_cord">Fコード</a></p>
-        <p class="cord"><a href = "#F#/Gb_cord">F#/Gbコード</a></p>
+        <p class="cord-1"><a href = "#C_cord">Cコード</a></p>
+        <p class="cord-2"><a href = "#C#/Db_cord">C#/Dbコード</a></p>
+        <p class="cord-3"><a href = "#D_cord">Dコード</a></p>
+        <p class="cord-4"><a href = "#D#/Eb_cord">D#/Ebコード</a></p>
+        <p class="cord-5"><a href = "#E_cord">Eコード</a></p>
+        <p class="cord-6"><a href = "#F_cord">Fコード</a></p>
+        <p class="cord-7"><a href = "#F#/Gb_cord">F#/Gbコード</a></p>
       </div>
       <div class="row cordmenu">
-        <p class="cord"><a href = "#G_cord">Gコード</a></p>
-        <p class="cord"><a href = "#G#/Ab_cord">G#/Abコード</a></p>
-        <p class="cord"><a href = "#A_cord">Aコード</a></p>
-        <p class="cord"><a href = "#A#/Bb_cord">A#/Bbコード</a></p>
-        <p class="cord"><a href = "#B_cord">Bコード</a></p>
+        <p class="cord-8"><a href = "#G_cord">Gコード</a></p>
+        <p class="cord-9"><a href = "#G#/Ab_cord">G#/Abコード</a></p>
+        <p class="cord-10"><a href = "#A_cord">Aコード</a></p>
+        <p class="cord-11"><a href = "#A#/Bb_cord">A#/Bbコード</a></p>
+        <p class="cord-12"><a href = "#B_cord">Bコード</a></p>
 
       </div>
         <div class="row">
@@ -138,20 +137,20 @@
           <h2>C#/Dbコード</h2>
         </div>
         <div class="row cordmenu">
-        <p class="cord"><a href = "#C_cord">Cコード</a></p>
-        <p class="cord"><a href = "#C#/Db_cord">C#/Dbコード</a></p>
-        <p class="cord"><a href = "#D_cord">Dコード</a></p>
-        <p class="cord"><a href = "#D#/Eb_cord">D#/Ebコード</a></p>
-        <p class="cord"><a href = "#E_cord">Eコード</a></p>
-        <p class="cord"><a href = "#F_cord">Fコード</a></p>
-        <p class="cord"><a href = "#F#/Gb_cord">F#/Gbコード</a></p>
+        <p class="cord-1"><a href = "#C_cord">Cコード</a></p>
+        <p class="cord-2"><a href = "#C#/Db_cord">C#/Dbコード</a></p>
+        <p class="cord-3"><a href = "#D_cord">Dコード</a></p>
+        <p class="cord-4"><a href = "#D#/Eb_cord">D#/Ebコード</a></p>
+        <p class="cord-5"><a href = "#E_cord">Eコード</a></p>
+        <p class="cord-6"><a href = "#F_cord">Fコード</a></p>
+        <p class="cord-7"><a href = "#F#/Gb_cord">F#/Gbコード</a></p>
       </div>
       <div class="row cordmenu">
-        <p class="cord"><a href = "#G_cord">Gコード</a></p>
-        <p class="cord"><a href = "#G#/Ab_cord">G#/Abコード</a></p>
-        <p class="cord"><a href = "#A_cord">Aコード</a></p>
-        <p class="cord"><a href = "#A#/Bb_cord">A#/Bbコード</a></p>
-        <p class="cord"><a href = "#B_cord">Bコード</a></p>
+        <p class="cord-8"><a href = "#G_cord">Gコード</a></p>
+        <p class="cord-9"><a href = "#G#/Ab_cord">G#/Abコード</a></p>
+        <p class="cord-10"><a href = "#A_cord">Aコード</a></p>
+        <p class="cord-11"><a href = "#A#/Bb_cord">A#/Bbコード</a></p>
+        <p class="cord-12"><a href = "#B_cord">Bコード</a></p>
 
       </div>
         <div class="row">
@@ -220,20 +219,20 @@
           <h2>Dコード</h2>
         </div>
         <div class="row cordmenu">
-        <p class="cord"><a href = "#C_cord">Cコード</a></p>
-        <p class="cord"><a href = "#C#/Db_cord">C#/Dbコード</a></p>
-        <p class="cord"><a href = "#D_cord">Dコード</a></p>
-        <p class="cord"><a href = "#D#/Eb_cord">D#/Ebコード</a></p>
-        <p class="cord"><a href = "#E_cord">Eコード</a></p>
-        <p class="cord"><a href = "#F_cord">Fコード</a></p>
-        <p class="cord"><a href = "#F#/Gb_cord">F#/Gbコード</a></p>
+        <p class="cord-1"><a href = "#C_cord">Cコード</a></p>
+        <p class="cord-2"><a href = "#C#/Db_cord">C#/Dbコード</a></p>
+        <p class="cord-3"><a href = "#D_cord">Dコード</a></p>
+        <p class="cord-4"><a href = "#D#/Eb_cord">D#/Ebコード</a></p>
+        <p class="cord-5"><a href = "#E_cord">Eコード</a></p>
+        <p class="cord-6"><a href = "#F_cord">Fコード</a></p>
+        <p class="cord-7"><a href = "#F#/Gb_cord">F#/Gbコード</a></p>
       </div>
       <div class="row cordmenu">
-        <p class="cord"><a href = "#G_cord">Gコード</a></p>
-        <p class="cord"><a href = "#G#/Ab_cord">G#/Abコード</a></p>
-        <p class="cord"><a href = "#A_cord">Aコード</a></p>
-        <p class="cord"><a href = "#A#/Bb_cord">A#/Bbコード</a></p>
-        <p class="cord"><a href = "#B_cord">Bコード</a></p>
+        <p class="cord-8"><a href = "#G_cord">Gコード</a></p>
+        <p class="cord-9"><a href = "#G#/Ab_cord">G#/Abコード</a></p>
+        <p class="cord-10"><a href = "#A_cord">Aコード</a></p>
+        <p class="cord-11"><a href = "#A#/Bb_cord">A#/Bbコード</a></p>
+        <p class="cord-12"><a href = "#B_cord">Bコード</a></p>
 
       </div>
         <div class="row">
@@ -301,20 +300,20 @@
           <h2>D＃E♭コード</h2>
         </div>
         <div class="row cordmenu">
-        <p class="cord"><a href = "#C_cord">Cコード</a></p>
-        <p class="cord"><a href = "#C#/Db_cord">C#/Dbコード</a></p>
-        <p class="cord"><a href = "#D_cord">Dコード</a></p>
-        <p class="cord"><a href = "#D#/Eb_cord">D#/Ebコード</a></p>
-        <p class="cord"><a href = "#E_cord">Eコード</a></p>
-        <p class="cord"><a href = "#F_cord">Fコード</a></p>
-        <p class="cord"><a href = "#F#/Gb_cord">F#/Gbコード</a></p>
+        <p class="cord-1"><a href = "#C_cord">Cコード</a></p>
+        <p class="cord-2"><a href = "#C#/Db_cord">C#/Dbコード</a></p>
+        <p class="cord-3"><a href = "#D_cord">Dコード</a></p>
+        <p class="cord-4"><a href = "#D#/Eb_cord">D#/Ebコード</a></p>
+        <p class="cord-5"><a href = "#E_cord">Eコード</a></p>
+        <p class="cord-6"><a href = "#F_cord">Fコード</a></p>
+        <p class="cord-7"><a href = "#F#/Gb_cord">F#/Gbコード</a></p>
       </div>
       <div class="row cordmenu">
-        <p class="cord"><a href = "#G_cord">Gコード</a></p>
-        <p class="cord"><a href = "#G#/Ab_cord">G#/Abコード</a></p>
-        <p class="cord"><a href = "#A_cord">Aコード</a></p>
-        <p class="cord"><a href = "#A#/Bb_cord">A#/Bbコード</a></p>
-        <p class="cord"><a href = "#B_cord">Bコード</a></p>
+        <p class="cord-8"><a href = "#G_cord">Gコード</a></p>
+        <p class="cord-9"><a href = "#G#/Ab_cord">G#/Abコード</a></p>
+        <p class="cord-10"><a href = "#A_cord">Aコード</a></p>
+        <p class="cord-11"><a href = "#A#/Bb_cord">A#/Bbコード</a></p>
+        <p class="cord-12"><a href = "#B_cord">Bコード</a></p>
 
       </div>
         <div class="row">
@@ -383,20 +382,20 @@
           <h2>Eコード</h2>
         </div>
         <div class="row cordmenu">
-        <p class="cord"><a href = "#C_cord">Cコード</a></p>
-        <p class="cord"><a href = "#C#/Db_cord">C#/Dbコード</a></p>
-        <p class="cord"><a href = "#D_cord">Dコード</a></p>
-        <p class="cord"><a href = "#D#/Eb_cord">D#/Ebコード</a></p>
-        <p class="cord"><a href = "#E_cord">Eコード</a></p>
-        <p class="cord"><a href = "#F_cord">Fコード</a></p>
-        <p class="cord"><a href = "#F#/Gb_cord">F#/Gbコード</a></p>
+        <p class="cord-1"><a href = "#C_cord">Cコード</a></p>
+        <p class="cord-2"><a href = "#C#/Db_cord">C#/Dbコード</a></p>
+        <p class="cord-3"><a href = "#D_cord">Dコード</a></p>
+        <p class="cord-4"><a href = "#D#/Eb_cord">D#/Ebコード</a></p>
+        <p class="cord-5"><a href = "#E_cord">Eコード</a></p>
+        <p class="cord-6"><a href = "#F_cord">Fコード</a></p>
+        <p class="cord-7"><a href = "#F#/Gb_cord">F#/Gbコード</a></p>
       </div>
       <div class="row cordmenu">
-        <p class="cord"><a href = "#G_cord">Gコード</a></p>
-        <p class="cord"><a href = "#G#/Ab_cord">G#/Abコード</a></p>
-        <p class="cord"><a href = "#A_cord">Aコード</a></p>
-        <p class="cord"><a href = "#A#/Bb_cord">A#/Bbコード</a></p>
-        <p class="cord"><a href = "#B_cord">Bコード</a></p>
+        <p class="cord-8"><a href = "#G_cord">Gコード</a></p>
+        <p class="cord-9"><a href = "#G#/Ab_cord">G#/Abコード</a></p>
+        <p class="cord-10"><a href = "#A_cord">Aコード</a></p>
+        <p class="cord-11"><a href = "#A#/Bb_cord">A#/Bbコード</a></p>
+        <p class="cord-12"><a href = "#B_cord">Bコード</a></p>
 
       </div>
         <div class="row">
@@ -465,20 +464,20 @@
           <h2>Fコード</h2>
         </div>
         <div class="row cordmenu">
-        <p class="cord"><a href = "#C_cord">Cコード</a></p>
-        <p class="cord"><a href = "#C#/Db_cord">C#/Dbコード</a></p>
-        <p class="cord"><a href = "#D_cord">Dコード</a></p>
-        <p class="cord"><a href = "#D#/Eb_cord">D#/Ebコード</a></p>
-        <p class="cord"><a href = "#E_cord">Eコード</a></p>
-        <p class="cord"><a href = "#F_cord">Fコード</a></p>
-        <p class="cord"><a href = "#F#/Gb_cord">F#/Gbコード</a></p>
+        <p class="cord-1"><a href = "#C_cord">Cコード</a></p>
+        <p class="cord-2"><a href = "#C#/Db_cord">C#/Dbコード</a></p>
+        <p class="cord-3"><a href = "#D_cord">Dコード</a></p>
+        <p class="cord-4"><a href = "#D#/Eb_cord">D#/Ebコード</a></p>
+        <p class="cord-5"><a href = "#E_cord">Eコード</a></p>
+        <p class="cord-6"><a href = "#F_cord">Fコード</a></p>
+        <p class="cord-7"><a href = "#F#/Gb_cord">F#/Gbコード</a></p>
       </div>
       <div class="row cordmenu">
-        <p class="cord"><a href = "#G_cord">Gコード</a></p>
-        <p class="cord"><a href = "#G#/Ab_cord">G#/Abコード</a></p>
-        <p class="cord"><a href = "#A_cord">Aコード</a></p>
-        <p class="cord"><a href = "#A#/Bb_cord">A#/Bbコード</a></p>
-        <p class="cord"><a href = "#B_cord">Bコード</a></p>
+        <p class="cord-8"><a href = "#G_cord">Gコード</a></p>
+        <p class="cord-9"><a href = "#G#/Ab_cord">G#/Abコード</a></p>
+        <p class="cord-10"><a href = "#A_cord">Aコード</a></p>
+        <p class="cord-11"><a href = "#A#/Bb_cord">A#/Bbコード</a></p>
+        <p class="cord-12"><a href = "#B_cord">Bコード</a></p>
 
       </div>
         <div class="row">
@@ -546,20 +545,20 @@
           <h2>F#/Gbコード</h2>
         </div>
         <div class="row cordmenu">
-        <p class="cord"><a href = "#C_cord">Cコード</a></p>
-        <p class="cord"><a href = "#C#/Db_cord">C#/Dbコード</a></p>
-        <p class="cord"><a href = "#D_cord">Dコード</a></p>
-        <p class="cord"><a href = "#D#/Eb_cord">D#/Ebコード</a></p>
-        <p class="cord"><a href = "#E_cord">Eコード</a></p>
-        <p class="cord"><a href = "#F_cord">Fコード</a></p>
-        <p class="cord"><a href = "#F#/Gb_cord">F#/Gbコード</a></p>
+        <p class="cord-1"><a href = "#C_cord">Cコード</a></p>
+        <p class="cord-2"><a href = "#C#/Db_cord">C#/Dbコード</a></p>
+        <p class="cord-3"><a href = "#D_cord">Dコード</a></p>
+        <p class="cord-4"><a href = "#D#/Eb_cord">D#/Ebコード</a></p>
+        <p class="cord-5"><a href = "#E_cord">Eコード</a></p>
+        <p class="cord-6"><a href = "#F_cord">Fコード</a></p>
+        <p class="cord-7"><a href = "#F#/Gb_cord">F#/Gbコード</a></p>
       </div>
       <div class="row cordmenu">
-        <p class="cord"><a href = "#G_cord">Gコード</a></p>
-        <p class="cord"><a href = "#G#/Ab_cord">G#/Abコード</a></p>
-        <p class="cord"><a href = "#A_cord">Aコード</a></p>
-        <p class="cord"><a href = "#A#/Bb_cord">A#/Bbコード</a></p>
-        <p class="cord"><a href = "#B_cord">Bコード</a></p>
+        <p class="cord-8"><a href = "#G_cord">Gコード</a></p>
+        <p class="cord-9"><a href = "#G#/Ab_cord">G#/Abコード</a></p>
+        <p class="cord-10"><a href = "#A_cord">Aコード</a></p>
+        <p class="cord-11"><a href = "#A#/Bb_cord">A#/Bbコード</a></p>
+        <p class="cord-12"><a href = "#B_cord">Bコード</a></p>
 
       </div>
         <div class="row">
@@ -628,20 +627,20 @@
           <h2>Gコード</h2>
         </div>
         <div class="row cordmenu">
-        <p class="cord"><a href = "#C_cord">Cコード</a></p>
-        <p class="cord"><a href = "#C#/Db_cord">C#/Dbコード</a></p>
-        <p class="cord"><a href = "#D_cord">Dコード</a></p>
-        <p class="cord"><a href = "#D#/Eb_cord">D#/Ebコード</a></p>
-        <p class="cord"><a href = "#E_cord">Eコード</a></p>
-        <p class="cord"><a href = "#F_cord">Fコード</a></p>
-        <p class="cord"><a href = "#F#/Gb_cord">F#/Gbコード</a></p>
+        <p class="cord-1"><a href = "#C_cord">Cコード</a></p>
+        <p class="cord-2"><a href = "#C#/Db_cord">C#/Dbコード</a></p>
+        <p class="cord-3"><a href = "#D_cord">Dコード</a></p>
+        <p class="cord-4"><a href = "#D#/Eb_cord">D#/Ebコード</a></p>
+        <p class="cord-5"><a href = "#E_cord">Eコード</a></p>
+        <p class="cord-6"><a href = "#F_cord">Fコード</a></p>
+        <p class="cord-7"><a href = "#F#/Gb_cord">F#/Gbコード</a></p>
       </div>
       <div class="row cordmenu">
-        <p class="cord"><a href = "#G_cord">Gコード</a></p>
-        <p class="cord"><a href = "#G#/Ab_cord">G#/Abコード</a></p>
-        <p class="cord"><a href = "#A_cord">Aコード</a></p>
-        <p class="cord"><a href = "#A#/Bb_cord">A#/Bbコード</a></p>
-        <p class="cord"><a href = "#B_cord">Bコード</a></p>
+        <p class="cord-8"><a href = "#G_cord">Gコード</a></p>
+        <p class="cord-9"><a href = "#G#/Ab_cord">G#/Abコード</a></p>
+        <p class="cord-10"><a href = "#A_cord">Aコード</a></p>
+        <p class="cord-11"><a href = "#A#/Bb_cord">A#/Bbコード</a></p>
+        <p class="cord-12"><a href = "#B_cord">Bコード</a></p>
 
       </div>
         <div class="row">
@@ -710,22 +709,22 @@
           <h2>G＃/Abコード</h2>
         </div>
         <div class="row cordmenu">
-        <p class="cord"><a href = "#C_cord">Cコード</a></p>
-        <p class="cord"><a href = "#C#/Db_cord">C#/Dbコード</a></p>
-        <p class="cord"><a href = "#D_cord">Dコード</a></p>
-        <p class="cord"><a href = "#D#/Eb_cord">D#/Ebコード</a></p>
-        <p class="cord"><a href = "#E_cord">Eコード</a></p>
-        <p class="cord"><a href = "#F_cord">Fコード</a></p>
-        <p class="cord"><a href = "#F#/Gb_cord">F#/Gbコード</a></p>
+        <p class="cord-1"><a href = "#C_cord">Cコード</a></p>
+        <p class="cord-2"><a href = "#C#/Db_cord">C#/Dbコード</a></p>
+        <p class="cord-3"><a href = "#D_cord">Dコード</a></p>
+        <p class="cord-4"><a href = "#D#/Eb_cord">D#/Ebコード</a></p>
+        <p class="cord-5"><a href = "#E_cord">Eコード</a></p>
+        <p class="cord-6"><a href = "#F_cord">Fコード</a></p>
+        <p class="cord-7"><a href = "#F#/Gb_cord">F#/Gbコード</a></p>
       </div>
       <div class="row cordmenu">
-        <p class="cord"><a href = "#G_cord">Gコード</a></p>
-        <p class="cord"><a href = "#G#/Ab_cord">G#/Abコード</a></p>
-        <p class="cord"><a href = "#A_cord">Aコード</a></p>
-        <p class="cord"><a href = "#A#/Bb_cord">A#/Bbコード</a></p>
-        <p class="cord"><a href = "#B_cord">Bコード</a></p>
-
+        <p class="cord-8"><a href = "#G_cord">Gコード</a></p>
+        <p class="cord-9"><a href = "#G#/Ab_cord">G#/Abコード</a></p>
+        <p class="cord-10"><a href = "#A_cord">Aコード</a></p>
+        <p class="cord-11"><a href = "#A#/Bb_cord">A#/Bbコード</a></p>
+        <p class="cord-12"><a href = "#B_cord">Bコード</a></p>
       </div>
+
         <div class="row">
         <div class="col-md-2 p-3 mx-3" >
             <p class="cord-font">G#コード</p>
@@ -792,20 +791,20 @@
           <h2>Aコード</h2>
         </div>
         <div class="row cordmenu">
-        <p class="cord"><a href = "#C_cord">Cコード</a></p>
-        <p class="cord"><a href = "#C#/Db_cord">C#/Dbコード</a></p>
-        <p class="cord"><a href = "#D_cord">Dコード</a></p>
-        <p class="cord"><a href = "#D#/Eb_cord">D#/Ebコード</a></p>
-        <p class="cord"><a href = "#E_cord">Eコード</a></p>
-        <p class="cord"><a href = "#F_cord">Fコード</a></p>
-        <p class="cord"><a href = "#F#/Gb_cord">F#/Gbコード</a></p>
+        <p class="cord-1"><a href = "#C_cord">Cコード</a></p>
+        <p class="cord-2"><a href = "#C#/Db_cord">C#/Dbコード</a></p>
+        <p class="cord-3"><a href = "#D_cord">Dコード</a></p>
+        <p class="cord-4"><a href = "#D#/Eb_cord">D#/Ebコード</a></p>
+        <p class="cord-5"><a href = "#E_cord">Eコード</a></p>
+        <p class="cord-6"><a href = "#F_cord">Fコード</a></p>
+        <p class="cord-7"><a href = "#F#/Gb_cord">F#/Gbコード</a></p>
       </div>
       <div class="row cordmenu">
-        <p class="cord"><a href = "#G_cord">Gコード</a></p>
-        <p class="cord"><a href = "#G#/Ab_cord">G#/Abコード</a></p>
-        <p class="cord"><a href = "#A_cord">Aコード</a></p>
-        <p class="cord"><a href = "#A#/Bb_cord">A#/Bbコード</a></p>
-        <p class="cord"><a href = "#B_cord">Bコード</a></p>
+        <p class="cord-8"><a href = "#G_cord">Gコード</a></p>
+        <p class="cord-9"><a href = "#G#/Ab_cord">G#/Abコード</a></p>
+        <p class="cord-10"><a href = "#A_cord">Aコード</a></p>
+        <p class="cord-11"><a href = "#A#/Bb_cord">A#/Bbコード</a></p>
+        <p class="cord-12"><a href = "#B_cord">Bコード</a></p>
 
       </div>
         <div class="row">
@@ -874,20 +873,20 @@
           <h2>A＃/Bbコード</h2>
         </div>
         <div class="row cordmenu">
-        <p class="cord"><a href = "#C_cord">Cコード</a></p>
-        <p class="cord"><a href = "#C#/Db_cord">C#/Dbコード</a></p>
-        <p class="cord"><a href = "#D_cord">Dコード</a></p>
-        <p class="cord"><a href = "#D#/Eb_cord">D#/Ebコード</a></p>
-        <p class="cord"><a href = "#E_cord">Eコード</a></p>
-        <p class="cord"><a href = "#F_cord">Fコード</a></p>
-        <p class="cord"><a href = "#F#/Gb_cord">F#/Gbコード</a></p>
+        <p class="cord-1"><a href = "#C_cord">Cコード</a></p>
+        <p class="cord-2"><a href = "#C#/Db_cord">C#/Dbコード</a></p>
+        <p class="cord-3"><a href = "#D_cord">Dコード</a></p>
+        <p class="cord-4"><a href = "#D#/Eb_cord">D#/Ebコード</a></p>
+        <p class="cord-5"><a href = "#E_cord">Eコード</a></p>
+        <p class="cord-6"><a href = "#F_cord">Fコード</a></p>
+        <p class="cord-7"><a href = "#F#/Gb_cord">F#/Gbコード</a></p>
       </div>
       <div class="row cordmenu">
-        <p class="cord"><a href = "#G_cord">Gコード</a></p>
-        <p class="cord"><a href = "#G#/Ab_cord">G#/Abコード</a></p>
-        <p class="cord"><a href = "#A_cord">Aコード</a></p>
-        <p class="cord"><a href = "#A#/Bb_cord">A#/Bbコード</a></p>
-        <p class="cord"><a href = "#B_cord">Bコード</a></p>
+        <p class="cord-8"><a href = "#G_cord">Gコード</a></p>
+        <p class="cord-9"><a href = "#G#/Ab_cord">G#/Abコード</a></p>
+        <p class="cord-10"><a href = "#A_cord">Aコード</a></p>
+        <p class="cord-11"><a href = "#A#/Bb_cord">A#/Bbコード</a></p>
+        <p class="cord-12"><a href = "#B_cord">Bコード</a></p>
 
       </div>
         <div class="row">
@@ -956,20 +955,20 @@
           <h2>Bコード</h2>
         </div>
         <div class="row cordmenu">
-        <p class="cord"><a href = "#C_cord">Cコード</a></p>
-        <p class="cord"><a href = "#C#/Db_cord">C#/Dbコード</a></p>
-        <p class="cord"><a href = "#D_cord">Dコード</a></p>
-        <p class="cord"><a href = "#D#/Eb_cord">D#/Ebコード</a></p>
-        <p class="cord"><a href = "#E_cord">Eコード</a></p>
-        <p class="cord"><a href = "#F_cord">Fコード</a></p>
-        <p class="cord"><a href = "#F#/Gb_cord">F#/Gbコード</a></p>
+        <p class="cord-1"><a href = "#C_cord">Cコード</a></p>
+        <p class="cord-2"><a href = "#C#/Db_cord">C#/Dbコード</a></p>
+        <p class="cord-3"><a href = "#D_cord">Dコード</a></p>
+        <p class="cord-4"><a href = "#D#/Eb_cord">D#/Ebコード</a></p>
+        <p class="cord-5"><a href = "#E_cord">Eコード</a></p>
+        <p class="cord-6"><a href = "#F_cord">Fコード</a></p>
+        <p class="cord-7"><a href = "#F#/Gb_cord">F#/Gbコード</a></p>
       </div>
       <div class="row cordmenu">
-        <p class="cord"><a href = "#G_cord">Gコード</a></p>
-        <p class="cord"><a href = "#G#/Ab_cord">G#/Abコード</a></p>
-        <p class="cord"><a href = "#A_cord">Aコード</a></p>
-        <p class="cord"><a href = "#A#/Bb_cord">A#/Bbコード</a></p>
-        <p class="cord"><a href = "#B_cord">Bコード</a></p>
+        <p class="cord-8"><a href = "#G_cord">Gコード</a></p>
+        <p class="cord-9"><a href = "#G#/Ab_cord">G#/Abコード</a></p>
+        <p class="cord-10"><a href = "#A_cord">Aコード</a></p>
+        <p class="cord-11"><a href = "#A#/Bb_cord">A#/Bbコード</a></p>
+        <p class="cord-12"><a href = "#B_cord">Bコード</a></p>
 
       </div>
         <div class="row">
@@ -1036,29 +1035,4 @@
     </div>
 @endsection
 
-@section('js')
-<script>
-  function inputCheck() {
-  let inputValue = document.getElementById( "input" ).value;
-  let result = inputValue.replace(/[.[A-Z].]/g, cords);
-  function cords(match){
-    if(match === 'C') {
-      return '<img src="/img/C.png">';
-    }else if(match === 'D') {
-      return '<img src="/img/D.png">';
-    }else {
-      return match;
-    }
-  }
-  document.getElementById( "view" ).innerHTML = result;
-}
-  function test() {
-    var str = 'sample_1, sample_2, sample_3';
- 
- // 正規表現に「g」フラグを追加
-    var result = str.replace(/_/g, '<img src="/img/C.png">');
-    //  _（アンダーバー）から-（ハイフン）に変更
-    $('#view') . append(result);
-  }
-</script>
-@endsection
+

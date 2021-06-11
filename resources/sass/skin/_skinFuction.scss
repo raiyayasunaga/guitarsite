@@ -57,8 +57,8 @@ $NERV-black: #1B1311;
   z-index: 9;  /* 一番手前に */
   pointer-events: none;  /* 他の要素にアクセス可能にするためにポインターイベントは無効に */
   opacity: 0;  /* 初期値 : 透過状態 */
-  -webkit-transition: opacity .7s ease;  /* アニメーション時間は 0.8秒 */
-  transition: opacity .7s ease;
+  -webkit-transition: opacity .8s ease;  /* アニメーション時間は 0.8秒 */
+  transition: opacity .8s ease;
 }
 
 @mixin preview-font {
