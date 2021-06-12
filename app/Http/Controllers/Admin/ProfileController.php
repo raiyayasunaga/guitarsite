@@ -7,7 +7,7 @@ use App\Http\Controllers\Controller;
 use App\Music;
 use App\User;
 use App\Skin;
-
+use Strorage;
 use Auth;
 
 class ProfileController extends Controller
@@ -22,11 +22,14 @@ class ProfileController extends Controller
         $user = Auth::user();
         $form = $request->all();
 
+        $user->skin_id = $request->skin_id;
+        $user->name = $request->name;
+
         if (isset($form['image'])) {
-            $path = $request->file('image')->store('public/profile');
-            $user->profile_image = basename($path);
+            $path = Storage::disk('s3')->putFile('/',$form['image'],'public');;
+            $user->profile_image = Storage::disk('s3')->url($path);
           } else {
-              $user->profile_image = null;
+            $user->profile_image = null;
           }
         
         unset($form['_token']);
@@ -34,7 +37,7 @@ class ProfileController extends Controller
         
         $user->fill($form)->save();
 
-        return redirect('admin/profileedit');
+        return redirect('admin/mypage');
     }
 
     // skinsテーブル

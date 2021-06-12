@@ -78,7 +78,7 @@
                                         <td><a href ="{{ route('admin.playing', ['id' => $music->id]), }}"> {{ $music->title }}</a></td>
                                         <td>{{ ($music->category) }}</td>
                                         <td class="mobile">{{ ($music->capo)}}</td>
-                                        <td><img src="{{ $user->profile_image }}" id="img"></td>
+                                        <td><img src="{{ $music->user->profile_image }}" style="width: 40px;" id="img"></td>
                                     </tr>
                                 @endif
                             @endforeach

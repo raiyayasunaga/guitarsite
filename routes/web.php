@@ -34,7 +34,7 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function() {
     // カラースキンを変更するルート
     Route::post('mypage', 'Admin\ProfileController@skin');
 
-    Route::post('profileedit', 'Admin\ProfileController@name');
+    Route::post('mypage', 'Admin\ProfileController@name');
     
     // 一部変更になるはず
     Route::post('profileedit', 'Admin\ProfileController@update');

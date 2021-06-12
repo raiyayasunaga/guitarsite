@@ -11,32 +11,23 @@
    <h2 class="my-3">プロフィール編集</h2>
     <form method="post" action="{{ action('Admin\ProfileController@update'), route('user.image') }}" enctype="multipart/form-data">
       <div class="row">
-        <div class="col-md-3">
-          <label for="profile_image">現在のプロフィール画像
-              <div class="col-md-10">
-                <input type="file" class="form-control-file" name="image">
-              </div>
-          </label>
-        </div>
-        <div class="col-md-5">
-          
-        </div>
+          <div class="col-md-3">
+            <div>現在のプロフィール画像</div>
+            <img src="{{ $user->profile_image }}" style="width: 100px;">
+          </div>
+
+          <div class="col-md-3">
+            <div>変更後のプロフィール画像</div>
+              <img src="{{ $user->profile_image }}" id="Newimg"  style="width: 200px;">  
+          </div>
       </div>
-      @csrf
-          <button type="submit" class="btn btn-primary">
-            変更する
-          </button>
-    </form>
-  </div>
-  <!-- formタグはややこしくなるためあえて分けて考えている -->
-    <div class="container">
-        <div class="row">
-          
-        </div>
+      <div class="row">
+        <input id="profile_image" type="file"  name="image" onchange="previewImage(this);">
+      </div>
+      <!-- formタグはややこしくなるためあえて分けて考えている -->
         <div class="row my-5">
           <div class="col-6">
             <div><h2>カラースキン編集</h2></div>
-              <form method="post" action="{{ action('Admin\ProfileController@skin') }}" enctype="multipart/form-data">
                 <select class="form-control" name="skin_id" onchange="changestyle('guitar', value)" id="skin">
                     <option value="1">選択して下さい</option>
                     <option value="2">綾波＆アスカ＆マリスキン</option>
@@ -46,11 +37,6 @@
                     <option value="6">AKIRAスキン</option>
                     <option value="7">ジブリスキン</option>
                 </select>
-                <div class="my-5">
-                  @csrf
-                    <button type="submit" class="btn btn-primary">変更する</button>
-                </div>
-              </form>
           </div>
           <div class="col-6">
             <div><h2>カラースキンプレビュー</h2>
@@ -66,6 +52,17 @@
             <span>※若干スタイルが崩れますが保存後は正常に機能します。</span>
           </div>
         </div>
+        <div class="row">
+          <div class="col-md-10">
+            <input type="text" value="" name="name">
+          </div>
+        </div>
+
+        <div class="row my-5">
+            @csrf
+            <button type="submit" class="btn btn-primary">変更する</button>
+          </div>
+    </form>
     </div>
 
   
