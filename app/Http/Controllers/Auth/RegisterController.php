@@ -50,6 +50,7 @@ class RegisterController extends Controller
 
         $this->validator($request->all())->validate();
 
+        $request->flashOnly( 'email');
         $bridge_request = $request->all();
         // password マスキング
         $bridge_request['password_mask'] = '****';

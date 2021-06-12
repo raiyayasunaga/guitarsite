@@ -26,28 +26,6 @@
 //ハンバーガーメニュー 
 
 
-// ナビゲーション携帯レスポンシブ
-.navbar-nav {
-  padding-left: 420px;
-  @include iphone-12-max() {
-    padding: 0px;
-  }
-}
-// ストップボタン
-.stopbutton {
-  position: fixed;
-  padding: 20px 30px 20px 30px;
-  left: 1270px;
-}
-
-@include iphone-12-max() {
-  .stopbutton {
-    position: fixed;
-    padding: 20px 30px;
-    left: 670px;
-  }
-}
-
 //アニメーション
 body::after {
   @include body-animation;
@@ -158,6 +136,55 @@ body.fadeout article{
 //   transform:scale(1.2);
 // }
 
+h1 a{
+  color: $sinnzi-color-green;
+  @include hederfont;
+  font-weight: 900;
+   &:hover {
+     text-decoration: none;
+     color: $sinnzi-color-orenge;
+     opacity: 0.8;
+   }
+ }
+ li {
+   list-style: none;
+ }
+ 
+ ul {
+     overflow:hidden;
+     list-style:none;
+     margin: 0 auto;
+     z-index: 20;
+     margin-left: 10px;
+     @include hederfont;
+     font-weight: 900;
+    li {
+     display: inline-block;
+     padding: 26px 10px 20px 10px;
+     list-style: none;
+
+       a {
+       font-size: 20px;
+       color: $sinnzi-color-green;
+         &:hover {
+           text-decoration: none;
+           color: $sinnzi-color-orenge;
+           }
+         }
+       }
+    } 
+
+.navbar-laravel {
+  background-color: $sinnzi-color-purple;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
+}
+.nav-link {
+  color: $sinnzi-color-green !important;
+}
+
+
+// ここからはskin共通！
+
 #preview {
   @include preview-font;
   img {
@@ -169,6 +196,27 @@ body.fadeout article{
   @include preview-font;
   img {
     @include preview-image;
+  }
+}
+
+// ナビゲーション携帯レスポンシブ
+.navbar-nav {
+  padding-left: 420px;
+  @include iphone-12-max() {
+    padding: 0px;
+  }
+}
+// ストップボタン
+.stopbutton {
+  position: fixed;
+  padding: 20px 30px 20px 30px;
+  left: 1270px;
+}
+@include iphone-12-max() {
+  .stopbutton {
+    position: fixed;
+    padding: 20px 30px;
+    left: 670px;
   }
 }
 
@@ -237,70 +285,11 @@ img {
 }
 
 .cord-font {
-  font-size: 23px;
-  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-  font-weight: blod;
-  background-color: #ececec;
-  border-radius: 5px;
-  padding: 5px;
-  color:black;
+  @include cord-font;
 
   &:hover {
     color:brown;
     text-decoration: none;
   }
 }
-// コード編集終わり
 
-
-h1 a{
-  color: $sinnzi-color-green;
-  @include hederfont;
-  font-weight: 900;
-   &:hover {
-     text-decoration: none;
-     color: $sinnzi-color-orenge;
-     opacity: 0.8;
-   }
- }
- li {
-   list-style: none;
- }
- 
- ul {
-     overflow:hidden;
-     list-style:none;
-     margin: 0 auto;
-     z-index: 20;
-     margin-left: 10px;
-     @include hederfont;
-     font-weight: 900;
-    li {
-     display: inline-block;
-     padding: 26px 10px 20px 10px;
-     list-style: none;
-
-       a {
-       font-size: 20px;
-       color: $sinnzi-color-green;
-         &:hover {
-           text-decoration: none;
-           color: $sinnzi-color-orenge;
-           }
-         }
-       }
-    } 
-
-.navbar-laravel {
-  background-color: $sinnzi-color-purple;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
-}
-
-
-.navbar-brand {
-  color: #fff !important;
-}
-
-.nav-link {
-  color: $sinnzi-color-green !important;
-}

@@ -37,53 +37,6 @@ body.fadeout article{
   transform:scale(1.2);
 }
 
-
-
-#cordbackground {
-  background: #c8ffad;
-}
-
-.cordmenu {
-  display: flex;
-  justify-content: center;
-}
-.cord {
-  padding: 10px;
-  margin-right: 10px;
-  border-radius: 10px;
-  background-color: aqua;
-  &:hover {
-    background-color: aquamarine;
-  }
-  a {
-    display: flex;
-    color: #fff;
-    &:hover {
-      text-decoration: none;
-    }
-  }
-}
-
-img {
-  width: 200px;
-  height: auto;
-  border: 2px solid #000;
-}
-
-.cord-font {
-  font-size: 23px;
-  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-  font-weight: blod;
-  background-color: #ececec;
-  border-radius: 5px;
-  padding: 5px;
-  color:black;
-
-  &:hover {
-    color:brown;
-    text-decoration: none;
-  }
-}
 h1 a{
   color: $sinnzi-color-green;
   @include hederfont;
@@ -135,3 +88,115 @@ h1 a{
 .nav-link {
   color: $sinnzi-color-green !important;
 }
+
+// ここからはskin共通！
+
+#preview {
+  @include preview-font;
+  img {
+    @include preview-image;
+  }
+}
+
+#lyrics {
+  @include preview-font;
+  img {
+    @include preview-image;
+  }
+}
+
+// ナビゲーション携帯レスポンシブ
+.navbar-nav {
+  padding-left: 420px;
+  @include iphone-12-max() {
+    padding: 0px;
+  }
+}
+// ストップボタン
+.stopbutton {
+  position: fixed;
+  padding: 20px 30px 20px 30px;
+  left: 1270px;
+}
+@include iphone-12-max() {
+  .stopbutton {
+    position: fixed;
+    padding: 20px 30px;
+    left: 670px;
+  }
+}
+
+// ギターコードの編集
+#cordbackground {
+  background: #c8ffad;
+}
+
+.cordmenu {
+  display: flex;
+  justify-content: center;
+}
+.cord-1 {
+ @include cord;
+ background-color: red;
+}
+.cord-2 {
+  @include cord;
+  background-color: blue;
+ }
+ .cord-3 {
+  @include cord;
+  background-color: lightskyblue;
+ }
+ .cord-4 {
+  @include cord;
+  background-color: green;
+ }
+ .cord-5 {
+  @include cord;
+  background-color: brown;
+ }
+ .cord-6 {
+  @include cord;
+  background-color: purple;
+ }
+ .cord-7 {
+  @include cord;
+  background-color: pink;
+ }
+ .cord-8 {
+  @include cord;
+  background-color: black;
+ }
+ .cord-9 {
+  @include cord;
+  background-color: orange;
+ }
+ .cord-10 {
+  @include cord;
+  background-color: lightgreen;
+ }
+ .cord-11 {
+  @include cord;
+  background-color: gold;
+ }
+ .cord-12 {
+  @include cord;
+  background-color: silver;
+ }
+
+img {
+  width: 200px;
+  height: auto;
+  border: 2px solid #000;
+}
+
+.cord-font {
+  @include cord-font;
+
+  &:hover {
+    color:brown;
+    text-decoration: none;
+  }
+}
+
+
