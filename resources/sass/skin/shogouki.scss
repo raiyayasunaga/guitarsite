@@ -26,11 +26,25 @@
 //ハンバーガーメニュー 
 
 
-// レスポンシブ
+// ナビゲーション携帯レスポンシブ
 .navbar-nav {
   padding-left: 420px;
   @include iphone-12-max() {
     padding: 0px;
+  }
+}
+// ストップボタン
+.stopbutton {
+  position: fixed;
+  padding: 20px 30px 20px 30px;
+  left: 1270px;
+}
+
+@include iphone-12-max() {
+  .stopbutton {
+    position: fixed;
+    padding: 20px 30px;
+    left: 670px;
   }
 }
 
@@ -48,7 +62,6 @@ body.fadeout article{
   -webkit-transform:scale(1.2);
   transform:scale(1.2);
 }
-
 
 
 // home画像編集

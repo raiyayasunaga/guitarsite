@@ -989,7 +989,43 @@
             return '<img src="/img/Bsus4.png">';
             break;
 
-        
+
+        case '[E♭]':
+            return '<img src="/img/Eb.png">';
+            break;
+        case '[A♭]':
+            return '<img src="/img/Ab.png">';
+            break;
+        case '[B♭]':
+            return '<img src="/img/Bb.png">';
+            break;
+        case '[E♭maj7]':
+            return '<img src="/img/EbM_7.png">';
+            break;
+        case '[A♭maj7]':
+            return '<img src="/img/AbM_7.png">';
+            break;
+        case '[B♭maj7]':
+            return '<img src="/img/BbM_7.png">';
+            break;
+        case '[D♭]':
+            return '<img src="/img/Db.png">';
+            break;
+        case '[D♭maj7]':
+            return '<img src="/img/Db.png">';
+            break;
+        case '[B♭m7]':
+            return '<img src="/img/Bb_m7.png">';
+            break;
+        case '[B♭m]':
+            return '<img src="/img/Bbm.png">';
+            break;
+        case '[B♭7]':
+            return '<img src="/img/Bb7.png">';
+            break;
+        case '[E♭7]':
+            return '<img src="/img/Eb7.png">';
+            break;
 
         default:
             return match;

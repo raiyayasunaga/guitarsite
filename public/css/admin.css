@@ -15,6 +15,16 @@ textarea {
   font-family: "\660E\671D\4F53";
 }
 
+.navbar-nav {
+  padding-left: 100px;
+}
+
+@media screen and (max-width: 854px) {
+  .navbar-nav {
+    padding: 0px;
+  }
+}
+
 @media screen and (max-width: 480px) {
   .mobile {
     display: none;
@@ -34,6 +44,14 @@ textarea {
   position: fixed;
   padding: 20px 30px 20px 30px;
   left: 1270px;
+}
+
+@media screen and (max-width: 854px) {
+  .stopbutton {
+    position: fixed;
+    padding: 20px;
+    left: 600px;
+  }
 }
 
 .user_name {

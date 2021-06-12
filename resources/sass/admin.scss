@@ -2,8 +2,6 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@200&display=swap');
 
-
-
 #hedarSkin {
   background-image: url("/img/guitar.png");
   background-repeat: no-repeat;
@@ -19,12 +17,19 @@ textarea {
   @include sitefont;
 }
 
-// スマホ版
-@media screen and (max-width: 480px) {
-.mobile {
-  display: none;
+// ナビゲーション携帯レスポンシブ
+.navbar-nav {
+  padding-left: 100px;
+  @include iphone-12-max() {
+    padding: 0px;
+  }
 }
 
+// スマホ版
+@media screen and (max-width: 480px) {
+  .mobile {
+    display: none;
+  }
  }
 
 // 画像について
@@ -43,12 +48,18 @@ textarea {
   padding: 20px 30px 20px 30px;
   left: 1270px;
 }
+@include iphone-12-max() {
+  .stopbutton {
+    position: fixed;
+    padding: 20px;
+    left: 600px;
+  }
+}
 
 .user_name {
   padding-left: 30px;
   font-size: 30px;
 }
-
 
 a {
   color: black;

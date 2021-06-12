@@ -7,7 +7,6 @@ use App\Http\Controllers\Controller;
 use App\Music;
 use App\User;
 use App\Skin;
-use Storage; 
 
 use Auth;
 
@@ -19,10 +18,10 @@ class ProfileController extends Controller
     }
     
     public function update(Request $request) {
-        $user = Auth::user();
-
-        $form = $request->all();
         
+        $user = Auth::user();
+        $form = $request->all();
+
         if (isset($form['image'])) {
             $path = $request->file('image')->store('public/profile');
             $user->profile_image = basename($path);
@@ -49,6 +48,7 @@ class ProfileController extends Controller
 
         return redirect('admin/mypage');
     }
+    
     public function name(Request $request)
     {
         $user = Auth::user();
@@ -56,21 +56,6 @@ class ProfileController extends Controller
         $user->save();
 
         return redirect('admin/profileedit');
-    }
-    
-    private function saveProfileImage($image, $id) {
-        // get instance
-        $img = \Image::make($image);
-        // resize
-        $img->fit(100, 100, function($constraint){
-            $constraint->upsize(); 
-        });
-        // save
-        $file_name = 'profile_'.$id.'.'.$image->getClientOriginalExtension();
-        $save_path = 'public/profiles/'.$file_name;
-        Storage::put($save_path, (string) $img->encode());
-        // return file name
-        return $file_name;
     }
 }
 

@@ -36,6 +36,20 @@
   }
 }
 
+.stopbutton {
+  position: fixed;
+  padding: 20px 30px 20px 30px;
+  left: 1270px;
+}
+
+@media screen and (max-width: 854px) {
+  .stopbutton {
+    position: fixed;
+    padding: 20px 30px;
+    left: 670px;
+  }
+}
+
 body::after {
   content: "";
   position: fixed;
