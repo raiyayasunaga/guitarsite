@@ -28,14 +28,72 @@
         <div class="row my-5">
           <div class="col-6">
             <div><h2>カラースキン編集</h2></div>
-                <select class="form-control" name="skin_id" onchange="changestyle('guitar', value)" id="skin">
-                    <option value="1">選択して下さい</option>
+                <select class="form-control" name="skin_id" id="skin">
+                  @if($user->skin_id == "1")
+                    <option selected value="1">選択して下さい</option>
                     <option value="2">綾波＆アスカ＆マリスキン</option>
                     <option value="3">初号機＆シンジスキン</option>
                     <option value="4">NERVスキン</option>
                     <option value="5">進撃スキン</option>
                     <option value="6">AKIRAスキン</option>
                     <option value="7">ジブリスキン</option>
+                  @elseif($user->skin_id == "2")
+                    <option value="1">選択して下さい</option>
+                    <option selected value="2">綾波＆アスカ＆マリスキン</option>
+                    <option value="3">初号機＆シンジスキン</option>
+                    <option value="4">NERVスキン</option>
+                    <option value="5">進撃スキン</option>
+                    <option value="6">AKIRAスキン</option>
+                    <option value="7">ジブリスキン</option>
+                  @elseif($user->skin_id == "3")
+                    <option value="1">選択して下さい</option>
+                    <option value="2">綾波＆アスカ＆マリスキン</option>
+                    <option selected value="3">初号機＆シンジスキン</option>
+                    <option value="4">NERVスキン</option>
+                    <option value="5">進撃スキン</option>
+                    <option value="6">AKIRAスキン</option>
+                    <option value="7">ジブリスキン</option>
+                  @elseif($user->skin_id == "4")
+                    <option value="1">選択して下さい</option>
+                    <option value="2">綾波＆アスカ＆マリスキン</option>
+                    <option value="3">初号機＆シンジスキン</option>
+                    <option selected value="4">NERVスキン</option>
+                    <option value="5">進撃スキン</option>
+                    <option value="6">AKIRAスキン</option>
+                    <option value="7">ジブリスキン</option>
+                  @elseif($user->skin_id == "5")
+                    <option value="1">選択して下さい</option>
+                    <option value="2">綾波＆アスカ＆マリスキン</option>
+                    <option value="3">初号機＆シンジスキン</option>
+                    <option value="4">NERVスキン</option>
+                    <option selected value="5">進撃スキン</option>
+                    <option value="6">AKIRAスキン</option>
+                    <option value="7">ジブリスキン</option>
+                  @elseif($user->skin_id == "6")
+                    <option value="1">選択して下さい</option>
+                    <option value="2">綾波＆アスカ＆マリスキン</option>
+                    <option value="3">初号機＆シンジスキン</option>
+                    <option value="4">NERVスキン</option>
+                    <option value="5">進撃スキン</option>
+                    <option selected value="6">AKIRAスキン</option>
+                    <option value="7">ジブリスキン</option>
+                  @elseif($user->skin_id == "7")
+                    <option value="1">選択して下さい</option>
+                    <option value="2">綾波＆アスカ＆マリスキン</option>
+                    <option value="3">初号機＆シンジスキン</option>
+                    <option value="4">NERVスキン</option>
+                    <option value="5">進撃スキン</option>
+                    <option value="6">AKIRAスキン</option>
+                    <option selected value="7">ジブリスキン</option>
+                  @else
+                    <option selected value="1">選択してください</option>
+                    <option value="2">綾波＆アスカ＆マリスキン</option>
+                    <option value="3">初号機＆シンジスキン</option>
+                    <option value="4">NERVスキン</option>
+                    <option value="5">進撃スキン</option>
+                    <option value="6">AKIRAスキン</option>
+                    <option value="7">ジブリスキン</option>
+                  @endif
                 </select>
           </div>
           <div class="col-6">
@@ -54,7 +112,7 @@
         </div>
         <div class="row">
           <div class="col-md-10">
-            <input type="text" value="" name="name">
+            <input type="text" value="{{ $user->name }}" name="name">
           </div>
         </div>
 

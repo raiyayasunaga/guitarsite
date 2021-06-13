@@ -10,7 +10,7 @@
                         <option value="key_7">7</option>
                         <option value="key_8">8</option>
                         <option value="key_9">9</option>
-                        <option value="key_10" selected>10</option>
+                        <option selected value="key_10" >10</option>
                         <option value="key_11">11</option>
                         <option value="key_12">12</option>
                         <option value="key_13">13</option>
@@ -23,7 +23,7 @@
                         <option value="key_20">20</option>
                     </select>
                 </div>
-            <div @click="moveToDown">
+            <div @click="moveToDown()">
                 <br>    
                 <br>    
                 <br>    
@@ -48,29 +48,34 @@
         },
         methods: {
             // $fixedは使わない？
-            oneClick: function() {
-                
-            },
-            select() {
-                   
-                let groupspeeds = {
-                    'key_5': this.sample,
-                    'key_6': interval = 20,
-                }
-                groupspeeds[this.speedNumber];
-            },
-            onchange() {
-            
+            select(value) {
+                    if (value.target.value == "key_5") {
+                        let speed = 1; //時間あたりに移動するpx量
+                        let interval = 50; //移動する間隔
+                    this.test = setInterval(function() {
+                        let scrollTop = document.body.scrollTop;
+                        let scroll = scrollTop + speed;
+                        window.scrollBy(0, scroll)
+                    },interval);
+                    }
+                    else {
+                        let speed = 1; //時間あたりに移動するpx量
+                        let interval = 120; //移動する間隔
+                    this.test = setInterval(function() {
+                        let scrollTop = document.body.scrollTop;
+                        let scroll = scrollTop + speed;
+                        window.scrollBy(0, scroll)
+                    },interval);
+                    }
             },
             moveToDown() {
-                let speed = 1; //時間あたりに移動するpx量です。デフォルトでは1pxにしていますが、自由に変えてください
-                let interval = 120; //移動する間隔です。デフォルトでは0.1秒おきにしていますが、自由に変えてくださ
-            this.test = setInterval(function() {
-                let scrollTop = document.body.scrollTop;
-                let scroll = scrollTop + speed;
+                    let speed = 1;
+                    let interval = 100;
+                this.sample = setInterval(function() {
+                    let scrollTop = document.body.scrollTop;
+                    let scroll = scrollTop + speed;
                 window.scrollBy(0, scroll)
-            },interval);
-
+                },interval);
             },
             button() {
                 let speed = 1;

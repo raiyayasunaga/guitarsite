@@ -143,113 +143,113 @@
         <script>
 
             // 声
-        @guest
+            @guest
 
-        @else
-            @switch(Auth::user()->skin_id)
-                @case(1)
-                // ギターボイス
-                window.onload = function() {
-                    let my_audio = new Audio("/Audio/test.mp3");
-                document.getElementById("hedarSkin").onclick = function() {
-                    my_audio.currentTime = 0;
-                    my_audio.play();
-                    }    
-                }
-                @break
-
-                @case(2)
-                // 綾波ボイス
-                window.onload = function() {
-                    let my_audio = new Audio("/Audio/ayanamiVoice1.mp3");
-                document.getElementById("hedarSkin").onclick = function() {
-                    my_audio.currentTime = 0;
-                    my_audio.play();
-                    }    
-                }
-                @break
-
-                @case(3)
-                // 初号機のボイス
-                window.onload = function() {
-                    let my_audio = new Audio("/Audio/shogoukiVoice.mp3");
-                    let mypageSound = new Audio("/Audio/sinnziVoice1.mp3"); 
-                    let createSound = new Audio("/Audio/kaworuVoice1.mp3");
-                    let musicSound = new Audio("/Audio/kaworuVoice2.mp3");
-                //ボタンにクリックイベントを設定
+            @else
+                @switch(Auth::user()->skin_id)
+                    @case(1)
+                    // ギターボイス
+                    window.onload = function() {
+                        let my_audio = new Audio("/Audio/test.mp3");
                     document.getElementById("hedarSkin").onclick = function() {
-                        my_audio.currentTime = 0;  //再生開始位置を先頭に戻す
-                        my_audio.play();  //サウンドを再生
+                        my_audio.currentTime = 0;
+                        my_audio.play();
+                        }    
+                    }
+                    @break
+
+                    @case(2)
+                    // 綾波ボイス
+                    window.onload = function() {
+                        let my_audio = new Audio("/Audio/ayanamiVoice1.mp3");
+                    document.getElementById("hedarSkin").onclick = function() {
+                        my_audio.currentTime = 0;
+                        my_audio.play();
+                        }    
+                    }
+                    @break
+
+                    @case(3)
+                    // 初号機のボイス
+                    window.onload = function() {
+                        let my_audio = new Audio("/Audio/shogoukiVoice.mp3");
+                        let mypageSound = new Audio("/Audio/sinnziVoice1.mp3"); 
+                        let createSound = new Audio("/Audio/kaworuVoice1.mp3");
+                        let musicSound = new Audio("/Audio/kaworuVoice2.mp3");
+                    //ボタンにクリックイベントを設定
+                        document.getElementById("hedarSkin").onclick = function() {
+                            my_audio.currentTime = 0;  //再生開始位置を先頭に戻す
+                            my_audio.play();  //サウンドを再生
+                            }
+                        document.getElementById("mypage").onclick = function() {
+                            mypageSound.currentTime = 0;
+                            mypageSound.play();
                         }
-                    document.getElementById("mypage").onclick = function() {
-                        mypageSound.currentTime = 0;
-                        mypageSound.play();
+                        document.getElementById("create").onclick = function() {
+                            createSound.currentTime = 0;
+                            createSound.play();
+                        }
+                        document.getElementById("musicCords").onclick = function() {
+                            musicSound.currentTime = 0;
+                            musicSound.play();
+                        }
                     }
-                    document.getElementById("create").onclick = function() {
-                        createSound.currentTime = 0;
-                        createSound.play();
+                    @break
+
+                    @case(4)
+                    // NERVボイス
+                    window.onload = function() {
+                        let my_audio = new Audio("/Audio/test.mp3");
+                    document.getElementById("hedarSkin").onclick = function() {
+                        my_audio.currentTime = 0;
+                        my_audio.play();
+                        }    
                     }
-                    document.getElementById("musicCords").onclick = function() {
-                        musicSound.currentTime = 0;
-                        musicSound.play();
+                    @break
+
+                    @case(5)
+                    // 進撃
+                    window.onload = function() {
+                        let my_audio = new Audio("/Audio/erennVoice1.mp3");
+                    document.getElementById("hedarSkin").onclick = function() {
+                        my_audio.currentTime = 0;
+                        my_audio.play();
+                        }    
                     }
-                }
-                @break
+                    @break
 
-                @case(4)
-                // NERVボイス
-                window.onload = function() {
-                    let my_audio = new Audio("/Audio/test.mp3");
-                document.getElementById("hedarSkin").onclick = function() {
-                    my_audio.currentTime = 0;
-                    my_audio.play();
-                    }    
-                }
-                @break
+                    @case(6)
+                    // AKIRAスキン
+                    window.onload = function() {
+                        let my_audio = new Audio("/Audio/tetuoVoice1.mp3");
+                    document.getElementById("hedarSkin").onclick = function() {
+                        my_audio.currentTime = 0;
+                        my_audio.play();
+                        }    
+                    }
+                    @break
 
-                @case(5)
-                // 進撃
-                window.onload = function() {
-                    let my_audio = new Audio("/Audio/erennVoice1.mp3");
-                document.getElementById("hedarSkin").onclick = function() {
-                    my_audio.currentTime = 0;
-                    my_audio.play();
-                    }    
-                }
-                @break
-
-                @case(6)
-                // AKIRAスキン
-                window.onload = function() {
-                    let my_audio = new Audio("/Audio/tetuoVoice1.mp3");
-                document.getElementById("hedarSkin").onclick = function() {
-                    my_audio.currentTime = 0;
-                    my_audio.play();
-                    }    
-                }
-                @break
-
-                @case(7)
-                // ジブリスキン
-                window.onload = function() {
-                    let my_audio = new Audio("/Audio/tetuoVoice1.mp3");
-                document.getElementById("hedarSkin").onclick = function() {
-                    my_audio.currentTime = 0;
-                    my_audio.play();
-                    }    
-                }
-                @break
-                
-                @default
-                window.onload = function() {
-                    let my_audio = new Audio("/Audio/test.mp3");
-                document.getElementById("hedarSkin").onclick = function() {
-                    my_audio.currentTime = 0;
-                    my_audio.play();
-                    }    
-                }
-            @endswitch
-        @endguest
+                    @case(7)
+                    // ジブリスキン
+                    window.onload = function() {
+                        let my_audio = new Audio("/Audio/tetuoVoice1.mp3");
+                    document.getElementById("hedarSkin").onclick = function() {
+                        my_audio.currentTime = 0;
+                        my_audio.play();
+                        }    
+                    }
+                    @break
+                    
+                    @default
+                    window.onload = function() {
+                        let my_audio = new Audio("/Audio/test.mp3");
+                    document.getElementById("hedarSkin").onclick = function() {
+                        my_audio.currentTime = 0;
+                        my_audio.play();
+                        }    
+                    }
+                @endswitch
+            @endguest
         </script>
     </body>
     @yield('js')

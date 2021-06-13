@@ -36,7 +36,7 @@ body {
             <h2><a class="button-link" href = "{{ action('Admin\ProfileController@edit') }}"><img src="{{ asset('storage/profile/' . $user->profile_image) }}" style="width: 50px;">プロフィール編集</a></h2>
         </div>
         <div class="row my-3">
-            <div class="col-md-4 my-3">
+            <div class="col-md-4">
             <a href="{{ action('Admin\GuitarController@create') }}" role="button" class="btn btn-primary">オリジナル曲を作る！！</a>
             </div>
 
@@ -47,7 +47,7 @@ body {
                                     <input type="text" class="form-control" name="mypage_title" value="{{ $mypage_title }}">
                                 </div>
                                 <div class="col-4">
-                                    {{ csrf_field() }}
+                                    @csrf
                                     <input type="submit" class="btn btn-primary" value="検索">
                                 </div>
                         </div>
@@ -63,7 +63,8 @@ body {
                                 <tr>
                                     <th width="30%">曲のタイトル</th>
                                     <th width="20%">カテゴリー</th>
-                                    <th width="20%">編集</th>
+                                    <th width="10%">カポ</th>
+                                    <th width="10%">編集</th>
                                     <th width="20%">公開する</th>
                                     <th width="10%">公開状態</th>
                                 </tr>
@@ -72,9 +73,10 @@ body {
                                 @foreach($posts as $music)
                                     <tr>
                                         <!-- 取得して投稿の値によって表示を変える -->
-                                            <td><a href ="{{ route('admin.playing', ['id' => $music->id]) }}"> {{ str_limit($music->title, 100) }}</a></td>
+                                            <td class="titleStyle"><a href ="{{ route('admin.playing', ['id' => $music->id]) }}"> {{ str_limit($music->title, 100) }}</a></td>
                                         <!-- 連想配列・データベースで値を引っ張ってくる -->
                                             <td>{{ ($music->category) }}</td>
+                                            <td>{{ ($music->capo) }}</td>
                                         <td>
                                             <div>
                                                 <a class="btn btn-primary p-1" href="{{ action('Admin\GuitarController@edit', ['id' => $music->id]) }}">編集</a>

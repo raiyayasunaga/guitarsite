@@ -1983,21 +1983,33 @@ __webpack_require__.r(__webpack_exports__);
   },
   methods: {
     // $fixedは使わない？
-    oneClick: function oneClick() {},
-    select: function select() {
-      var groupspeeds = {
-        'key_5': this.sample,
-        'key_6': interval = 20
-      };
-      groupspeeds[this.speedNumber];
+    select: function select(value) {
+      if (value.target.value == "key_5") {
+        var speed = 1; //時間あたりに移動するpx量
+
+        var interval = 50; //移動する間隔
+
+        this.test = setInterval(function () {
+          var scrollTop = document.body.scrollTop;
+          var scroll = scrollTop + speed;
+          window.scrollBy(0, scroll);
+        }, interval);
+      } else {
+        var _speed = 1; //時間あたりに移動するpx量
+
+        var _interval = 120; //移動する間隔
+
+        this.test = setInterval(function () {
+          var scrollTop = document.body.scrollTop;
+          var scroll = scrollTop + _speed;
+          window.scrollBy(0, scroll);
+        }, _interval);
+      }
     },
-    onchange: function onchange() {},
     moveToDown: function moveToDown() {
-      var speed = 1; //時間あたりに移動するpx量です。デフォルトでは1pxにしていますが、自由に変えてください
-
-      var interval = 120; //移動する間隔です。デフォルトでは0.1秒おきにしていますが、自由に変えてくださ
-
-      this.test = setInterval(function () {
+      var speed = 1;
+      var interval = 100;
+      this.sample = setInterval(function () {
         var scrollTop = document.body.scrollTop;
         var scroll = scrollTop + speed;
         window.scrollBy(0, scroll);
@@ -37623,7 +37635,7 @@ var render = function() {
           _vm._v(" "),
           _c("option", { attrs: { value: "key_9" } }, [_vm._v("9")]),
           _vm._v(" "),
-          _c("option", { attrs: { value: "key_10", selected: "" } }, [
+          _c("option", { attrs: { selected: "", value: "key_10" } }, [
             _vm._v("10")
           ]),
           _vm._v(" "),
@@ -37650,21 +37662,31 @@ var render = function() {
       )
     ]),
     _vm._v(" "),
-    _c("div", { on: { click: _vm.moveToDown } }, [
-      _c("br"),
-      _vm._v(" "),
-      _c("br"),
-      _vm._v(" "),
-      _c("br"),
-      _vm._v(" "),
-      _c("br"),
-      _vm._v(" "),
-      _c("br"),
-      _vm._v(" "),
-      _c("br"),
-      _vm._v(" "),
-      _c("br")
-    ])
+    _c(
+      "div",
+      {
+        on: {
+          click: function($event) {
+            return _vm.moveToDown()
+          }
+        }
+      },
+      [
+        _c("br"),
+        _vm._v(" "),
+        _c("br"),
+        _vm._v(" "),
+        _c("br"),
+        _vm._v(" "),
+        _c("br"),
+        _vm._v(" "),
+        _c("br"),
+        _vm._v(" "),
+        _c("br"),
+        _vm._v(" "),
+        _c("br")
+      ]
+    )
   ])
 }
 var staticRenderFns = []

@@ -100,9 +100,8 @@ class GuitarController extends Controller
                 ->orderBy('id', 'asc')
                 ->get();
         } else {
-            // それ以外はすべてのニュースを取得する
-            $music = Music::where('user_id', Auth::id()) //$userによる投稿を取得
-            ->orderBy('created_at', 'desc') // 投稿作成日が新しい順に並べる
+            $music = Music::where('user_id', Auth::id()) 
+            ->orderBy('created_at', 'desc') 
             ->get(); 
         }
 
