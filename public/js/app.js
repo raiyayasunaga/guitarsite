@@ -1953,38 +1953,18 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     // ここ入らないのかも
     return {
       test: 0,
-      speedNumber: 'key_10'
+      speedNumber: ''
     };
   },
   methods: {
     // $fixedは使わない？
     select: function select(value) {
-      if (value.target.value == "key_5") {
+      if (value.target.value == "早い") {
         var speed = 1; //時間あたりに移動するpx量
 
         var interval = 50; //移動する間隔
@@ -1994,30 +1974,31 @@ __webpack_require__.r(__webpack_exports__);
           var scroll = scrollTop + speed;
           window.scrollBy(0, scroll);
         }, interval);
-      } else {
+      } else if (value.target.value == "遅い") {
         var _speed = 1; //時間あたりに移動するpx量
 
-        var _interval = 120; //移動する間隔
+        var _interval = 200; //移動する間隔
 
         this.test = setInterval(function () {
           var scrollTop = document.body.scrollTop;
           var scroll = scrollTop + _speed;
           window.scrollBy(0, scroll);
         }, _interval);
+      } else {
+        var _speed2 = 1; //時間あたりに移動するpx量
+
+        var _interval2 = 120; //移動する間隔
+
+        this.test = setInterval(function () {
+          var scrollTop = document.body.scrollTop;
+          var scroll = scrollTop + _speed2;
+          window.scrollBy(0, scroll);
+        }, _interval2);
       }
     },
     moveToDown: function moveToDown() {
       var speed = 1;
-      var interval = 100;
-      this.sample = setInterval(function () {
-        var scrollTop = document.body.scrollTop;
-        var scroll = scrollTop + speed;
-        window.scrollBy(0, scroll);
-      }, interval);
-    },
-    button: function button() {
-      var speed = 1;
-      var interval = 10;
+      var interval = 120;
       this.sample = setInterval(function () {
         var scrollTop = document.body.scrollTop;
         var scroll = scrollTop + speed;
@@ -37589,8 +37570,6 @@ var render = function() {
       _vm._v("ストップ")
     ]),
     _vm._v(" "),
-    _c("button", { on: { click: _vm.button } }, [_vm._v("少し早い")]),
-    _vm._v(" "),
     _c("div", { staticClass: "row mt-3" }, [
       _vm._v("スクロール速度\n                "),
       _c(
@@ -37625,68 +37604,26 @@ var render = function() {
           }
         },
         [
-          _c("option", { attrs: { value: "key_5" } }, [_vm._v("5")]),
+          _c("option", { attrs: { value: "" } }, [_vm._v("選択してください")]),
           _vm._v(" "),
-          _c("option", { attrs: { value: "key_6" } }, [_vm._v("6")]),
+          _c("option", { attrs: { value: "早い" } }, [_vm._v("早い")]),
           _vm._v(" "),
-          _c("option", { attrs: { value: "key_7" } }, [_vm._v("7")]),
-          _vm._v(" "),
-          _c("option", { attrs: { value: "key_8" } }, [_vm._v("8")]),
-          _vm._v(" "),
-          _c("option", { attrs: { value: "key_9" } }, [_vm._v("9")]),
-          _vm._v(" "),
-          _c("option", { attrs: { selected: "", value: "key_10" } }, [
-            _vm._v("10")
+          _c("option", { attrs: { selected: "", value: "普通" } }, [
+            _vm._v("普通")
           ]),
           _vm._v(" "),
-          _c("option", { attrs: { value: "key_11" } }, [_vm._v("11")]),
-          _vm._v(" "),
-          _c("option", { attrs: { value: "key_12" } }, [_vm._v("12")]),
-          _vm._v(" "),
-          _c("option", { attrs: { value: "key_13" } }, [_vm._v("13")]),
-          _vm._v(" "),
-          _c("option", { attrs: { value: "key_14" } }, [_vm._v("14")]),
-          _vm._v(" "),
-          _c("option", { attrs: { value: "key_15" } }, [_vm._v("15")]),
-          _vm._v(" "),
-          _c("option", { attrs: { value: "key_16" } }, [_vm._v("16")]),
-          _vm._v(" "),
-          _c("option", { attrs: { value: "key_17" } }, [_vm._v("17")]),
-          _vm._v(" "),
-          _c("option", { attrs: { value: "key_18" } }, [_vm._v("18")]),
-          _vm._v(" "),
-          _c("option", { attrs: { value: "key_19" } }, [_vm._v("19")]),
-          _vm._v(" "),
-          _c("option", { attrs: { value: "key_20" } }, [_vm._v("20")])
+          _c("option", { attrs: { value: "遅い" } }, [_vm._v("遅い")])
         ]
       )
     ]),
     _vm._v(" "),
-    _c(
-      "div",
-      {
-        on: {
-          click: function($event) {
-            return _vm.moveToDown()
-          }
+    _c("div", {
+      on: {
+        click: function($event) {
+          return _vm.moveToDown()
         }
-      },
-      [
-        _c("br"),
-        _vm._v(" "),
-        _c("br"),
-        _vm._v(" "),
-        _c("br"),
-        _vm._v(" "),
-        _c("br"),
-        _vm._v(" "),
-        _c("br"),
-        _vm._v(" "),
-        _c("br"),
-        _vm._v(" "),
-        _c("br")
-      ]
-    )
+      }
+    })
   ])
 }
 var staticRenderFns = []

@@ -9,7 +9,7 @@
         <!-- ifを使ってカラムによって表示を変える方法を実装 -->
             <h2>曲のタイトル：{{ str_limit($music->title, 100) }}</h2>
             <div class="ml-3">
-              <img src="{{ asset('storage/profile/'.$music->user->profile_image) }}" style="border: none; width:50px; height:auto; border-radius: 50px;" id="img">
+              <img src="{{ $music->user->profile_image }}" style="border: none; width:50px; height:auto; border-radius: 50px;" id="img">
             </div>
           </div>
           <div class="row mb-5">
@@ -33,6 +33,8 @@
 @section('js')
 <script>
 // ここでlyricsでもらった値を表現
+ 
+
 document.addEventListener("DOMContentLoaded", function() {
   let string = '{!! str_replace("\n", "<br />", str_replace("\r", "", $music->lyrics)) !!}';
   let result = string.replace(/\[.*?]/g, cords);

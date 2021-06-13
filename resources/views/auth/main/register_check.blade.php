@@ -16,7 +16,7 @@
                             <label for="name" class="col-md-4 col-form-label text-md-right">名前</label>
                             <div class="col-md-6">
                                 <span class="">{{$user->name}}</span>
-                                <input type="hidden" name="email" value="{{$user->name}}">
+                                <input type="hidden" name="name" value="{{$user->name}}">
                             </div>
                         </div>
 
@@ -43,6 +43,7 @@
 
                         <div class="form-group row mb-0">
                             <div class="col-md-6 offset-md-4">
+                            <input type="hidden" name="email_token">
                                 <button type="submit" class="btn btn-primary">
                                     本登録
                                 </button>

@@ -116,6 +116,7 @@
 
                         <div class="form-group row mb-0">
                             <div class="col-md-6 offset-md-4">
+                                <input type="hidden" name="email_token">
                                 <button type="submit" class="btn btn-primary">
                                     確認画面へ
                                 </button>

@@ -143,7 +143,7 @@ class GuitarController extends Controller
         // 該当するデータを上書きして保存する)
         $music->fill($music_form)->save();
 
-        return redirect('admin/mypage');
+        return redirect('admin/mypage/');
     }
 
 }

@@ -13,6 +13,7 @@ use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Auth\Events\Registered;
 use Carbon\Carbon;
 
+
 class RegisterController extends Controller
 {
     /*
@@ -50,7 +51,7 @@ class RegisterController extends Controller
 
         $this->validator($request->all())->validate();
 
-        $request->flashOnly( 'email');
+        $request->flashOnly('email');
         $bridge_request = $request->all();
         // password マスキング
         $bridge_request['password_mask'] = '****';
@@ -127,41 +128,39 @@ class RegisterController extends Controller
 
     public function mainCheck(Request $request)
     {
-    $request->validate([
-      'name' => 'required|string',
-      'name_pronunciation' => 'required|string',
-      'birth_year' => 'required|numeric',
-      'birth_month' => 'required|numeric',
-      'birth_day' => 'required|numeric',
-    ]);
-    //データ保持用
-    $email_token = $request->email_token;
-
-    $user = new User();
-    $user->name = $request->name;
-    $user->name_pronunciation = $request->name_pronunciation;
-    $user->birth_year = $request->birth_year;
-    $user->birth_month = $request->birth_month;
-    $user->birth_day = $request->birth_day;
-    
-
-    return view('auth.main.register_check', compact('user','email_token'));
-    }
-
-    public function mainRegister(Request $request)
-    {
-      $user = User::where('email_verify_token',$request->email_token)->first();
-      $user->status = config('const.USER_STATUS.REGISTER');
+      $request->validate([
+        'name' => 'required|string',
+        'name_pronunciation' => 'required|string',
+        'birth_year' => 'required|numeric',
+        'birth_month' => 'required|numeric',
+        'birth_day' => 'required|numeric',
+      ]);
+      //データ保持用
+      $email_token = $request->email_token;
+  
+      $user = new User();
       $user->name = $request->name;
       $user->name_pronunciation = $request->name_pronunciation;
       $user->birth_year = $request->birth_year;
       $user->birth_month = $request->birth_month;
       $user->birth_day = $request->birth_day;
-      $user->save();
-      $this->guard()->login($user);
-                    //     return $this->registered($request, $user)
-                    //    ?: redirect($this->redirectPath());
   
-      return view('auth.main.registered');
+      return view('auth.main.register_check', compact('user','email_token'));
     }
+
+    public function mainRegister(Request $request)
+  {
+    $user = User::where('email_verify_token',$request->email_token)->first();
+    $user->status = config('const.USER_STATUS.REGISTER');
+    $user->name = $request->name;
+    $user->name_pronunciation = $request->name_pronunciation;
+    $user->birth_year = $request->birth_year;
+    $user->birth_month = $request->birth_month;
+    $user->birth_day = $request->birth_day;
+    $user->save();
+
+    //     return $this->registered($request, $user)
+                    //    ?: redirect($this->redirectPath());
+    return view('auth.main.registered');
+  }
 }
