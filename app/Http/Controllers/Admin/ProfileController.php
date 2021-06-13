@@ -7,7 +7,7 @@ use App\Http\Controllers\Controller;
 use App\Music;
 use App\User;
 use App\Skin;
-use Strorage;
+use Storage;
 use Auth;
 
 class ProfileController extends Controller
