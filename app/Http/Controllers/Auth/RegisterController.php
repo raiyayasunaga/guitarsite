@@ -54,7 +54,7 @@ class RegisterController extends Controller
         $request->flashOnly('email');
         $bridge_request = $request->all();
         // password マスキング
-        $bridge_request['password_mask'] = '****';
+        $bridge_request['password_mask'] = '********';
 
         return view('auth.register_check')->with($bridge_request);
     }

@@ -48,6 +48,7 @@ body {
                                 </div>
                                 <div class="col-4">
                                     @csrf
+                                    <input type="hidden" name="user_id" id="{{ $user->id }}">
                                     <input type="submit" class="btn btn-primary" value="検索">
                                 </div>
                         </div>

@@ -61,8 +61,6 @@ class GuitarController extends Controller
     public function home(Request $request) {
         $cond_title = $request->cond_title;
         $category = $request->category;
-
-        // プロフィール用のコード
         $user = Auth::user();
 
         if ($cond_title != '') {
@@ -85,7 +83,7 @@ class GuitarController extends Controller
             $posts = Music::all();
         }
         
-        return view('admin.home', compact('posts' , 'cond_title', 'category', 'user'));
+        return view('admin.home', ['posts' => $posts, 'cond_title' => $cond_title, 'category' => $category, 'user' => $user]);
     }
 
     public function mypage(Request $request) {
@@ -95,6 +93,7 @@ class GuitarController extends Controller
         if ($mypage_title != '') {
             // 検索されたら検索結果を取得する
             // リレーションの関係を使ってnewとhistoryを使ってやってみる
+            
             $music = Music::where('title', 'like', '%'.$mypage_title.'%')
                 ->orderBy('id', 'asc')
                 ->get();

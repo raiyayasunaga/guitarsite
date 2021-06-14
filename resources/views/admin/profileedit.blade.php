@@ -10,6 +10,15 @@
   <div class="container">
    <h2 class="my-3">プロフィール編集</h2>
     <form method="post" action="{{ action('Admin\ProfileController@update'), route('user.image') }}" enctype="multipart/form-data">
+      @if (count($errors) > 0)
+          <div class="errormessagebox">
+                <ul>
+                    @foreach ($errors->all() as $error) 
+                          <li>{{  $error }}</li>
+                    @endforeach
+                </ul>
+            </div>
+      @endif
       <div class="row">
           <div class="col-md-3">
             <div>現在のプロフィール画像</div>
@@ -110,16 +119,18 @@
             <span>※若干スタイルが崩れますが保存後は正常に機能します。</span>
           </div>
         </div>
-        <div class="row">
+        <div class="row my-3">
           <div class="col-md-10">
-            <input type="text" value="{{ $user->name }}" name="name">
+          <div>名前</div>
+            <input type="text" value="{{ ($user->name) }}" name="name">
           </div>
         </div>
+        </div>
 
-        <div class="row my-5">
+        <div class="row">
             @csrf
             <button type="submit" class="btn btn-primary">変更する</button>
-          </div>
+        </div>
     </form>
     </div>
 

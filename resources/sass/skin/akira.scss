@@ -107,7 +107,7 @@ h1 a{
 
 // ナビゲーション携帯レスポンシブ
 .navbar-nav {
-  padding-left: 420px;
+  padding-left: 380px;
   @include iphone-12-max() {
     padding: 0px;
   }

@@ -14,7 +14,7 @@
                         </div>
                     @endif
 
-                    You are logged in!
+                    <a href="admin/mypage">ログイン成功！　マイページはこちら</a>
                 </div>
             </div>
         </div>

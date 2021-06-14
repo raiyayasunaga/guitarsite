@@ -16,7 +16,6 @@
             <h3 class="col-4">カポ：{{ ($music->capo) }}</h3>
             <h3 class="col-4">カテゴリー：{{ ($music->category) }}</h3>
          </div>
-         <!-- 動画リンク: -->
 
         <div id="app">
           <roll-component></roll-component>
@@ -25,6 +24,9 @@
         <h3>曲の歌詞</h3>
 
         <div id="lyrics"> 
+            <div class="row">
+                    <button class="col-md-12 btn btn-primary" @click="check()">動画リンク</button>
+            </div>
         </div>
         <h2 class="my-5">終わり</h2>
 
@@ -34,7 +36,14 @@
 @section('js')
 <script>
 // ここでlyricsでもらった値を表現
- 
+ function check() {
+    if(window.confirm('動画リンクに移動します。')){
+        return window.location.href = '{{ ($music->video_link) }}'; 
+    }
+    else {
+        return flase;
+    }
+ }
 
 document.addEventListener("DOMContentLoaded", function() {
   let string = '{!! str_replace("\n", "<br />", str_replace("\r", "", $music->lyrics)) !!}';

@@ -54,12 +54,12 @@
                 </div>
         </div>
         <!-- 動画リンク -->
-        <!-- <div class="form-group row">
+        <div class="form-group row">
             <label class="col-md-2" for="title">動画リンク</label>
             <div class="col-10">
-                <input type="text" class="form-control" name="link" value="{{ old('link') }}">
+                <input type="text" class="form-control" name="video_link" value="{{ old('video_link') }}">
             </div>
-        </div> -->
+        </div>
             <div class="row">
                 <select id="selectCords" onchange="keyChange();" class="form-control">
                     <option value="1">C = Am</option>

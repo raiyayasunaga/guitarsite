@@ -19,6 +19,12 @@ class ProfileController extends Controller
     
     public function update(Request $request) {
         
+      $validate_rule = [
+        'name' => 'required|max:5',
+     ];
+     
+     $this->validate($request, $validate_rule);
+
         $user = Auth::user();
         $form = $request->all();
 
