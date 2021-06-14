@@ -15,6 +15,10 @@ textarea {
   font-family: "\660E\671D\4F53";
 }
 
+.navbar-nav {
+  padding-left: 380px;
+}
+
 @media screen and (max-width: 854px) {
   .navbar-nav {
     padding: 0px;

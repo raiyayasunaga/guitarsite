@@ -19,6 +19,7 @@
   display: flex;
   text-decoration: none;
   color: black;
+  margin-top: 30px;
 }
 
 .button-link:hover {
@@ -252,6 +253,14 @@ ul li a:hover {
   .navbar-nav {
     padding: 0px;
   }
+}
+
+a {
+  color: black;
+}
+
+a:hover {
+  text-decoration: none;
 }
 
 #preview {

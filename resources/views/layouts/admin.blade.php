@@ -78,12 +78,12 @@
                     <div class="collapse navbar-collapse" id="navbarSupportedContent" >
                         
                         @guest
-                            <ul class="navbar-nav mr-auto">
+                            <ul class="navbar-nav mr-auto" style="padding-left: 0px;">
                                 <!-- ログインリンク -->
                                 <li><a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a></li>
                             </ul>
                                 <!-- 右サイドバー -->
-                            <ul class="navbar-nav ml-auto">
+                            <ul class="navbar-nav ml-auto" style="padding-left: 0px;">
                                     @if (Route::has('register'))
                                     <li class="nav-item">
                                         <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>

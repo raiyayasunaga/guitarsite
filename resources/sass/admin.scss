@@ -19,6 +19,7 @@ textarea {
 
 // ナビゲーション携帯レスポンシブ
 .navbar-nav {
+  padding-left: 380px;
   @include iphone-12-max() {
     padding: 0px;
   }
