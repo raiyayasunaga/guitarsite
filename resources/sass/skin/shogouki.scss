@@ -160,7 +160,7 @@ h1 a{
      font-weight: 900;
     li {
      display: inline-block;
-     padding: 26px 10px 20px 10px;
+     padding: 20px 10px;
      list-style: none;
 
        a {
@@ -182,6 +182,14 @@ h1 a{
   color: $sinnzi-color-green !important;
 }
 
+// ナビゲーション携帯レスポンシブ
+.navbar-nav {
+  padding-left: 420px;
+  @include iphone-12-max() {
+    padding: 0px;
+  }
+}
+
 
 // ここからはskin共通！
 
@@ -199,13 +207,6 @@ h1 a{
   }
 }
 
-// ナビゲーション携帯レスポンシブ
-.navbar-nav {
-  padding-left: 420px;
-  @include iphone-12-max() {
-    padding: 0px;
-  }
-}
 // ストップボタン
 .stopbutton {
   position: fixed;
@@ -218,6 +219,10 @@ h1 a{
     padding: 20px 30px;
     left: 670px;
   }
+}
+
+.navbar-toggler {
+  background-color: $sinnzi-color-green;
 }
 
 // ギターコードの編集
@@ -286,7 +291,6 @@ img {
 
 .cord-font {
   @include cord-font;
-
   &:hover {
     color:brown;
     text-decoration: none;

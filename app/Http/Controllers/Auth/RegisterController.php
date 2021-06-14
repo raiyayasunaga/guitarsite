@@ -137,8 +137,9 @@ class RegisterController extends Controller
       ]);
       //データ保持用
       $email_token = $request->email_token;
-  
       $user = new User();
+    //   ここで追記email_token
+      $user->email_token = $request->email_token;
       $user->name = $request->name;
       $user->name_pronunciation = $request->name_pronunciation;
       $user->birth_year = $request->birth_year;

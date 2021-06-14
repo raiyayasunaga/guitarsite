@@ -131,14 +131,14 @@ h1 a{
   background: #c8ffad;
 }
 
-.cordmenu {
-  display: flex;
-  justify-content: center;
-}
-.cord-1 {
- @include cord;
- background-color: red;
-}
+  .cordmenu {
+    display: flex;
+    justify-content: center;
+  }
+  .cord-1 {
+  @include cord;
+  background-color: red;
+  }
 .cord-2 {
   @include cord;
   background-color: blue;

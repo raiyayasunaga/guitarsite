@@ -75,9 +75,8 @@
                         <span class="navbar-toggler-icon"></span>
                     </button>
 
-                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                        <!-- Left Side Of Navbar -->
-                        <!-- Authentication Links -->
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent" >
+                        
                         @guest
                             <ul class="navbar-nav mr-auto">
                                 <!-- ログインリンク -->
@@ -179,7 +178,7 @@
                         document.getElementById("hedarSkin").onclick = function() {
                             my_audio.currentTime = 0;  //再生開始位置を先頭に戻す
                             my_audio.play();  //サウンドを再生
-                            }
+                        }
                         document.getElementById("mypage").onclick = function() {
                             mypageSound.currentTime = 0;
                             mypageSound.play();
@@ -231,7 +230,7 @@
                     @case(7)
                     // ジブリスキン
                     window.onload = function() {
-                        let my_audio = new Audio("/Audio/tetuoVoice1.mp3");
+                        let my_audio = new Audio("/Audio/inugamiVoice1.mp3");
                     document.getElementById("hedarSkin").onclick = function() {
                         my_audio.currentTime = 0;
                         my_audio.play();

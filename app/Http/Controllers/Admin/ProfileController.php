@@ -28,37 +28,19 @@ class ProfileController extends Controller
         if (isset($form['image'])) {
             $path = Storage::disk('s3')->putFile('/',$form['image'],'public');
             $user->profile_image = Storage::disk('s3')->url($path);
+          } elseif ($request->file('image')) {
+            $path = Storage::disk('s3')->putFile('/',$form['image'],'public');
+            $form['profile_image'] = Storage::disk('s3')->url($path);
           } else {
-            $user->profile_image = null;
-          }
-        
+            $form['profile_image'] = $user->profile_image;
+        }
+
         unset($form['_token']);
         unset($form['image']);
         
         $user->fill($form)->save();
 
         return redirect('admin/mypage');
-    }
-
-    // skinsテーブル
-    public function skin(Request $request) 
-    {    
-        // $this->validate($request, Skin::$rules);
-        $user = Auth::user();
-
-        $user->skin_id = $request->skin_id;
-        $user->save();
-
-        return redirect('admin/mypage');
-    }
-    
-    public function name(Request $request)
-    {
-        $user = Auth::user();
-        $user->name = $request->name;
-        $user->save();
-
-        return redirect('admin/profileedit');
     }
 }
 

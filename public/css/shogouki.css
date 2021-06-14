@@ -221,7 +221,7 @@ ul {
 
 ul li {
   display: inline-block;
-  padding: 26px 10px 20px 10px;
+  padding: 20px 10px;
   list-style: none;
 }
 
@@ -242,6 +242,16 @@ ul li a:hover {
 
 .nav-link {
   color: #23d024 !important;
+}
+
+.navbar-nav {
+  padding-left: 420px;
+}
+
+@media screen and (max-width: 854px) {
+  .navbar-nav {
+    padding: 0px;
+  }
 }
 
 #preview {
@@ -266,16 +276,6 @@ ul li a:hover {
   margin-right: -30px;
 }
 
-.navbar-nav {
-  padding-left: 420px;
-}
-
-@media screen and (max-width: 854px) {
-  .navbar-nav {
-    padding: 0px;
-  }
-}
-
 .stopbutton {
   position: fixed;
   padding: 20px 30px 20px 30px;
@@ -288,6 +288,10 @@ ul li a:hover {
     padding: 20px 30px;
     left: 670px;
   }
+}
+
+.navbar-toggler {
+  background-color: #23d024;
 }
 
 #cordbackground {

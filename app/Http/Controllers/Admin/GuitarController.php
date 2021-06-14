@@ -85,9 +85,7 @@ class GuitarController extends Controller
             $posts = Music::all();
         }
         
-
-
-        return view('admin.home', ['posts' => $posts, 'cond_title' => $cond_title, 'category' => $category, 'user' => $user]);
+        return view('admin.home', compact('posts' , 'cond_title', 'category', 'user'));
     }
 
     public function mypage(Request $request) {
@@ -96,6 +94,7 @@ class GuitarController extends Controller
 
         if ($mypage_title != '') {
             // 検索されたら検索結果を取得する
+            // リレーションの関係を使ってnewとhistoryを使ってやってみる
             $music = Music::where('title', 'like', '%'.$mypage_title.'%')
                 ->orderBy('id', 'asc')
                 ->get();
@@ -105,13 +104,12 @@ class GuitarController extends Controller
             ->get(); 
         }
 
-
         return view('admin.mypage', ['posts' => $music, 'mypage_title' => $mypage_title, 'user' => $user]);
     }
 
     public function playing(Request $request) {
         $music = Music::find($request->id);
-        // 名前から予測していく
+
         return view('admin.playing', ['music' => $music]);
     }
 

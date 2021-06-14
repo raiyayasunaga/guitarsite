@@ -71,3 +71,12 @@ $NERV-black: #1B1311;
     }
   }
 }
+@mixin cord-font {
+  font-size: 23px;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-weight: blod;
+  background-color: #ececec;
+  border-radius: 5px;
+  padding: 5px;
+  color:black;
+}
