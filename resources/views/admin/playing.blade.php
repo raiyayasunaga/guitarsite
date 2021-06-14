@@ -16,6 +16,7 @@
             <h3 class="col-4">カポ：{{ ($music->capo) }}</h3>
             <h3 class="col-4">カテゴリー：{{ ($music->category) }}</h3>
          </div>
+         <!-- 動画リンク: -->
 
         <div id="app">
           <roll-component></roll-component>

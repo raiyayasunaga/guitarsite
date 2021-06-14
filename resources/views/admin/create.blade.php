@@ -53,6 +53,13 @@
                     </select>
                 </div>
         </div>
+        <!-- 動画リンク -->
+        <!-- <div class="form-group row">
+            <label class="col-md-2" for="title">動画リンク</label>
+            <div class="col-10">
+                <input type="text" class="form-control" name="link" value="{{ old('link') }}">
+            </div>
+        </div> -->
             <div class="row">
                 <select id="selectCords" onchange="keyChange();" class="form-control">
                     <option value="1">C = Am</option>
