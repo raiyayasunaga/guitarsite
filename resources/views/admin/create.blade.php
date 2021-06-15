@@ -283,7 +283,7 @@
                 </div>
 
                 <div class="col-12">
-                <textarea placeholder="歌詞、コードを入力" name="lyrics" class="form-control" onkeyup="origindata()" id="origin-data"  rows="5" value="{{ old('lyrics') }}" style="overflow: hidden; height: 134px;"></textarea>
+                <textarea placeholder="歌詞、コードを入力" name="lyrics" class="form-control" onkeyup="origindata()" id="origin-data" rows="5" value="{{ old('lyrics') }}" style="height: 134px;"></textarea>
                 </div>
                 
                 <div class="my-3">プレビュー</div>

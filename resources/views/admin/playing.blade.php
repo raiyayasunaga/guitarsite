@@ -25,7 +25,9 @@
 
         <div id="lyrics"> 
             <div class="row">
-                    <button class="col-md-12 btn btn-primary" @click="check()">動画リンク</button>
+                @if ($music->video_link)
+                    <button class="col-md-12 btn btn-primary" @click="check()">動画参考リンク</button>
+                @endif
             </div>
         </div>
         <h2 class="my-5">終わり</h2>

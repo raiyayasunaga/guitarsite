@@ -87,8 +87,10 @@ h1 a{
 @include iphone-12-max() {
   .stopbutton {
     position: fixed;
-    padding: 20px 30px;
+    padding: 5px 15px;
     left: 670px;
+    top: 200px;
+
   }
 }
 

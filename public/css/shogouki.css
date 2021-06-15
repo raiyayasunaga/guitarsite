@@ -15,6 +15,10 @@
   background-image: url("/img/shogouki_angry.png");
 }
 
+textarea {
+  overflow: auto;
+}
+
 .button-link {
   display: flex;
   text-decoration: none;
@@ -294,8 +298,9 @@ a:hover {
 @media screen and (max-width: 854px) {
   .stopbutton {
     position: fixed;
-    padding: 20px 30px;
+    padding: 5px 15px;
     left: 670px;
+    top: 200px;
   }
 }
 

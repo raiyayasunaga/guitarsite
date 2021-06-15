@@ -431,7 +431,7 @@
 
 
                         <div class="col-12">
-                        <textarea placeholder="歌詞、コードを入力" name="lyrics" class="form-control" onkeyup="origindata()" id="origin-data" rows="5" style="overflow: hidden; height: 134px;">{{ $music_form->lyrics }}</textarea>
+                        <textarea placeholder="歌詞、コードを入力" name="lyrics" class="form-control" onkeyup="origindata()" id="origin-data" rows="5" style="height: 134px;">{{ $music_form->lyrics }}</textarea>
                         </div>
                         
                         <div class="my-3">プレビュー</div>

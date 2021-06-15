@@ -148,7 +148,7 @@
                     @case(1)
                     // ギターボイス
                     window.onload = function() {
-                        let my_audio = new Audio("/Audio/test.mp3");
+                        let my_audio = new Audio("/Audio/guitarVoice1.mp3");
                     document.getElementById("hedarSkin").onclick = function() {
                         my_audio.currentTime = 0;
                         my_audio.play();
@@ -240,7 +240,7 @@
                     
                     @default
                     window.onload = function() {
-                        let my_audio = new Audio("/Audio/test.mp3");
+                        let my_audio = new Audio("/Audio/guitarVoice1.mp3");
                     document.getElementById("hedarSkin").onclick = function() {
                         my_audio.currentTime = 0;
                         my_audio.play();

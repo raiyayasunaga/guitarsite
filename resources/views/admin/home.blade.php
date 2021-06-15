@@ -15,11 +15,6 @@
     <li></li>
     <li></li>
 </ul>
-<div class="hamburger">
-  <span></span>
-  <span></span>
-  <span></span>
-</div>
 <div id="bgskin-home">
     <div class="container">
         <div class="row py-3">
@@ -47,7 +42,7 @@
                                 <option value="アニソン">アニソン</option>
                                 <option value="ジブリ">ジブリ</option>
                                 <option value="なし">なし</option>
-                                <option value="カテゴリー" selected>カテゴリー</option>
+                                <option value="" selected>カテゴリー</option>
                             </select>
                          </div>
                         <div class="col-4">

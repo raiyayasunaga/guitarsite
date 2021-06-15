@@ -59,12 +59,12 @@ class GuitarController extends Controller
     }
 
     public function home(Request $request) {
+
         $cond_title = $request->cond_title;
         $category = $request->category;
         $user = Auth::user();
 
         if ($cond_title != '') {
-            // 検索されたら検索結果を取得する
             $posts = Music::where('title', 'like', '%'.$cond_title.'%')
                 ->orderBy('id', 'asc')
                 ->get();
@@ -74,11 +74,13 @@ class GuitarController extends Controller
         }
 
         if ($category != '') {
-            // 検索されたら検索結果を取得する
+
             $posts = Music::where('category', 'like', '%'.$category.'%')
                 ->orderBy('id', 'asc')
                 ->get();
-        } else {
+        } else if ($category == '') {
+            
+        }else {
             // それ以外はすべてのニュースを取得する
             $posts = Music::all();
         }
@@ -93,10 +95,11 @@ class GuitarController extends Controller
         if ($mypage_title != '') {
             // 検索されたら検索結果を取得する
             // リレーションの関係を使ってnewとhistoryを使ってやってみる
-            
-            $music = Music::where('title', 'like', '%'.$mypage_title.'%')
-                ->orderBy('id', 'asc')
-                ->get();
+            $music = Music::where('user_id', Auth::id()) 
+            ->where('title', 'like', '%'.$mypage_title.'%')
+            ->orderBy('created_at', 'desc') 
+            ->get(); 
+            // $music = $user->music->where('title', 'like', '%'.$mypage_title.'%');
         } else {
             $music = Music::where('user_id', Auth::id()) 
             ->orderBy('created_at', 'desc') 
