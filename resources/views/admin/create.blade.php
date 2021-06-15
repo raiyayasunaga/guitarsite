@@ -282,13 +282,17 @@
                     </div>
                 </div>
 
-                <div class="col-12">
-                <textarea placeholder="歌詞、コードを入力" name="lyrics" class="form-control" onkeyup="origindata()" id="origin-data" rows="5" value="{{ old('lyrics') }}" style="height: 134px;"></textarea>
+                <div class="creata-text">
+                <textarea placeholder="歌詞、コードを入力" name="lyrics" class="form-control" onkeyup="origindata()" id="origin-data" rows="5" value="{{ old('lyrics') }}" style="height: 134px; width: 555px;"></textarea>
                 </div>
                 
-                <div class="my-3">プレビュー</div>
-                    <div class="col-12 my-5" id="preview">
-                    </div>
+                <div class="ml-3 desc-text">
+                    <h4>コードの書き方</h4>
+                    <p>テキストの端まで行ったら、必ず改行してください</p>
+                    <p>※これはメインで視聴するのはスマホ画面ですのでレイアウトを合わせるためです。</p>
+                </div>
+                    <p class="col-12 my-5" id="preview">
+                    </p>
                 </div> 
                 @csrf
                 <input type="submit" class="btn btn-primary mb-5" value="追加する">

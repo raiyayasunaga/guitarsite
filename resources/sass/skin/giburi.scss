@@ -250,8 +250,20 @@ h1 a{
   .stopbutton {
     position: fixed;
     padding: 5px 15px;
-    left: 670px;
-    top: 200px;
+    left: 660px;
+    top: 230px;
+  }
+  .movebutton {
+    position: fixed;
+    padding: 5px 15px;
+    left: 660px;
+    top: 150px;
+  }
+  .moveslowbutton {
+    position: fixed;
+    padding: 5px 15px;
+    left: 660px;
+    top: 230px;
   }
 }
 

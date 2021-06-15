@@ -37574,7 +37574,7 @@ var render = function() {
         staticClass: "stopbutton btn btn-outline-primary",
         on: { click: _vm.Stop }
       },
-      [_vm._v("ストップ")]
+      [_vm._v("止める")]
     ),
     _vm._v(" "),
     _c(
