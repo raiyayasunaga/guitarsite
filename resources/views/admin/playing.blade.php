@@ -23,7 +23,7 @@
         <div>
         <h3>曲の歌詞</h3>
 
-        <div id="lyrics"> 
+        <div id="lyrics" class="mt-5"> 
             <div class="row">
                 @if ($music->video_link)
                     <button class="col-md-12 btn btn-primary" @click="check()">動画参考リンク</button>
@@ -40,7 +40,7 @@
 // ここでlyricsでもらった値を表現
  function check() {
     if(window.confirm('動画リンクに移動します。')){
-        return window.location.href = '{{ ($music->video_link) }}'; 
+        return window.open('{{ ($music->video_link) }}', '_black');
     }
     else {
         return flase;

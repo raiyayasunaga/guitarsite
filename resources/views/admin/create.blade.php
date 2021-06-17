@@ -42,7 +42,7 @@
                 <div class="col-10">
                     <select class="form-control mb-3" name = "capo" value="{{ old('capo') }}">
                         <option value="半音"  @if(old('capo')=='半音') selected  @endif>半音</option>
-                        <option value="+-0" selected @if(old('capo')=='±0') selected  @endif>±0</option>
+                        <option value="±0" selected @if(old('capo')=='±0') selected  @endif>±0</option>
                         <option value="+1" @if(old('capo')=='+1') selected  @endif>+1</option>
                         <option value="+2" @if(old('capo')=='+2') selected  @endif>+2</option>
                         <option value="+3" @if(old('capo')=='+3') selected  @endif>+3</option>

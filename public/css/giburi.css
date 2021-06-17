@@ -287,7 +287,8 @@ ul li a:hover {
 
 #preview img {
   width: 70px;
-  margin-bottom: 90px;
+  margin-bottom: 55px;
+  margin-top: -25px;
   margin-right: -30px;
 }
 
@@ -298,7 +299,8 @@ ul li a:hover {
 
 #lyrics img {
   width: 70px;
-  margin-bottom: 90px;
+  margin-bottom: 55px;
+  margin-top: -25px;
   margin-right: -30px;
 }
 

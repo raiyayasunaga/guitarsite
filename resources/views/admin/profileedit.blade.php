@@ -36,7 +36,7 @@
       <!-- formタグはややこしくなるためあえて分けて考えている -->
         <div class="row my-5">
           <div class="col-6">
-            <div><h2>カラースキン編集</h2></div>
+            <div><h5>カラースキン編集</h5></div>
                 <select class="form-control" name="skin_id" id="skin">
                   @if($user->skin_id == "1")
                     <option selected value="1">選択して下さい</option>
@@ -106,7 +106,7 @@
                 </select>
           </div>
           <div class="col-6">
-            <div><h2>カラースキンプレビュー</h2>
+            <div><h5>カラースキンプレビュー</h5>
             <select class="form-control" onchange="changeCss('guitar', value)" id="skin">
               <option value="{{ asset('/css/guitar.css') }}">選択して下さい</option>
               <option value="{{ asset('/css/ayanami.css') }}">綾波＆アスカ＆マリスキン</option>

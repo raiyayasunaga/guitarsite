@@ -206,8 +206,14 @@
                             </select>
                         </div>
                 </div>
+                <div class="form-group row">
+                        <label class="col-md-2" for="title">動画リンク</label>
+                        <div class="col-10">
+                            <input type="text" class="form-control" name="video_link" value="{{ $music_form->video_link }}">
+                        </div>
+                    </div>
                     
-                    <div class="row">
+                    <div class="form-group row">
                         <select id="selectCords" onchange="keyChange();" class="form-control">
 					      <option value="1">C = Am</option>
 					      <option value="2">C# = A#m</option>
@@ -430,14 +436,17 @@
                         </div>
 
 
-                        <div class="col-12">
-                        <textarea placeholder="歌詞、コードを入力" name="lyrics" class="form-control" onkeyup="origindata()" id="origin-data" rows="5" style="height: 134px;">{{ $music_form->lyrics }}</textarea>
-                        </div>
-                        
-                        <div class="my-3">プレビュー</div>
-                        
-                            <div class="col-12 my-5" id="preview">
+                        <div class="creata-text">
+                            <textarea placeholder="歌詞、コードを入力" name="lyrics" class="form-control" onkeyup="origindata()" id="origin-data" rows="5" value="{{ old('lyrics') }}" style="height: 134px; width: 555px;">{{ $music_form->lyrics }}</textarea>
                             </div>
+                            
+                            <div class="ml-3 desc-text">
+                                <h4>コードの書き方</h4>
+                                <p>テキストの端まで行ったら、必ず改行してください</p>
+                                <p>※これはメインで視聴するのはスマホ画面ですのでレイアウトを合わせるためです。</p>
+                            </div>
+                                <p class="col-12 my-5" id="preview">
+                                </p>
                         </div> 
                         @csrf
                         <input type="hidden" value="{{ $music_form->id }}" name="id">
