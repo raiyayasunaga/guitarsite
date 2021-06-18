@@ -693,7 +693,7 @@
             return '<img src="/img/Em6.png">';
             break;
         case '[Em7]':
-            return '<img src="/img/Em7.png">';
+            return '<img src="/img/E_m7.png">';
             break;
         case '[Em7-5]':
             return '<img src="/img/Emb5.png">';
