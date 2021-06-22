@@ -23,7 +23,6 @@
                 <div class="row">
                     <label class="col-md-2" for="category" >カテゴリー</label>
                     <div class="col-md-10">
-                    <!-- データベースで取得した 値に合わせるオンラインサポートする-->
                         <select class="form-control mb-3" name="category">
                             @switch ($music_form->category)
                                 @case('洋楽')
@@ -982,9 +981,11 @@ function origindata() {
             break;
 
         case '[G#]':
+        case '[Ab]':
             return '<img src="/img/Ab.png">';
             break;
         case '[G#6]':
+        case '[Ab6]':
             return '<img src="/img/Ab6.png">';
             break;
         case '[G#7]':
@@ -1151,43 +1152,56 @@ function origindata() {
             break;
 
 
-        case '[E♭]':
+        
+        case '[E♭]': 
+        case '[Eb]':
             return '<img src="/img/Eb.png">';
             break;
+
         case '[A♭]':
+        case '[Ab]':
             return '<img src="/img/Ab.png">';
             break;
         case '[B♭]':
+        case '[Bb]':
             return '<img src="/img/Bb.png">';
             break;
         case '[E♭maj7]':
+        case '[Ebmaj7]':
             return '<img src="/img/EbM_7.png">';
             break;
         case '[A♭maj7]':
+        case '[Abmaj7]':
             return '<img src="/img/AbM_7.png">';
             break;
         case '[B♭maj7]':
+        case '[Bbmaj7]':
             return '<img src="/img/BbM_7.png">';
             break;
         case '[D♭]':
+        case '[Db]':
             return '<img src="/img/Db.png">';
             break;
         case '[D♭maj7]':
+        case '[Dbmaj7]':
             return '<img src="/img/Db.png">';
             break;
         case '[B♭m7]':
+        case '[Bbm7]':
             return '<img src="/img/Bb_m7.png">';
             break;
         case '[B♭m]':
+        case '[Bbm]':
             return '<img src="/img/Bbm.png">';
             break;
         case '[B♭7]':
+        case '[Bb7]':
             return '<img src="/img/Bb7.png">';
             break;
         case '[E♭7]':
+        case '[Eb7]':
             return '<img src="/img/Eb7.png">';
             break;
-
         default:
             return match;
     }

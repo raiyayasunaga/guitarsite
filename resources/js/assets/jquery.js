@@ -17,3 +17,17 @@ $(function() {
     return false;
   });
 });
+
+$(function() {
+  $('.hamburger').click(function() {
+      $(this).toggleClass('active');
+
+      if ($(this).hasClass('active')) {
+          $('.menu').addClass('active');
+          $('.menu').removeClass('normal');
+      } else {
+          $('.menu').addClass('normal');
+          $('.menu').removeClass('active');
+      }
+  });
+});

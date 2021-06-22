@@ -97,6 +97,138 @@ ul li a:hover {
   color: #23d024 !important;
 }
 
+.navbar-nav {
+  padding-left: 380px;
+}
+
+@media screen and (max-width: 854px) {
+  .navbar-nav {
+    display: none;
+  }
+}
+
+.hamburger {
+  display: block;
+  position: fixed;
+  z-index: 3;
+  right: 13px;
+  top: 12px;
+  width: 42px;
+  height: 42px;
+  cursor: pointer;
+  text-align: center;
+}
+
+@media screen and (min-width: 854px) {
+  .hamburger {
+    display: none;
+  }
+}
+
+.hamburger span {
+  display: block;
+  position: absolute;
+  width: 30px;
+  height: 2px;
+  left: 6px;
+  background: #555;
+  transition: 0.3s ease-in-out;
+}
+
+.hamburger span:nth-child(1) {
+  background-color: #23d024;
+  top: 10px;
+}
+
+.hamburger span:nth-child(2) {
+  top: 20px;
+  background-color: #23d024;
+}
+
+.hamburger span:nth-child(3) {
+  top: 30px;
+  background-color: #23d024;
+}
+
+.hamburger .active {
+  display: block;
+}
+
+.hamburger .active span:nth-child(1) {
+  top: 16px;
+  left: 6px;
+  background: #fff;
+  transform: rotate(-45deg);
+}
+
+.hamburger .active span:nth-child(2),
+.hamburger .active span:nth-child(3) {
+  top: 16px;
+  background: #fff;
+  transform: rotate(45deg);
+}
+
+nav.menu {
+  position: fixed;
+  z-index: 2;
+  top: 0;
+  left: 0;
+  color: #fff;
+  background: rgba(0, 0, 0, 0.7);
+  text-align: center;
+  width: 100%;
+  opacity: 0;
+  transition: opacity 0.6s ease, visibility 0.6s ease;
+}
+
+@media screen and (min-width: 854px) {
+  nav.menu {
+    display: none;
+  }
+}
+
+nav.menu ul {
+  margin: 0 auto;
+  padding: 0;
+  width: 100%;
+}
+
+nav.menu ul li {
+  list-style-type: none;
+  margin-bottom: 30px;
+  padding: 0;
+  width: 100%;
+  transition: 0.4s all;
+}
+
+nav.menu ul li:last-child {
+  padding-bottom: 0;
+}
+
+nav.menu ul li:hover {
+  opacity: 0.5;
+}
+
+nav.menu ul li a {
+  color: #fff;
+  padding: 1em 0;
+  text-decoration: none;
+}
+
+nav.menu.normal ul {
+  display: none;
+}
+
+/* このクラスを、jQueryで付与・削除する */
+
+nav.menu.active {
+  opacity: 100;
+}
+
+nav.menu.active ul {
+  display: block;
+}
+
 #preview {
   color: #db1024;
   font-weight: bold;

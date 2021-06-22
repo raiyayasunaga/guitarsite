@@ -17,9 +17,6 @@ use Auth;
 
 class GuitarController extends Controller
 {
-    public function add() {
-        return view('admin.create');
-    }
 
     public function close(Request $request) {
         $music = Music::find($request->id);

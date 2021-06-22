@@ -289,6 +289,7 @@
                 <div class="ml-3 desc-text">
                     <h4>コードの書き方</h4>
                     <p>テキストの端まで行ったら、必ず改行してください</p>
+                    <p>♭や＃の書き方に注意！！</p>
                     <p>※これはメインで視聴するのはスマホ画面ですのでレイアウトを合わせるためです。</p>
                 </div>
                     <p class="col-12 my-5" id="preview">
@@ -1000,41 +1001,53 @@
             return '<img src="/img/Bsus4.png">';
             break;
 
-
-        case '[E♭]':
+        case '[E♭]': 
+        case '[Eb]':
             return '<img src="/img/Eb.png">';
             break;
+
         case '[A♭]':
+        case '[Ab]':
             return '<img src="/img/Ab.png">';
             break;
         case '[B♭]':
+        case '[Bb]':
             return '<img src="/img/Bb.png">';
             break;
         case '[E♭maj7]':
+        case '[Ebmaj7]':
             return '<img src="/img/EbM_7.png">';
             break;
         case '[A♭maj7]':
+        case '[Abmaj7]':
             return '<img src="/img/AbM_7.png">';
             break;
         case '[B♭maj7]':
+        case '[Bbmaj7]':
             return '<img src="/img/BbM_7.png">';
             break;
         case '[D♭]':
+        case '[Db]':
             return '<img src="/img/Db.png">';
             break;
         case '[D♭maj7]':
+        case '[Dbmaj7]':
             return '<img src="/img/Db.png">';
             break;
         case '[B♭m7]':
+        case '[Bbm7]':
             return '<img src="/img/Bb_m7.png">';
             break;
         case '[B♭m]':
+        case '[Bbm]':
             return '<img src="/img/Bbm.png">';
             break;
         case '[B♭7]':
+        case '[Bb7]':
             return '<img src="/img/Bb7.png">';
             break;
         case '[E♭7]':
+        case '[Eb7]':
             return '<img src="/img/Eb7.png">';
             break;
 

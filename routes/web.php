@@ -1,5 +1,7 @@
 <?php
 
+use Illuminate\Http\Request;
+use App\Http\Middleware\CheckAge;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -11,7 +13,9 @@
 |
 */
 Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function() {
-    Route::get('create', 'Admin\GuitarController@add');
+    Route::get('create', function(Request $request) {
+        return view('admin.create');
+    });
     Route::get('home', 'Admin\GuitarController@home');
     // ルートの設定
     Route::post('create', 'Admin\GuitarController@create');
@@ -40,7 +44,9 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function() {
     Route::post('profileedit', 'Admin\ProfileController@update');
 });
 
-
+Route::get('admin/age', function(Request $request) {
+    return view('admin.age');
+})->middleware('age');
 
 // コードは誰でも見せられる
 Route::get('admin/cord', 'Admin\GuitarController@cord');

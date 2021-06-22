@@ -13,8 +13,185 @@
             </div>
           </div>
           <div class="row mb-5">
-            <h3 class="col-4">カポ：{{ ($music->capo) }}</h3>
-            <h3 class="col-4">カテゴリー：{{ ($music->category) }}</h3>
+                <div class="col-md-6">
+                    <select class="form-control mb-3" name = "capo">
+                        @switch ($music->capo)
+                            @case('+7')
+                                <option selected value="+7">+7</option>
+                                <option value="+6">+6</option>
+                                <option value="+5">+5</option>
+                                <option value="+4">+4</option>
+                                <option value="+3">+3</option>
+                                <option value="+2">+2</option>
+                                <option value="+1">+1</option>
+                                <option value="±0">±0</option>
+                                <option value="半音">半音</option>
+                            @break
+                            @case('+6')
+                                <option value="+7">+7</option>
+                                <option selected value="+6">+6</option>
+                                <option value="+5">+5</option>
+                                <option value="+4">+4</option>
+                                <option value="+3">+3</option>
+                                <option value="+2">+2</option>
+                                <option value="+1">+1</option>
+                                <option value="±0">±0</option>
+                                <option value="半音">半音</option>
+                            @break
+                            @case('+5')
+                                <option value="+7">+7</option>
+                                <option value="+6">+6</option>
+                                <option selected value="+5">+5</option>
+                                <option value="+4">+4</option>
+                                <option value="+3">+3</option>
+                                <option value="+2">+2</option>
+                                <option value="+1">+1</option>
+                                <option value="±0">±0</option>
+                                <option value="半音">半音</option>
+                            @break
+                            @case('+4')
+                                <option value="+7">+7</option>
+                                <option value="+6">+6</option>
+                                <option value="+5">+5</option>
+                                <option selected value="+4">+4</option>
+                                <option value="+3">+3</option>
+                                <option value="+2">+2</option>
+                                <option value="+1">+1</option>
+                                <option value="±0">±0</option>
+                                <option value="半音">半音</option>
+                            @break
+                            @case('+3')
+                                <option value="+7">+7</option>
+                                <option value="+6">+6</option>
+                                <option value="+5">+5</option>
+                                <option value="+4">+4</option>
+                                <option selected value="+3">+3</option>
+                                <option value="+2">+2</option>
+                                <option value="+1">+1</option>
+                                <option value="±0">±0</option>
+                                <option value="半音">半音</option>
+                            @break
+                            @case('+2')
+                                <option value="+7">+7</option>
+                                <option value="+6">+6</option>
+                                <option value="+5">+5</option>
+                                <option value="+4">+4</option>
+                                <option value="+3">+3</option>
+                                <option selected value="+2">+2</option>
+                                <option value="+1">+1</option>
+                                <option value="±0">±0</option>
+                                <option value="半音">半音</option>
+                            @break
+                            @case('+1')
+                                <option value="+7">+7</option>
+                                <option value="+6">+6</option>
+                                <option value="+5">+5</option>
+                                <option value="+4">+4</option>
+                                <option value="+3">+3</option>
+                                <option value="+2">+2</option>
+                                <option selected value="+1">+1</option>
+                                <option value="±0">±0</option>
+                                <option value="半音">半音</option>
+                            @break
+                            @case('±0')
+                                <option value="+7">+7</option>
+                                <option value="+6">+6</option>
+                                <option value="+5">+5</option>
+                                <option value="+4">+4</option>
+                                <option value="+3">+3</option>
+                                <option value="+2">+2</option>
+                                <option value="+1">+1</option>
+                                <option selected value="±0">±0</option>
+                                <option value="半音">半音</option>
+                            @break
+                            @case('半音')
+                                <option value="+7">+7</option>
+                                <option value="+6">+6</option>
+                                <option value="+5">+5</option>
+                                <option value="+4">+4</option>
+                                <option value="+3">+3</option>
+                                <option value="+2">+2</option>
+                                <option value="+1">+1</option>
+                                <option value="±0">±0</option>
+                                <option selected value="半音">半音</option>
+                            @break
+                            @default
+                                <option value="+7">+7</option>
+                                <option value="+6">+6</option>
+                                <option value="+5">+5</option>
+                                <option value="+4">+4</option>
+                                <option value="+3">+3</option>
+                                <option value="+2">+2</option>
+                                <option value="+1">+1</option>
+                                <option selsected value="±0">±0</option>
+                                <option value="半音">半音</option>
+                        @endswitch
+
+
+                    </select>
+                </div>
+                <div class="col-md-6">
+                    <select class="form-control mb-3" name="category">
+                         @switch ($music->category)
+                                @case('洋楽')
+                                    <option selected value="洋楽">洋楽</option>
+                                    <option value="Jpop">Jpop</option>
+                                    <option value="ロック">ロック</option>
+                                    <option value="アニソン">アニソン</option>
+                                    <option value="ジブリ">ジブリ</option>
+                                    <option value="なし">なし</option>
+                                @break
+                                @case('Jpop')
+                                    <option value="洋楽">洋楽</option>
+                                    <option selected value="Jpop">Jpop</option>
+                                    <option value="ロック">ロック</option>
+                                    <option value="アニソン">アニソン</option>
+                                    <option value="ジブリ">ジブリ</option>
+                                    <option value="なし">なし</option>
+                                @break
+                                @case('ロック')
+                                    <option value="洋楽">洋楽</option>
+                                    <option value="Jpop">Jpop</option>
+                                    <option selected value="ロック">ロック</option>
+                                    <option value="アニソン">アニソン</option>
+                                    <option value="ジブリ">ジブリ</option>
+                                    <option value="なし">なし</option>
+                                @break
+                                @case('アニソン')
+                                    <option value="洋楽">洋楽</option>
+                                    <option value="Jpop">Jpop</option>
+                                    <option value="ロック">ロック</option>
+                                    <option selected value="アニソン">アニソン</option>
+                                    <option value="ジブリ">ジブリ</option>
+                                    <option value="なし">なし</option>
+                                @break
+                                @case('ジブリ')
+                                    <option value="洋楽">洋楽</option>
+                                    <option value="Jpop">Jpop</option>
+                                    <option value="ロック">ロック</option>
+                                    <option value="アニソン">アニソン</option>
+                                    <option selected value="ジブリ">ジブリ</option>
+                                    <option value="なし">なし</option>
+                                @break
+                                @case('なし')
+                                    <option value="洋楽">洋楽</option>
+                                    <option value="Jpop">Jpop</option>
+                                    <option value="ロック">ロック</option>
+                                    <option value="アニソン">アニソン</option>
+                                    <option value="ジブリ">ジブリ</option>
+                                    <option selected value="なし">なし</option>
+                                @break
+                                @default
+                                    <option value="洋楽">洋楽</option>
+                                    <option value="Jpop">Jpop</option>
+                                    <option value="ロック">ロック</option>
+                                    <option value="アニソン">アニソン</option>
+                                    <option value="ジブリ">ジブリ</option>
+                                    <option selected value="なし">なし</option>
+                                @endswitch
+                               
+                    </select>
+                </div>
          </div>
 
         <div id="app">
@@ -30,7 +207,7 @@
                 @endif
             </div>
         </div>
-        <h2 class="my-5">終わり</h2>
+        <h3 class="my-5"><a href="home">終わりホームへ</a></h3>
 
     </div>
 @endsection
@@ -52,10 +229,6 @@ document.addEventListener("DOMContentLoaded", function() {
   let result = string.replace(/\[.*?]/g, cords);
   function cords(match){
     switch(match) {
-        case "\n":
-            return '<br>';
-            break;
-            
         case '[C]':
             return '<img src="/img/C.png">';
             break;
@@ -194,6 +367,7 @@ document.addEventListener("DOMContentLoaded", function() {
             return '<img src="/img/Eb7sus4.png">';
             break;
         case '[D#add9]':
+        case '[Ebadd9]':
             return '<img src="/img/Ebadd9.png">';
             break;
         case '[D#aug]':
@@ -560,43 +734,55 @@ document.addEventListener("DOMContentLoaded", function() {
             break;
 
 
-        case '[E♭]':
+        case '[E♭]': 
+        case '[Eb]':
             return '<img src="/img/Eb.png">';
             break;
+
         case '[A♭]':
+        case '[Ab]':
             return '<img src="/img/Ab.png">';
             break;
         case '[B♭]':
+        case '[Bb]':
             return '<img src="/img/Bb.png">';
             break;
         case '[E♭maj7]':
+        case '[Ebmaj7]':
             return '<img src="/img/EbM_7.png">';
             break;
         case '[A♭maj7]':
+        case '[Abmaj7]':
             return '<img src="/img/AbM_7.png">';
             break;
         case '[B♭maj7]':
+        case '[Bbmaj7]':
             return '<img src="/img/BbM_7.png">';
             break;
         case '[D♭]':
+        case '[Db]':
             return '<img src="/img/Db.png">';
             break;
         case '[D♭maj7]':
+        case '[Dbmaj7]':
             return '<img src="/img/Db.png">';
             break;
         case '[B♭m7]':
+        case '[Bbm7]':
             return '<img src="/img/Bb_m7.png">';
             break;
         case '[B♭m]':
+        case '[Bbm]':
             return '<img src="/img/Bbm.png">';
             break;
         case '[B♭7]':
+        case '[Bb7]':
             return '<img src="/img/Bb7.png">';
             break;
         case '[E♭7]':
+        case '[Eb7]':
             return '<img src="/img/Eb7.png">';
             break;
-
         default:
             return match;
     }

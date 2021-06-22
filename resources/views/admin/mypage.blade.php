@@ -35,6 +35,9 @@ body {
         <div class="row">
             <h2><a class="button-link" href = "{{ action('Admin\ProfileController@edit') }}"><img src="{{ $user->profile_image }}" style="width: 50px; height: 50px;">プロフィール編集</a></h2>
         </div>
+        <div class="row">
+            <!-- <a href="age?birth_year={{ Auth::user()->birth_year }}">18歳禁コーナー</a> -->
+        </div>
         <div class="row my-3">
             <div class="col-md-4">
             <a href="{{ action('Admin\GuitarController@create') }}" role="button" class="btn btn-primary">オリジナル曲を作る！！</a>
