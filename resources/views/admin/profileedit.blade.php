@@ -116,7 +116,6 @@
               <option value="{{ asset('/css/akira.css') }}">AKIRAスキン</option>
               <option value="{{ asset('/css/giburi.css') }}">ジブリスキン</option>
             </select>
-            <span>※若干スタイルが崩れますが保存後は正常に機能します。</span>
           </div>
         </div>
         <div class="row my-3">

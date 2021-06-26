@@ -77,7 +77,7 @@ body {
                                 @foreach($posts as $music)
                                     <tr>
                                         <!-- 取得して投稿の値によって表示を変える -->
-                                            <td class="titleStyle"><a href ="{{ route('admin.playing', ['id' => $music->id]) }}"> {{ str_limit($music->title, 100) }}</a></td>
+                                            <td style="font-size: 20px;"><a href ="{{ route('admin.playing', ['id' => $music->id]) }}"> {{ str_limit($music->title, 100) }}</a></td>
                                         <!-- 連想配列・データベースで値を引っ張ってくる -->
                                             <td>{{ ($music->category) }}</td>
                                             <td>{{ ($music->capo) }}</td>

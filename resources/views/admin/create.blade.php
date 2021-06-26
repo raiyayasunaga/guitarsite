@@ -25,8 +25,8 @@
             </div>
         </div>
         <div class="form-group row">
-            <label class="col-md-2" for="category" >カテゴリー</label>
-            <div class="col-10">
+            <label class="col-md-2" for="category">カテゴリー</label>
+            <div class="col-4">
                 <select class="form-control mb-3" name="category" value="{{ old('category') }}">
                         <option value="なし" selected  @if(old('category')=='なし') selected  @endif>なし</option>
                         <option value="洋楽" @if(old('category')=='洋楽') selected  @endif>洋楽</option>
@@ -36,10 +36,10 @@
                         <option value="ジブリ"  @if(old('category')=='ジブリ') selected  @endif>ジブリ</option>
                 </select>
             </div>
-        </div>
-        <div class="form-group row">
-            <label class="col-md-2" for="capo">設定するカポ数</label>
-                <div class="col-10">
+            <div class="col-md-1">
+            </div>
+            <label class="col-md-1" for="capo">カポ数</label>
+                <div class="col-4">
                     <select class="form-control mb-3" name = "capo" value="{{ old('capo') }}">
                         <option value="半音"  @if(old('capo')=='半音') selected  @endif>半音</option>
                         <option value="±0" selected @if(old('capo')=='±0') selected  @endif>±0</option>
@@ -60,7 +60,7 @@
                 <input type="text" class="form-control" name="video_link" value="{{ old('video_link') }}">
             </div>
         </div>
-            <div class="row">
+            <div class="row" style="margin-top: 70px;">
                 <select id="selectCords" onchange="keyChange();" class="form-control">
                     <option value="1">C = Am</option>
                     <option value="2">C# = A#m</option>
@@ -288,7 +288,7 @@
                 
                 <div class="ml-3 desc-text">
                     <h4>コードの書き方</h4>
-                    <p>テキストの端まで行ったら、必ず改行してください</p>
+                    <p>ボタンを押してコードを挿入！自分のオリジナルコード曲が作れるサイトです。</p>
                     <p>♭や＃の書き方に注意！！</p>
                     <p>※これはメインで視聴するのはスマホ画面ですのでレイアウトを合わせるためです。</p>
                 </div>

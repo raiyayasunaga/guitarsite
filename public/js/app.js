@@ -1968,33 +1968,51 @@ __webpack_require__.r(__webpack_exports__);
       if (value.target.value == "早い") {
         var speed = 1; //時間あたりに移動するpx量
 
-        var interval = 50; //移動する間隔
+        var interval = 80; //移動する間隔
 
         this.test = setInterval(function () {
           var scrollTop = document.body.scrollTop;
           var scroll = scrollTop + speed;
           window.scrollBy(0, scroll);
         }, interval);
-      } else if (value.target.value == "遅い") {
-        var _speed = 1; //時間あたりに移動するpx量
-
-        var _interval = 200; //移動する間隔
-
+      } else if (value.target.value == "とても早い") {
+        var _speed = 1;
+        var _interval = 40;
         this.test = setInterval(function () {
           var scrollTop = document.body.scrollTop;
           var scroll = scrollTop + _speed;
           window.scrollBy(0, scroll);
         }, _interval);
-      } else {
+      } else if (value.target.value == "遅い") {
         var _speed2 = 1; //時間あたりに移動するpx量
 
-        var _interval2 = 120; //移動する間隔
+        var _interval2 = 160; //移動する間隔
 
         this.test = setInterval(function () {
           var scrollTop = document.body.scrollTop;
           var scroll = scrollTop + _speed2;
           window.scrollBy(0, scroll);
         }, _interval2);
+      } else if (value.target.value == "とても遅い") {
+        var _speed3 = 1; //時間あたりに移動するpx量
+
+        var _interval3 = 200; //移動する間隔
+
+        this.test = setInterval(function () {
+          var scrollTop = document.body.scrollTop;
+          var scroll = scrollTop + _speed3;
+          window.scrollBy(0, scroll);
+        }, _interval3);
+      } else {
+        var _speed4 = 1; //時間あたりに移動するpx量
+
+        var _interval4 = 120; //移動する間隔
+
+        this.test = setInterval(function () {
+          var scrollTop = document.body.scrollTop;
+          var scroll = scrollTop + _speed4;
+          window.scrollBy(0, scroll);
+        }, _interval4);
       }
     },
     moveToDown: function moveToDown() {
@@ -37625,24 +37643,24 @@ var render = function() {
         [
           _c("option", { attrs: { value: "" } }, [_vm._v("選択してください")]),
           _vm._v(" "),
+          _c("option", { attrs: { value: "とても早い" } }, [
+            _vm._v("とても早い")
+          ]),
+          _vm._v(" "),
           _c("option", { attrs: { value: "早い" } }, [_vm._v("早い")]),
           _vm._v(" "),
           _c("option", { attrs: { selected: "", value: "普通" } }, [
             _vm._v("普通")
           ]),
           _vm._v(" "),
-          _c("option", { attrs: { value: "遅い" } }, [_vm._v("遅い")])
+          _c("option", { attrs: { value: "遅い" } }, [_vm._v("遅い")]),
+          _vm._v(" "),
+          _c("option", { attrs: { value: "とても遅い" } }, [
+            _vm._v("とても遅い")
+          ])
         ]
       )
-    ]),
-    _vm._v(" "),
-    _c("div", {
-      on: {
-        click: function($event) {
-          return _vm.moveToDown()
-        }
-      }
-    })
+    ])
   ])
 }
 var staticRenderFns = []

@@ -68,8 +68,12 @@
                 <nav class="navbar navbar-expand-md navbar-dark navbar-laravel">
                         <span id="logo-hedar"></span>
                         <span id="logo-hidden"></span>
-                        <div class="naver container">
-                            <a href="home"><div id="hedarSkin"></div></a>
+                        <div class="container">
+                            <div class="row">
+
+                                 <div class="col-2">
+                                    <a href="home"><div id="hedarSkin"></div></a>
+                                </div>
                             @guest
                                 <ul class="navbar-nav mr-auto" style="padding-left: 0px;">
                                     <!-- ログインリンク -->
@@ -85,43 +89,46 @@
                                         </li>
                                     <header>
                                     <!-- ログイン前はadminをつける必要がある -->
-                                        <ul>
-                                            <li><a href = "admin/mypage">マイページ</a></li>
-                                            <li><a href = "admin/create">曲の作成</a></li>
-                                            <li><a href = "admin/cord">ギターのコード一覧</a></li>
-                                        </ul>
+                                        <div style="">
+                                            <ul>
+                                                <li><a href = "admin/mypage">マイページ</a></li>
+                                                <li><a href = "admin/create">曲の作成</a></li>
+                                                <li><a href = "admin/cord">ギターのコード一覧</a></li>
+                                            </ul>
+                                        </div>
                                     </header>
                                 </ul>
                             @else
-                            <li class="nav-item dropdown">
-                                    <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                        {{ Auth::user()->name }} <span class="caret"></span>
-                                    </a>
-
-                                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                        <a class="dropdown-item" href="{{ route('logout') }}"
-                                        onclick="event.preventDefault();
-                                            document.getElementById('logout-form').submit();">
-                                            {{ __('Logout') }}
+                                <div class="col-1" style="padding-top: 20px;">
+                                    <li class="nav-item dropdown">
+                                        <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                            {{ Auth::user()->name }} <span class="caret"></span>
                                         </a>
 
-                                        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                                            @csrf
-                                        </form>
-                                    </div>
-                                </li>
-                                
+                                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                            <a class="dropdown-item" href="{{ route('logout') }}"
+                                            onclick="event.preventDefault();
+                                                document.getElementById('logout-form').submit();">
+                                                {{ __('Logout') }}
+                                            </a>
 
-                            <!-- Right Side Of Navbar -->
-                            <ul class="navbar-nav">
-                                <header>
-                                    <ul>
-                                        <li><a id="mypage" href = "mypage" >マイページ</a></li>
-                                        <li><a id="create" href = "create" >曲の作成</a></li>
-                                        <li><a id="musicCords" href = "cord" >ギターのコード一覧</a></li>
-                                    </ul>
-                                </header>
-                            </ul>
+                                            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                                @csrf
+                                            </form>
+                                        </div>
+                                    </li>
+                                </div>
+                                <div class="col">
+                                    <header>
+                                        <ul>
+                                            <li><a id="mypage" href = "mypage" >マイページ</a></li>
+                                            <li><a id="create" href = "create" >曲の作成</a></li>
+                                            <li><a id="musicCords" href = "cord" >ギターのコード一覧</a></li>
+                                        </ul>
+                                    </header>
+                                </div>
+                            </div>
+                                
                             <div class="hamburger">
                                 <span></span>
                                 <span></span>

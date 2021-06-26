@@ -249,10 +249,6 @@ ul li a:hover {
   color: #23d024 !important;
 }
 
-.navbar-nav {
-  padding-left: 380px;
-}
-
 @media screen and (max-width: 854px) {
   .navbar-nav {
     display: none;
@@ -415,7 +411,14 @@ a:hover {
 
 .stopbutton {
   position: fixed;
-  padding: 20px 30px 20px 30px;
+  padding: 10px;
+  left: 1270px;
+}
+
+.movebutton {
+  position: fixed;
+  padding: 10px;
+  top: 200px;
   left: 1270px;
 }
 

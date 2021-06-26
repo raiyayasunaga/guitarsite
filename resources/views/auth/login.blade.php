@@ -11,6 +11,12 @@
                         <form method="POST" action="{{ route('login') }}">
                             @csrf
 
+                            <div class="row d-flex justify-content-center">
+                                    demoメールアドレス：test@icloud.com
+                            </div>
+                            <div class="mb-3 row d-flex justify-content-center">
+                                    demoパスワード：test
+                            </div>
                             <div class="form-group row">
                                 <label for="email" class="col-sm-4 col-form-label text-md-right">{{ __('E-Mail Address') }}</label>
 

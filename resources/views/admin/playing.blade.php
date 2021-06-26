@@ -207,7 +207,7 @@
                 @endif
             </div>
         </div>
-        <h3 class="my-5"><a href="home">終わりホームへ</a></h3>
+        <h3 class="my-5"><a href="home">演奏終了ホームへ</a></h3>
 
     </div>
 @endsection
@@ -426,7 +426,7 @@ document.addEventListener("DOMContentLoaded", function() {
             return '<img src="/img/Em6.png">';
             break;
         case '[Em7]':
-            return '<img src="/img/Em7.png">';
+            return '<img src="/img/Em_7.png">';
             break;
         case '[Em7-5]':
             return '<img src="/img/Emb5.png">';
