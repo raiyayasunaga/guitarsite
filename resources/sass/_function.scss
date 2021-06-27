@@ -83,48 +83,78 @@ $NERV-black: #1B1311;
 }
 
 
-@mixin hamburger {
-  display : block;
+// 新しい
+@mixin nav-Menu {
   position: fixed;
-  z-index : 3;
-  right : 13px;
-  top   : 12px;
-  width : 42px;
-  height: 42px;
-  cursor: pointer;
-  text-align: center;
-}
-@mixin span {
-  display : block;
-  position: absolute;
-  width   : 30px;
-  height  : 2px ;
-  left    : 6px;
-  background : #555;
-  -webkit-transition: 0.3s ease-in-out;
-  -moz-transition   : 0.3s ease-in-out;
-  transition        : 0.3s ease-in-out;
-}
-
-@mixin  span-nth {
-  top : 16px;
-  left: 6px;
-  background :#fff;
-  -webkit-transform: rotate(-45deg);
-  -moz-transform   : rotate(-45deg);
-  transform        : rotate(-45deg);
-}
-
-@mixin menu {
-  position: fixed;
-  z-index : 2;
-  top  : 0;
-  left : 0;
-  color: #fff;
-  background: rgba(0,0,0,0.7);
+  z-index: 12;
+  top: 0;
+  left: 0;
   text-align: center;
   width: 100%;
-  opacity: 0;
-  transition: opacity .6s ease, visibility .6s ease;
+  height: 100%;
+  display: none;
+}
+
+@mixin nav-Menu-ul {
+  width: 100%;
+  margin: 0 auto;
+  padding: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateY(-50%) translateX(-50%);
+}
+
+@mixin nav-Menu-li {
+  font-size: 24px;
+  list-style-type: none;
+  width: 100%;
+  padding-bottom: 0px;
+}
+
+@mixin nav-Menu-a {
+  display: block;
+  color: #fff;
+  padding: 15px 0;
+  font-weight: bold;
+  font-size: 38px;
+}
+
+@mixin hamburgar {
+  position: fixed;
+  right:18px;
+  top: 3px;
+  width: 45px;
+  height: 45px;
+  cursor: pointer;
+  z-index: 13;
+  display: block;
+}
+@mixin hamburgar-span {
+  display: block;
+  position: absolute;
+  width: 35px;
+  border-bottom: solid 4px #C1C1C1;
+  -webkit-transition: .35s ease-in-out;
+  -moz-transition: .35s ease-in-out;
+  transition: .35s ease-in-out;
+  left: 6px;
+}
+
+@mixin hamburgar-nth-child1 {
+  top: 18px;
+  left: 6px;
+  -webkit-transform: rotate(-45deg);
+  -moz-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+  border-bottom: solid 3px #C1C1C1;
+}
+
+@mixin hamburgar-nth-child23 {
+  top: 18px;
+  -webkit-transform: rotate(45deg);
+  -moz-transform: rotate(45deg);
+  transform: rotate(45deg);
+  border-bottom: solid 3px #C1C1C1;
 }
 

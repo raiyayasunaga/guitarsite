@@ -220,93 +220,59 @@ h1 a{
 // ここからはskin共通！
 
 .navbar-nav {
-  padding-left: 380px;
   @include iphone-12-max() {
     display: none;
   }
 }
-.hamburger {
-  @include hamburger;
-  @include iphone-12-min() {
-    display: none;
-  }
-  span {
-    @include span;
-    &:nth-child(1) {
-      background-color: $sinnzi-color-green;
-      top: 10px;
-    }
-    &:nth-child(2) {
-      top: 20px;
-      background-color: $sinnzi-color-green;
-    }
-    &:nth-child(3) {
-      top: 30px;
-      background-color: $sinnzi-color-green;
 
+/*携帯用ハンバーガーナビメニュー設定*/
+nav.navMenu{
+  @include nav-Menu;
+  background: $NERV-red;
+    ul {
+      @include nav-Menu-ul;
+      li {
+        @include nav-Menu-li;
+          &:last-child {
+            padding-bottom: 0;
+          }
+          a {
+            @include nav-Menu-a;
+          }
+      }
     }
   }
-  .active {
-    display: block;
+  
+  .hamburgar {
+    @include hamburgar;
+    @media screen and (min-width: 854px) {
+      display: none;
+    }
     span {
+      @include hamburgar-span;
       &:nth-child(1) {
-        @include span-nth;
+        top: 10px;
       }
-      &:nth-child(2),
+      &:nth-child(2) {
+        top: 20px;
+      }
       &:nth-child(3) {
-        top: 16px;
-        background :#fff;
-        -webkit-transform: rotate(45deg);
-        -moz-transform   : rotate(45deg);
-        transform        : rotate(45deg);
+        top: 30px;
+      }
+    }
+    .active {
+      span {
+        &:nth-child(1) {
+          @include hamburgar-nth-child1;
+        }
+        &:nth-child(2),
+        &:nth-child(3) {
+          @include hamburgar-nth-child23;
+        }
       }
     }
   }
-}
-
-nav.menu {
-  @include menu;
-  @include iphone-12-min() {
-    display: none;
-  }
-  ul {
-    margin: 0 auto;
-    padding: 0;
-    width: 100%;
-    li {
-      list-style-type: none;
-      margin-bottom: 30px;
-      padding: 0;
-      width: 100%;
-      transition: .4s all;
-      &:last-child {
-        padding-bottom: 0;
-
-      }
-      &:hover {
-        opacity: 0.5;
-      }
-      a {
-        color: #fff;
-        padding: 1em 0;
-        text-decoration :none;
-      }
-    }
-  }
-}
-
-nav.menu.normal {
-  ul {
-    display: none;
-  }
-}
-/* このクラスを、jQueryで付与・削除する */
-nav.menu.active {
-  opacity: 100;
-  ul {
-    display: block;
-  }
-} 
+  // 終わり 
 
 #preview {
   @include preview-font;
@@ -323,12 +289,7 @@ nav.menu.active {
 }
 
 // ナビゲーション携帯レスポンシブ
-.navbar-nav {
-  padding-left: 380px;
-  @include iphone-12-max() {
-    padding: 0px;
-  }
-}
+
 // ストップボタン
 .stopbutton {
   position: fixed;

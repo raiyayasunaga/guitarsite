@@ -3,12 +3,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@200&display=swap');
 
 #hedarSkin {
-  background-image: url("/img/guitar.png");
+  background-image: url("/img/guitar_1.jpg");
   background-repeat: no-repeat;
-  background-size: 90px;
-  padding: 50px 100px 30px 10px;
+  background-size: 30px;
+  padding: 50px 50px 30px 10px;
   &:hover {
-    background-image: url("/img/eleguitar.png");
+    background-image: url("/img/guitar_2.jpg");
   }
 }
 
@@ -41,6 +41,7 @@ textarea {
   padding: 20px 30px 20px 30px;
   left: 1270px;
 }
+
 @include iphone-12-max() {
   .stopbutton {
     position: fixed;
@@ -105,124 +106,75 @@ a {
   @include sitefont;
 }
 
+.desc-text {
+  border: 2px solid black;
+  border-radius: 10px;
+}
+
 // 終わり
 // ここからはskin共通！
 // ナビゲーション携帯レスポンシブ
-.navbar-nav {
-  padding-left: 380px;
+.nav {
   @include iphone-12-max() {
     display: none;
   }
 }
 
-.hamburger {
-  display : block;
-  position: fixed;
-  z-index : 3;
-  right : 13px;
-  top   : 12px;
-  width : 42px;
-  height: 42px;
-  cursor: pointer;
-  text-align: center;
-  @include iphone-12-min() {
-    display: none;
+.td-block {
+  display: inline-block;
+}
+
+/*ナビのスタイル*/
+nav.navMenu{
+  @include nav-Menu;
+  background: lightblue;
+    ul {
+      @include nav-Menu-ul;
+    }
+      li {
+        @include nav-Menu-li;
+          &:last-child {
+            padding-bottom: 0;
+          }
+          a {
+            @include nav-Menu-a;
+          }
+      }
   }
-  span {
-    display : block;
-    position: absolute;
-    width   : 30px;
-    height  : 2px ;
-    left    : 6px;
-    background : #555;
-    -webkit-transition: 0.3s ease-in-out;
-    -moz-transition   : 0.3s ease-in-out;
-    transition        : 0.3s ease-in-out;
-    &:nth-child(1) {
-      top: 10px;
+  
+  
+  /*ボタンのスタイル*/
+  .hamburgar {
+    @include hamburgar;
+    @media screen and (min-width: 854px) {
+      display: none;
     }
-    &:nth-child(2) {
-      top: 20px;
-    }
-    &:nth-child(3) {
-      top: 30px;
-    }
-  }
-  .active {
-    display: block;
     span {
+      @include hamburgar-span;
       &:nth-child(1) {
-        top : 16px;
-        left: 6px;
-        background :#fff;
-        -webkit-transform: rotate(-45deg);
-        -moz-transform   : rotate(-45deg);
-        transform        : rotate(-45deg);
+        top: 10px;
       }
-      &:nth-child(2),
+      &:nth-child(2) {
+        top: 20px;
+      }
       &:nth-child(3) {
-        top: 16px;
-        background :#fff;
-        -webkit-transform: rotate(45deg);
-        -moz-transform   : rotate(45deg);
-        transform        : rotate(45deg);
+        top: 30px;
+      }
+    }
+    .active {
+      span {
+        &:nth-child(1) {
+          @include hamburgar-nth-child1;
+        }
+        &:nth-child(2),
+        &:nth-child(3) {
+          @include hamburgar-nth-child23;
+        }
       }
     }
   }
-}
-
-nav.menu {
-  position: fixed;
-  z-index : 2;
-  top  : 0;
-  left : 0;
-  color: #fff;
-  background: rgba(0,0,0,0.7);
-  text-align: center;
-  width: 100%;
-  opacity: 0;
-  transition: opacity .6s ease, visibility .6s ease;
-  @include iphone-12-min() {
-    display: none;
-  }
-  ul {
-    margin: 0 auto;
-    padding: 0;
-    width: 100%;
-    li {
-      list-style-type: none;
-      margin-bottom: 30px;
-      padding: 0;
-      width: 100%;
-      transition: .4s all;
-      &:last-child {
-        padding-bottom: 0;
-
-      }
-      &:hover {
-        opacity: 0.5;
-      }
-      a {
-        color: #fff;
-        padding: 1em 0;
-        text-decoration :none;
-      }
-    }
-  }
-}
-
-nav.menu.normal {
-  ul {
-    display: none;
-  }
-}
-/* このクラスを、jQueryで付与・削除する */
-nav.menu.active {
-  opacity: 100;
-  ul {
-    display: block;
-  }
-} 
+  
+  
 
 #preview {
   @include preview-font;
@@ -333,8 +285,6 @@ h1 a{
 }
 
 
-
-// ここから共通
 @include iphone-12-max() {
   .stopbutton {
     position: fixed;
@@ -366,35 +316,35 @@ h1 a{
 }
 .cord-1 {
  @include cord;
- background-color: red;
+ background-color: orange;
 }
 .cord-2 {
   @include cord;
-  background-color: blue;
+  background-color: orange;
  }
  .cord-3 {
   @include cord;
-  background-color: lightskyblue;
+  background-color: orange;
  }
  .cord-4 {
   @include cord;
-  background-color: green;
+  background-color: orange;
  }
  .cord-5 {
   @include cord;
-  background-color: brown;
+  background-color: orange;
  }
  .cord-6 {
   @include cord;
-  background-color: purple;
+  background-color: orange;
  }
  .cord-7 {
   @include cord;
-  background-color: pink;
+  background-color: orange;
  }
  .cord-8 {
   @include cord;
-  background-color: black;
+  background-color: orange;
  }
  .cord-9 {
   @include cord;
@@ -402,15 +352,15 @@ h1 a{
  }
  .cord-10 {
   @include cord;
-  background-color: lightgreen;
+  background-color: orange;
  }
  .cord-11 {
   @include cord;
-  background-color: gold;
+  background-color: orange;
  }
  .cord-12 {
   @include cord;
-  background-color: silver;
+  background-color: orange;
  }
 
 img {
@@ -427,5 +377,3 @@ img {
   }
 }
 
-
-// コード一覧終わり

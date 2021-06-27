@@ -65,15 +65,11 @@
     
         </head>
         <body class="fadeout">
-                <nav class="navbar navbar-expand-md navbar-dark navbar-laravel">
+        <nav class="navbar navbar-expand-md navbar-dark navbar-laravel">
                         <span id="logo-hedar"></span>
                         <span id="logo-hidden"></span>
                         <div class="container">
-                            <div class="row">
-
-                                 <div class="col-2">
-                                    <a href="home"><div id="hedarSkin"></div></a>
-                                </div>
+                                <a href="home"><div id="hedarSkin"></div></a>
                             @guest
                                 <ul class="navbar-nav mr-auto" style="padding-left: 0px;">
                                     <!-- ログインリンク -->
@@ -89,8 +85,8 @@
                                         </li>
                                     <header>
                                     <!-- ログイン前はadminをつける必要がある -->
-                                        <div style="">
-                                            <ul>
+                                        <div>
+                                            <ul class="nav">
                                                 <li><a href = "admin/mypage">マイページ</a></li>
                                                 <li><a href = "admin/create">曲の作成</a></li>
                                                 <li><a href = "admin/cord">ギターのコード一覧</a></li>
@@ -99,8 +95,7 @@
                                     </header>
                                 </ul>
                             @else
-                                <div class="col-1" style="padding-top: 20px;">
-                                    <li class="nav-item dropdown">
+                            <li class="nav-item dropdown">
                                         <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                             {{ Auth::user()->name }} <span class="caret"></span>
                                         </a>
@@ -117,34 +112,37 @@
                                             </form>
                                         </div>
                                     </li>
-                                </div>
-                                <div class="col">
-                                    <header>
-                                        <ul>
-                                            <li><a id="mypage" href = "mypage" >マイページ</a></li>
-                                            <li><a id="create" href = "create" >曲の作成</a></li>
-                                            <li><a id="musicCords" href = "cord" >ギターのコード一覧</a></li>
-                                        </ul>
-                                    </header>
-                                </div>
-                            </div>
-                                
-                            <div class="hamburger">
-                                <span></span>
-                                <span></span>
-                                <span></span>
-                            </div>
-                                <nav class="menu">
-                                    <ul>
+                                <ul class="navbar-nav mr-auto">
+
+                                </ul>
+                                <ul class="navbar-nav ml-auto" style="margin: 0px;">
+                                <header>
+                                    <ul class="nav">
                                         <li><a id="mypage" href = "mypage" >マイページ</a></li>
                                         <li><a id="create" href = "create" >曲の作成</a></li>
                                         <li><a id="musicCords" href = "cord" >ギターのコード一覧</a></li>
                                     </ul>
-                                </nav>
+                                </header>
+                                </ul>
+                            </div>
+                            <nav class="navMenu">
+                                <ul>
+                                    <li><a href="mypage">マイページ</a></li>
+                                    <li><a href="create">曲の作成</a></li>
+                                    <li><a href="cord">ギターコード一覧</a></li>
+                                </ul>
+                            </nav>
+
+                            <!-- メニュー -->
+                            <div class="hamburgar">
+                                <span class="toggle-span"></span>
+                                <span></span>
+                                <span></span>
+                            </div>
+
                                                             
                             @endguest
                         </div>
-                    </div>
                 </nav>
 
                 <main>

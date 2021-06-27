@@ -18,16 +18,22 @@ $(function() {
   });
 });
 
-$(function() {
-  $('.hamburger').click(function() {
-      $(this).toggleClass('active');
+$(function () {
+  $('.hamburgar').click(function () {
+    $(this).toggleClass('active');
 
-      if ($(this).hasClass('active')) {
-          $('.menu').addClass('active');
-          $('.menu').removeClass('normal');
-      } else {
-          $('.menu').addClass('normal');
-          $('.menu').removeClass('active');
-      }
+    if ($(this).hasClass('active')) {
+        $('.navMenu').addClass('active');
+        $('.navMenu').fadeIn(500);
+    } else {
+        $('.navMenu').removeClass('active');
+        $('.navMenu').fadeOut(500);
+    }
+  });
+
+  $('.navmenu-a').click(function () {
+    $('.navMenu').removeClass('active');
+    $('.navMenu').fadeOut(1000);
+    $('.hamburgar').removeClass('active');
   });
 });
