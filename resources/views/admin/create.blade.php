@@ -88,6 +88,9 @@
                             <button type="button"class="btn btn-outline-primary m-1" onclick="chord_insert('[Bm]');">Bm</button>
                             <button type="button"class="btn btn-outline-primary m-1" onclick="chord_insert('[Cmaj7]');">Cmaj7</button>
                             <button type="button"class="btn btn-outline-primary m-1" onclick="chord_insert('[Dm7]');">Dm7</button>
+                            <button type="button"class="btn btn-outline-primary m-1" onclick="chord_insert('[D]');">D</button>
+                            <button type="button"class="btn btn-outline-primary m-1" onclick="chord_insert('[A]');">A</button>
+                            <button type="button"class="btn btn-outline-primary m-1" onclick="chord_insert('[E]');">E</button>
                             <button type="button"class="btn btn-outline-primary m-1" onclick="chord_insert('[Em7]');">Em7</button>
                             <button type="button"class="btn btn-outline-primary m-1" onclick="chord_insert('[Fmaj7]');">Fmaj7</button>
                             <button type="button"class="btn btn-outline-primary m-1" onclick="chord_insert('[G7]');">G7</button>
@@ -900,6 +903,7 @@
             return '<img src="/img/Adim.png">';
             break;
         case '[Amaj7]':
+        case '[AM7]':
             return '<img src="/img/AM_7.png">';
             break;
         case '[Am]':

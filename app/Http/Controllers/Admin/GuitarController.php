@@ -63,7 +63,7 @@ class GuitarController extends Controller
 
         if ($cond_title != '') {
             $posts = Music::where('title', 'like', '%'.$cond_title.'%')
-                ->orderBy('id', 'asc')
+                ->orderBy('id', 'desc')
                 ->get();
         } else {
             // それ以外はすべてのニュースを取得する
@@ -73,7 +73,7 @@ class GuitarController extends Controller
         if ($category != '') {
 
             $posts = Music::where('category', 'like', '%'.$category.'%')
-                ->orderBy('id', 'asc')
+                ->orderBy('id', 'desc')
                 ->get();
         } else if ($category == '') {
             
