@@ -526,6 +526,7 @@
             return '<img src="/img/Cdim.png">';
             break;
         case '[Cmaj7]':
+        case '[CM7]':
             return '<img src="/img/CM_7.png">';
             break;
         case '[Cm6]':
@@ -608,6 +609,7 @@
             return '<img src="/img/Ddim.png">';
             break;
         case '[Dmaj7]':
+        case '[DM7]':
             return '<img src="/img/DM_7.png">';
             break;
         case '[Dm]':
@@ -688,6 +690,7 @@
             return '<img src="/img/Edim.png">';
             break;
         case '[Emaj7]':
+        case '[EM7]':
             return '<img src="/img/EM_7.png">';
             break;
         case '[Em]':
@@ -734,6 +737,7 @@
             return '<img src="/img/Fdim.png">';
             break;
         case '[Fmaj7]':
+        case '[FM7]':
             return '<img src="/img/FM_7.png">';
             break;
         case '[Fm]':
@@ -987,6 +991,7 @@
             return '<img src="/img/Baug.png">';
             break;
         case '[Bmaj7]':
+        case '[BM7]':
             return '<img src="/img/BM_7.png">';
             break;
         case '[Bm]':

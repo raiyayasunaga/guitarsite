@@ -1954,6 +1954,8 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     // ここ入らないのかも
@@ -1965,7 +1967,7 @@ __webpack_require__.r(__webpack_exports__);
   methods: {
     // $fixedは使わない？
     select: function select(value) {
-      if (value.target.value == "早い") {
+      if (value.target.value == "普通") {
         var speed = 1; //時間あたりに移動するpx量
 
         var interval = 80; //移動する間隔
@@ -1975,44 +1977,68 @@ __webpack_require__.r(__webpack_exports__);
           var scroll = scrollTop + speed;
           window.scrollBy(0, scroll);
         }, interval);
-      } else if (value.target.value == "とても早い") {
+      } else if (value.target.value == "早い") {
         var _speed = 1;
-        var _interval = 40;
+        var _interval = 70;
         this.test = setInterval(function () {
-          var scrollTop = document.body.scrollTop;
+          var scrollTop = documetn.body.scrollTop;
           var scroll = scrollTop + _speed;
           window.scrollBy(0, scroll);
         }, _interval);
-      } else if (value.target.value == "遅い") {
-        var _speed2 = 1; //時間あたりに移動するpx量
-
-        var _interval2 = 160; //移動する間隔
-
+      } else if (value.target.value == "とても早い") {
+        var _speed2 = 1;
+        var _interval2 = 60;
         this.test = setInterval(function () {
           var scrollTop = document.body.scrollTop;
           var scroll = scrollTop + _speed2;
           window.scrollBy(0, scroll);
         }, _interval2);
-      } else if (value.target.value == "とても遅い") {
-        var _speed3 = 1; //時間あたりに移動するpx量
-
-        var _interval3 = 200; //移動する間隔
-
+      } else if (value.target.value == "めちゃくちゃ早い") {
+        var _speed3 = 1;
+        var _interval3 = 50;
         this.test = setInterval(function () {
           var scrollTop = document.body.scrollTop;
           var scroll = scrollTop + _speed3;
           window.scrollBy(0, scroll);
         }, _interval3);
-      } else {
+      } else if (value.target.value == "遅い") {
         var _speed4 = 1; //時間あたりに移動するpx量
 
-        var _interval4 = 120; //移動する間隔
+        var _interval4 = 90; //移動する間隔
 
         this.test = setInterval(function () {
           var scrollTop = document.body.scrollTop;
           var scroll = scrollTop + _speed4;
           window.scrollBy(0, scroll);
         }, _interval4);
+      } else if (value.target.value == "とても遅い") {
+        var _speed5 = 1; //時間あたりに移動するpx量
+
+        var _interval5 = 100; //移動する間隔
+
+        this.test = setInterval(function () {
+          var scrollTop = document.body.scrollTop;
+          var scroll = scrollTop + _speed5;
+          window.scrollBy(0, scroll);
+        }, _interval5);
+      } else if (value.target.value == "めちゃくちゃ遅い") {
+        var _speed6 = 1;
+        var _interval6 = 120;
+        this.test = setInterval(function () {
+          var scrollTop = document.body.scrollTop;
+          var scroll = scrollTop + _speed6;
+          window.scrollBy(0, scroll);
+        }, _interval6);
+      } else {
+        var _speed7 = 1; //時間あたりに移動するpx量
+
+        var _interval7 = 80; //移動する間隔
+
+        this.test = setInterval(function () {
+          var scrollTop = document.body.scrollTop;
+          var scroll = scrollTop + _speed7;
+          window.scrollBy(0, scroll);
+        }, _interval7);
       }
     },
     moveToDown: function moveToDown() {
@@ -37643,6 +37669,10 @@ var render = function() {
         [
           _c("option", { attrs: { value: "" } }, [_vm._v("選択してください")]),
           _vm._v(" "),
+          _c("option", { attrs: { value: "めちゃくちゃ早い" } }, [
+            _vm._v("めちゃくちゃ早い")
+          ]),
+          _vm._v(" "),
           _c("option", { attrs: { value: "とても早い" } }, [
             _vm._v("とても早い")
           ]),
@@ -37657,6 +37687,10 @@ var render = function() {
           _vm._v(" "),
           _c("option", { attrs: { value: "とても遅い" } }, [
             _vm._v("とても遅い")
+          ]),
+          _vm._v(" "),
+          _c("option", { attrs: { value: "めちゃくちゃ遅い" } }, [
+            _vm._v("めちゃくちゃ遅い")
           ])
         ]
       )

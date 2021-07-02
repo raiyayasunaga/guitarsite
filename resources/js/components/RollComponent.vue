@@ -6,11 +6,13 @@
                 <div class="row mt-3">スクロール速度
                     <select class="form-control mb-3" v-model="speedNumber" @change="select">
                         <option value="">選択してください</option>
+                        <option value="めちゃくちゃ早い">めちゃくちゃ早い</option>
                         <option value="とても早い">とても早い</option>
                         <option value="早い">早い</option>
                         <option selected value="普通" >普通</option>
                         <option value="遅い">遅い</option>
                         <option value="とても遅い">とても遅い</option>
+                        <option value="めちゃくちゃ遅い">めちゃくちゃ遅い</option>
                     </select>
                 </div> 
     </div>
@@ -31,50 +33,77 @@
             // $fixedは使わない？
             
             select(value) {
-                if (value.target.value == "早い") {
+                if (value.target.value == "普通") {
                         let speed = 1; //時間あたりに移動するpx量
                         let interval = 80; //移動する間隔
                     this.test = setInterval(function() {
                         let scrollTop = document.body.scrollTop;
                         let scroll = scrollTop + speed;
                         window.scrollBy(0, scroll)
-                    },interval);
+                    }, interval);
                     }
+                else if(value.target.value == "早い") {
+                        let speed = 1;
+                        let interval = 70;
+                    this.test = setInterval(function() {
+                        let scrollTop = documetn.body.scrollTop;
+                        let scroll = scrollTop + speed;
+                        window.scrollBy(0, scroll)
+                    },interval)
+                }
                 else if(value.target.value == "とても早い") {
                         let speed = 1;
-                        let interval = 40;
+                        let interval = 60;
                     this.test = setInterval(function() {
                         let scrollTop = document.body.scrollTop;
                         let scroll = scrollTop + speed;
                         window.scrollBy(0, scroll)
-                    },interval);
+                    }, interval);
                     }
+                else if(value.target.value == "めちゃくちゃ早い") {
+                    let speed = 1;
+                    let interval = 50;
+                    this.test = setInterval(function() {
+                        let scrollTop = document.body.scrollTop;
+                        let scroll = scrollTop + speed;
+                        window.scrollBy(0, scroll)
+                    }, interval);
+                }
                 else if (value.target.value == "遅い") {
                         let speed = 1; //時間あたりに移動するpx量
-                        let interval = 160; //移動する間隔
+                        let interval = 90; //移動する間隔
                     this.test = setInterval(function() {
                         let scrollTop = document.body.scrollTop;
                         let scroll = scrollTop + speed;
                         window.scrollBy(0, scroll)
-                    },interval);
+                    }, interval);
                     }
                 else if (value.target.value == "とても遅い") {
                         let speed = 1; //時間あたりに移動するpx量
-                        let interval = 200; //移動する間隔
+                        let interval = 100; //移動する間隔
                     this.test = setInterval(function() {
                         let scrollTop = document.body.scrollTop;
                         let scroll = scrollTop + speed;
                         window.scrollBy(0, scroll)
-                    },interval);
+                    }, interval);
                     }
+                else if (value.target.value == "めちゃくちゃ遅い") {
+                        let speed = 1;
+                        let interval = 120;
+                        this.test = setInterval(function() {
+                            let scrollTop = document.body.scrollTop;
+                            let scroll = scrollTop + speed;
+                            window.scrollBy(0, scroll)
+                        }, interval)
+                }
                 else {
                         let speed = 1; //時間あたりに移動するpx量
-                        let interval = 120; //移動する間隔
+                        let interval = 80; //移動する間隔
                     this.test = setInterval(function() {
                         let scrollTop = document.body.scrollTop;
                         let scroll = scrollTop + speed;
                         window.scrollBy(0, scroll)
-                    },interval);
+                    }, interval);
                     }
             },
             moveToDown() {

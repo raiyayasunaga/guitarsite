@@ -46,6 +46,7 @@ class ProfileController extends Controller
         
         $user->fill($form)->save();
 
+        session()->flash('msg_seccess', 'プロフィールを変更しました');
         return redirect('admin/mypage');
     }
 }

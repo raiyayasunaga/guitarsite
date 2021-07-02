@@ -37,17 +37,18 @@ class GuitarController extends Controller
 
     public function create(Request $request) {
 
-      $this->validate($request, Music::$rules);
+        $this->validate($request, Music::$rules);
 
-      $music = new Music;
-      $form = $request->all();
+        $music = new Music;
+        $form = $request->all();
 
-      // データベースに保存する
-      $music->fill($form);
-      //ユーザーそれぞれのデータの値を保存できる作業 
-      $music->user_id = Auth::id();
-      $music->save();
+        // データベースに保存する
+        $music->fill($form);
+        //ユーザーそれぞれのデータの値を保存できる作業 
+        $music->user_id = Auth::id();
+        $music->save();
 
+      session()->flash('msg_info', '投稿が完了しました');
       return redirect('admin/mypage');
     }
 
@@ -117,6 +118,8 @@ class GuitarController extends Controller
       $music = Music::find($request->id);
       // 削除する
       $music->delete();
+
+      session()->flash('msg_success', '投稿が消去されました');
       return redirect('admin/mypage/');
     }
 
