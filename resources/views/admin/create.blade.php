@@ -86,14 +86,18 @@
                             <button type="button"class="btn btn-outline-primary m-1" onclick="chord_insert('[G]');">G</button>
                             <button type="button"class="btn btn-outline-primary m-1" onclick="chord_insert('[Am]');">Am</button>
                             <button type="button"class="btn btn-outline-primary m-1" onclick="chord_insert('[Bm]');">Bm</button>
+                            <button type="button"class="btn btn-outline-primary m-1" onclick="chord_insert('[Bm7]');">Bm7</button>
                             <button type="button"class="btn btn-outline-primary m-1" onclick="chord_insert('[Cmaj7]');">Cmaj7</button>
                             <button type="button"class="btn btn-outline-primary m-1" onclick="chord_insert('[Dm7]');">Dm7</button>
                             <button type="button"class="btn btn-outline-primary m-1" onclick="chord_insert('[D]');">D</button>
                             <button type="button"class="btn btn-outline-primary m-1" onclick="chord_insert('[A]');">A</button>
                             <button type="button"class="btn btn-outline-primary m-1" onclick="chord_insert('[E]');">E</button>
+                            <button type="button"class="btn btn-outline-primary m-1" onclick="chord_insert('[Caug]');">Caug</button>
+                            <button type="button"class="btn btn-outline-primary m-1" onclick="chord_insert('[Cadd9]');">Cadd9</button>
                             <button type="button"class="btn btn-outline-primary m-1" onclick="chord_insert('[Em7]');">Em7</button>
                             <button type="button"class="btn btn-outline-primary m-1" onclick="chord_insert('[Fmaj7]');">Fmaj7</button>
                             <button type="button"class="btn btn-outline-primary m-1" onclick="chord_insert('[G7]');">G7</button>
+                            <button type="button"class="btn btn-outline-primary m-1" onclick="chord_insert('[G6]');">G6</button>
                             <button type="button"class="btn btn-outline-primary m-1" onclick="chord_insert('[Am7]');">Am7</button>
                             <button type="button"class="btn btn-outline-primary m-1" onclick="chord_insert('[Bm7-5]');">Bm7-5</button>
                         </div>
@@ -560,6 +564,7 @@
             return '<img src="/img/Dbaug.png">';
             break;
         case '[C#dim]':
+        case '[Dbdim]':
             return '<img src="/img/Dbdim.png">';
             break;
         case '[C#maj7]':
@@ -647,6 +652,7 @@
             return '<img src="/img/Ebaug.png">';
             break;
         case '[D#dim]':
+        case '[Ebdim]':
             return '<img src="/img/Ebdim.png">';
             break;
         case '[D#maj7]':
@@ -778,6 +784,7 @@
             return '<img src="/img/GBaug.png">';
             break;
         case '[F#dim]':
+        case '[Gbdim]':
             return '<img src="/img/Gbdim.png">';
             break;
         case '[F#maj7]':
@@ -858,6 +865,7 @@
             return '<img src="/img/Abaug.png">';
             break;
         case '[G#dim]':
+        case '[Abdim]':
             return '<img src="/img/Abdim.png">';
             break;
         case '[G#maj7]':
@@ -948,6 +956,7 @@
             return '<img src="/img/Bbaug.png">';
             break;
         case '[A#dim]':
+        case '[Bbdim]':
             return '<img src="/img/Bbdim.png">';
             break;
         case '[A#M7]':
