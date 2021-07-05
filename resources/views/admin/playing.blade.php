@@ -225,10 +225,14 @@
  }
 
 document.addEventListener("DOMContentLoaded", function() {
-  let string = '{!! str_replace("\n", "<br />", str_replace("\r", "", $music->lyrics)) !!}';
+  let string = '{!! str_replace("\n", "<br />", str_replace("\r", "", str_replace("'", "’", $music->lyrics))) !!}';
   let result = string.replace(/\[.*?]/g, cords);
   function cords(match){
     switch(match) {
+        case "\n":
+            return '<br>';
+            break;
+
         case '[C]':
             return '<img src="/img/C.png">';
             break;
@@ -288,6 +292,7 @@ document.addEventListener("DOMContentLoaded", function() {
             return '<img src="/img/Dbaug.png">';
             break;
         case '[C#dim]':
+        case '[Dbdim]':
             return '<img src="/img/Dbdim.png">';
             break;
         case '[C#maj7]':
@@ -369,13 +374,13 @@ document.addEventListener("DOMContentLoaded", function() {
             return '<img src="/img/Eb7sus4.png">';
             break;
         case '[D#add9]':
-        case '[Ebadd9]':
             return '<img src="/img/Ebadd9.png">';
             break;
         case '[D#aug]':
             return '<img src="/img/Ebaug.png">';
             break;
         case '[D#dim]':
+        case '[Ebdim]':
             return '<img src="/img/Ebdim.png">';
             break;
         case '[D#maj7]':
@@ -507,6 +512,7 @@ document.addEventListener("DOMContentLoaded", function() {
             return '<img src="/img/GBaug.png">';
             break;
         case '[F#dim]':
+        case '[Gbdim]':
             return '<img src="/img/Gbdim.png">';
             break;
         case '[F#maj7]':
@@ -553,6 +559,7 @@ document.addEventListener("DOMContentLoaded", function() {
             return '<img src="/img/Gaug.png">';
             break;
         case '[Gmaj7]':
+        case '[GM7]':
             return '<img src="/img/GM_7.png">';
             break;
         case '[Gm6]':
@@ -587,6 +594,7 @@ document.addEventListener("DOMContentLoaded", function() {
             return '<img src="/img/Abaug.png">';
             break;
         case '[G#dim]':
+        case '[Abdim]':
             return '<img src="/img/Abdim.png">';
             break;
         case '[G#maj7]':
@@ -636,7 +644,7 @@ document.addEventListener("DOMContentLoaded", function() {
             return '<img src="/img/Adim.png">';
             break;
         case '[Amaj7]':
-        case '[AM]':
+        case '[AM7]':
             return '<img src="/img/AM_7.png">';
             break;
         case '[Am]':
@@ -677,6 +685,7 @@ document.addEventListener("DOMContentLoaded", function() {
             return '<img src="/img/Bbaug.png">';
             break;
         case '[A#dim]':
+        case '[Bbdim]':
             return '<img src="/img/Bbdim.png">';
             break;
         case '[A#M7]':
@@ -739,7 +748,6 @@ document.addEventListener("DOMContentLoaded", function() {
             return '<img src="/img/Bsus4.png">';
             break;
 
-
         case '[E♭]': 
         case '[Eb]':
             return '<img src="/img/Eb.png">';
@@ -789,6 +797,7 @@ document.addEventListener("DOMContentLoaded", function() {
         case '[Eb7]':
             return '<img src="/img/Eb7.png">';
             break;
+
         default:
             return match;
     }

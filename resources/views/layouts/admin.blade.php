@@ -16,8 +16,6 @@
             {{-- Laravel標準で用意されているJavascriptを読み込みます --}}
             <script src="{{ asset('js/app.js') }}" defer></script>
 
-            <script src="{{ asset('js/assets/jquery.js') }}"></script>
-
             <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14"></script>
 
             <!-- Fonts -->

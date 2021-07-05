@@ -68,7 +68,7 @@ class GuitarController extends Controller
                 ->get();
         } else {
             // それ以外はすべてのニュースを取得する
-            $posts = Music::all();
+            $posts = Music::orderBy('created_at', 'desc')->get();
         }
 
         if ($category != '') {
@@ -80,7 +80,7 @@ class GuitarController extends Controller
             
         }else {
             // それ以外はすべてのニュースを取得する
-            $posts = Music::all();
+            $posts = Music::orderBy('created_at', 'desc')->get();
         }
         
         return view('admin.home', ['posts' => $posts, 'cond_title' => $cond_title, 'category' => $category, 'user' => $user]);

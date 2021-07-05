@@ -238,11 +238,19 @@
                                     <button type="button"class="btn btn-outline-primary m-1" onclick="chord_insert('[G]');">G</button>
                                     <button type="button"class="btn btn-outline-primary m-1" onclick="chord_insert('[Am]');">Am</button>
                                     <button type="button"class="btn btn-outline-primary m-1" onclick="chord_insert('[Bm]');">Bm</button>
+                                    <button type="button"class="btn btn-outline-primary m-1" onclick="chord_insert('[Bm7]');">Bm7</button>
                                     <button type="button"class="btn btn-outline-primary m-1" onclick="chord_insert('[Cmaj7]');">Cmaj7</button>
                                     <button type="button"class="btn btn-outline-primary m-1" onclick="chord_insert('[Dm7]');">Dm7</button>
+                                    <button type="button"class="btn btn-outline-primary m-1" onclick="chord_insert('[D]');">D</button>
+                                    <button type="button"class="btn btn-outline-primary m-1" onclick="chord_insert('[D7]');">D7</button>
+                                    <button type="button"class="btn btn-outline-primary m-1" onclick="chord_insert('[A]');">A</button>
+                                    <button type="button"class="btn btn-outline-primary m-1" onclick="chord_insert('[E]');">E</button>
+                                    <button type="button"class="btn btn-outline-primary m-1" onclick="chord_insert('[Caug]');">Caug</button>
+                                    <button type="button"class="btn btn-outline-primary m-1" onclick="chord_insert('[Cadd9]');">Cadd9</button>
                                     <button type="button"class="btn btn-outline-primary m-1" onclick="chord_insert('[Em7]');">Em7</button>
                                     <button type="button"class="btn btn-outline-primary m-1" onclick="chord_insert('[Fmaj7]');">Fmaj7</button>
-                                    <button type="button"class="btn btn-outline-primary m-1" onclick="chord_insert('[G7]');">G7</button>
+                                    <button type="button"class="btn btn-outline-primary m-1" onclick="chord_insert('[C7]');">C7</button>
+                                    <button type="button"class="btn btn-outline-primary m-1" onclick="chord_insert('[G6]');">G6</button>
                                     <button type="button"class="btn btn-outline-primary m-1" onclick="chord_insert('[Am7]');">Am7</button>
                                     <button type="button"class="btn btn-outline-primary m-1" onclick="chord_insert('[Bm7-5]');">Bm7-5</button>
                                 </div>
@@ -671,6 +679,7 @@ function origindata() {
             return '<img src="/img/Cdim.png">';
             break;
         case '[Cmaj7]':
+        case '[CM7]':
             return '<img src="/img/CM_7.png">';
             break;
         case '[Cm6]':
@@ -704,6 +713,7 @@ function origindata() {
             return '<img src="/img/Dbaug.png">';
             break;
         case '[C#dim]':
+        case '[Dbdim]':
             return '<img src="/img/Dbdim.png">';
             break;
         case '[C#maj7]':
@@ -753,6 +763,7 @@ function origindata() {
             return '<img src="/img/Ddim.png">';
             break;
         case '[Dmaj7]':
+        case '[DM7]':
             return '<img src="/img/DM_7.png">';
             break;
         case '[Dm]':
@@ -790,6 +801,7 @@ function origindata() {
             return '<img src="/img/Ebaug.png">';
             break;
         case '[D#dim]':
+        case '[Ebdim]':
             return '<img src="/img/Ebdim.png">';
             break;
         case '[D#maj7]':
@@ -833,6 +845,7 @@ function origindata() {
             return '<img src="/img/Edim.png">';
             break;
         case '[Emaj7]':
+        case '[EM7]':
             return '<img src="/img/EM_7.png">';
             break;
         case '[Em]':
@@ -842,7 +855,7 @@ function origindata() {
             return '<img src="/img/Em6.png">';
             break;
         case '[Em7]':
-            return '<img src="/img/Em7.png">';
+            return '<img src="/img/E_m7.png">';
             break;
         case '[Em7-5]':
             return '<img src="/img/Emb5.png">';
@@ -879,6 +892,7 @@ function origindata() {
             return '<img src="/img/Fdim.png">';
             break;
         case '[Fmaj7]':
+        case '[FM7]':
             return '<img src="/img/FM_7.png">';
             break;
         case '[Fm]':
@@ -919,6 +933,7 @@ function origindata() {
             return '<img src="/img/GBaug.png">';
             break;
         case '[F#dim]':
+        case '[Gbdim]':
             return '<img src="/img/Gbdim.png">';
             break;
         case '[F#maj7]':
@@ -981,11 +996,9 @@ function origindata() {
             break;
 
         case '[G#]':
-        case '[Ab]':
             return '<img src="/img/Ab.png">';
             break;
         case '[G#6]':
-        case '[Ab6]':
             return '<img src="/img/Ab6.png">';
             break;
         case '[G#7]':
@@ -1001,6 +1014,7 @@ function origindata() {
             return '<img src="/img/Abaug.png">';
             break;
         case '[G#dim]':
+        case '[Abdim]':
             return '<img src="/img/Abdim.png">';
             break;
         case '[G#maj7]':
@@ -1050,6 +1064,7 @@ function origindata() {
             return '<img src="/img/Adim.png">';
             break;
         case '[Amaj7]':
+        case '[AM7]':
             return '<img src="/img/AM_7.png">';
             break;
         case '[Am]':
@@ -1090,6 +1105,7 @@ function origindata() {
             return '<img src="/img/Bbaug.png">';
             break;
         case '[A#dim]':
+        case '[Bbdim]':
             return '<img src="/img/Bbdim.png">';
             break;
         case '[A#M7]':
@@ -1133,6 +1149,7 @@ function origindata() {
             return '<img src="/img/Baug.png">';
             break;
         case '[Bmaj7]':
+        case '[BM7]':
             return '<img src="/img/BM_7.png">';
             break;
         case '[Bm]':
@@ -1151,8 +1168,6 @@ function origindata() {
             return '<img src="/img/Bsus4.png">';
             break;
 
-
-        
         case '[E♭]': 
         case '[Eb]':
             return '<img src="/img/Eb.png">';
@@ -1202,6 +1217,7 @@ function origindata() {
         case '[Eb7]':
             return '<img src="/img/Eb7.png">';
             break;
+
         default:
             return match;
     }

@@ -90,13 +90,14 @@
                             <button type="button"class="btn btn-outline-primary m-1" onclick="chord_insert('[Cmaj7]');">Cmaj7</button>
                             <button type="button"class="btn btn-outline-primary m-1" onclick="chord_insert('[Dm7]');">Dm7</button>
                             <button type="button"class="btn btn-outline-primary m-1" onclick="chord_insert('[D]');">D</button>
+                            <button type="button"class="btn btn-outline-primary m-1" onclick="chord_insert('[D7]');">D7</button>
                             <button type="button"class="btn btn-outline-primary m-1" onclick="chord_insert('[A]');">A</button>
                             <button type="button"class="btn btn-outline-primary m-1" onclick="chord_insert('[E]');">E</button>
                             <button type="button"class="btn btn-outline-primary m-1" onclick="chord_insert('[Caug]');">Caug</button>
                             <button type="button"class="btn btn-outline-primary m-1" onclick="chord_insert('[Cadd9]');">Cadd9</button>
                             <button type="button"class="btn btn-outline-primary m-1" onclick="chord_insert('[Em7]');">Em7</button>
                             <button type="button"class="btn btn-outline-primary m-1" onclick="chord_insert('[Fmaj7]');">Fmaj7</button>
-                            <button type="button"class="btn btn-outline-primary m-1" onclick="chord_insert('[G7]');">G7</button>
+                            <button type="button"class="btn btn-outline-primary m-1" onclick="chord_insert('[C7]');">C7</button>
                             <button type="button"class="btn btn-outline-primary m-1" onclick="chord_insert('[G6]');">G6</button>
                             <button type="button"class="btn btn-outline-primary m-1" onclick="chord_insert('[Am7]');">Am7</button>
                             <button type="button"class="btn btn-outline-primary m-1" onclick="chord_insert('[Bm7-5]');">Bm7-5</button>
@@ -831,6 +832,7 @@
             return '<img src="/img/Gaug.png">';
             break;
         case '[Gmaj7]':
+        case '[GM7]':
             return '<img src="/img/GM_7.png">';
             break;
         case '[Gm6]':
