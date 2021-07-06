@@ -9,7 +9,7 @@
                         <option value="めちゃくちゃ早い">めちゃくちゃ早い</option>
                         <option value="とても早い">とても早い</option>
                         <option value="早い">早い</option>
-                        <option selected value="普通" >普通</option>
+                        <option value="普通" >普通</option>
                         <option value="遅い">遅い</option>
                         <option value="とても遅い">とても遅い</option>
                         <option value="めちゃくちゃ遅い">めちゃくちゃ遅い</option>
@@ -46,11 +46,11 @@
                         let speed = 1;
                         let interval = 70;
                     this.test = setInterval(function() {
-                        let scrollTop = documetn.body.scrollTop;
+                        let scrollTop = document.body.scrollTop;
                         let scroll = scrollTop + speed;
                         window.scrollBy(0, scroll)
-                    },interval)
-                }
+                    },interval);
+                    }
                 else if(value.target.value == "とても早い") {
                         let speed = 1;
                         let interval = 60;
@@ -95,7 +95,7 @@
                             let scroll = scrollTop + speed;
                             window.scrollBy(0, scroll)
                         }, interval)
-                }
+                    }
                 else {
                         let speed = 1; //時間あたりに移動するpx量
                         let interval = 80; //移動する間隔

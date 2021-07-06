@@ -1981,7 +1981,7 @@ __webpack_require__.r(__webpack_exports__);
         var _speed = 1;
         var _interval = 70;
         this.test = setInterval(function () {
-          var scrollTop = documetn.body.scrollTop;
+          var scrollTop = document.body.scrollTop;
           var scroll = scrollTop + _speed;
           window.scrollBy(0, scroll);
         }, _interval);
@@ -37679,9 +37679,7 @@ var render = function() {
           _vm._v(" "),
           _c("option", { attrs: { value: "早い" } }, [_vm._v("早い")]),
           _vm._v(" "),
-          _c("option", { attrs: { selected: "", value: "普通" } }, [
-            _vm._v("普通")
-          ]),
+          _c("option", { attrs: { value: "普通" } }, [_vm._v("普通")]),
           _vm._v(" "),
           _c("option", { attrs: { value: "遅い" } }, [_vm._v("遅い")]),
           _vm._v(" "),

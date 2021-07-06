@@ -90,6 +90,7 @@
                             <button type="button"class="btn btn-outline-primary m-1" onclick="chord_insert('[Cmaj7]');">Cmaj7</button>
                             <button type="button"class="btn btn-outline-primary m-1" onclick="chord_insert('[Dm7]');">Dm7</button>
                             <button type="button"class="btn btn-outline-primary m-1" onclick="chord_insert('[D]');">D</button>
+                            <button type="button"class="btn btn-outline-primary m-1" onclick="chord_insert('[Dsus4]');">Dsus4</button>
                             <button type="button"class="btn btn-outline-primary m-1" onclick="chord_insert('[D7]');">D7</button>
                             <button type="button"class="btn btn-outline-primary m-1" onclick="chord_insert('[A]');">A</button>
                             <button type="button"class="btn btn-outline-primary m-1" onclick="chord_insert('[E]');">E</button>
@@ -937,7 +938,9 @@
             break;
 
         case '[A#]':
-            return '<img src="/img/Am.png">';
+        case '[Bb]':
+        case '[B♭]':
+            return '<img src="/img/Bb.png">';
             break;
         case '[A#m7]':
             return '<img src="/img/Bb_m7.png">';

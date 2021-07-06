@@ -1039,8 +1039,10 @@ function origindata() {
             return '<img src="/img/Absus4.png">';
             break;
 
-        case '[A]':
-            return '<img src="/img/A.png">';
+        case '[A#]':
+        case '[Bb]':
+        case '[B♭]':
+            return '<img src="/img/Bb.png">';
             break;
         case '[Am7]':
             return '<img src="/img/A_m7.png">';
