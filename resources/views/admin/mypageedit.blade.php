@@ -1044,6 +1044,9 @@ function origindata() {
         case '[B♭]':
             return '<img src="/img/Bb.png">';
             break;
+        case '[A]':
+            return '<img src="/img/A.png">';
+            break;
         case '[Am7]':
             return '<img src="/img/A_m7.png">';
             break;
@@ -1218,6 +1221,11 @@ function origindata() {
         case '[E♭7]':
         case '[Eb7]':
             return '<img src="/img/Eb7.png">';
+            break;
+
+        // 分数コード
+        case '[Bm/A]':
+            return '<img src="/img/Bm_A.png">';
             break;
 
         default:

@@ -1074,6 +1074,11 @@
             return '<img src="/img/Eb7.png">';
             break;
 
+        // 分数コード
+        case '[Bm/A]':
+            return '<img src="/img/Bm_A.png">';
+            break;
+
         default:
             return match;
     }

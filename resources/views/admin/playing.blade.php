@@ -624,6 +624,9 @@ document.addEventListener("DOMContentLoaded", function() {
         case '[B♭]':
             return '<img src="/img/Bb.png">';
             break;
+        case '[A]':
+            return '<img src="/img/A.png">';
+            break;
         case '[Am7]':
             return '<img src="/img/A_m7.png">';
             break;
@@ -798,6 +801,11 @@ document.addEventListener("DOMContentLoaded", function() {
         case '[E♭7]':
         case '[Eb7]':
             return '<img src="/img/Eb7.png">';
+            break;
+
+        // 分数コード
+        case '[Bm/A]':
+            return '<img src="/img/Bm_A.png">';
             break;
 
         default:
