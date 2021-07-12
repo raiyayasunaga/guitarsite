@@ -199,13 +199,12 @@
         </div>
         <div>
         <h3>曲の歌詞</h3>
-
-        <div id="lyrics" class="mt-5"> 
             <div class="row">
                 @if ($music->video_link)
-                    <button class="col-md-12 btn btn-primary" @click="check()">動画参考リンク</button>
+                    <a class="btn btn-primary" href="{{ $music->video_link }}">{{ $music->title }}の参考動画</a>
                 @endif
             </div>
+        <div id="lyrics" class="mt-5"> 
         </div>
         <h3 class="my-5"><a href="home">演奏終了ホームへ</a></h3>
 
@@ -214,15 +213,6 @@
 
 @section('js')
 <script>
-// ここでlyricsでもらった値を表現
- function check() {
-    if(window.confirm('動画リンクに移動します。')){
-        return window.open('{{ ($music->video_link) }}', '_black');
-    }
-    else {
-        return flase;
-    }
- }
 
 document.addEventListener("DOMContentLoaded", function() {
   let string = '{!! str_replace("\n", "<br />", str_replace("\r", "", str_replace("'", "’", $music->lyrics))) !!}';

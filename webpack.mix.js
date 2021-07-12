@@ -14,6 +14,7 @@ const mix = require('laravel-mix');
 mix.js([
     'resources/js/app.js',
     'resources/js/assets/jquery.js',
+    'resources/js/assets/toast.js',
     ], 'public/js/app.js')
     .sass('resources/sass/app.scss', 'public/css')
     .sass('resources/sass/skin/ayanami.scss', 'public/css')

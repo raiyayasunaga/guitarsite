@@ -20,5 +20,10 @@ class Music extends Model
     {
         return $this->belongsTo('App\User');
     }
+
+    public function favorites()
+    {
+        return $this->belongToMany('App\Favorite');
+    }
     
 }

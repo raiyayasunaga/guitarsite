@@ -7,7 +7,9 @@ use App\Http\Controllers\Controller;
 use App\Music;
 use App\User;
 use App\Skin;
+use App\Favorite;
 use Image;
+use DB;
 
 use Auth;
 
@@ -76,9 +78,8 @@ class GuitarController extends Controller
             $posts = Music::where('category', 'like', '%'.$category.'%')
                 ->orderBy('id', 'desc')
                 ->get();
-        } else if ($category == '') {
-            
-        }else {
+        }  
+        else {
             // それ以外はすべてのニュースを取得する
             $posts = Music::orderBy('created_at', 'desc')->get();
         }
@@ -144,6 +145,52 @@ class GuitarController extends Controller
         $music->fill($music_form)->save();
 
         return redirect('admin/mypage/');
+    }
+
+    public function favoritecreate(Request $request)
+    {
+        // どんな処理を書いていけば良いのか、、
+        $favorite = new Favorite;
+        $favorite->user_id = $request->user_id;
+        $favorite->music_id = $request->music_id;
+
+        $favorite->save();
+
+        session()->flash('msg_success', 'お気に入り登録しました！');
+        return redirect('admin/home');
+    }
+
+    public function favorite(Request $request)
+    {
+        $category = $request->category; 
+
+        if ($category != '') {
+
+            $favorites = Music::join('favorites', 'music.id', '=', 'favorites.music_id')
+            ->where('favorites.user_id', '=', Auth::user()->id)
+            ->where('category', 'like', $category)
+            ->get();
+
+        }  
+        else {
+
+            $favorites = Music::join('favorites', 'music.id', '=', 'favorites.music_id')
+            ->where('favorites.user_id', '=', Auth::user()->id)
+            ->get();
+            
+        }
+
+        return view('admin.favorite', ['favorites' => $favorites, 'category' => $category]);
+    }
+
+    // お気に入り解除
+    public function favoriteclear(Request $request)
+    {
+        $favorites = Favorite::find($request->id);
+        $favorites->delete();
+
+        session()->flash('msg_success', 'お気に入りが解除されました');
+        return redirect('admin/favorite');
     }
 
 }

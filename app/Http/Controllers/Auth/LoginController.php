@@ -45,6 +45,7 @@ class LoginController extends Controller
         $request->session()->invalidate();
 
         // /homeに変更
+        session()->flash('msg_success', 'ログアウトしました');
         return $this->loggedOut($request) ?: redirect('admin/cord');
     }
     public function __construct()
@@ -54,6 +55,7 @@ class LoginController extends Controller
     // ログインした後のURL指定
     public function redirectPath()
     {
+        session()->flash('msg_success', 'ログインしました');
         return 'admin/home';
         //例）return 'costs/index';
     }

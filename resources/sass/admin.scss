@@ -12,6 +12,12 @@
   }
 }
 
+#toast-container > .toast-success {
+  background-image: none;
+  background-color: green;
+  color: white;
+  font-family: bload;
+  }
 
 textarea {
   @include sitefont;

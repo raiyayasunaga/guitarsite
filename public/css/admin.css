@@ -11,6 +11,13 @@
   background-image: url("/img/guitar_2.jpg");
 }
 
+#toast-container > .toast-success {
+  background-image: none;
+  background-color: green;
+  color: white;
+  font-family: bload;
+}
+
 textarea {
   font-family: "\660E\671D\4F53";
 }

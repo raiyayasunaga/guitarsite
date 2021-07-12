@@ -15,6 +15,7 @@
             <!-- Scripts -->
             {{-- Laravel標準で用意されているJavascriptを読み込みます --}}
             <script src="{{ asset('js/app.js') }}" defer></script>
+            <script src="{{ asset('js/assets/toast.js') }}" ></script>
 
             <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14"></script>
 
@@ -24,9 +25,9 @@
 
             
             <!-- toastr -->
-            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.css">
             <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-            <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+            <link href="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css" rel="stylesheet" />
+            <script src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
 
 
             <!-- Styles -->
@@ -122,7 +123,9 @@
                                 <ul class="navbar-nav ml-auto" style="margin: 0px;">
                                 <header>
                                     <ul class="nav">
+                                        <li><a href="home">ホーム</a></li>
                                         <li><a id="mypage" href = "mypage" >マイページ</a></li>
+                                        <li><a id="mypage" href = "favorite" >お気に入り曲</a></li>
                                         <li><a id="create" href = "create" >曲の作成</a></li>
                                         <li><a id="musicCords" href = "cord" >ギターのコード一覧</a></li>
                                     </ul>
@@ -131,7 +134,9 @@
                             </div>
                             <nav class="navMenu">
                                 <ul>
+                                    <li><a href="home">ホーム(公開一覧）</a></li>
                                     <li><a href="mypage">マイページ</a></li>
+                                    <li><a href="{{ route('admin.favorite') }}">お気に入り曲</a></li>
                                     <li><a href="create">曲の作成</a></li>
                                     <li><a href="cord">ギターコード一覧</a></li>
                                 </ul>

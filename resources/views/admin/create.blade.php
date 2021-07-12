@@ -301,6 +301,7 @@
                     <p>♭や＃の書き方に注意！！</p>
                     <p>※これはメインで視聴するのはスマホ画面ですのでレイアウトを合わせるためです。</p>
                 </div>
+                <!-- 文字列としてmargingを使って使用する -->
                     <p class="col-12 my-5" id="preview">
                     </p>
                 </div> 
@@ -1084,7 +1085,6 @@
     }
   }
   document.getElementById( "preview" ).innerHTML = result;
-
 } 
 </script>
 @endsection

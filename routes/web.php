@@ -39,6 +39,11 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function() {
     Route::post('mypage', 'Admin\ProfileController@skin');
 
     Route::post('mypage', 'Admin\ProfileController@name');
+
+    // お気に入り設定
+    Route::get('favorite', 'Admin\GuitarController@favorite')->name('admin.favorite');
+    Route::post('favoritecreate', 'Admin\GuitarController@favoritecreate')->name('admin.favorite.create');
+    Route::post('favoriteclear', 'Admin\GuitarController@favoriteclear');
     
     // 一部変更になるはず
     Route::post('profileedit', 'Admin\ProfileController@update');
