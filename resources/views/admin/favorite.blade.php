@@ -52,7 +52,7 @@
                         <tbody>
                             @foreach($favorites as $music)
                                     <tr>
-                                        <td style="font-size: 20px;"><a href ="{{ route('admin.playing', ['id' => $music->id]), }}"> {{ $music->title }}</a></td>
+                                        <td style="font-size: 20px;"><a href ="{{ route('admin.playing', ['id' => $music->music_id]), }}"> {{ $music->title }}</a></td>
                                         <td>{{ ($music->category) }}</td>
                                         <td>
                                         <form method="post" action="{{ action('Admin\GuitarController@favoriteclear') }}" onSubmit="return check()">

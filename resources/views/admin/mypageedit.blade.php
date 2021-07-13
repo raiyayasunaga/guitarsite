@@ -243,6 +243,7 @@
                                     <button type="button"class="btn btn-outline-primary m-1" onclick="chord_insert('[Dm7]');">Dm7</button>
                                     <button type="button"class="btn btn-outline-primary m-1" onclick="chord_insert('[D]');">D</button>
                                     <button type="button"class="btn btn-outline-primary m-1" onclick="chord_insert('[D7]');">D7</button>
+                                    <button type="button"class="btn btn-outline-primary m-1" onclick="chord_insert('[Dsus4]');">Dsus4</button>
                                     <button type="button"class="btn btn-outline-primary m-1" onclick="chord_insert('[A]');">A</button>
                                     <button type="button"class="btn btn-outline-primary m-1" onclick="chord_insert('[E]');">E</button>
                                     <button type="button"class="btn btn-outline-primary m-1" onclick="chord_insert('[Caug]');">Caug</button>
