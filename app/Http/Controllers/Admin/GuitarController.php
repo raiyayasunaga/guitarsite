@@ -47,6 +47,7 @@ class GuitarController extends Controller
         // データベースに保存する
         $music->fill($form);
         //ユーザーそれぞれのデータの値を保存できる作業 
+        $music->public = "1";
         $music->user_id = Auth::id();
         $music->save();
 
