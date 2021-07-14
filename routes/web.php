@@ -15,18 +15,18 @@ use App\Http\Middleware\CheckAge;
 Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function() {
     Route::get('create', function(Request $request) {
         return view('admin.create');
-    });
-    Route::get('home', 'Admin\GuitarController@home');
+    })->name('admin.create');
+    Route::get('home', 'Admin\GuitarController@home')->name('admin.home');
     // ルートの設定
     Route::post('create', 'Admin\GuitarController@create');
-    Route::get('mypage', 'Admin\GuitarController@mypage');
+    Route::get('mypage', 'Admin\GuitarController@mypage')->name('admin.mypage');
     Route::get('playing', 'Admin\GuitarController@playing')->name('admin.playing');
     // ギターコードの表示設定
-    Route::get('delete', 'Admin\GuitarController@delete');
+    Route::get('delete', 'Admin\GuitarController@delete')->name('admin.delete');
 
     // 編集と更新
-    Route::get('mypageedit', 'Admin\GuitarController@edit');
-    Route::post('mypageedit', 'Admin\GuitarController@update')->name('user.cord');
+    Route::get('musicedit', 'Admin\GuitarController@edit')->name('admin.edit');
+    Route::post('musicedit', 'Admin\GuitarController@update')->name('user.cord');
 
     // 公開と非公開
     Route::get('open', 'Admin\GuitarController@open');
@@ -34,19 +34,14 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function() {
 
     // プロフィールに関する
     Route::get('profileedit', 'Admin\ProfileController@edit')->name('user.image');
-
-    // カラースキンを変更するルート
-    Route::post('mypage', 'Admin\ProfileController@skin');
-
-    Route::post('mypage', 'Admin\ProfileController@name');
+    // 一部変更になるはず
+    Route::post('profileedit', 'Admin\ProfileController@update');
 
     // お気に入り設定
     Route::get('favorite', 'Admin\GuitarController@favorite')->name('admin.favorite');
     Route::post('favoritecreate', 'Admin\GuitarController@favoritecreate')->name('admin.favorite.create');
     Route::post('favoriteclear', 'Admin\GuitarController@favoriteclear');
     
-    // 一部変更になるはず
-    Route::post('profileedit', 'Admin\ProfileController@update');
 });
 
 Route::get('admin/age', function(Request $request) {
@@ -54,7 +49,7 @@ Route::get('admin/age', function(Request $request) {
 })->middleware('age');
 
 // コードは誰でも見せられる
-Route::get('admin/cord', 'Admin\GuitarController@cord');
+Route::get('admin/cord', 'Admin\GuitarController@cord')->name('admin.cords');
 
 
 // メールから仮登録しているルーティング

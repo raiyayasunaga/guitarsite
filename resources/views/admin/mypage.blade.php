@@ -65,10 +65,8 @@ body {
                         <table class="table">
                             <thead>
                                 <tr>
-                                    <th width="30%">曲のタイトル</th>
-                                    <th width="20%">カテゴリー</th>
-                                    <th width="10%">カポ</th>
-                                    <th width="10%">編集</th>
+                                    <th width="50%">曲のタイトル</th>
+                                    <th width="20%">編集</th>
                                     <th width="20%">公開する</th>
                                     <th width="10%">公開状態</th>
                                 </tr>
@@ -79,13 +77,11 @@ body {
                                         <!-- 取得して投稿の値によって表示を変える -->
                                             <td style="font-size: 20px;"><a href ="{{ route('admin.playing', ['id' => $music->id]) }}"> {{ str_limit($music->title, 100) }}</a></td>
                                         <!-- 連想配列・データベースで値を引っ張ってくる -->
-                                            <td>{{ ($music->category) }}</td>
-                                            <td>{{ ($music->capo) }}</td>
                                         <td>
-                                            <div>
+                                            <div style="display: inline-block">
                                                 <a class="btn btn-primary p-1" href="{{ action('Admin\GuitarController@edit', ['id' => $music->id]) }}">編集</a>
                                             </div>
-                                            <div>
+                                            <div style="display: inline-block">
                                             <form method="get" action="{{ action('Admin\GuitarController@delete') }}" onSubmit="return check()">
                                                 <button type="submit" class="btn btn-primary p-1" >消去</button>
                                                     <input type="hidden" name="id" value="{{$music->id}}">
@@ -93,14 +89,14 @@ body {
                                             </div>
                                         </td>
                                         <td>
-                                            <div>
-                                                <a class="btn btn-primary p-1" href="{{ action('Admin\GuitarController@close', ['id' => $music->id]) }}">非公開</a>
+                                            <div style="display: inline-block">
+                                                <a class="btn btn-primary p-1"  href="{{ action('Admin\GuitarController@close', ['id' => $music->id]) }}">非公開</a>
                                             </div>
-                                            <div>
-                                            <form method="get" action="{{ action('Admin\GuitarController@open') }}" onSubmit="return check()">
-                                                <button type="submit" class="btn btn-primary p-1">公開</button>
-                                                <input type="hidden" name="id" value="{{$music->id}}">
-                                            </form>
+                                            <div style="display: inline-block">
+                                                <form method="get" action="{{ action('Admin\GuitarController@open') }}" onSubmit="return check()">
+                                                    <button type="submit" class="btn btn-primary p-1">公開</button>
+                                                    <input type="hidden" name="id" value="{{$music->id}}">
+                                                </form>
                                             </div>
                                         </td>
                                         <td>

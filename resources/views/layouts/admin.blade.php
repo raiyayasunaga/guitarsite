@@ -92,9 +92,11 @@
                                     <!-- ログイン前はadminをつける必要がある -->
                                         <div>
                                             <ul class="nav">
-                                                <li><a href = "admin/mypage">マイページ</a></li>
-                                                <li><a href = "admin/create">曲の作成</a></li>
-                                                <li><a href = "admin/cord">ギターのコード一覧</a></li>
+                                                <li><a href = "home">ホームページ</a></li>
+                                                <li><a href = "mypage">マイページ</a></li>
+                                                <li><a href = "favorite">お気に入り曲</a></li>
+                                                <li><a href = "create">曲の作成</a></li>
+                                                <li><a href = "cord">ギターのコード一覧</a></li>
                                             </ul>
                                         </div>
                                     </header>
@@ -123,22 +125,22 @@
                                 <ul class="navbar-nav ml-auto" style="margin: 0px;">
                                 <header>
                                     <ul class="nav">
-                                        <li><a href="home">ホーム</a></li>
-                                        <li><a id="mypage" href = "mypage" >マイページ</a></li>
-                                        <li><a id="mypage" href = "favorite" >お気に入り曲</a></li>
-                                        <li><a id="create" href = "create" >曲の作成</a></li>
-                                        <li><a id="musicCords" href = "cord" >ギターのコード一覧</a></li>
+                                        <li><a href="{{ route('admin.home') }}">ホーム</a></li>
+                                        <li><a id="mypage" href = "{{ route('admin.create') }}" >マイページ</a></li>
+                                        <li><a id="favorite" href = "{{ route('admin.favorite') }}" >お気に入り曲</a></li>
+                                        <li><a id="create" href = "{{ route('admin.create') }}" >曲の作成</a></li>
+                                        <li><a id="musicCords" href = "{{ route('admin.cords') }}" >ギターのコード一覧</a></li>
                                     </ul>
                                 </header>
                                 </ul>
                             </div>
                             <nav class="navMenu">
                                 <ul>
-                                    <li><a href="home">ホーム(公開一覧）</a></li>
-                                    <li><a href="mypage">マイページ</a></li>
-                                    <li><a href="{{ route('admin.favorite') }}">お気に入り曲</a></li>
-                                    <li><a href="create">曲の作成</a></li>
-                                    <li><a href="cord">ギターコード一覧</a></li>
+                                    <li><a href="{{ route('admin.home') }}">ホーム(公開一覧）</a></li>
+                                    <li><a id="mypage" href="{{ route('admin.mypage') }}">マイページ</a></li>
+                                    <li><a id="favorite" href="{{ route('admin.favorite') }}">お気に入り曲</a></li>
+                                    <li><a id="create" href="{{ route('admin.create') }}">曲の作成</a></li>
+                                    <li><a id="musicCords" href="{{ route('admin.cords') }}">ギターコード一覧</a></li>
                                 </ul>
                             </nav>
 

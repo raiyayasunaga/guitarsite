@@ -77,14 +77,14 @@
                                         <td>{{ ($music->category) }}</td>
                                         <td class="mobile">{{ ($music->capo)}}</td>
                                             @if(in_array($music->id, $music_ids))
-                                                <td><button class="btn btn-primary">登録済み</button></td>
+                                                <td><button class="btn btn-danger">済み</button></td>
                                             @else
                                                 <td>
                                                     <form method="post" action="{{ action('Admin\GuitarController@favoritecreate') }}" onSubmit="return check()">
                                                         @csrf
                                                         <input type="hidden" name="music_id" value="{{ $music->id }}">
                                                         <input type="hidden" name="user_id" value="{{ Auth::user()->id }}">
-                                                            <button type="submit" class=" btn btn-primary p-1">登録</button>
+                                                            <button type="submit" class=" btn btn-primary">登録</button>
                                                     </form>
                                                 </td>
                                             @endif
