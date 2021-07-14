@@ -63,6 +63,14 @@ class GuitarController extends Controller
 
         $cond_title = $request->cond_title;
         $category = $request->category;
+        $favorites = Favorite::where('user_id', Auth::id())->get();
+        $music_ids = [];
+
+        foreach($favorites as $favorite)
+        {
+            array_push($music_ids, $favorite->music_id);
+        }
+
         $user = Auth::user();
 
         if ($cond_title != '') {
@@ -85,7 +93,7 @@ class GuitarController extends Controller
             $posts = Music::orderBy('created_at', 'desc')->get();
         }
         
-        return view('admin.home', ['posts' => $posts, 'cond_title' => $cond_title, 'category' => $category, 'user' => $user]);
+        return view('admin.home', ['posts' => $posts, 'cond_title' => $cond_title, 'category' => $category, 'user' => $user, 'music_ids' => $music_ids]);
     }
 
     public function mypage(Request $request) {

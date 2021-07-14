@@ -76,14 +76,18 @@
                                         <td style="font-size: 20px;"><a href ="{{ route('admin.playing', ['id' => $music->id]), }}"> {{ $music->title }}</a></td>
                                         <td>{{ ($music->category) }}</td>
                                         <td class="mobile">{{ ($music->capo)}}</td>
-                                        <td>
-                                        <form method="post" action="{{ action('Admin\GuitarController@favoritecreate') }}" onSubmit="return check()">
-                                            @csrf
-                                            <input type="hidden" name="music_id" value="{{ $music->id }}">
-                                            <input type="hidden" name="user_id" value="{{ Auth::user()->id }}">
-                                                <button type="submit" class=" btn btn-primary p-1">登録</button>
-                                        </form>
-                                        </td>
+                                            @if(in_array($music->id, $music_ids))
+                                                <td><button class="btn btn-primary">登録済み</button></td>
+                                            @else
+                                                <td>
+                                                    <form method="post" action="{{ action('Admin\GuitarController@favoritecreate') }}" onSubmit="return check()">
+                                                        @csrf
+                                                        <input type="hidden" name="music_id" value="{{ $music->id }}">
+                                                        <input type="hidden" name="user_id" value="{{ Auth::user()->id }}">
+                                                            <button type="submit" class=" btn btn-primary p-1">登録</button>
+                                                    </form>
+                                                </td>
+                                            @endif
                                         <td><img src="{{ $music->user->profile_image }}" style="width: 40px;" id="img"></td>
                                     </tr>
                                 @endif
