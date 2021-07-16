@@ -126,7 +126,7 @@
                                 <header>
                                     <ul class="nav">
                                         <li><a href="{{ route('admin.home') }}">ホーム</a></li>
-                                        <li><a id="mypage" href = "{{ route('admin.create') }}" >マイページ</a></li>
+                                        <li><a id="mypage" href = "{{ route('admin.mypage') }}" >マイページ</a></li>
                                         <li><a id="favorite" href = "{{ route('admin.favorite') }}" >お気に入り曲</a></li>
                                         <li><a id="create" href = "{{ route('admin.create') }}" >曲の作成</a></li>
                                         <li><a id="musicCords" href = "{{ route('admin.cords') }}" >ギターのコード一覧</a></li>

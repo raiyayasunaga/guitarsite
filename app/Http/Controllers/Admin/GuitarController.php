@@ -62,7 +62,6 @@ class GuitarController extends Controller
     public function home(Request $request) {
 
         $cond_title = $request->cond_title;
-        $category = $request->category;
         $favorites = Favorite::where('user_id', Auth::id())->get();
         $music_ids = [];
 
@@ -81,19 +80,8 @@ class GuitarController extends Controller
             // それ以外はすべてのニュースを取得する
             $posts = Music::orderBy('created_at', 'desc')->get();
         }
-
-        if ($category != '') {
-
-            $posts = Music::where('category', 'like', '%'.$category.'%')
-                ->orderBy('id', 'desc')
-                ->get();
-        }  
-        else {
-            // それ以外はすべてのニュースを取得する
-            $posts = Music::orderBy('created_at', 'desc')->get();
-        }
         
-        return view('admin.home', ['posts' => $posts, 'cond_title' => $cond_title, 'category' => $category, 'user' => $user, 'music_ids' => $music_ids]);
+        return view('admin.home', ['posts' => $posts, 'cond_title' => $cond_title, 'user' => $user, 'music_ids' => $music_ids]);
     }
 
     public function mypage(Request $request) {

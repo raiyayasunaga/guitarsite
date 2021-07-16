@@ -23,6 +23,7 @@
         <div class="row">
             <div class="col-md-8">
                 <form action="{{ action('Admin\GuitarController@home') }}" method="get">
+                    <h5>とりあえず名前検索だけ</h5>
                     <div class="form-group row">
                         <div class="col-8">
                             <input type="text" class="form-control" name="cond_title" value="{{ $cond_title }}">
@@ -31,25 +32,6 @@
                         @csrf
                             <input type="submit" class="btn btn-primary" value="検索">
                         </div>
-                    </div>
-                    
-                    <div class="form-group row">
-                        <div class="col-8">
-                            <select class="form-control mb-3" name="category" value="{{ $category }}">
-                                <option value="洋楽">洋楽</option>
-                                <option value="Jpop">Jpop</option>
-                                <option value="ロック">ロック</option>
-                                <option value="アニソン">アニソン</option>
-                                <option value="ジブリ">ジブリ</option>
-                                <option value="なし">なし</option>
-                                <option value="" selected>カテゴリー</option>
-                            </select>
-                         </div>
-                        <div class="col-4">
-                            @csrf
-                            <input type="submit" class="btn btn-primary" value="検索">
-                        </div>
-                        
                     </div>
                 </form>
             </div>
