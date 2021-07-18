@@ -23,7 +23,6 @@
         <div class="row">
             <div class="col-md-8">
                 <form action="{{ action('Admin\GuitarController@home') }}" method="get">
-                    <h5>とりあえず名前検索だけ</h5>
                     <div class="form-group row">
                         <div class="col-8">
                             <input type="text" class="form-control" name="cond_title" value="{{ $cond_title }}">

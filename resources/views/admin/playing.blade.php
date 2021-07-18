@@ -206,7 +206,23 @@
             </div>
         <div id="lyrics" class="mt-5"> 
         </div>
-        <h3 class="my-5"><a href="home">演奏終了ホームへ</a></h3>
+        <div class="row">
+            <div class="col-xs-6">
+            <a class="btn btn-primary" href="home">ホームへ</a>
+            </div>
+            <div class="col-xs-6 ml-5">
+            @if(in_array($music->id, $music_ids))
+                <td><button class="btn btn-danger">済み</button></td>
+            @else
+                <form method="post" action="{{ action('Admin\GuitarController@favoritecreate') }}" onSubmit="return check()">
+                    @csrf
+                    <input type="hidden" name="music_id" value="{{ $music->id }}">
+                    <input type="hidden" name="user_id" value="{{ Auth::user()->id }}">
+                        <button type="submit" class=" btn btn-primary">登録</button>
+                </form>
+            @endif
+            </div>
+        </div>
 
     </div>
 @endsection

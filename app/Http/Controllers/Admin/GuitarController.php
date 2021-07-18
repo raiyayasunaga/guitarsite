@@ -108,7 +108,16 @@ class GuitarController extends Controller
     public function playing(Request $request) {
         $music = Music::find($request->id);
 
-        return view('admin.playing', ['music' => $music]);
+        $favorites = Favorite::where('user_id', Auth::id())->get();
+        $music_ids = [];
+
+        foreach($favorites as $favorite)
+        {
+            array_push($music_ids, $favorite->music_id);
+        }
+
+
+        return view('admin.playing', compact(['music', 'favorites', 'music_ids']));
     }
 
     public function delete(Request $request)
