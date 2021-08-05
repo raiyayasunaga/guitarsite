@@ -42,6 +42,8 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function() {
     Route::post('favoritecreate', 'Admin\GuitarController@favoritecreate')->name('admin.favorite.create');
     Route::post('favoriteclear', 'Admin\GuitarController@favoriteclear');
     
+    // 録音
+    Route::get('record', 'Admin\GUitarController@record')->name('admin.record');
 });
 
 Route::get('admin/age', function(Request $request) {

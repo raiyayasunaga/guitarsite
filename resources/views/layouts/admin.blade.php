@@ -130,6 +130,7 @@
                                         <li><a id="favorite" href = "{{ route('admin.favorite') }}" >お気に入り曲</a></li>
                                         <li><a id="create" href = "{{ route('admin.create') }}" >曲の作成</a></li>
                                         <li><a id="musicCords" href = "{{ route('admin.cords') }}" >ギターのコード一覧</a></li>
+                                        <li><a id="musicCords" href = "{{ route('admin.record') }}" >録音</a></li>
                                     </ul>
                                 </header>
                                 </ul>

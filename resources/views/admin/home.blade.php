@@ -87,7 +87,7 @@
 <script>
    function check(){
 
-        if(window.confirm('本当に実行してもよろしいですか？')){ // 確認ダイアログを表示
+        if(window.confirm('本当に登録してもよろしいですか？')){ // 確認ダイアログを表示
 
             return true; // 「OK」時は送信を実行
 

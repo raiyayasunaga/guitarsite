@@ -199,4 +199,9 @@ class GuitarController extends Controller
         return redirect('admin/favorite');
     }
 
+    public function record()
+    {
+        return view('admin.record');
+    }
+
 }

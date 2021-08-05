@@ -1226,9 +1226,26 @@ function origindata() {
 
         // 分数コード
         case '[Bm/A]':
-            return '<img src="/img/Bm_A.png">';
+            return '<img src="/img/Bm_A.jpg">';
             break;
-
+        case '[Am/G]':
+            return '<img src="/img/Am_G.jpg">';
+            break;
+        case '[Am7/D]':
+            return '<img src="/img/Am7_D.jpg">';
+            break;
+        case '[F/G]':
+            return '<img src="/img/F_G.png">';
+            break;
+        case '[F#m/E]':
+            return '<img src="/img/F#m_E.jpg">';
+            break;
+        case '[Bb/C]':
+            return '<img src="/img/Bb_C.jpg">';
+            break;
+        case '[Dm7/G]':
+            return '<img src="/img/Dm7_G.jpg">';
+            break;
         default:
             return match;
     }
